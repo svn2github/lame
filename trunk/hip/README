@@ -13,6 +13,9 @@ assmbler.
 
 Seeking currently isn't implemented.  Also the hip.dsp file needs some work.
 
+There are python wrappers, and this is packaged in debian
+
+
 From mpglib's orginal README:
 =============================
 
