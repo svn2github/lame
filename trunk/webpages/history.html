@@ -23,17 +23,26 @@ LAME 3.85&nbsp; (CVS)</h3>
 
 <ul>
 <li>
-new VBR routine now the default.&nbsp; Same tunings as the old routine,
+new VBR routine now the default.&nbsp; Similar results to the old routine,
 but very different scalefactor search algorithm.&nbsp; Much faster, with
 noise shaping very close to the psycho acoustic model.&nbsp; Some further
 tuning may be needed.</li>
+
+<li>
+<font color="#FF0000">Takehiro Tominaga:&nbsp; mid/side stereo demasking
+thresholds updated.</font></li>
+
+<li>
+Takehiro Tominaga: New short block MDCT coefficient data structure.&nbsp;
+Should allow for future speed improvements.</li>
 
 <li>
 Robert Hegemann:&nbsp; fixed bug in old VBR routine, the --noath mode messed
 up the VBR routine resulting in very large files</li>
 
 <li>
-</li>
+<font color="#FF0000">Takehiro Tominaga:&nbsp; Modified PE&nbsp;formula
+to use ATH.</font></li>
 </ul>
 
 <h3>
