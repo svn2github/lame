@@ -107,8 +107,8 @@ def calculate_diff(filespec):
         del lines[DIFF_HEAD_LINES:-DIFF_TAIL_LINES]
         lines.insert(DIFF_HEAD_LINES,
                      '[...%d lines suppressed...]\n' % removedlines)
-    return string.join(lines, '')
-
+##    return string.join(lines, '')
+    return ""   # I don't want a diff
 
 
 def blast_mail(mailcmd, filestodiff):
