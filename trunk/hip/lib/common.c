@@ -26,7 +26,7 @@
 #include <dmalloc.h>
 #endif
 
-// In C++ the array first must be prototyped, why ?
+/* In C++ the array first must be prototyped, why ? */
 
 extern const int tabsel_123 [2] [3] [16];
 
@@ -44,18 +44,42 @@ const long freqs[9] = { 44100, 48000, 32000,
                         22050, 24000, 16000,
                         11025, 12000,  8000 };
 
-int bitindex;
-unsigned char *wordpointer;
-unsigned char *pcm_sample;
-int pcm_point = 0;
 
 
 #if defined( USE_LAYER_1 ) || defined ( USE_LAYER_2 )
   real muls[27][64];
 #endif
 
+#if 0
+static void get_II_stuff(struct frame *fr)
+{
+  static const int translate [3] [2] [16] =   /* char ? */
+   { { { 0,2,2,2,2,2,2,0,0,0,1,1,1,1,1,0 } ,
+       { 0,2,2,0,0,0,1,1,1,1,1,1,1,1,1,0 } } ,
+     { { 0,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0 } ,
+       { 0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0 } } ,
+     { { 0,3,3,3,3,3,3,0,0,0,1,1,1,1,1,0 } ,
+       { 0,3,3,0,0,0,1,1,1,1,1,1,1,1,1,0 } } };
+
+  int table,sblim;
+  static const struct al_table2 *tables[5] = 
+       { alloc_0, alloc_1, alloc_2, alloc_3 , alloc_4 };
+  static int sblims[5] = { 27 , 30 , 8, 12 , 30 };
+
+  if(fr->lsf)
+    table = 4;
+  else
+    table = translate[fr->sampling_frequency][2-fr->stereo][fr->bitrate_index];
+  sblim = sblims[table];
+
+  fr->alloc = tables[table];
+  fr->II_sblimit = sblim;
+}
+#endif
+
 #define HDRCMPMASK 0xfffffd00
 
+#define MAX_INPUT_FRAMESIZE 4096
 
 int head_check(unsigned long head,int check_layer)
 {
@@ -72,26 +96,20 @@ int head_check(unsigned long head,int check_layer)
     /* syncword */
 	return FALSE;
   }
-#if 0
-  if(!((head>>17)&3)) {
-    /* bits 13-14 = layer 3 */
-	return FALSE;
-  }
+
+#ifndef USE_LAYER_1
+  if (nLayer == 1)
+      return FALSE;
 #endif
+#ifndef USE_LAYER_2
+  if (nLayer == 2)
+      return FALSE;
+#endif
+  if (nLayer == 4)
+      return FALSE;
 
-  if (3 !=  nLayer) 
-  {
-	#if defined (USE_LAYER_1) || defined (USE_LAYER_2)
-	  if (4==nLayer)
-		  return FALSE;
-	#else
-		return FALSE;
-    #endif
-  }
-
-  if (check_layer>0) {
-      if (nLayer != check_layer) return FALSE;
-  }
+  if (check_layer > 0 && nLayer != check_layer)
+      return FALSE;
 
   if( ((head>>12)&0xf) == 0xf) {
     /* bits 16,17,18,19 = 1111  invalid bitrate */
@@ -101,6 +119,9 @@ int head_check(unsigned long head,int check_layer)
     /* bits 20,21 = 11  invalid sampling freq */
     return FALSE;
   }
+  if ((head&0x3) == 0x2 )
+      /* invalid emphasis */
+      return FALSE;
   return TRUE;
 }
 
@@ -183,11 +204,11 @@ int decode_header(struct frame *fr,unsigned long newhead)
         if(fr->error_protection)
           ssize += 2;
 #endif
-    if (fr->framesize>MAX_INPUT_FRAMESIZE) {
-        fprintf(stderr,"Frame size too big.\n");
-        fr->framesize = MAX_INPUT_FRAMESIZE;
-        return (0);
-    } 
+	if (fr->framesize>MAX_INPUT_FRAMESIZE) {
+	  fprintf(stderr,"Frame size too big.\n");
+	  fr->framesize = MAX_INPUT_FRAMESIZE;
+	  return (0);
+	} 
 
 
 	if (fr->bitrate_index==0)
@@ -240,48 +261,48 @@ void print_header_compact(struct frame *fr)
 
 #endif
 
-unsigned int getbits(int number_of_bits)
+unsigned int getbits(PMPSTR mp, int number_of_bits)
 {
   unsigned long rval;
 
-  if(!number_of_bits)
+  if (number_of_bits <= 0 || !mp->wordpointer)
     return 0;
 
   {
-    rval = wordpointer[0];
+    rval = mp->wordpointer[0];
     rval <<= 8;
-    rval |= wordpointer[1];
+    rval |= mp->wordpointer[1];
     rval <<= 8;
-    rval |= wordpointer[2];
-    rval <<= bitindex;
+    rval |= mp->wordpointer[2];
+    rval <<= mp->bitindex;
     rval &= 0xffffff;
 
-    bitindex += number_of_bits;
+    mp->bitindex += number_of_bits;
 
     rval >>= (24-number_of_bits);
 
-    wordpointer += (bitindex>>3);
-    bitindex &= 7;
+    mp->wordpointer += (mp->bitindex>>3);
+    mp->bitindex &= 7;
   }
   return rval;
 }
 
-unsigned int getbits_fast(int number_of_bits)
+unsigned int getbits_fast(PMPSTR mp, int number_of_bits)
 {
   unsigned long rval;
 
   {
-    rval = wordpointer[0];
+    rval = mp->wordpointer[0];
     rval <<= 8;	
-    rval |= wordpointer[1];
-    rval <<= bitindex;
+    rval |= mp->wordpointer[1];
+    rval <<= mp->bitindex;
     rval &= 0xffff;
-    bitindex += number_of_bits;
+    mp->bitindex += number_of_bits;
 
     rval >>= (16-number_of_bits);
 
-    wordpointer += (bitindex>>3);
-    bitindex &= 7;
+    mp->wordpointer += (mp->bitindex>>3);
+    mp->bitindex &= 7;
   }
   return rval;
 }
@@ -296,9 +317,10 @@ int set_pointer( PMPSTR mp, long backstep)
     return MP3_ERR; 
   }
   bsbufold = mp->bsspace[1-mp->bsnum] + 512;
-  wordpointer -= backstep;
+  mp->wordpointer -= backstep;
   if (backstep)
-    memcpy(wordpointer,bsbufold+mp->fsizeold-backstep,(size_t)backstep);
-  bitindex = 0;
+    memcpy(mp->wordpointer,bsbufold+mp->fsizeold-backstep,(size_t)backstep);
+  mp->bitindex = 0;
   return MP3_OK;
 }
+

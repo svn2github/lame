@@ -66,7 +66,7 @@ typedef struct
 }   VBRTAGDATA;
 
 int CheckVbrTag(unsigned char *buf);
-int GetVbrTag(VBRTAGDATA *pTagData,  unsigned char *buf);
+int hip_GetVbrTag(VBRTAGDATA *pTagData,  unsigned char *buf);
 
 /*
 int SeekPoint(unsigned char TOC[NUMTOCENTRIES], int file_bytes, float percent);

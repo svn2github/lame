@@ -40,7 +40,7 @@ typedef struct mpstr_tag {
         int fsizeold;
         int fsizeold_nopadding;
 	struct frame fr;
-        unsigned char bsspace[2][MAXFRAMESIZE+512]; /* MAXFRAMESIZE */
+        unsigned char bsspace[2][MAXFRAMESIZE+1024]; /* MAXFRAMESIZE */
 	real hybrid_block[2][2][SBLIMIT*SSLIMIT];
 	int hybrid_blc[2];
 	unsigned long header;
@@ -49,6 +49,8 @@ typedef struct mpstr_tag {
         int  synth_bo;
         int  sync_bitstream;
 	
+  int bitindex;
+  unsigned char *wordpointer;
 } MPSTR, *PMPSTR;
 
 

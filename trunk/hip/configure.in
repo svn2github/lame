@@ -5,7 +5,7 @@ dnl Initialization and Versioning
 dnl ------------------------------------------------
 
 AC_INIT(lib/hip.c)
-AM_INIT_AUTOMAKE(libmp3hip,0.2)
+AM_INIT_AUTOMAKE(libmp3hip,0.3)
 AC_REVISION($Id$)
 
 dnl Library versioning
@@ -22,7 +22,7 @@ dnl      library implements.  In other words, the library implements all the
 dnl      interface numbers in the range from number 'CURRENT - AGE' to
 dnl      'CURRENT'.
 
-H_LIB_CURRENT=0
+H_LIB_CURRENT=1
 H_LIB_REVISION=0
 H_LIB_AGE=0
 AC_SUBST(H_LIB_CURRENT)

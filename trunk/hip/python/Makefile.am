@@ -14,4 +14,4 @@ install:
 distclean: clean
 
 clean:
-	python2.1 setup.py clean --all
+	python setup.py clean --all
