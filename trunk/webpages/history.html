@@ -23,12 +23,17 @@ Starting with LAME 3.0:
 LAME 3.89alpha&nbsp; (CVS)</h3>
 
 <ul>
-<li>
-Takehiro Tominaga:&nbsp; LAME can calculate the CRC of VBR header,
-     so now "lame -pv" works fine.
-</li>
-<li>
-</li>
+  <li> Takehiro Tominaga:&nbsp; LAME can calculate the CRC of VBR header, so now 
+    "lame -pv" works fine.</li>
+  <li><font color="#FF0000">Robert Hegemann:&nbsp; Improvements of the new VBR 
+    code.</font></li>
+  <li><font color="#3366FF">Robert Hegemann: New VBR code is now defaulted. The 
+    VBR speed is now on par with CBR.</font></li>
+  <li><font color="#FF0000">Gabriel Bouvigne: Change of the maximum frame size 
+    limit. LAME should now be more friendly with hardware players.</font></li>
+  <li>Gabriel Bouvigne: Size of VBR is now more balanced according to the -V value.</li>
+  <li>Alexander Leidinger: Code cleanups</li>
+  <li>John Dahlstrom: LAME now handles 24bits input</li>
 </ul>
 
 <h3>
@@ -62,10 +67,7 @@ distorted band at each iteration.</font></li>
 <font color="#FF0000">Takehiro Tominaga: Interframe, shortblock temporal
 masking.</font></li>
 
-<li>
-<font color="#FF0000"></font></li>
-
-<li>
+  <li>
 Takehiro Tominaga:&nbsp; LAME restructured into a shared library and front
 end application.&nbsp; Slight changes to the API. More changes are coming
 to turn LAME into a true shared library (right now you have to recompile
