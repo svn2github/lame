@@ -127,7 +127,7 @@ int head_check(unsigned long head,int check_layer)
 
 
 /*
- * the code a header and write the information
+ * decode a header and write the information
  * into the frame structure
  */
 int decode_header(struct frame *fr,unsigned long newhead)
@@ -313,7 +313,9 @@ int set_pointer( PMPSTR mp, long backstep)
   unsigned char *bsbufold;
 
   if(mp->fsizeold < 0 && backstep > 0) {
-    fprintf(stderr,"Can't step back %ld!\n",backstep);
+#if 0
+    fprintf(stderr,"hip: Can't step back %ld bytes!\n",backstep);
+#endif
     return MP3_ERR; 
   }
   bsbufold = mp->bsspace[1-mp->bsnum] + 512;

@@ -37,6 +37,14 @@ int	 decodeMP3_unclipped(PMPSTR mp,unsigned char *inmemory,int inmemsize,char *o
 /* added remove_buf to support mpglib seeking */
 void remove_buf(PMPSTR mp);
 
+/* added audiodata_precedesframes to return the number of bitstream frames the audio data will precede the 
+   current frame by for Layer 3 data. Aids seeking.
+ */
+int audiodata_precedesframes(PMPSTR mp);
+
+/* Resets decoding. Aids seeking. */
+void decode_reset(PMPSTR mp);
+
 #ifdef __cplusplus
 }
 #endif

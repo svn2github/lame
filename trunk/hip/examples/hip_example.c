@@ -32,7 +32,10 @@ int main(int argc, char **argv){
       eof=1;
     } else if (ret < 0) {
       /* error in the stream.  Not a problem, just reporting it in
-         case we (the app) cares.  In this case, we don't. */
+         case we (the app) cares.  In this case, we notify since this
+         is a test application.
+      */
+      fprintf(stderr,"Error in the stream %ld\n", ret);
     } else {
       fwrite(pcmout,1,ret,stdout);
     }

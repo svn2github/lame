@@ -183,6 +183,16 @@ wrap_decodeMP3(PMPSTR mp,unsigned char *inmemory,int inmemsize,char *outmemory,i
   return ret;
 }
 
+void hip_decode_reset(HIP_File *hf)
+{
+  decode_reset(HF_MP(hf));
+}
+
+int hip_audiodata_precedesframes(HIP_File *hf)
+{
+  return audiodata_precedesframes(HF_MP(hf));
+}
+
 long
 hip_read (HIP_File * hf, char *out_buffer, int out_buffer_len,
           int bigendianp, int word, int sgned, int *bitstream)
@@ -272,6 +282,7 @@ hip_decode_headers(HIP_File * hf, unsigned char *in_buffer, int in_buffer_len,
 
     hf->header_parsed = 0;
 
+    /* fprintf(stderr, "HF_MP(hf) = %p\n", HF_MP(hf)); */
     decode_status =
         decodeMP3(HF_MP(hf), in_buffer, in_buffer_len, out_buffer, out_buffer_len, &processed_bytes);
     /* three cases:  
@@ -339,7 +350,7 @@ hip_decode_headers(HIP_File * hf, unsigned char *in_buffer, int in_buffer_len,
     }
 
 #ifdef HIP_DEBUG
-    fprintf(stderr,"decode_headers: decode status = %i / ret = %i\n", ret, decode_status);
+    fprintf(stderr,"hip_decode_headers: decode status = %i / ret = %i\n", ret, decode_status);
 #endif
     return ret;
 }

@@ -15,3 +15,14 @@
 - Myers Carpenter <myers@users.sf.net>
   Added vorbisfile like interface.  Repackaged as seprate from lame. Python
   module.
+
+- Leigh Smith <leighsmith@users.sourceforge.net>
+  Added a patch:
+
+Introduces two functions hip_decode_reset() and
+hip_audiodata_precedesframes() to aid arbitrary seeking within
+MP3 data. Standardised error messages to have a "hip:" prefix
+(aiding error reporting by users of applications linking to hip) and
+controlled the display of them using a #define HIP_DEBUG. Added
+a couple of debugging fprintfs (controlled by HIP_DEBUG). Added
+documentation of fields of struct frame and MPSTR.

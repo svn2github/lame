@@ -656,9 +656,6 @@ III_get_scale_factors_2(PMPSTR mp, int *scf,struct gr_info_s *gr_infos,int i_ste
 static const int pretab1 [22] = {0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,2,2,3,3,3,2,0}; /* char enough ? */
 static const int pretab2 [22] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-/*
- * don't forget to apply the same changes to III_dequantize_sample_ms() !!! 
- */
 static int III_dequantize_sample(PMPSTR mp, real xr[SBLIMIT][SSLIMIT],int *scf,
    struct gr_info_s *gr_infos,int sfreq,int part2bits)
 {
@@ -667,6 +664,9 @@ static int III_dequantize_sample(PMPSTR mp, real xr[SBLIMIT][SSLIMIT],int *scf,
   int l[3],l3;
   int part2remain = gr_infos->part2_3_length - part2bits;
   int *me;
+
+  /* fprintf(stderr,"part2remain = %d, gr_infos->part2_3_length = %d, part2bits = %d\n",
+	  part2remain, gr_infos->part2_3_length, part2bits); */
 
   {
     int i;
@@ -707,7 +707,7 @@ static int III_dequantize_sample(PMPSTR mp, real xr[SBLIMIT][SSLIMIT],int *scf,
       int i;
       for (i = 0; i < 3; i++) {
 	  if (l[i] < 0) {
-	      fprintf(stderr, "mpg123: Bogus region length (%d)\n", l[i]);
+	      fprintf(stderr, "hip: Bogus region length (%d)\n", l[i]);
 	      l[i] = 0;
 	  }
       }
@@ -1032,7 +1032,9 @@ static int III_dequantize_sample(PMPSTR mp, real xr[SBLIMIT][SSLIMIT],int *scf,
   if(part2remain > 0)
     getbits(mp,part2remain);
   else if(part2remain < 0) {
-    fprintf(stderr,"mpg123: Can't rewind stream by %d bits!\n",-part2remain);
+#if 0
+    fprintf(stderr,"hip: Can't rewind stream by %d bits!\n",-part2remain);
+#endif
     return 1; /* -> error */
   }
   return 0;
@@ -1534,6 +1536,23 @@ static void III_hybrid( PMPSTR mp, real fsIn[SBLIMIT][SSLIMIT],real tsOut[SSLIMI
  */
 struct III_sideinfo sideinfo;
 
+int layer3_audiodata_precedesframes(PMPSTR mp)
+{
+    int audioDataInFrame;
+    int framesToBacktrack;
+
+    /* specific to Layer 3, since Layer 1 & 2 the audio data starts at the frame that describes it. */
+    /* determine how many bytes and therefore bitstream frames the audio data precedes it's matching frame */
+    /* fprintf(stderr, "hip: main_data_begin = %d, mp->bsize %d, mp->fsizeold %d, mp->ssize %d\n",
+	  sideinfo.main_data_begin, mp->bsize, mp->fsizeold, mp->ssize); */
+    /* compute the number of frames to backtrack, 4 for the header, ssize already holds the CRC */
+    /* TODO Erroneously assumes current frame is same as previous frame. */
+    audioDataInFrame = mp->bsize - 4 - mp->ssize;
+    framesToBacktrack = (sideinfo.main_data_begin + audioDataInFrame - 1) / audioDataInFrame; 
+    /* fprintf(stderr, "hip: audioDataInFrame %d framesToBacktrack %d\n", audioDataInFrame, framesToBacktrack); */
+    return framesToBacktrack;
+}
+
 int do_layer3_sideinfo(PMPSTR mp)
 {
   struct frame *fr = &mp->fr;
@@ -1617,7 +1636,6 @@ int  do_layer3( PMPSTR mp,unsigned char *pcm_sample,int *pcm_point,
     granules = 2;
   }
 
-
   for (gr=0;gr<granules;gr++) 
   {
     static real hybridIn[2][SBLIMIT][SSLIMIT];
@@ -1642,6 +1660,7 @@ int  do_layer3( PMPSTR mp,unsigned char *pcm_sample,int *pcm_point,
       }
 #endif
 
+      /* fprintf(stderr, "calling III dequantize sample 1 gr_infos->part2_3_length %d\n", gr_infos->part2_3_length); */
       if(III_dequantize_sample(mp, hybridIn[0], scalefacs[0],gr_infos,sfreq,part2bits))
         return clip;
     }
@@ -1662,6 +1681,7 @@ int  do_layer3( PMPSTR mp,unsigned char *pcm_sample,int *pcm_point,
       }
 #endif
 
+      /* fprintf(stderr, "calling III dequantize sample 2  gr_infos->part2_3_length %d\n", gr_infos->part2_3_length); */
       if(III_dequantize_sample(mp, hybridIn[1],scalefacs[1],gr_infos,sfreq,part2bits))
           return clip;
 
