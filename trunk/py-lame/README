@@ -26,3 +26,6 @@ Build module:
 	make -f Makefile.pre.in boot
 	make
 
+
+-- 
+$Id: README,v 1.2 2002-04-28 16:14:03 aleidinger Exp $

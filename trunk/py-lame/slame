@@ -26,6 +26,8 @@
 #   SUCH DAMAGE.
 #
 
+# $Id: slame,v 1.2 2002-04-28 16:14:03 aleidinger Exp $
+
 # slame:
 # quick hack to test some aspects of pylame, a cleanup is needed
 
