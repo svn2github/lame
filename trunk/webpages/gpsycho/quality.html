@@ -8,32 +8,9 @@
 
 <center>
 <h2>
-GPSYCHO</h2></center>
-
-<center>
-<h2>
 Quality and Listening Test Information</h2></center>
 
-<center>
-<hr WIDTH="100%"></center>
-
-<h3>
-A rough estimate of where the GPSYCHO quality improvements come from:</h3>
-
-<ul>
-<li>
-35%&nbsp; bug fixes in psycho acoustic model and pre-echo detection.</li>
-
-<li>
-35%&nbsp; bit allocation improvements</li>
-
-<li>
-20%&nbsp; bit reservoir control</li>
-
-<li>
-10 %&nbsp; joint stereo</li>
-</ul>
-
+<hr WIDTH="100%">
 <h3>
 Tuning by listening tests:</h3>
 
@@ -51,14 +28,12 @@ and the original signal, in a random order.&nbsp; Listen to ABC three times,
 always in that order, and rate B and C on a scale from 1-5, 5 being for
 the signal you perceive as the original.</li>
 </ul>
-
-<h3>
-<a href="preecho.html">Tuning by reverse engineering:</a></h3>
-Here is a detailed example on how the pre-echo algorithm in LAME 3.10 was
-tuned and dramatically improved by doing a frame by frame comparison with
-the FhG encoder.&nbsp;&nbsp; First a sample is found where LAME produces
-noticeably worse results than the state-of-the-art FhG encoder.&nbsp; Listening
-tests are used to determine which frames are causing most of the problems.&nbsp;
+<a href="preecho.html">Tuning by reverse engineering:</a>&nbsp;&nbsp; Here
+is a detailed example on how the pre-echo algorithm in LAME 3.10 was tuned
+and dramatically improved by doing a frame by frame comparison with the
+FhG encoder.&nbsp;&nbsp; First a sample is found where LAME produces noticeably
+worse results than the state-of-the-art FhG encoder.&nbsp; Listening tests
+are used to determine which frames are causing most of the problems.&nbsp;
 MP3x ( the frame analyzer) is then used to compare the troublesome frames
 produced by LAME to those produced by the FhG encoder.&nbsp; In the case
 presented, the problem was because LAME was not switching to short blocks
@@ -78,21 +53,25 @@ Some Test Samples</h2></center>
 try these yet,
 <br>but if you find samples where another encoder does noticeably better
 than LAME,&nbsp; I would be very interested.
-<p>
-<hr WIDTH="100%">
-<br>I am not an audiophile, my ears are in their 30's, and I perform my
-tests with a motherboard sound card and $40 headphones.&nbsp; However,
-the quality of the ISO psy-model is so bad it is quite easy to detect the
-flaws.
-<p>Note that BladeEnc, 8hz-mp3,&nbsp; LAME 2.1 all produce identical results.
-<p>
-<hr WIDTH="100%">
 <br>&nbsp;
 <br>&nbsp;
 <center>
 <h1>
 Test cases which need work</h1></center>
 
+<h3>
+<a href="../download/samples">hihat.wav</a> pre-echo from a hi-hat.&nbsp;&nbsp;
+(.5M&nbsp; 3 seconds)</h3>
+Zia Mazhar &lt;zmazhar@citechco.net>&nbsp; writes:&nbsp; "It's a simple
+sound of a hi-hat. I tried with BladeEnc, Xing,
+<br>GOGO-no-coda ver. 2.26, FhG [all versions], and of course, the latest
+version of LAME. But none sounds like the original. FhG sounds best, though.
+Other encoders add a amplified "hissing sound" to the file. You can see
+the difference even in the *WinAmp eq-visualization* display. It seems
+that the original frequency changes a lot.
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
 <h3>
 <a href="../download/samples">ftb_test.wav</a>&nbsp; Obvious differences
 between FhG and LAME.&nbsp; (4.5M 26 seconds)</h3>
@@ -278,10 +257,44 @@ in the bit allocation subroutine.&nbsp; This sample also has some attacks
 (drums) that are greatly improved with GPSYCHO.&nbsp; I cannot detect a
 difference between GPSYCHO and FhG for this sample.
 <br>&nbsp;
-<br>&nbsp;
 <center>
-<h1>
-Other test cases</h1></center>
+<h2>
+Test Cases Where LAME beats FhG!</h2></center>
+
+<h3>
+<a href="../download/samples">KMFDM-Dogma.wav</a>&nbsp;&nbsp;&nbsp; (1.1M,
+about 6 seconds.)</h3>
+Found by Kevin Burtch &lt;kburtch@bellsouth.net>.
+<br>&nbsp;
+<h3>
+<a href="../download/samples">iron.wav</a>&nbsp;&nbsp; (6.2M, 35 seconds)</h3>
+Found by Jee J C" &lt;jeejc@hotmail.com> .&nbsp; A short sample from the
+Cardigans.
+<br>&nbsp;
+<h3>
+<a href="../download/samples">spahm.wav&nbsp;</a>&nbsp;&nbsp;&nbsp; (4.4M,
+about 25 seconds.)&nbsp; Similar to fatboy.wav, but FhG does much worse
+for some reason.</h3>
+From &lt;spahm@hotmail.com>
+<br>&nbsp;
+<h3>
+<a href="../download/samples">BlackBird.wav&nbsp;</a>&nbsp;&nbsp;&nbsp;
+(1.1M, about 6 seconds)</h3>
+From davel@caffeine.co.uk:&nbsp;&nbsp; The opening bars from the Beautiful
+South track 'Blackbird on the Wire' - you will notice it has some very
+sudden synthesized drums in it. I encoded this track using both Lame and
+Frau, and found that Frau just couldn't handle the first drum hit (it even
+had trouble with subsequent ones which are less apparent on this particular
+example) and actually drops out for a fraction of a second before the drum
+hit. I have tried many settings on both decoders and Lame seems to handle
+it no matter what, whereas Frau always trips up, even with the highest
+quality setting. Bitrate is immaterial.
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<center>
+<h2>
+Other Test Cases</h2></center>
 
 <h3>
 <a href="../download/samples">60.wav</a>&nbsp;&nbsp; Simple two tone test
@@ -289,29 +302,9 @@ case usefull for debugging.&nbsp;&nbsp; (900K,&nbsp; 5 seconds)</h3>
 Sent by Naoki SHIBATA,&nbsp; n-sibata@ics.es.osaka-u.ac.jp, see <a href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>
 <br>&nbsp;
 <h3>
-<a href="../download/samples">KMFDM-Dogma.wav</a>&nbsp;&nbsp; LAME actually
-sounds better than FhG!&nbsp; (1.1M, about 6 seconds.)</h3>
-Found by Kevin Burtch &lt;kburtch@bellsouth.net>.
-<br>&nbsp;
-<h3>
-<a href="../download/samples">iron.wav</a>&nbsp;&nbsp; A sample where LAME
-sounds better than FhG!&nbsp;&nbsp; (6.2M, 35 seconds)</h3>
-Found by Jee J C" &lt;jeejc@hotmail.com> .&nbsp; A short sample from the
-Cardigans.
-<br>&nbsp;
-<h3>
-<a href="../download/samples">spahm.wav&nbsp;</a>&nbsp;&nbsp; Another case
-where LAME actually sounds better than FhG!&nbsp; (4.4M, about 25 seconds.)&nbsp;
-Similar to fatboy.wav, but FhG does much worse for some reason.</h3>
-From &lt;spahm@hotmail.com>
-<br>&nbsp;
-<br>&nbsp;
-<h3>
 <a href="../download/samples">fatboy.wav</a>&nbsp;&nbsp; All encoders have
 trouble with this one.&nbsp; (900K,&nbsp; about 5 seconds.)</h3>
 Found by Jake Hamby &lt;jehamby@anobject.com>
-<br>&nbsp;
-<br>&nbsp;
 <br>&nbsp;
 <h3>
 <a href="../download/samples">applaud.wav</a>&nbsp;&nbsp; 1.4M, about 9
