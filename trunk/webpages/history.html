@@ -19,15 +19,20 @@ Starting with LAME 3.0:
 <hr></h3>
 
 <h3>
-LAME 3.85&nbsp; (CVS)</h3>
+LAME 3.86alpha&nbsp; (CVS)</h3>
 
 <ul>
 <li>
-new VBR routine now the default.&nbsp; Similar results to the old routine,
+New VBR routine now the default.&nbsp; Similar results to the old routine,
 but very different scalefactor search algorithm.&nbsp; Much faster, with
 noise shaping very close to the psycho acoustic model.&nbsp; Some further
 tuning may be needed.</li>
+</ul>
 
+<h3>
+LAME 3.85beta&nbsp;&nbsp; July 3 2000</h3>
+
+<ul>
 <li>
 <font color="#FF0000">Takehiro Tominaga:&nbsp; mid/side stereo demasking
 thresholds updated.</font></li>
@@ -41,12 +46,16 @@ Robert Hegemann:&nbsp; fixed bug in old VBR routine, the --noath mode messed
 up the VBR routine resulting in very large files</li>
 
 <li>
+Robert Hegemann: found bugs in some sections when using 32 bit floating
+point.&nbsp; Default is now back to 64bit floating point.</li>
+
+<li>
 <font color="#FF0000">Takehiro Tominaga:&nbsp; Modified PE formula to use
 ATH.</font></li>
 
 <li>
 <font color="#000000">S.T.J.:&nbsp; README.DJGPP - instructions for compiling
-LAME&nbsp;with DJGPP, the dos version of gcc.</font></li>
+LAME with DJGPP, the dos version of gcc.</font></li>
 </ul>
 
 <h3>
