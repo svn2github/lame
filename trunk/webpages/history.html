@@ -25,6 +25,20 @@ LAME 3.84beta&nbsp; (CVS)</h3>
 <li>
 Mark Weinstein:&nbsp; .wav file output (with --decode option) was writing
 the wrong filesize in the .wav file.&nbsp; Now fixed.</li>
+
+<li>
+Mark Taylor:&nbsp; (optional) Vorbis support, both encoding and decoding.&nbsp;
+LAME can now produce .ogg files, or even re-encode your entire .ogg collection
+into mp3.&nbsp;&nbsp; (Just kidding: it is always a bad idea to convert
+from one lossy format to another)</li>
+
+<li>
+?: Bug fixed causing VBR to crash under windows.&nbsp;&nbsp; (pretab[]
+array overflow)</li>
+
+<li>
+<font color="#FF0000">Takehiro Tominaga:&nbsp; LAME CBR will now use scalefac_scale
+to expand the dynamic range of the scalefactors.</font></li>
 </ul>
 
 <h3>
