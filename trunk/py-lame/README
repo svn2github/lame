@@ -23,9 +23,10 @@
 
 
 Build module:
-	make -f Makefile.pre.in boot
-	make
+	./setup.py build
 
+Install module:
+	./setup.py install
 
 -- 
-$Id: README,v 1.2 2002-04-28 16:14:03 aleidinger Exp $
+$Id: README,v 1.3 2004-01-10 11:02:02 aleidinger Exp $
