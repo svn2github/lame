@@ -23,6 +23,7 @@
 *.gif -k 'b'
 *.png -k 'b'
 *.jpg -k 'b'
+*.jpeg -k 'b'
 *.mp3 -k 'b'
 *.wav -k 'b'
 *.dsp -k 'b'
