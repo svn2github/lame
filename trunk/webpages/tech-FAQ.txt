@@ -2,16 +2,32 @@ LAME Technical FAQ
 Copyright Mark Taylor, June 2000
 
 
-1.  Why does LAME add silence to the beginning each song?
-2.  Why does LAME add silence to the end of each song?
-3.  Why cant MP3 files be seamlessly spliced together?
-4.  What is the size of a MPEG1/2 frame?
-5.  Does LAME use any MP3 patented technology?
+1.  Why is a decoded MP3 longer than the original .wav file?
+2.  Why does LAME add silence to the beginning each song?
+3.  Why does LAME add silence to the end of each song?
+4.  Why cant MP3 files be seamlessly spliced together?
+5.  What is the size of a MPEG1/2 frame?
+6.  Does LAME use any MP3 patented technology?
+
+
+==========================================================================
+1.   Why is a decoded MP3 longer than the original .wav file?
+
+Because LAME (and all other MDCT based encoders) add padding to the
+beginning and end of each song.  For an explination of why,
+see the questions below.
+
+LAME embeds the amount of padding in the ancillary data of the
+first frame of the MP3 file. (LAME INFO tag). The LAME decoder 
+will use this information to remove the leading padding of an MP3 file.  
+
+Modifications to the decoder so that it will also remove the
+trailing padding have not yet been made.  
 
 
 ==========================================================================
 
-1.  Why does LAME add silence to the beginning each song?
+2.  Why does LAME add silence to the beginning each song?
 
 
 This is because of several factors:
@@ -132,7 +148,7 @@ samples up to 96+512.
 
 
 ==========================================================================
-2.  Why does LAME add silence to the end of each song?
+3.  Why does LAME add silence to the end of each song?
 
 Extra padding at the end of a file can be caused by a couple of things:
 
@@ -159,7 +175,7 @@ frame is properly padded with ancillary data.
 
 
 ==========================================================================
-3.  Why cant MP3 files be seamlessly spliced together?
+4.  Why cant MP3 files be seamlessly spliced together?
 
 There are several reasons this is *very* difficult (but not impossible):
 
@@ -222,7 +238,7 @@ complete frame of samples 576-1727 needs frame N, N+1 and N+2.
 
 
 ==========================================================================
-4. What is the size of a MPEG1/2 frame?
+5. What is the size of a MPEG1/2 frame?
 
 The number of bits/frame is:  frame_size*bit_rate/sample_rate.
 For MPEG1, frame_size = 1152 samples/frame
@@ -245,7 +261,7 @@ selected frames to keep the average bitrate as close as possible to
 the specified bitrate.
 
 ==========================================================================
-5. Does LAME use any MP3 patented technology?
+6. Does LAME use any MP3 patented technology?
 
 LAME, as the name says, is *not* an encoder.  LAME is a development
 project which uses the open source model to improve MP3 technology.
