@@ -22,8 +22,8 @@ bad.&nbsp; Then see if you can figure out which algorithm/tuning is at
 fault, and how it can be improved without breaking something else!</li>
 
 <li>
-MPEG&nbsp;likes the&nbsp; "ABC hidden reference test".&nbsp; Signal A is
-always the original .wav file.&nbsp; B and C are the encoded and the original
+MPEG likes the&nbsp; "ABC hidden reference test".&nbsp; Signal A is always
+the original .wav file.&nbsp; B and C are the encoded and the original
 signal, in a random order.&nbsp; Listen to ABC three times, always in that
 order, and rate B and C on a scale from 1-5, 5 being for the signal you
 perceive as the original.</li>
@@ -60,15 +60,20 @@ than LAME,&nbsp; I would be very interested.
 Test cases which need work</h1></center>
 
 <h3>
-<a href="../download/samples">vbrtest.wav</a>&nbsp; Banjo music, fools
-VBR modes.&nbsp;&nbsp; (.8M&nbsp; 5 seconds)</h3>
+<a href="../download/samples">vbrtest.wav</a>&nbsp; "God loves his children"
+with Lou Reid and Carolina.&nbsp; This sample fools some VBR modes.&nbsp;&nbsp;
+(.8M&nbsp; 5 seconds)</h3>
 VBR algorithms based on psycho acoustics (rather than perceptual entropy)
 have trouble with this sample.&nbsp;&nbsp;&nbsp; VBR modes encode this
-sample at about 20kbs less then the average sample, and this is not a case
-were VBR is getting the same quality at a lower bitrate!&nbsp;&nbsp; Robert:
-where did this case come from?
+sample at about 20kbs less then average.&nbsp; But&nbsp; this is not a
+case were VBR is getting the same quality at a lower bitrate!&nbsp;&nbsp;
+From Ove (http://home.bip.net/ove.rung) :&nbsp;&nbsp; "Back in "the old
+days" I was using tompg.exe for my encoding&nbsp; until I discovered a
+really hard-to-encode tune.&nbsp; I still use that tune for testing new
+encoders, and mp+&nbsp;&nbsp; produces heavy artifacts.
 <br>&nbsp;
-<br><a href="../download/samples"></a>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
 <h3>
 <a href="../download/samples">hihat.wav</a> pre-echo from a hi-hat.&nbsp;&nbsp;
 (.5M&nbsp; 3 seconds)</h3>
