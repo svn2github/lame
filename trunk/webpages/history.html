@@ -19,7 +19,21 @@ Starting with LAME 3.0:
 <hr></h3>
 
 <h3>
-LAME 3.84beta&nbsp; (CVS)</h3>
+LAME 3.85&nbsp; (CVS)</h3>
+
+<ul>
+<li>
+new VBR routine now the default.&nbsp; Same tunings as the old routine,
+but very different scalefactor search algorithm.&nbsp; Much faster, with
+noise shaping very close to the psycho acoustic model.&nbsp; Some further
+tuning may be needed.</li>
+
+<li>
+</li>
+</ul>
+
+<h3>
+LAME 3.84beta&nbsp; June 30&nbsp; 2000</h3>
 
 <ul>
 <li>
@@ -42,7 +56,7 @@ fixed for the mpg123 based decoder in LAME.</li>
 
 <li>
 Marco Remondini:&nbsp; VBR histogram works in win32.&nbsp; compile with
--DBRHIST&nbsp;-DNOTERMCAP</li>
+-DBRHIST -DNOTERMCAP</li>
 
 <li>
 <font color="#FF0000">Takehiro Tominaga:&nbsp; LAME CBR will now use scalefac_scale
