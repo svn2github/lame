@@ -1,0 +1,15 @@
+lame (3.88-0) unstable; urgency=low
+
+  * Updated debian/ directory to use configure.
+
+ -- Ingo Saitz <Ingo.Saitz@stud.uni-hannover.de>  Mon, 11 Dec 2000 08:43:26 +0100
+
+lame (3.86-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Stefan Karrmann <S.Karrmann@gmx.net>  Thu, 31 Aug 2000 22:15:07 +0200
+
+Local variables:
+mode: debian-changelog
+End:
