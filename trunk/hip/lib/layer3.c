@@ -318,7 +318,7 @@ void init_layer3(int down_sample_sblimit)
  * read additional side information
  */
 #ifdef MPEG1 
-static void III_get_side_info_1(struct III_sideinfo *si,int stereo,
+static int III_get_side_info_1(struct III_sideinfo *si,int stereo,
  int ms_stereo,long sfreq,int single)
 {
    int ch, gr;
@@ -344,8 +344,9 @@ static void III_get_side_info_1(struct III_sideinfo *si,int stereo,
        gr_infos->part2_3_length = getbits(12);
        gr_infos->big_values = getbits_fast(9);
        if(gr_infos->big_values > 288) {
-          fprintf(stderr,"big_values too large! %i\n",gr_infos->big_values);
-          gr_infos->big_values = 288;
+          /* fprintf(stderr,"big_values too large! %i\n",gr_infos->big_values); */
+          /* gr_infos->big_values = 288; */
+          return 0;
        }
        {
 	 unsigned int qss = getbits_fast(8);
@@ -388,9 +389,10 @@ static void III_get_side_info_1(struct III_sideinfo *si,int stereo,
 	 }
 
          if(gr_infos->block_type == 0) {
-           fprintf(stderr,"Blocktype == 0 and window-switching == 1 not allowed.\n");
+           /* fprintf(stderr,"Blocktype == 0 and window-switching == 1 not allowed.\n"); */
 		   /* error seems to be very good recoverable, so don't exit */
            /* exit(1); */
+           return 0;
          }
          /* region_count/start parameters are implicit in this case. */       
          gr_infos->region1start = 36>>1;
@@ -408,11 +410,13 @@ static void III_get_side_info_1(struct III_sideinfo *si,int stereo,
          gr_infos->block_type = 0;
          gr_infos->mixed_block_flag = 0;
        }
-       gr_infos->preflag = get1bit();
+       if (!lsf)
+         gr_infos->preflag = get1bit();
        gr_infos->scalefac_scale = get1bit();
        gr_infos->count1table_select = get1bit();
      }
    }
+   return 1; 
 }
 #endif
 
@@ -1028,7 +1032,7 @@ static int III_dequantize_sample(real xr[SBLIMIT][SSLIMIT],int *scf,
   if(part2remain > 0)
     getbits(part2remain);
   else if(part2remain < 0) {
-    fprintf(stderr,"mpg123: Can't rewind stream by %d bits!\n",-part2remain);
+    /* fprintf(stderr,"mpg123: Can't rewind stream by %d bits!\n",-part2remain); */
     return 1; /* -> error */
   }
   return 0;
@@ -1557,7 +1561,8 @@ int do_layer3_sideinfo(struct frame *fr)
   else {
     granules = 2;
 #ifdef MPEG1
-    III_get_side_info_1(&sideinfo,stereo,ms_stereo,sfreq,single);
+    if(III_get_side_info_1(&sideinfo,stereo,ms_stereo,sfreq,single))
+      return 0;
 #else
     fprintf(stderr,"Not supported\n");
 #endif

@@ -7,7 +7,7 @@ from distutils.core import setup
 from distutils.extension import Extension
 
 VERSION_MAJOR = 0
-VERSION_MINOR = 1
+VERSION_MINOR = 2
 pyhip_version = str(VERSION_MAJOR) + '.' + str(VERSION_MINOR)
 
 def get_setup():

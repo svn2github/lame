@@ -125,8 +125,15 @@ py_hip_new(PyObject *self, PyObject *args) /* change to accept kwarg */
 static void
 py_hip_file_dealloc(PyObject *self)
 {
-  if (PY_HIPFILE(self))
+  py_hip * hip_self = (py_hip *) self;
+  
+  if (PY_HIPFILE(self)) {
     hip_clear(PY_HIPFILE(self));
+  }
+ 
+  if (hip_self->fclose_on_del) {
+    fclose(hip_self->hipf->datasource);
+  }
 
   PyMem_DEL(self);
 }
@@ -159,15 +166,21 @@ py_hip_open(py_hip *self, PyObject *args)
       PyErr_SetString(PyExc_IOError, errmsg);
       return NULL;
     }
-
+    self->fclose_on_del = 1;
+    
   } else if (PyArg_ParseTuple(args, "O!|sl", &PyFile_Type, &fobject,
 			      &initial, &ibytes)) {
     PyErr_Clear(); /* clear first failure */
 
     file = PyFile_AsFile(fobject);
 
-    if (file == NULL) 
+    if (file == NULL) {
+      snprintf(errmsg, MSG_SIZE, "Got NULL from PyFile_AsFile");
+      PyErr_SetString(PyExc_IOError, errmsg);
       return NULL;
+    }
+    
+    self->fclose_on_del = 0;
 
   } else {
     PyErr_SetString(PyExc_TypeError, 

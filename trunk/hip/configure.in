@@ -5,7 +5,7 @@ dnl Initialization and Versioning
 dnl ------------------------------------------------
 
 AC_INIT(lib/hip.c)
-AM_INIT_AUTOMAKE(libmp3hip,0.1)
+AM_INIT_AUTOMAKE(libmp3hip,0.2)
 AC_REVISION($Id$)
 
 dnl Library versioning

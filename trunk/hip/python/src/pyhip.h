@@ -7,6 +7,7 @@
 typedef struct {
   PyObject_HEAD
   HIP_File *hipf;
+  int fclose_on_del;
 } py_hip;
 
 #define PY_HIPFILE(x) (((py_hip *)x)->hipf)

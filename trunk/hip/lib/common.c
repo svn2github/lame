@@ -183,6 +183,13 @@ int decode_header(struct frame *fr,unsigned long newhead)
         if(fr->error_protection)
           ssize += 2;
 #endif
+    if (fr->framesize>MAX_INPUT_FRAMESIZE) {
+        fprintf(stderr,"Frame size too big.\n");
+        fr->framesize = MAX_INPUT_FRAMESIZE;
+        return (0);
+    } 
+
+
 	if (fr->bitrate_index==0)
 	  fr->framesize=0;
 	else{

@@ -31,3 +31,27 @@ Description: A Python interface to the libmp3hip library
  This module makes the libmp3hip (MPEG 1/2/2.5, Layer I, II,
  III decoder) functions available in Python. With this module 
  you can write Python applications that can decode mpeg audio files.
+
+Package: python2.1-hip
+Architecture: any
+Depends: python (>= 2.1), python (<< 2.2), ${shlibs:Depends}
+Description: A Python interface to the libmp3hip library
+ This module makes the libmp3hip (MPEG 1/2/2.5, Layer I, II,
+ III decoder) functions available in Python. With this module 
+ you can write Python applications that can decode mpeg audio files.
+
+Package: python2.2-hip
+Architecture: any
+Depends: python (>= 2.2), python (<< 2.3), ${shlibs:Depends}
+Description: A Python interface to the libmp3hip library
+ This module makes the libmp3hip (MPEG 1/2/2.5, Layer I, II,
+ III decoder) functions available in Python. With this module 
+ you can write Python applications that can decode mpeg audio files.
+
+Package: python2.3-hip
+Architecture: any
+Depends: python (>= 2.3), ${shlibs:Depends}
+Description: A Python interface to the libmp3hip library
+ This module makes the libmp3hip (MPEG 1/2/2.5, Layer I, II,
+ III decoder) functions available in Python. With this module 
+ you can write Python applications that can decode mpeg audio files.
