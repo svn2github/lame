@@ -28,22 +28,38 @@
           
 <h3>LAME 3.94alpha (CVS)</h3>
 <ul>
-  <li>Takehiro Tominaga:
+  <li>Takehiro Tominaga:</li>
      <ul>
-       <li><font color="#ff0000">fixed block switching of nspsytune</font></li>
+       <li><font color="#3366ff">changed data structure for more optimization</font></li>
+       <li><font color="#3366ff">cleaned up and optimized MDCT frequency filtering(lowpass/highpass filter)</font></li>
+       <li><font color="#3366ff">cleaned up and optimized bit resvoir code</font></li>
+       <li><font color="#ff0000">fixed and improved block switching code of nspsytune</font></li>
        <li><font color="#ff0000">best huffman divide in the inner loop.</font>
 	    This should improve the quality, but PAINFULLY slow.
 	    So it is not enabled by default. Use -h to use it.</li>
        <li>Changed -q option mapping. "-q2" until version 3.93 is now "-q3".</li>
-       <li><font color="#ff0000">saving bits by better scalefactor storing</font></li>
+       <li><font color="#ff0000">better scalefactor storing</font></li>
+       <li>removed and cleaned up many unused files</li>
      </ul>
+  </li>
+  <li>Robert Hegeman:
+     <ul>
+       <li>Changed all the C++ style comments into C style.</li>
+     </ul>
+  </li>
   <li>Darin Morrison:
      <ul>
        <li><font color="#ff0000">new preset, "portable", "radio", "dm-medium", and their fast mode</font></li>
      </ul>
+  </li>
+  <li>Gabriel Bouvigne:
+     <ul>
+       <li><font color="#ff0000">Changed default cutoff frequency</font></li>
+     </ul>
+  </li>
 </ul>
 <br>
-<h3>LAME 3.93</h3>
+<h3>LAME 3.93 &nbsp; &nbsp;Nov 18 2002</h3>
 <ul>
   <li>Takehiro Tominaga:
      <ul>
@@ -54,6 +70,7 @@
       <li><font color="#3366ff">nspsytune FIR filter clean up</font></li>
       <li><font color="#ff0000">fix small psymodel bugs(DC current estimation, preecho detection of non-VBR mode, and nspsymode initialization)</font></li>
       <li>portability fixes for Tru64 UNIX</li>
+      <li>reentrant fix for ATH adjustment, which is backported by Robert Hegeman</li>
      </ul>
   </li>
   <li>Albert Faber: some fixes in the DLL</li>
