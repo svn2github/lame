@@ -2,7 +2,7 @@
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; I; Linux 2.2.12-20 i686) [Netscape]">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; I; Linux 2.4.0-test5 i586) [Netscape]">
    <title>LAME Changelog</title>
 </head>
 <body text="#000000" bgcolor="#FFFFFF" link="#888888" vlink="#555555" alink="#BBBBBB">
@@ -25,6 +25,28 @@ LAME 3.87alpha (CVS)</h3>
 <li>
 Mark Taylor:&nbsp; Bug fixed in LAME/mpglib error recovery when encountering
 a corrupt&nbsp; MP3 frame during *decoding*.</li>
+
+<li>
+Albert Faber:&nbsp; added LayerI+II decoding support</li>
+
+<li>
+<font color="#3366FF">Frank Klemm:&nbsp; added improved CRC calculation</font></li>
+
+<li>
+Robert Hegemann:&nbsp; Bug fixes</li>
+
+<ul>
+<li>
+<font color="#FF0000">in huffman_init</font>, could lead to segmentation
+faults (only in rare cases, most likely at lower sample rates)</li>
+
+<li>
+<font color="#FF0000">M/S switching at lower sample rates</font> (the fact
+there is no 2nd granule was ignored)</li>
+</ul>
+
+<li>
+<font color="#3366FF">Robert Hegemann:&nbsp; speed up in old VBR</font></li>
 </ul>
 
 <h3>
