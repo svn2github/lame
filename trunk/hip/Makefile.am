@@ -6,6 +6,7 @@ SUBDIRS = lib include doc examples debian python
 
 EXTRA_DIST = autogen.sh
 
+DISTCLEANFILES = config.cache
 # DISTCLEANFILES = config.guess config.sub 
 
 debug:
