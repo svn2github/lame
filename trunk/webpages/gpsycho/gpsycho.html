@@ -16,7 +16,7 @@ A GPL'd Psycho-Acoustic Model</h2></center>
 
 <center>
 <h2>
-c. 1999&nbsp; <a href="mailto:mt@sulaco.org">Mark Taylor</a></h2></center>
+c. 1999&nbsp; The LAME project</h2></center>
 
 <center>
 <hr WIDTH="100%"></center>
@@ -56,7 +56,7 @@ Tests</a></h3>
 <ul>
 <li>
 Click the above link for results and descriptions of the listening tests
-used in the LAME&nbsp;project.</li>
+used in the LAME project.</li>
 </ul>
 
 <h3>
@@ -67,10 +67,14 @@ used in the LAME&nbsp;project.</li>
 <a href="vbr.html">Notes on GPSYCHO variable bit rate (VBR)</a></h3>
 
 <h3>
+Notes on GPSYCHO&nbsp;average bit rate (ABR)&nbsp;&nbsp;</h3>
+
+<h3>
 <a href="ms_stereo.html">Notes on GPSYCHO Mid/Side Stereo</a></h3>
 
 <h3>
-<a href="outer_loop.html">Notes on GPSYCHO outer_loop quantization algorithm</a></h3>
+<a href="outer_loop.html">Notes on GPSYCHO outer_loop quantization algorithm
+(CBR noise shaping)</a></h3>
 
 <h3>
 
@@ -92,36 +96,35 @@ described <a href="ms_stereo.html">here.</a></li>
 
 <li>
 MS_STEREO ISO sparsing&nbsp; formula does not work.&nbsp; It will remove
-95% of the side channel coefficients.&nbsp; I don't sparse the side channel
-at all, but allocate less bits for encoding.&nbsp;&nbsp; Martin Weghofer
-&lt;e9427483@student.tuwien.ac.at>&nbsp; has a coder which does effectively
-use side channel sparsing, but the algorithm does not work will with the
-LAME quantization procedure.&nbsp; This is an area that needs further work.</li>
+95% of the side channel coefficients.&nbsp; GPSYCHO does not sparse the
+side channel at all, but allocate less bits for encoding.&nbsp;&nbsp; Martin
+Weghofer &lt;e9427483@student.tuwien.ac.at>&nbsp; has a coder which does
+effectively use side channel sparsing, but the algorithm does not work
+will with the LAME quantization procedure.&nbsp; This is an area that needs
+further work.</li>
 
 <li>
 MS_STEREO now uses ideas in a Johnson ICASSP 1992 paper to compute true
 Mid and Side thresholds which compensate for stereo de-masking.&nbsp;&nbsp;
-It is used in PAC and AAC.</li>
+Similar to that used in PAC and AAC.</li>
 
 <li>
 Bit reservoir use.&nbsp; Again the ISO formula performs poorly.&nbsp; At
 128kbs,&nbsp; it always thinks it needs to drain the reservoir, and thus
 the reservoir can never build up.&nbsp; It will also use up all the bits
-for the left channel before even looking at the right channel.&nbsp; I
-put in a kludged up formula that seems to work ok, but could use some tuning.</li>
+for the left channel before even looking at the right channel.</li>
 
 <li>
-Mid/Side bit allocation.&nbsp; I allocate bits based on the differences
+Mid/Side bit allocation.&nbsp; GPSYCHO allocate bits based on the differences
 between left and right masking thresholds.&nbsp; Anyone have a better idea?</li>
 
 <li>
-Remove data in scalefactor band 21 when encoding at 128kbs or less.&nbsp;
-This was done because FhG also does it (you can see this by running the
-graphical frame analyzer).&nbsp; It amounts to a 16kHz low-pass filter
-and makes a few more bits available for more important information.&nbsp;
-If it offends you, you probably should not be encoding at 128kbs in the
-first place!&nbsp; Try 160kbs.&nbsp; At 128kbs, more often than not the
-psy-model will remove these frequencies even without this mod.</li>
+lowpass filtering based on the compression ratio.&nbsp; For high compression
+ratios, low pass filtering will improve the results.&nbsp; The exact amount
+of filtering needed depends on the music and personal preferences - the
+formula to decide how much lowpass filtering to use may need some tuning.&nbsp;
+At 256kbs, no filterings is done.&nbsp; At 128kbs, the lowpass filter is
+around 15.5khz.</li>
 
 <li>
 Improved shortblock switching.&nbsp; It is now based on surges in PE or
@@ -149,22 +152,21 @@ estimates less accurate.</li>
 <li>
 subblock_gain.&nbsp; This seems to be important.&nbsp; FhG uses it for
 most short blocks.&nbsp; LAME and other dist10 based codes do not make
-any use of this.&nbsp; One subblock gain algorithm (LAME 3.21) is enabled
-with -Z.</li>
+any use of this.&nbsp;&nbsp; VBR modes will use subblock gain.</li>
 </ul>
 
 <h3>
-Things I've learned from analyzing FhG produced .mp3 frames (layer 3, 128kbs):</h3>
+Things we've learned from analyzing FhG (mp3enc3.1) produced .mp3 frames:</h3>
 
 <ul>
 <li>
-I've never seen FhG use mixed_blocks</li>
+FhG uses mixed_blocks only if specified as an option.</li>
 
 <li>
-I've never seen FhG use intensity stereo</li>
+FhG uses intensity stereo only at lower bitrates.</li>
 
 <li>
-I've never seen FhG use scsfi&lt;>0</li>
+FhG does not seem to use&nbsp; scsfi&lt;>0</li>
 
 <li>
 Removes data in scalefactor band 21 at 128kbs.</li>
@@ -177,15 +179,11 @@ switching.</li>
 More sophisticated mid/side bit allocation.</li>
 
 <li>
-Excellent short block detection.&nbsp; How do they do this?&nbsp; They
-can't be using the ISO pe formula.</li>
+Excellent short block detection.</li>
 
 <li>
 Good bit reservoir use.&nbsp; Not totally based on pe, since they often
 allocate extra bits to long blocks.</li>
-
-<li>
-Does not produce variable bit rate frames.</li>
 </ul>
 
 </body>

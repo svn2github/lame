@@ -1,0 +1,53 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; I; Linux 2.2.12-20 i686) [Netscape]">
+</head>
+<body>
+
+<center>
+<h1>
+GPSYCHO</h1></center>
+
+<center>
+<h1>
+Average Bit Rate (ABR)</h1></center>
+
+<center>
+<h3>
+A variable bit rate algorithm which uses GPSYCO's time tested CBR&nbsp;noise
+shaping code</h3></center>
+
+<center>
+<hr WIDTH="100%"></center>
+
+<p><tt>Suggested usage:</tt>
+<p><tt>lame -h --abr 128&nbsp; input.wav output.mp3</tt>
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<center>
+<p>
+<hr WIDTH="100%"></center>
+
+<p>ABR&nbsp;mode&nbsp; is like CBR, but with an unlimited bit reservoir.&nbsp;
+When using ABR,&nbsp; GPSYCHO&nbsp;will use the CBR algorithm to compute
+the number of bits needed to encode each frame.&nbsp;&nbsp; If the number
+of bits is greater than the target bitrate, the CBR algorithm has to use
+bits from the bit reservoir, and we just have to hope that the bitreservoir
+has enought bits!
+<p>With ABR, GPSYCHO&nbsp;does not rely on the bit reservoir at all, but
+each frame just uses the smallest possible bitrate which can encode the
+frame with the desired number of bits.
+<p>The difference between ABR&nbsp;and true VBR is in how the desired number
+of bits is chosen.&nbsp; The true VBR&nbsp;mode determines the number of
+bits based on the quantization noise.&nbsp; VBR figures out how many bits
+are needed so that the quantization noise is less than the allowed masking.
+<p>ABR mode uses the CBR&nbsp;formula to determine the desired number of
+bits.&nbsp; This formulas is based on the perceptual entropy, which is
+a rough measure of how difficult the frame is to encode.
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>
