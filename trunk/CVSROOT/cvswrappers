@@ -25,3 +25,5 @@
 *.jpg -k 'b'
 *.mp3 -k 'b'
 *.wav -k 'b'
+*.dsp -k 'b'
+*.dsw -k 'b'
