@@ -53,18 +53,11 @@ static int  ExtractI4(unsigned char *buf);
 int         GetVbrTag(VBRTAGDATA *pTagData,  unsigned char *buf);
 
 static int  is_syncword_mp123(const void *const headerptr);
-int         decode_headers(HIP_File * hf, unsigned char *in_buffer, int in_buffer_len, 
-                char *out_buffer, int out_buffer_len);
+
 
 int
-hip_open (FILE * file, HIP_File * hf, char *initial, long ibytes)
+hip_decode_init (HIP_File * hf)
 {
-  unsigned char buf[100];
-  int ret, len;
-  char out[4806];
-/*  short int pcm_l[1152], pcm_r[1152]; */
-
-
   HF_MP(hf) = malloc(sizeof(MPSTR));
   if(HF_MP(hf) == NULL)
     return HIP_EFAULT;
@@ -72,6 +65,26 @@ hip_open (FILE * file, HIP_File * hf, char *initial, long ibytes)
   /* init the decoder and clear out our info struct */
   if (!InitMP3 (HF_MP(hf)))
     return HIP_EFAULT;
+
+  /* allows us to distinguish a decoder initialized with a file
+     vs. one initialized for use with a memory region. 
+   */ 
+  hf->datasource = NULL; 
+  return 0;
+}  
+
+int
+hip_open (FILE * file, HIP_File * hf, char *initial, long ibytes)
+{
+  unsigned char buf[100];
+  int ret, len;
+  char out[4608];
+/*  short int pcm_l[1152], pcm_r[1152]; */
+
+
+  ret = hip_decode_init(hf);
+  if(ret != 0)
+    return ret;
 
   hf->datasource = file;
   
@@ -100,7 +113,7 @@ hip_open (FILE * file, HIP_File * hf, char *initial, long ibytes)
      yet prepared to handle the output.
   */
   
-  ret = decode_headers (hf, buf, len, out, sizeof(out));
+  ret = hip_decode_headers (hf, buf, len, out, sizeof(out));
   if (ret == -1)
     return -1;
 
@@ -111,7 +124,7 @@ hip_open (FILE * file, HIP_File * hf, char *initial, long ibytes)
       if (len != sizeof (buf))
         return -1;
       ret =
-        decode_headers (hf, buf, len, out, sizeof(out));
+        hip_decode_headers (hf, buf, len, out, sizeof(out));
       if (-1 == ret)
         return -1;
     }
@@ -237,13 +250,13 @@ hip_info(HIP_File * hf, int link)
 
 /* from lame's mpglib_interface.c */
 /*
- * For decode_headers:  return code
+ * For hip_decode_headers:  return code
  * -1     error
  *  0     ok, but need more data before outputing any samples
  *  n     number of samples output.  either 576 or 1152 depending on MP3 file.
  */
 int
-decode_headers(HIP_File * hf, unsigned char *in_buffer, int in_buffer_len, 
+hip_decode_headers(HIP_File * hf, unsigned char *in_buffer, int in_buffer_len, 
     char *out_buffer, int out_buffer_len)
 {
     static const int smpls[2][4] = {
