@@ -1,0 +1,115 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; I; Linux 2.2.12-20 i686) [Netscape]">
+   <title>winamp decoding bug</title>
+</head>
+<body>
+
+<center>
+<h1>
+&nbsp; The Winamp/100Hz&nbsp; Decoding Bug</h1></center>
+
+<h3>
+UPDATE 10/2/00:&nbsp; Winamp Bug Fixed!</h3>
+This probably shouldn't be called a Winamp bug or a <a href="http://www.mp3dev.org">LAME</a>
+bug, but instead a flaw in the&nbsp; MP3 ISO specification.
+<p>It was caused by assuming that the Huffman "big_values" data is at most
+8191 (2^13 -1). 13 bits are used to encode these numbers, but in some cases
+during decoding you need to add 15 to the result.&nbsp; Thus the effective
+range is 0 through
+<br>8206.&nbsp; However, the ISO MP3 spec says that the maximum value should
+be 8191, and it is not clear if they are refering to the maximum value
+before or after adding the 15, and the ISO demonstration source (dist10)
+uses values up to 8206.&nbsp;&nbsp; Imposing a maximum value of 8191 is
+a completely unneeded restriction which results in a (very tiny) loss of
+quality.
+<p>The 8191/8206 issue was first described by Rob Leslie, author of the
+<a href="http://www.mars.org/home/rob/proj/mpeg/">MAD
+decoder</a>. It was placed on the todo list&nbsp; to decide if LAME should
+use values up to 8206 or limit them to 8191.&nbsp; It&nbsp; took several
+months for us to realize that this issue was triggering the "Winamp bug".
+<p>Developers for Winamp and Sonique have already produced&nbsp; versions
+of their software which can decode 100only.mp3.&nbsp; So this should be
+fixed in the releases dated after 10/2/00.
+<p>LAME 3.88 will either be set to not encode big_values greater than 8191,
+or this limit will be enforced if the&nbsp; "--strictly-enforce-ISO" option
+is used.
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<br>&nbsp;
+<br>&nbsp;
+<p><a href="../index.html">The LAME project&nbsp;</a> often receives reports
+of this bug.&nbsp; The problem seems to be that the LAME produced mp3 files
+of simple harmonics like the pure 100Hz tone shown below is decoded incorrectly
+with Winamp/Nitrane.&nbsp; Testing shows that this is in fact not a bug
+in the LAME produced mp3 file, but a bug in the Nitrane decoding engine
+used by Winamp.
+<p>The followin players will decode the MP3 file with no problems:&nbsp;
+mpg123, xmms, freeamp (Xing engine),&nbsp; musicmatch&nbsp; jukebox, windows
+media player, sonique 1.30.4, UltraPlayer 1.0.
+<p>More evidence of bugs in Nitrane can be found in <a href="http://www.mail-archive.com/mp3encoder@geek.rcc.se/msg02361.html">Matthew
+Loyd's post in the mp3encoder mailing list.</a>
+<p>Naoki Shibata has also documented some bugs in Nitrane, and has produced
+a Winamp decoder plugin based on mpg123.&nbsp; This plugin replaces Nitrane.&nbsp;&nbsp;
+See <a href="http://www.geocities.co.jp/Technopolis/9674/in_mpg123.html">Naoki's&nbsp;
+web site.</a>
+<p>Even more MP3 decoder bugs can be found at&nbsp; <a href="http://players.shoutclub.net/wavcompare/">MP3
+Player Quality Comparson Site.</a>&nbsp; and <a href="http://privatewww.essex.ac.uk/~djmrob/mp3decoders/">MP3
+decoder tests.</a>&nbsp;&nbsp;&nbsp;&nbsp; Both sites document severe flaws
+in several popular decoders.
+<p>Test samples:
+<p><a href="100only.wav">100only.wav</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+A&nbsp; pure 100 Hz sine wave
+<br><a href="100only.mp3">100only.mp3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Encoded with "lame -h"
+<p><a href="sweep.wav">sweep.wav&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+A sine wav sweep from 20Hz-20,000Hz
+<br><a href="sweep.mp3">sweep.mp3&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Encoded with "lame -h"
+<h3>
+Here are some illustrations showing&nbsp; two Nitrane bugs when decoding
+the 100only.mp3 file.<br>
+(Similar problems show up with sweep.mp3).&nbsp;<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<BR></h3>
+
+<h3>
+Periodice drop out.&nbsp; This dropout occurs peiodically in the Nitrane
+decoded file (about once per second)</h3>
+Here is a picture of the wav form around sample 2500, of the Nitrane decoded
+100only.mp3:
+<p><img SRC="100only.winamp.time2500.gif" >
+<p>And here is the same picture, only using mpg123 to decode the mp3 file:
+<br>(similar correct results are obtained with other decoders such as MusicMatch
+and Sonique)
+<br><img SRC="100only.mpg123.time2500.gif" >
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+Nitrane glitch at beginning of file:</h3>
+Here is the original .wav file, starting at time=0s:
+<br><img SRC="100only.time0.gif" >
+<p>Here is the .wav file produced by Nitrane, from 100only.mp3, at time
+0:&nbsp;&nbsp;&nbsp; (note that all encoders and decoders introduce a delay,
+in this case around&nbsp; 1000 samples)
+<br><img SRC="100only.winamp.time0.gif" >
+<p>And here is the .wav file produced my mpg123, from 100only.mp3, at time
+0.
+<br><img SRC="100only.mpg123.time0.gif" >
+<p>
+<hr>Wave form plots produced by <a href="http://sweep.sourceforge.net">sweep</a>.
+Captured and converted to gif by <a href="http://www.trilon.com/xv/">xv</a>.
+</body>
+</html>

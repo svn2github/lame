@@ -1,0 +1,221 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; I; Linux 2.2.12-20 i686) [Netscape]">
+</head>
+<body>
+
+<center>
+<h1>
+GPSYCHO</h1></center>
+
+<center>
+<h1>
+Variable Bit Rate</h1></center>
+
+<center>
+<hr WIDTH="100%"></center>
+
+<p><tt>Suggested usage:</tt>
+<p><tt>lame -v -V 2 -b 128&nbsp; input.wav output.mp3</tt>
+<br>&nbsp;
+<p><tt>VBR mode automatically uses the highest quality option.&nbsp; So
+both</tt>
+<br><tt>"-v" and "-h" are not necessary when using -V.</tt>
+<p><tt>Options:</tt>
+<p><tt>-V n&nbsp;&nbsp; where n=0..9.&nbsp;&nbsp; 0 = highest quality</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9 = lowest quality</tt>
+<p><tt>-b &lt;minimum allowed bitrate></tt>
+<br><tt>-B &lt;maximum allowed bitrate></tt>
+<p><tt>Using -B with other than 320kbs is not recommended, since even a</tt>
+<br><tt>128kbs CBR stream will sometimes use frames as large as 320kbs</tt>
+<br><tt>via the bitreservoir.</tt>
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<br>
+<center>
+<p>
+<hr WIDTH="100%"></center>
+
+<p><tt>Variables used in VBR code description:</tt>
+<br>&nbsp;
+<p><tt>sfb:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+scale factor band index.</tt>
+<br><tt>thm[sfb]:&nbsp;&nbsp;&nbsp; Allowed masking.&nbsp; thm[sfb] = How
+much noise is allowed in the sfb'th band,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+as computed by the GPSYCHO.</tt>
+<p><tt>gain[sfb]:&nbsp;&nbsp;&nbsp; MDCT coefficents are scaled by 2^(-.25*gain)
+before quantizing.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Smaller values of gain (more negative) mean that more bits are required</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+to encode the coefficients, but the quantization noise will be (usually)
+smaller.</tt>
+<p><tt>desired_gain[sfb]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The amount
+of gain needed so that if gain[sfb]&lt;= desired_gain[sfb],</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the quantization noise will be &lt;= thm[sfb].</tt>
+<br>&nbsp;
+<p><tt>An MP3 can use the following variables&nbsp; to achieve a given
+gain[sfb]:</tt>
+<p><tt>For longblocks:</tt>
+<p><tt>&nbsp;&nbsp; gain[sfb][i] =&nbsp;&nbsp; 2^&nbsp; [ -.25 * ( global_gain
+-210 - ifqstep*scalefac[gr][ch].l[sfb] -&nbsp; ifqstep*pretab[sfb]) ]</tt>
+<p><tt>For shortblocks:&nbsp; (i=0..2 for the three short blocks)</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; gain[sfb][i] =&nbsp;&nbsp; 2^&nbsp; [ -.25*(&nbsp;
+global_gain -210&nbsp; -&nbsp; 8*subblock_gain[i]&nbsp; - ifqstep*scalefac.s[sfb][i])&nbsp;&nbsp;
+]</tt>
+<br>&nbsp;
+<p><tt>ifqstep =&nbsp; scalefac_scale==0 ?&nbsp; 2 : 4;</tt>
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<p><tt>VBR Algorithm:</tt>
+<br>&nbsp;
+<br>&nbsp;
+<p><tt>step 1:&nbsp;&nbsp;&nbsp; psymodel.c:</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Computes
+the allowed maskings, thm[sfb]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; thm[sfb]
+may be reduced by a few db depending on the quality setting.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The
+smaller thm[sfb], the more bits will be required to encode the</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frame.</tt>
+<br>&nbsp;
+<p><tt>step 2:&nbsp;&nbsp;&nbsp; find_scalefac() in vbrquantize.c:</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Compute
+desired_gain[sfb]:</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for
+(sfb=0, sfb&lt; SBMAX, ++sfb)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+compute desired_gain[sfb] using a divide and conquer iteration</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+so that quantization_noise[sfb] &lt; thm[sfb]</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This requires 7 iterations of calc_sfb_noise() which computes</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+quantization error for the specified gain.&nbsp; This is the only time</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+VBR need to do any (expensive) quantization!</tt>
+<br>&nbsp;
+<p><tt>step 3:&nbsp;&nbsp;&nbsp; VBR_noise_shaping() in vbrquantize.c:</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Find
+a combination of global_gain, subblock_gain, preflag,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scalefac_scale,
+etc... so that:&nbsp; gain[sfb] &lt;= desired_gain[sfb]</tt>
+<br>&nbsp;
+<p><tt>step 4:&nbsp;&nbsp;&nbsp; VBR_quantize_granule()&nbsp; in vbrquantize.c</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Calculate
+the number of bits needed to encode the frame with</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the
+values computed in step 3.&nbsp; Unlike CBR, VBR (usually) only</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; has
+to do this expensive huffman bit counting stuff once!</tt>
+<br>&nbsp;
+<p><tt>step 5:&nbsp;&nbsp;&nbsp; VBR_noise_shaping() in vbrquantize.c:</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
+bits &lt; minimum_bits:&nbsp; Repeat step 3, only with a larger value of</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; global_gain.&nbsp;
+(but allow bits &lt; minimum_bits for analog silence)</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
+bits > maximum_bits:&nbsp; decrease global_gain, keeping all other</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scalefactors
+the same.</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usually
+step 5 is not necessary.</tt>
+<br>&nbsp;
+<br>&nbsp;
+<p><tt>step 6:&nbsp;&nbsp;&nbsp; VBR_quantize() in vbrquantize.c</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; After
+encoding both channels and granules, check to make sure</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; that
+the total number of bits for the whole frame does not</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exceed
+the maximum allowed. If it does, lower the quality</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and
+repeat steps 2,3 and 4 for the granules that were using</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lots
+of bits.</tt>
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<br><tt>The actual flow chart looks something like this:</tt>
+<br>&nbsp;
+<p><tt>VBR_quantize()</tt>
+<p><tt>&nbsp;&nbsp; determine minbits, maxbits for each granule</tt>
+<br><tt>&nbsp;&nbsp; determine max_frame_bits</tt>
+<br><tt>&nbsp;&nbsp; adjust global quality setting based on VBR_q</tt>
+<p><tt>&nbsp;&nbsp; do</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frame_bits=0</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loop over each channel, granule:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute
+thm[sfb]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits=VBR_noise_shaping():&nbsp;
+Encodes each granule with minbits &lt;= bits &lt;=maxbits</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frame_bits
++= bits</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lower the global quality setting</tt>
+<p><tt>&nbsp;&nbsp; while (frame_bits > max_frame_bits)</tt>
+<br>&nbsp;
+<br>&nbsp;
+<p><tt>VBR_noise_shaping():</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; find_scalefac()&nbsp;&nbsp; (computes desired_gain)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; Estimate largest possible value of global_gain</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; do</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute_scalefac_long/short()</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scalefacts, etc. so
+that gain &lt;= desired_gain)</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits = VBR_quantize_granule()</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (bits &lt; minbits
+&amp;&amp; analog silence) break;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (bits >= minbits)
+break;</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; decrease global_gain
+(which increases number of bits used)</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; while 1</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; if bits > maxbits</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increase
+global_gain</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits
+= VBR_quantize_granule()</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (bits > maxbits)</tt>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p><tt>find_scalefac()</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple divide and conquer iteration
+which repeatidly</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; calls calc_sfb_noise() with different
+values of desired_gain</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; until it finds the largest desired_gain
+such that the</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quantization_noise &lt; allowed
+masking</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requires 7 iterations.</tt>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>
