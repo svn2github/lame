@@ -1,0 +1,97 @@
+<html><head><title>winamp decoding bug</title></head><body>
+<h1>
+
+
+The Winamp Decoding Bug</h1>
+<br><a href="100only.wav">
+100only.wav</a> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A&nbsp; pure 100 Hz sine wave<br><a href="100only.mp3">
+100only.mp3</a> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Encoded with "lame -h"<br>
+<br><a href="sweep.wav">
+sweep.wav &nbsp;</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A sine wav sweep from 20Hz-20,000Hz <br><a href="sweep.mp3">
+sweep.mp3 </a>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Encoded with "lame -h"<br>
+<br>
+<br>
+The LAME project receives reports of this bug, in various forms, about once
+ a week.&nbsp; The problem seems to be that the LAME produced mp3 files of simple
+ harmonics like the pure 100Hz tone shown below is decoded incorrectly with
+ Winamp/Nitrane.&nbsp; Testing shows that this is in fact not a bug in the LAME
+ produced mp3 file, but a bug in the Nitrane decoding engine used by Winamp.&nbsp;
+ Most other decoders can play back the mp3 files without any problems.&nbsp; <br>
+<br>
+More evidence of bugs in Nitrane can be found in <a href="http://www.mail-archive.com/mp3encoder@geek.rcc.se/msg02361.html">Matthew Loyd's post in the mp3encoder mailing list.</a> &nbsp; <br>
+<br>
+Naoki Shibata has also documented some bugs in Nitrane, and has produced a Winamp decoder plugin based on mpg123.&nbsp; See <a href="http://www.geocities.co.jp/Technopolis/9674/in_mpg123.html">this web site.&nbsp;</a> <br>
+<br>
+<br>
+<br> Here are some illustrations showing&nbsp; two Nintrane (Winamp version 2.4) bugs when decoding the 100only.mp3 file.<br>
+(Similar problems show up with sweep.mp3)
+
+
+<h3>
+
+
+<br>
+
+</h3>
+
+
+<h3>Periodice drop out.&nbsp; This dropout occurs peiodically in the Nitrane decoded file (about once per second)</h3>
+<br> Here is a picture of the wav form around sample 2500, of the Nitrane decoded 100only.mp3:<br>
+<br>
+<img src="100only.winamp.time2500.gif">
+
+
+
+<br>
+
+
+
+<br>
+
+And here is the same picture, only using mpg123 to decode the mp3 file:<br>
+(similar correct results are obtained with other decoders such as MusicMatch and Sonique)<br>
+<img src="100only.mpg123.time2500.gif">
+
+
+
+<br>
+
+
+
+<br>
+
+
+
+<br>
+
+
+
+<br>
+
+
+
+<br>
+
+
+<h3>Nitrane glitch at beginning of file:</h3>
+<br>
+Here is the original .wav file, starting at time=0s:&nbsp; <br>
+<img src="100only.time0.gif">
+
+<br>
+
+<br> Here is the .wav file produced by Nitrane, from 100only.mp3, at time
+ 0: &nbsp;&nbsp; (note that all encoders and decoders introduce a delay, in this case
+ around&nbsp; 1000 samples)&nbsp; <br>
+<img src="100only.winamp.time0.gif">
+
+<br>
+<br>
+And here is the .wav file produced my mpg123, from 100only.mp3, at time 0.&nbsp; <br>
+<img src="100only.mpg123.time0.gif">
+
+<br>
+<br>
+<br>
+</body>
+</html>
