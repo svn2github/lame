@@ -23,18 +23,33 @@ LAME 3.62beta&nbsp; (CVS)</H3>
 
 <UL>
 <LI>
+<FONT COLOR="#FF0000">Lionel Bonnet:&nbsp; Bug fixed in MPEG2 scalefactor
+routine: scalefactors were being severly limited.</FONT></LI>
+
+<LI>
 <FONT COLOR="#3366FF">Takehiro Tominaga:&nbsp; faster FFT routines from.&nbsp;
 These routines are also compatible with the GOGO routines, in case someone
 is interested in porting them back to LAME.</FONT></LI>
 
 <LI>
-More modularization work.&nbsp;&nbsp; It is now possible to use LAME&nbsp;as
+<FONT COLOR="#3366FF">Sigbj&oslash;rn Skj&aelig;ret, Takehiro Tominaga:&nbsp;
+faster pow() code.</FONT></LI>
+
+<LI>
+<FONT COLOR="#FF0000">Joachim Kuebart:&nbsp; Found some unitialized variables
+that were effecting quality for encodings which did not use the -h option
+(now fixed).</FONT></LI>
+
+<LI>
+More modularization work.&nbsp;&nbsp; It is now possible to use LAME as
 a library where you can set the encoding parameters directly and do your
-own file i/o.&nbsp; More changes still to come.</LI>
+own file i/o.&nbsp;&nbsp; The calling program is now it's own mp3 output.&nbsp;
+For an example of the LAME&nbsp;API, see main.c, or mp3rtp.c or mp3x.c.&nbsp;
+These can all be compiled as stand alone programs which link with libmp3lame.a.</LI>
 
 <LI>
 Felix vos Leitner:&nbsp; mp3rtp fixes.&nbsp; mp3rtp is a standalone program
-which will encode and stream with RTP.&nbsp;&nbsp;</LI>
+which will encode and stream with RTP.</LI>
 
 <LI>
 Robert Hegemann:&nbsp; Information written to stderr displaying exactly
@@ -155,8 +170,8 @@ LAME 3.57beta&nbsp; November 22 1999</H3>
 
 <UL>
 <LI>
-Sigbjxrn Skjfret: patch to allow encoding from 8bit input files when using
-LIBSNDFILE</LI>
+Sigbj&oslash;rn Skj&aelig;ret, patch to allow encoding from 8bit input
+files when using LIBSNDFILE</LI>
 
 <LI>
 Automatic downsampling to nearest valid samplerate.</LI>
