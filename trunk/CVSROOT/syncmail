@@ -165,7 +165,7 @@ def main():
     PEOPLE = string.join(args)
     mailcmd = MAILCMD % vars()
 
-    print 'Mailing %s...' % PEOPLE
+#    print 'Mailing %s...' % PEOPLE
     if specs == ['-', 'Imported', 'sources']:
         return
     if specs[-3:] == ['-', 'New', 'directory']:
@@ -175,7 +175,7 @@ def main():
 
 
 if __name__ == '__main__':
-    print 'Running syncmail...'
+#    print 'Running syncmail...'
     main()
-    print '...syncmail done.'
+#    print '...syncmail done.'
     sys.exit(0)
