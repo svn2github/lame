@@ -86,6 +86,27 @@ the difference even in the *WinAmp eq-visualization* display. It seems
 that the original frequency changes a lot.
 <br>&nbsp;
 <br>&nbsp;
+<h3>
+<a href="../download/samples">youcantdothat.wav</a>&nbsp;&nbsp;&nbsp; (5M&nbsp;
+26 seconds)</h3>
+
+<p><br>From David J M Robinson &lt;DavidR at europe.com> .&nbsp; From vinyl
+- the results aren't too impressive using any encoder
+<br>at 128kbps. On the initial guitar riff, LAME does better than either
+the old FhG routine in mp3 Prod Pro, or the fast routine available in Cool
+Edit Pro. The others have more difficulty with the echo in the right channel.
+BUT when the vocals come in, the other codecs create an undercurrent of
+noise (which is bad enough) while LAME seems to blast almost white noise
+along with the vocal track, which sounds much worse IMHO.
+<br>&nbsp;
+<br>&nbsp;
+<h3>
+<a href="../download/samples">pipes.wav</a>&nbsp;&nbsp;&nbsp; (2.6M&nbsp;
+15 seconds)</h3>
+From magnus at alum.mit.edu.&nbsp; Bagpipes.&nbsp; It's mainly that the
+pipes are "muted".&nbsp; There's a certain "crispness"
+<br>to the original that is lost after encoding.&nbsp; I'm not exactly
+sure how&nbsp; else to explain it.
 <br>&nbsp;
 <br>&nbsp;
 <h3>
@@ -112,7 +133,7 @@ This one even makes additional noise.
 <h3>
 <a href="../download/samples">ftb_test.wav</a>&nbsp; Obvious differences
 between FhG and LAME.&nbsp; (4.5M 26 seconds)</h3>
-This is a great test case found by&nbsp; &lt;jodaman@cegt201.bradley.edu>
+This is a great test case found by&nbsp; &lt;jodaman at cegt201.bradley.edu>
 .&nbsp; It is a selection from Metallica's Fade To Black.&nbsp;&nbsp; At
 128kbs, the difference between LAME and FhG (mp3enc 3.1) is clearly noticable.&nbsp;
 There are problems with the vocal 's' sounds, and there is a slight tinny
@@ -131,18 +152,19 @@ to test encoders!</li>
 <h3>
 <a href="../download/samples">testsignal2.wav</a>&nbsp;&nbsp;&nbsp; Subtle
 pre-echo test case.&nbsp; (700K, about 5 seconds)</h3>
-This is a very nice pre-echo test case from&nbsp; Jan Rafaj &lt;rafaj@cedric.vabo.cz>.&nbsp;&nbsp;&nbsp;&nbsp;
-It&nbsp; has some clear, isolated drums.&nbsp; If your MP3 encoder does
-not switch to short blocks at the precise moment, you will have very noticeable
-pre-echo.&nbsp; The pre-echo actually sounds like a snare,&nbsp; but this
-snare is completely artificial - there is no trace of it in the original
-.wav file!&nbsp;&nbsp; ISO based encoders do very poorly, mostly because
-the short block switching is completely broken in the psy model (even if
-it detects a pre-echo event, it will switch to short blocks 1 granule too
-late).&nbsp;&nbsp; LAME 3.03 does noticeably better, but it still uses
-the ISO pre-echo detection criterion, and misses many of the pre-echo events.&nbsp;
-If you go into l3psy.c and set switch_pe = 1000 (instead of 1800), LAME
-will do much better, maybe 90% as good as FhG.
+This is a very nice pre-echo test case from&nbsp; Jan Rafaj &lt;rafaj at
+cedric.vabo.cz>.&nbsp;&nbsp;&nbsp;&nbsp; It&nbsp; has some clear, isolated
+drums.&nbsp; If your MP3 encoder does not switch to short blocks at the
+precise moment, you will have very noticeable pre-echo.&nbsp; The pre-echo
+actually sounds like a snare,&nbsp; but this snare is completely artificial
+- there is no trace of it in the original .wav file!&nbsp;&nbsp; ISO based
+encoders do very poorly, mostly because the short block switching is completely
+broken in the psy model (even if it detects a pre-echo event, it will switch
+to short blocks 1 granule too late).&nbsp;&nbsp; LAME 3.03 does noticeably
+better, but it still uses the ISO pre-echo detection criterion, and misses
+many of the pre-echo events.&nbsp; If you go into l3psy.c and set switch_pe
+= 1000 (instead of 1800), LAME will do much better, maybe 90% as good as
+FhG.
 <p>FhG does great.&nbsp; They seem to have excellent pre-echo detection.&nbsp;
 I would love to know what their algorithm is based on.
 <p>Note&nbsp; 5/99: LAME 3.05 has a much improved pre-echo detection algorithm,
@@ -158,7 +180,7 @@ mp3 testcases</a></li>
 <h3>
 <a href="../download/samples">testsignal4.wav</a>&nbsp;&nbsp;&nbsp; Subtle
 distortion case.&nbsp; (800K, about 6 seconds)</h3>
-Another difficult and subtle case from Jan Rafaj &lt;rafaj@cedric.vabo.cz>.&nbsp;&nbsp;
+Another difficult and subtle case from Jan Rafaj &lt;rafaj at cedric.vabo.cz>.&nbsp;&nbsp;
 I believe this is by Enya.&nbsp; There is a slight trill as the volume
 increases.&nbsp; I can barely here it, but the FhG encoder manages to avoid
 it. Using mid/side masking thresholds seems to help a lot (-h in LAME 3.21
@@ -207,7 +229,7 @@ on MP3 files produced by other encoders to see how well they do.
 <h3>
 <a href="../download/samples">track7.wav</a>&nbsp;&nbsp; Jazz sample&nbsp;
 (800K,&nbsp; 4 seconds)</h3>
-Sent by Naoki SHIBATA,&nbsp; shibatch@geocities.co.jp, see <a href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>
+Sent by Naoki SHIBATA,&nbsp; shibatch at geocities.co.jp, see <a href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>
 <br>Naoki can hear noise in the left channel, but only when using a good
 pair of headphones.&nbsp; It goes away
 <br>when joint stereo is not used.&nbsp; Comparing with FhG, it looks like
@@ -229,7 +251,7 @@ I use a mono, downsampled version for the current MPEG2 quality improvements.
 <a href="../download/samples">main_theme.wav</a>&nbsp;&nbsp;&nbsp;&nbsp;
 Strange artifact, mid/side stereo test.&nbsp;&nbsp; (1.7M, about 11 seconds)</h3>
 This sample is from an old Pink Floyd song.&nbsp; It was found by Robert
-Hegemann &lt;Robert.Hegemann@gmx.de>
+Hegemann &lt;Robert.Hegemann at gmx.de>
 <br>In the beginning, while the foreground pans from right to left there
 is a slight twinkling sound.&nbsp; This goes away
 <br>with -X, but the true cause and a better fix should be found.&nbsp;
@@ -244,7 +266,7 @@ The FhG also does not use mid/side encoding for this sample.
 <h3>
 <a href="../download/samples">mstest.wav</a>&nbsp;&nbsp; Mide/Side stereo
 encoding test sample&nbsp; (700K, about 5 seconds)</h3>
-A good jstereo test case sent to me by Scott Miller &lt;scgmille@indiana.edu>.&nbsp;&nbsp;
+A good jstereo test case sent to me by Scott Miller &lt;scgmille at indiana.edu>.&nbsp;&nbsp;
 It contains some higher frequency modes which are isolated to the left
 channel.&nbsp; LAME sounds fine in Stereo mode (-m s), but using any type
 of mid/side stereo will spread these modes to the right channel.&nbsp;
@@ -267,7 +289,7 @@ switch</a> added to LAME 3.12!
 (1.4M, about 9 seconds)</h3>
 This case has some subtle pre-echos that were missed by older versions
 of LAME, and it greatly confused the old LAME mid/side stereo switching
-criterion.&nbsp; It was found by Nils Faerber &lt;Nils.Faerber@unix-ag.org>.&nbsp;&nbsp;
+criterion.&nbsp; It was found by Nils Faerber &lt;Nils.Faerber at unix-ag.org>.&nbsp;&nbsp;
 It was heavily used to tune the LAME 3.12 <a href="ms_stereo.html">mid/side
 switch,</a> and for more fine tuning of the pre-echo detection algorithm
 in LAME 3.15.&nbsp;&nbsp; Nils reports that with LAME 3.12, the quality
@@ -298,23 +320,23 @@ Test Cases Where LAME beats FhG!</h2></center>
 <h3>
 <a href="../download/samples">KMFDM-Dogma.wav</a>&nbsp;&nbsp;&nbsp; (1.1M,
 about 6 seconds.)</h3>
-Found by Kevin Burtch &lt;kburtch@bellsouth.net>.
+Found by Kevin Burtch &lt;kburtch at bellsouth.net>.
 <br>&nbsp;
 <h3>
 <a href="../download/samples">iron.wav</a>&nbsp;&nbsp; (6.2M, 35 seconds)</h3>
-Found by Jee J C" &lt;jeejc@hotmail.com> .&nbsp; A short sample from the
-Cardigans.
+Found by Jee J C" &lt;jeejc at hotmail.com> .&nbsp; A short sample from
+the Cardigans.
 <br>&nbsp;
 <h3>
 <a href="../download/samples">spahm.wav&nbsp;</a>&nbsp;&nbsp;&nbsp; (4.4M,
 about 25 seconds.)&nbsp; Similar to fatboy.wav, but FhG does much worse
 for some reason.</h3>
-From &lt;spahm@hotmail.com>
+From &lt;spahm at hotmail.com>
 <br>&nbsp;
 <h3>
 <a href="../download/samples">BlackBird.wav&nbsp;</a>&nbsp;&nbsp;&nbsp;
 (1.1M, about 6 seconds)</h3>
-From davel@caffeine.co.uk:&nbsp;&nbsp; The opening bars from the Beautiful
+From davel at caffeine.co.uk:&nbsp;&nbsp; The opening bars from the Beautiful
 South track 'Blackbird on the Wire' - you will notice it has some very
 sudden synthesized drums in it. I encoded this track using both Lame and
 Frau, and found that Frau just couldn't handle the first drum hit (it even
@@ -332,12 +354,12 @@ Other Test Cases</h2></center>
 <h3>
 <a href="../download/samples">60.wav</a>&nbsp;&nbsp; Simple two tone test
 case usefull for debugging.&nbsp;&nbsp; (900K,&nbsp; 5 seconds)</h3>
-Sent by Naoki SHIBATA,&nbsp; shibatch@geocities.co.jp, see <a href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>
+Sent by Naoki SHIBATA,&nbsp; shibatch at geocities.co.jp, see <a href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>
 <br>&nbsp;
 <h3>
 <a href="../download/samples">fatboy.wav</a>&nbsp;&nbsp; All encoders have
 trouble with this one.&nbsp; (900K,&nbsp; about 5 seconds.)</h3>
-Found by Jake Hamby &lt;jehamby@anobject.com>
+Found by Jake Hamby &lt;jehamby at anobject.com>
 <br>&nbsp;
 <h3>
 <a href="../download/samples">applaud.wav</a>&nbsp;&nbsp; 1.4M, about 9
