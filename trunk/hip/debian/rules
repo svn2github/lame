@@ -36,9 +36,6 @@ autotools:
 	NEWDATEGUESS=`/usr/share/misc/config.guess -t | tr -d -` ;\
 	if [ $$OLDDATESUB -lt $$NEWDATESUB -o \
 	     $$OLDDATEGUESS -lt $$NEWDATEGUESS ]; then \
-	   dch -a -p "GNU config automated update: config.sub\
-	     ($$OLDDATESUB to $$NEWDATESUB), config.guess\
-	     ($$OLDDATEGUESS to $$NEWDATEGUESS)" ;\
 	   cp -f /usr/share/misc/config.sub config.sub ;\
 	   cp -f /usr/share/misc/config.guess config.guess ;\
 	   echo WARNING: GNU config scripts updated from master copies 1>&2 ;\

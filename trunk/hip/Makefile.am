@@ -6,6 +6,8 @@ SUBDIRS = lib include doc examples debian python
 
 EXTRA_DIST = autogen.sh
 
+# DISTCLEANFILES = config.guess config.sub 
+
 debug:
 	$(MAKE) all CFLAGS="@DEBUG@"
 

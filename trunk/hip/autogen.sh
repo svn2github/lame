@@ -51,10 +51,10 @@ echo "  aclocal $ACLOCAL_FLAGS"
 aclocal $ACLOCAL_FLAGS
 #echo "  autoheader"
 #autoheader
-echo "  libtoolize --automake"
-libtoolize --automake
-echo "  automake --add-missing $AUTOMAKE_FLAGS"
-automake --add-missing $AUTOMAKE_FLAGS 
+echo "  libtoolize --copy --automake"
+libtoolize --copy --automake
+echo "  automake --copy --add-missing $AUTOMAKE_FLAGS"
+automake --copy --add-missing $AUTOMAKE_FLAGS 
 echo "  autoconf"
 autoconf
 

@@ -8,10 +8,10 @@ all:
 
 install: 
 	if test @BUILD_PYTHON_MOD@ = yes; then \
-		python2.1 setup.py install --prefix $(DESTDIR)\
+		python2.1 setup.py install --prefix ${DESTDIR}; \
 	fi
 
+distclean: clean
+
 clean:
-	if test @BUILD_PYTHON_MOD@ = yes; then \
-		-python2.1 setup.py clean --all \
-	fi
+	python2.1 setup.py clean --all
