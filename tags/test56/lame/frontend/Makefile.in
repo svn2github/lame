@@ -1,0 +1,130 @@
+#
+# Makefile.in for LAME 3.xx frontend
+#
+# processed by ./configure to produce Makefile
+#
+#
+# these variables are available on command line:
+#
+#   make PGM=lame_exp             - specify a name of an executable file
+#
+#
+SHELL = @SHELL@
+@SET_MAKE@
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+BINDIR = @bindir@
+LIBDIR = $(prefix)/lib
+INCLUDEDIR = $(prefix)/include
+CC     = @CC@
+CFLAGS = @CFLAGS@ @FRONTEND_CFLAGS@
+LDFLAGS= @LDFLAGS@ @FRONTEND_LDFLAGS@
+DEFS   = @CONFIG_DEFS@
+INCLUDES = @INCLUDES@
+#LIBS   = @LIBS@
+LIBS    =
+
+INSTALL= @INSTALL@
+INSTALL_PROGRAM=@INSTALL_PROGRAM@
+INSTALL_DATA=@INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+
+# can be overriden on commandline
+PGM ?= lame@FILE_EXTENSION@
+
+AR = @AR@
+RANLIB = @RANLIB@
+MAKEDEP = @MAKEDEP@
+RM_F = @RM_F@
+LN_S = @LN_S@
+
+
+brhist_sources = brhist.c
+
+c_sources = @FRONTEND_SOURCES@ \
+        lametime.c \
+	timestatus.c \
+	portableio.c \
+	ieeefloat.c \
+	parse.c \
+	get_audio.c
+
+OBJ = $(c_sources:.c=.o)
+DEP = $(c_sources:.c=.d)
+
+
+#todo: can NASM stuff be safely removed from this Makefile.in ?
+NASM = nasm
+ASFLAGS=-f elf -i i386/
+%.o: %.nas
+	$(NASM) $(ASFLAGS) $< -o $@
+
+%.o: %.s
+	gcc -c $< -o $@
+
+%.o: %.c 
+	$(CC) $(INCLUDES) $(DEFS) $(CFLAGS) -c $< -o $@
+
+%.d: %.c
+  ifeq ($(NOUNIXCMD),YES)
+	$(CC) $(MAKEDEP) $(INCLUDES) $(DEFS) $(CFLAGS)  $< > $@
+  else
+	$(SHELL) -ec '$(CC) $(MAKEDEP) $(INCLUDES) $(DEFS) $(CFLAGS) $< | sed '\''s;$*.o;& $@;g'\'' > $@'
+  endif
+
+all: $(PGM)
+
+# these applications are to be statically linked for now:
+# i.e dont use -L -lmp3lame, since the default will pick up the shared lib
+$(PGM):	main.o ../libmp3lame/libmp3lame.a $(LIBS) $(OBJ)
+	$(CC) -o $(PGM) main.o $(OBJ) $(LDFLAGS) $(LIBS) ../libmp3lame/libmp3lame.a
+
+mp3rtp:	rtp.o mp3rtp.o ../libmp3lame/libmp3lame.a $(LIBS) $(OBJ)
+	$(CC) -o mp3rtp mp3rtp.o rtp.o -L.. $(OBJ) $(LIBS) $(LDFLAGS) ../libmp3lame/libmp3lame.a
+
+
+
+install: $(PGM)
+	$(INSTALL_PROGRAM) $(PGM) ${BINDIR}
+
+uninstall:
+	$(RM_F) $(BINDIR)/$(PGM)
+
+clean:
+  ifeq ($(UNAME),MSDOS)
+	-del *.o
+	-del *.d
+	-del *.a
+	-del $(PGM)
+  else
+	-$(RM_F) $(OBJ) $(DEP) $(PGM) main.o rtp.o mp3rtp mp3rtp.o \
+         mp3x.o mp3x main.d rtp.d mp3rtp.d
+  endif
+
+tags: TAGS
+
+TAGS: ${c_sources}
+	etags -T ${c_sources}
+
+ifneq ($(MAKECMDGOALS),clean)
+  -include $(DEP)
+endif
+
+
+#
+#  testcase.mp3 is a 2926 byte file.  The first number output by
+#  wc is the number of bytes which differ between new output
+#  and 'official' results.  
+#
+#  Because of compiler options and effects of roundoff, the 
+#  number of bytes which are different may not be zero, but
+#  should be at most 30.
+#
+test: $(PGM)
+	./$(PGM)  --nores -h ../testcase.wav ../testcase.new.mp3
+	cmp -l ../testcase.new.mp3 ../testcase.mp3 | wc
+
+testg: $(PGM)
+	./$(PGM) -g -h ../../test/castanets.wav
