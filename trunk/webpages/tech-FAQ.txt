@@ -43,6 +43,11 @@ routine similar to the one used in decoding, and thus also introduce
 their own 528 sample delay.  A .wav file encoded & decoded will have a
 1056 sample delay (1056 samples will be appended to the beginning).
 
+(actually, the observed delay is 1057 samples.  For even more
+technical discussions about this, see the mp3encoder mailing list
+archive)
+
+
 The FhG encoder (at highest quality) introduces a 1160 sample delay,
 for a total encoding/decoding delay of 1688 samples.  I haven't tested
 Xing.
