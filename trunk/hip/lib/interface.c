@@ -398,7 +398,7 @@ decodeMP3_clipchoice( PMPSTR mp,unsigned char *in,int isize,char *out,int *done,
       int size;
       fprintf(stderr,"bitstream problem: resyncing...\n");
       mp->old_free_format = 0;
-      mp->sync_bitstream = 1;
+      // mp->sync_bitstream = 1;
 		
       /* skip some bytes, buffer the rest */
       size = (int) (mp->wordpointer - (mp->bsspace[mp->bsnum] + 512));
@@ -560,6 +560,11 @@ decodeMP3_clipchoice( PMPSTR mp,unsigned char *in,int isize,char *out,int *done,
   
   if (bytes > 0) {
     int size;
+    while (bytes > 512) {
+      read_buf_byte(mp);
+      bytes--;
+      mp->framesize--;
+    }
     copy_mp(mp, bytes, mp->wordpointer);
     mp->wordpointer += bytes;
     
