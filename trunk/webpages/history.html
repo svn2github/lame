@@ -20,7 +20,15 @@ Starting with LAME 3.0:
 <hr></h3>
 
 <h3>
-LAME 3.88alpha (CVS)</h3>
+LAME 3.89alpha&nbsp; (CVS)</h3>
+
+<ul>
+<li>
+</li>
+</ul>
+
+<h3>
+LAME 3.88beta&nbsp;&nbsp; March 25 2001</h3>
 
 <ul>
 <li>
@@ -69,6 +77,10 @@ Waves to encode on it.</font></li>
 for 4Dos users</font></li>
 
 <li>
+<font color="#000000">Mark Taylor: Several bugs fixed in the resampling
+code.</font></li>
+
+<li>
 <font color="#000000">Frank Klemm, Robert Hegemann:&nbsp;&nbsp;&nbsp; added
 assembler code for CPU feature detection on runtime (MMX, 3DNow, SIMD)</font></li>
 
@@ -80,11 +92,24 @@ assembler code for CPU feature detection on runtime (MMX, 3DNow, SIMD)</font></l
 more work on configure stuff</font></li>
 
 <li>
-<font color="#000000">Alexander Leidinger:&nbsp;&nbsp;&nbsp; automake/libtool
+<font color="#000000">Alexander Leidinger:&nbsp;&nbsp; automake/libtool
 generated Makefiles and TONS of other work.</font></li>
 
 <li>
+<font color="#000000">Alexander Leidinger:&nbsp;&nbsp; Much work towards
+shared library style API.</font></li>
+
+<li>
 <font color="#000000">Anonymous: New more efficient RTP code.</font></li>
+
+<li>
+<font color="#FF0000">Mark Taylor:&nbsp;psycho-acoustic data now computed
+for all scalefactor bands (up to 24khz)</font></li>
+
+<li>
+<font color="#FF0000">Mark Taylor, Takehiro Tominaga: All ISO table data
+replaced by formulas - should improve MPEG2.5 results for which we never
+had correct table data.</font></li>
 </ul>
 
 <h3>
@@ -1883,7 +1908,8 @@ with a hand configured unrolling [PSYD]</li>
 
 <li>
 m3 - (amiga only) Added in the asm FFT for m68k (based on sources from
-<b>Henryk Richter</b> and <b>Stephane Tavenard</b>)</li>
+<b>Henryk
+Richter</b> and <b>Stephane Tavenard</b>)</li>
 
 <li>
 m4 - raw pcm support back in</li>
@@ -1913,11 +1939,12 @@ and the first 465 energy values. Saves a bunch of calculations.</li>
 
 <li>
 - Added a speed-up/quality switch. Speed is increased but quality is decreased
-<i>slightly</i>. My ears are bad enough not to be able to notice the difference
-in quality at low settings :). Setting '-q 1' improves speed by about 10%.
-'-q 100' improves speed by about 26%. Enoding of my test track goes from
-111s (at default '-q 0') to 82s (at -q 100). Thanks to <b>Jan Peman</b>
-for this tip.</li>
+<i>slightly</i>.
+My ears are bad enough not to be able to notice the difference in quality
+at low settings :). Setting '-q 1' improves speed by about 10%. '-q 100'
+improves speed by about 26%. Enoding of my test track goes from 111s (at
+default '-q 0') to 82s (at -q 100). Thanks to <b>Jan Peman</b> for this
+tip.</li>
 </ul>
 
 <li>
