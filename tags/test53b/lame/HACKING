@@ -1,0 +1,43 @@
+First, see the file STYLEGUIDE
+
+
+
+************************************************************************
+LAME API
+
+For a general outline of the code, see the file API.  
+Also, main.c is a simple front end to libmp3lame.a
+
+The guts of the code are called from lame_encode_buffer().
+
+lame_encode_buffer() handles buffering and resampling, and
+then calls lame_encode_frame() for each frame:
+
+lame_encode_frame():
+   l3psycho_anal()        compute masking thresholds
+   mdct_sub()             compute MDCT coefficients
+   iteration_loop()       choose scalefactors (via iteration)
+                          which determine noise shapping, and 
+                          choose best huffman tables for lossless compression
+
+   format_bitstream       format the bitstream.  when data+headers are complete,
+                          output to internal bit buffer.
+   copy_buffer()          copy internal bit buffer into user's mp3 buffer
+
+
+
+
+************************************************************************
+
+THREADSAFE:
+
+Lame is supposed to be threadsafe.  But it is not yet.
+
+Some static variables in takehiro.c need to be moved
+into lame_internal_flags (in util.h).  
+
+There are a lot of static variables in timestatus.c,
+but these variables are only used by the output display.
+These routines should eventually be moved out of the library
+and into the front end.  So dont try to make this
+data thread safe!
