@@ -9,19 +9,45 @@
 
 <center>
 <h1>
-&nbsp; The Winamp&nbsp; Decoding Bug</h1></center>
+&nbsp; The Winamp/100Hz&nbsp; Decoding Bug</h1></center>
 
 <h3>
-This bug is in Winamp 2.62 (latest version as of 5/1/00) and earlier versions.</h3>
-<h3>
-UPDATE 10/2/00:&nbsp; Winamp Bug diagnosed!&nbsp; It is a simple fix
-for the Nullsoft programmers.&nbsp; Details from the mp3encoder
-mailing list will soon show up 
-<a href="http://www.mail-archive.com/mp3encoder@geek.rcc.se/" > here</a>.&nbsp;</h3>
-&nbsp;
-<p>&nbsp;
-<br>
-Update 6/9/00:&nbsp; Winamp 2.64 has the same bugs.
+UPDATE 10/2/00:&nbsp; Winamp Bug Fixed!</h3>
+This probably shouldn't be called a Winamp bug or a <a href="http://www.mp3dev.org"
+>LAME</a> bug, but instead
+a flaw in the&nbsp; MP3 ISO specification.
+<p>It was caused by assuming that the Huffman "big_values" data is at most
+8191 (2^13 -1). 13 bits are used to encode these numbers, but in some cases
+during decoding you need to add 15 to the result.&nbsp; Thus the effective
+range is 0 through
+<br>8206.&nbsp; However, the ISO MP3 spec says that the maximum value should
+be 8191, and it is not clear if they are refering to the maximum value
+before or after adding the 15, and the ISO demonstration source (dist10)
+uses values up to 8206.&nbsp;&nbsp; Imposing a maximum value of 8191 is
+a completely unneeded restriction which results in a (very tiny) loss of
+quality.
+<p>The 8191/8206 issue was first described Rob Leslie, of the MAC&nbsp;decoder
+(www.mars.org/home/rob/proj/mpeg/).&nbsp; It was placed on the todo list&nbsp;
+to decide if LAME&nbsp;should use values up to 8206 or limit them to 8191.&nbsp;
+It&nbsp; took several months for us to realize that this issue was triggering
+the "Winamp bug".
+<p>Developers for Winamp and Sonique have already produced&nbsp; versions
+of their software which can decode 100only.mp3.&nbsp; So this should be
+fixed in the releases dated after 10/2/00.
+<p><a href="in_mp3_234.zip">
+Here is a fixed version of Nitrane.</a>&nbsp;&nbsp; 
+
+<br>As well as an alpha version of Winamp's <a href="in_mp3_260_alpha12.zip">
+next generation decoder.</a>&nbsp;
+
+<p>LAME&nbsp;3.88 will either be set to not encode big_values greater than
+8191, or this limit will be enforced if the&nbsp; "--strictly-enforce-ISO"&nbsp;option
+is used.
+<br>&nbsp;
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<br>&nbsp;
 <br>&nbsp;
 <p><a href="../index.html">The LAME project&nbsp;</a> often receives reports
 of this bug.&nbsp; The problem seems to be that the LAME produced mp3 files
