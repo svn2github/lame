@@ -1,6 +1,7 @@
 ## $Id$
 
 all: 
+	config_unix.py
 	python2.1 setup.py build
 
 install: 
