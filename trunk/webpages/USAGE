@@ -13,7 +13,7 @@ fixed bit rate jstereo 128kbs encoding, highest quality:  (recommended)
 To disable joint stereo encoding (slightly faster, but less quality at bitrates<=128kbs)
 % lame -m s sample.wav  sample.mp3     
 
-Fast encode, low quality  (no psycho-acoustics)
+Fast encode, low quality  (no noise shaping)
 % lame -f sample.wav  sample.mp3     
 
 Variable Bitrate (VBR): (use -V n to adjust quality/filesize)
@@ -106,7 +106,6 @@ Experimental (undocumented):  may work better or worse:
 Operational:
 
 -r             assume input file is raw PCM
---decode       assume input file is an mp3 file, and decode to raw pcm.  
 -s  n          input sampling frequency in kHz (for raw PCM input files)
 --resample n   output sampling frequency
 --mp3input     input file is an MP3 file.  decode using mpglib/mpg123
@@ -121,22 +120,42 @@ Operational:
 -g             run MP3x, the graphical frame analyzer
 --strictly-enforce-ISO   comply as much as possible to ISO MPEG spec
 
+--decode       assume input file is an mp3 file, and decode to wav.
+-t             disable writing of WAV header when using --decode
+               (decode to raw pcm, native endian format (use -x to swap))
+
 --ogg          Encode using Ogg Vorbis (.ogg) instead of mp3.
 
-id3 tagging:
 
---tt "title"     title of song (max 30 chars)
---ta "artist"    artist who did the song (max 30 chars)
---tl "album"     album where it came from (max 30 chars)
---ty "year"      year in which the song/album was made (max 4 chars)
---tc "comment"   additional info (max 30 chars)
---tg "genre"     genre of song (name or number)
+
+ID3 tagging:
+
+--tt <title>    audio/song title (max 30 chars for version 1 tag)
+--ta <artist>   audio/song artist (max 30 chars for version 1 tag)
+--tl <album>    audio/song album (max 30 chars for version 1 tag)
+--ty <year>     audio/song year of issue (1 to 9999)
+--tc <comment>  user-defined text (max 30 chars for v1 tag, 28 for v1.1)
+--tn <track>    audio/song track number (1 to 99, creates v1.1 tag)
+--tg <genre>    audio/song genre (name or number in list)
+--add-id3v2     force addition of version 2 tag
+--id3v1-only    add only a version 1 tag
+--id3v2-only    add only a version 2 tag
+--space-id3v1   pad version 1 tag with spaces instead of nulls
+--pad-id3v2     pad version 2 tag with extra 128 bytes
+--genre-list    print alphabetically sorted ID3 genre list and exit
+
+Note: A version 2 tag will NOT be added unless one of the input fields
+won't fit in a version 1 tag (e.g. the title string is longer than 30
+characters), or the `--add-id3v2' or `--id3v2-only' options are used,
+or output is redirected to stdout.
 
 
 
 options not yet described:
 --nores            disable bit reservoir
 --noath            disable ATH
+--athlower <n db>  lower the ATH by n db.  
+--athshort         use only the ATH for short blocks
 --cwlimit <freq>   specify range of tonality calculation
 
 --lowpass
@@ -261,15 +280,11 @@ mpglib decode capability
 --decode 
 
 This just uses LAME's mpg123/mpglib interface to decode an MP3 file to
-a raw pcm file.  The input file must be an MP3 file, and the raw pcm
-data will be written to the output file in native endian format.
-Under linux, on i386, to convert the output file to a wav, use:
+a wav file.  The input file can be any input type supported by
+encoding, including .mp3  and .ogg.  
 
-% lame --decode input.mp3 output.pcm
-% sox -c 2 -t raw -r 44100 -s -w output.pcm output.wav
-
-(assuming output.pcm came from a stereo, 44.1khz mp3 file)
-
+If -t is used (disable wav header), LAME will output
+raw pcm in native endian format (use -x to swap bytes).
 
 
 =======================================================================
@@ -362,17 +377,17 @@ slower quantization formula.
 
 
 =======================================================================
-sfb=21 cutoff
+keep all frequencies
 =======================================================================
 -k   
 
 keep all frequencies.  (Disable all filters)
 
-Without -k, LAME will automatically apply various types of lowpass
-filters.  This is because the high frequency coefficients can take up
-a lot of bits that would be better used for lower, more important
-frequencies.
+LAME will automatically apply various types of lowpass filters.  This
+is because the high frequency coefficients can take up a lot of bits
+that would be better used for lower, more important frequencies.
 
+-k will disable all lowpass filtering.  Not recommended.
 
 
 
@@ -463,11 +478,6 @@ Ogg Vorbis encoding
 Encode using the Ogg Vobis codec (using libvorbis) instead of
 LAME's internal mp3 codec.
 
-Assume the input file is an Ogg Vorbis file.  Mostly usefull
-with --decode for playing back .ogg files.  
-If the filename ends in ".ogg" LAME will assume
-it is an Ogg.  For stdin or files which dont end in .ogg you need
-to use this switch.
 
 
 =======================================================================
@@ -566,6 +576,10 @@ specified) This tag in embedded in frame 0 of the MP3 file.  It lets
 VBR aware players correctly seek and compute playing times of VBR
 files.
 
+When '--decode' is specified (decode mp3 to wav), this flag will 
+disable writing the WAV header.  The output will be raw pcm,
+native endian format.  Use -x to swap bytes.
+
 
 
 =======================================================================
@@ -655,7 +669,8 @@ swapbytes
 =======================================================================
 -x
 
-swap bytes in the input file.  for sorting out little endian/big endian
-type problems.  If your encodings sound like static, try this first.
+swap bytes in the input file (and output file when using --decode).
+For sorting out little endian/big endian type problems.  If your
+encodings sound like static, try this first.
 
 
