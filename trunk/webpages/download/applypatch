@@ -1,0 +1,117 @@
+#!/bin/csh -f
+#
+# applypatch:  this script will apply the lame patch against 
+#              the dist10 encoder source. 
+#
+# version 1.0 by ???
+# version 2.0 by Conrad Sanderson
+#
+# example
+# -------
+#
+#  first create a directory with:  dist10.tar.gz
+#                                  lame3.50.patch.gz
+#
+#  run from within that directory: applypatch lame3.50.patch.gz
+#
+
+if ($# < 1 ) then 
+	echo "$0 is a script to apply the lame patch against"
+	echo "the ISO dist10 source.  It must be run from a directory"
+	echo "containing dist10.tar.gz, dist10.tar or dist10.tgz file"
+	echo "and the lame patch file - eg. lame3.50.patch.gz or lame3.50.patch"
+	echo " "
+	echo "usage: $0 lame_patch_file"
+	exit -1
+endif
+
+set patch=$1
+
+#
+# see if dist10.tar.gz, dist10.tar or dist10.tgz exist
+#
+
+set distsrc="nothing"
+
+if(-e dist10.tar.gz) then
+	set distsrc=dist10.tar.gz
+endif
+
+if(-e dist10.tar) then
+	set distsrc=dist10.tar
+endif
+
+if(-e dist10.tgz) then
+	set distsrc=dist10.tgz
+endif
+
+
+if( $distsrc == "nothing" ) then
+	echo "can't find ISO dist10 source (dist10.tar.gz, dist10.tar or dist10.tgz)"
+	exit -1
+endif
+
+#
+# see if patch file exists
+#
+
+if(! -e $patch) then
+	echo "$patch doesn't exist"
+	exit -1
+endif
+
+#
+# figure out whether dist10 is compressed 
+#
+set dcatcmd=cat
+set dext=$distsrc:e
+
+gunzip -t $distsrc
+if ($status) then
+   set dcatcmd=cat
+else
+   set dcatcmd=zcat
+endif
+
+
+#
+# figure out whether the patch is compressed
+#
+gunzip -t $patch
+if ($status) then
+   set pcatcmd=cat
+else
+   set pcatcmd=zcat
+endif
+
+
+# 
+# real work begins here
+#
+
+set dir = $cwd
+rm -Rf lame_src encoder
+
+# untar the dist10 source
+echo "extracting the ISO dist10 source..."
+$dcatcmd $distsrc | tar xf -
+
+cd dist10/lsf
+
+# create a copy of the dist10 encoder directory, without tables subdirectory
+tar cf - encoder | ( cd $dir ; tar xf -)
+cd $dir
+rm -Rf encoder/tables
+
+# apply the patch
+$pcatcmd $patch | patch -p0 
+
+# rename the directory
+
+mv encoder lame_src
+
+
+# clean up
+rm -Rf dist10
+
+echo "lame MP3 encoder source is in lame_src directory"

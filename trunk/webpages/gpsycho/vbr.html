@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i686) [Netscape]">
+</HEAD>
+<BODY>
+
+<CENTER>
+<H1>
+GPSYCHO</H1></CENTER>
+
+<CENTER>
+<H1>
+Variable Bit Rate</H1></CENTER>
+
+<CENTER>
+<HR WIDTH="100%"></CENTER>
+
+<P><BR>
+<P>OVER = number of scalefactor bands with distortion that exceeds the
+allowed distortion given by the masking thresholds.&nbsp;&nbsp; OVER is
+computed by outer_loop, and the masking thresholds are computed by the
+psycho-acoustic model.
+<P>The LAME VBR algorithm is finds the minimum possible number of bits
+for which we can find a quantization
+<BR>with OVER=0.
+<P>The quality is adjusted through the -V option, which sets VBR_q from
+0 to 9.&nbsp;&nbsp;&nbsp; The quality is adjusted by modifying the allowed
+masking from the psycho acoustic model.&nbsp; Increasing the allowed masking
+lowers quality,&nbsp; since this allows more quantization error.&nbsp;
+For higher quality, we decrease the allowed masking by as much as 16db.
+<P>
+<HR WIDTH="100%">
+<P>Usage notes:
+<P>If you want to use VBR to improve the quality of 128kbs encodings while
+only making the file slightly larger,&nbsp; be sure to set a minimum allowed
+bitrate:
+<P>% lame -v -b 112&nbsp; input.wav output.mp3
+<P>If you want to get the maximum compression, try:
+<P>% lame -v -b 32 input.wav output.mp3
+<P>If the encoded file is much too big, add the option -V n, with n>4.&nbsp;
+To improve the quality (and make the file bigger) try -V n with n&lt;4.
+<P>
+<HR WIDTH="100%">
+<BR><TT>VBR_iteration_loop in pseudo code</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; initialize iteration loop</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; for each granule</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get data to be quantized</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for each channel, or
+mid channel only (for mid/side stereo)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+determine min and max allowed bits depending on block type</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+make binary search in the range [min,max] bits,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+starting with this_bits in the middle of [min,max]</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+apply quality setting by adjusting allowed maskings:</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+masking_lower_db = -10+2*VBR_q</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+increase quality for low bits:</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+masking_lower_db += 6*((this_bits-125)/(2500-125)-1)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+call outer_loop in sloppy mode</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if the quantization is good enough</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+continue binary search with decreased this_bits</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+continue binary search with increased this_bits</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+abort binary search if within +/-10 bits of optimum</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sum used_bits</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end for each channel</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; end for each granule</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; select an appropriate bitrate able to hold used_bits</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; for each granule</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for each channel</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+call outer_loop in *not* sloppy mode to quantize the data</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end for each channel</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; end for each granule</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; update the bitreservoir</TT>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>
