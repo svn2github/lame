@@ -1,0 +1,77 @@
+%define name @PACKAGE@
+%define ver @VERSION@
+%define quality alpha
+%define rel 1
+%define prefix %{_usr}
+%define docdir %{_defaultdocdir}
+
+Summary : LAME Ain't an MP3 Encoder
+Name: %{name}
+Version: %{ver}%{quality}
+Release: %{rel}
+Copyright: LGPL
+Vendor: The LAME Project
+Packager: cefiar <cefiar1@optushome.com.au>
+URL: http://www.sulaco.org/mp3/
+Group: Applications/Multimedia
+Source: http://www.sulaco.org:80/mp3/download/beta/%{name}-%{ver}.tar.gz
+BuildRoot: /var/tmp/lame-%{ver}-root
+Prefix: %{prefix}
+
+%description
+LAME is an educational tool to be used for learning about MP3 encoding.  The
+goal of the LAME project is to use the open source model to improve the
+psycho acoustics, noise shaping and speed of MP3.  Another goal of the LAME
+project is to use these improvements for the basis of a  patent free audio
+compression codec for the GNU project.
+
+%prep -q
+
+%setup -n %{name}-%{ver} -q
+
+%build -q
+LC_ALL=POSIX
+export LC_ALL
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix --enable-nasm --enable-mp3x --enable-mp3rtp --quiet
+
+numcpu=`egrep -c "^processor[[:space:]]+:[[:space:]]+[0-9]+" /proc/cpuinfo`
+if [ "$numcpu""x" != "x" ]; then
+	make -j"$numcpu"
+else
+	make
+fi
+
+%install
+rm -fr $RPM_BUILD_ROOT
+make install prefix=$RPM_BUILD_ROOT%{prefix}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+rm -rf /usr/src/redhat/BUILD/%{name}-%{ver}
+
+%files
+%defattr (-,root,root)
+%doc LICENSE USAGE COPYING API TODO README* HACKING STYLEGUIDE PRESETS.draft
+%doc %{docdir}/%{name}
+%{prefix}/bin
+%{prefix}/lib
+%{prefix}/man
+
+%changelog
+* Sat Aug 04 2001 Markus Linnala «maage@cs.tut.fi»
+- Build and include docs and libs correctly
+- Build extra programs
+
+* Tue Aug 01 2000 Stuart Young «cefiar1@optushome.com.au»
+- Updated RPM to 3.85beta.
+- Modified spec file (merged George and Keitaro's specs)
+- Added reasonable info to the specs to reflect the maintainer
+- Renamed lame.spec (plain spec is bad, mmkay?).
+
+* Fri Jun 30 2000 Keitaro Yosimura «ramsy@linux.or.jp»
+- Updated RPM to 3.84alpha.
+- Better attempt at an RPM, independant of 3.83 release.
+- (This is all surmise as there was no changelog).
+
+* Thu May 30 2000 Georges Seguin «crow@planete.net» 
+- First RPM build around 3.83beta
