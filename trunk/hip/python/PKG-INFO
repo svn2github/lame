@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pyhip
+Version: 0.1
+Summary: A wrapper for libmp3hip.
+Home-page: http://maski.org/pyhip/
+Author: Myers Carpenter
+Author-email: myers_carpenter@users.sf.net
+License: LGPL
+Description: UNKNOWN
+Platform: UNKNOWN

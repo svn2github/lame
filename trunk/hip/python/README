@@ -1,0 +1,47 @@
+pyvorbis - a Python wrapper for the Ogg/Vorbis library
+
+Ogg/Vorbis is available at http://www.xiph.org
+
+This is the Vorbis module. You will need to download and install the
+Python ogg module (available wherever you got this) before you can
+build the vorbis module.
+
+Access this module via "import ogg.vorbis" or "from ogg.vorbis import
+*". You can now write Python programs to encode and decode Ogg Vorbis
+files (encoding is quite a bit more involved). The module is
+self-documenting, though I need to update quite a bit of it. Look at
+test/ogg123.py, test/short.py, and test/enc.py for very simple
+demonstrations of the module interface.
+
+And if anyone is wondering why I have things separated into a main
+module "ogg" and a submodule "ogg.vorbis", vorbis is the audio subset
+of the ogg bitstream. In the future there will likely be a video part
+of the ogg bistream, and nothing in the ogg modulue really has to know
+about anything specific in the vorbis module.
+ 
+To build, you need the distutils package, availible from
+http://www.python.org/sigs/distutils-sig/download.html (it comes with
+Python 2.0). Run config_unix.py first to generate a Setup file. Then
+run "python setup.py build" to build and then as root run "python
+setup.py install".  You may need to run config_unix.py with a
+"--prefix" option if you installed your ogg or vorbis libraries in a
+weird place.
+
+To decode, you'll basically want to create a VorbisFile object and
+read data from that.  You can then write the data to a sound
+device. I've used both the pyao wrapper (also by me) and the
+linuxsounddev module present in Python2.0.
+
+To encode, you need to feed a VorbisDSPState object PCM data as one
+array of floating point values ranging from -1.0 ... 1.0 per
+channel. You can do this in pure Python, but it almost doubles the
+time it takes to encode (less if you optimize it, I suppose).
+
+Perhaps you are wondering how much of a performance hit you'll be
+taking using the Python bindings versus straight C. Well, I've tried
+to make things as fast as possible, but of course nothing's
+perfect. Decoding a file, top reports about the same CPU usage for my
+ogg123.py and the C implementation of ogg123. For encoding, it's about
+twice as slow if you're using my test enc.py file. It can probably
+stand some speedup, though.
+
