@@ -19,7 +19,7 @@ Starting with LAME 3.0:
 <hr></h3>
 
 <h3>
-LAME&nbsp;3.83beta&nbsp; (CVS)</h3>
+LAME 3.83beta&nbsp; (CVS)</h3>
 
 <ul>
 <li>
@@ -32,6 +32,9 @@ LAME 3.82beta&nbsp;&nbsp; May 11 2000</h3>
 <ul>
 <li>
 Robert Hegemann:&nbsp; Fixed bug in high bitrate joint stereo encodings.</li>
+
+<li>
+<font color="#3366FF">Naoki Shibata:&nbsp; new long block MDCT&nbsp;routine</font></li>
 </ul>
 
 <h3>
@@ -42,12 +45,18 @@ LAME 3.81beta&nbsp; May 8 2000</h3>
 all ISO code removed!</li>
 
 <li>
-<font color="#3366FF">Takehiro Tominaga and Naoki Shibata:&nbsp; new MDCT
-routines.</font></li>
+<font color="#3366FF">Takehiro Tominaga and Naoki Shibata:&nbsp; new window
+subband routines.</font></li>
 
 <li>
-ISO 7680bit buffer limitation removed.&nbsp; It can be reactivated with
-"--strictly-enforce-ISO"&nbsp; Please report any trouble with high bitrates.</li>
+<font color="#000000">Naoki Shibata:&nbsp; Bug fix in mpglib (decoding)
+lib:&nbsp; in some cases, MDCT&nbsp;coefficients from previous granule
+was incorrectly used for the next granule.&nbsp;</font></li>
+
+<li>
+<font color="#FF0000">ISO 7680 bit buffer limitation removed.&nbsp; It
+can be reactivated with "--strictly-enforce-ISO"&nbsp; Please report any
+trouble with high bitrates.</font></li>
 </ul>
 
 <h3>
