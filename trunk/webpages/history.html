@@ -27,6 +27,10 @@ LAME 3.80beta&nbsp; (CVS)</h3>
 huffman encoding!</font></li>
 
 <li>
+<font color="#FF0000">Takehiro Tominaga and Mark Taylor:&nbsp; much improved
+short block compression!</font></li>
+
+<li>
 <font color="#000000">Tomasz Motylewski and Mark Taylor:&nbsp; MPEG2.5
 now supported!</font></li>
 
@@ -38,6 +42,18 @@ This replaces the last of the ISO code.</font></li>
 <font color="#FF0000">Scott&nbsp; Manley and Mark Taylor:&nbsp; good resampling
 routine finaly in LAME.&nbsp; uses a 19 point FIR filter with Blackman
 window.&nbsp; Very slow for non integer resampling ratios.</font></li>
+
+<li>
+<font color="#000000">Iwasa Kazmi:&nbsp; fixed SIGBUS error:&nbsp; VBR
+and id3 tags were using data after it was free()'d.</font></li>
+
+<li>
+<font color="#FF0000">Robert Hegemann:&nbsp; Improved VBR tuning.&nbsp;
+#define RH_QUALITY_CONTROL and #RH_SIDE_VBR now the defaults.</font></li>
+
+<li>
+<font color="#000000">Robert Hgemann:&nbsp;&nbsp; LAME&nbsp;version string
+now added to ancillary data.</font></li>
 </ul>
 
 <h3>
@@ -45,7 +61,7 @@ LAME 3.70&nbsp;&nbsp; April 6 2000</h3>
 
 <ul>
 <li>
-"LAME&nbsp;3.69beta comes LAME 3.70 "stable"</li>
+"LAME 3.69beta comes LAME 3.70 "stable"</li>
 </ul>
 
 <h3>
@@ -444,7 +460,8 @@ LAME 3.53beta&nbsp; November 8 1999</h3>
 <li>
 <font color="#3366FF">Takehiro Tominaga:&nbsp; Fixed MPEG2 problem in new
 MDCT routines.&nbsp; Takehiro's combined filterbank/MDCT routine is now
-the default.&nbsp; Removes all buffering from psymodel.c and the filterbanks/MDCT
+the
+default.&nbsp; Removes all buffering from psymodel.c and the filterbanks/MDCT
 routines.</font></li>
 </ul>
 
