@@ -1,11 +1,17 @@
 ## $Id$
 
 all: 
-	config_unix.py
-	python2.1 setup.py build
+	if test @BUILD_PYTHON_MOD@ = yes; then \
+		python2.1 setup.py build; \
+	fi
+
 
 install: 
-	python2.1 setup.py install --prefix $(DESTDIR)
+	if test @BUILD_PYTHON_MOD@ = yes; then \
+		python2.1 setup.py install --prefix $(DESTDIR)\
+	fi
 
 clean:
-	-python2.1 setup.py clean --all
+	if test @BUILD_PYTHON_MOD@ = yes; then \
+		-python2.1 setup.py clean --all \
+	fi
