@@ -16,17 +16,17 @@ Tuning by listening tests:</h3>
 
 <ul>
 <li>
-Most improvements in GPSYCHO require detailed listening tests.&nbsp; I
-think the best way to go about this is to find a sample where GPSYCHO does
-something bad.&nbsp; Then see if you can figure out which algorithm/tuning
-is at fault, and how it can be improved without breaking something else!</li>
+Most improvements in GPSYCHO require detailed listening tests.&nbsp; The
+best way to go about this is to find a sample where GPSYCHO does something
+bad.&nbsp; Then see if you can figure out which algorithm/tuning is at
+fault, and how it can be improved without breaking something else!</li>
 
 <li>
-The best way to perform a listening test is the "ABC hidden reference test".&nbsp;
-Signal A is always the original .wav file.&nbsp; B and C are the encoded
-and the original signal, in a random order.&nbsp; Listen to ABC three times,
-always in that order, and rate B and C on a scale from 1-5, 5 being for
-the signal you perceive as the original.</li>
+MPEG&nbsp;likes the&nbsp; "ABC hidden reference test".&nbsp; Signal A is
+always the original .wav file.&nbsp; B and C are the encoded and the original
+signal, in a random order.&nbsp; Listen to ABC three times, always in that
+order, and rate B and C on a scale from 1-5, 5 being for the signal you
+perceive as the original.</li>
 </ul>
 <a href="preecho.html">Tuning by reverse engineering:</a>&nbsp;&nbsp; Here
 is a detailed example on how the pre-echo algorithm in LAME 3.10 was tuned
@@ -60,6 +60,16 @@ than LAME,&nbsp; I would be very interested.
 Test cases which need work</h1></center>
 
 <h3>
+<a href="../download/samples">vbrtest.wav</a>&nbsp; Banjo music, fools
+VBR modes.&nbsp;&nbsp; (.8M&nbsp; 5 seconds)</h3>
+VBR algorithms based on psycho acoustics (rather than perceptual entropy)
+have trouble with this sample.&nbsp;&nbsp;&nbsp; VBR modes encode this
+sample at about 20kbs less then the average sample, and this is not a case
+were VBR is getting the same quality at a lower bitrate!&nbsp;&nbsp; Robert:
+where did this case come from?
+<br>&nbsp;
+<br><a href="../download/samples"></a>&nbsp;
+<h3>
 <a href="../download/samples">hihat.wav</a> pre-echo from a hi-hat.&nbsp;&nbsp;
 (.5M&nbsp; 3 seconds)</h3>
 Zia Mazhar&nbsp; writes:&nbsp; "It's a simple sound of a hi-hat. I tried
@@ -69,7 +79,6 @@ version of LAME. But none sounds like the original. FhG sounds best, though.
 Other encoders add a amplified "hissing sound" to the file. You can see
 the difference even in the *WinAmp eq-visualization* display. It seems
 that the original frequency changes a lot.
-<br>&nbsp;
 <br>&nbsp;
 <br>&nbsp;
 <h3>
@@ -83,18 +92,11 @@ underwater sound.&nbsp;&nbsp; The old FhG encoder l3enc also has the same
 problems.
 <ul>
 <li>
-<a href="http://cegt201.bradley.edu/~jodaman/dev/mp3">Joda's Space</a></li>
+<a href="http://cegt201.bradley.edu/~jodaman/dev/mp3">Joda's Space</a>&nbsp;
+The originator of this ftb_test.wav, and a rare example of the right way
+to test encoders!</li>
 </ul>
 
-<h3>
-<a href="../download/samples">track7.wav</a>&nbsp;&nbsp; Jazz sample&nbsp;
-(800K,&nbsp; 4 seconds)</h3>
-Sent by Naoki SHIBATA,&nbsp; shibatch@geocities.co.jp, see <a href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>
-<br>Naoki can hear noise in the left channel, but only when using a good
-pair of headphones.&nbsp; It goes away
-<br>when joint stereo is not used.&nbsp; Comparing with FhG, it looks like
-LAME is toggling back and forth between
-<br>MS and regular stereo when it should not be.
 <br>&nbsp;
 <br>&nbsp;
 <br>&nbsp;
@@ -182,7 +184,7 @@ Sent by Naoki SHIBATA,&nbsp; shibatch@geocities.co.jp, see <a href="http://www.g
 pair of headphones.&nbsp; It goes away
 <br>when joint stereo is not used.&nbsp; Comparing with FhG, it looks like
 LAME is toggling back and forth between
-<br>MS and regular stereo when it should not be.&nbsp; As of LAME&nbsp;3.83:
+<br>MS and regular stereo when it should not be.&nbsp; As of LAME 3.83:
 noise is almost gone.
 <br>&nbsp;
 <br>&nbsp;
