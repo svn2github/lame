@@ -28,3 +28,4 @@
 *.wav -k 'b'
 *.dsp -k 'b'
 *.dsw -k 'b'
+*.ico -k 'b'
