@@ -1,0 +1,165 @@
+#
+# Makefile.in for LAME 3.xx lib
+#
+# processed by ./configure to produce Makefile
+#
+#
+# these variables are available on command line:
+#
+#   make UNAME=xxxxx ARCH=xxxxx   - specify a type of host
+#   make PGM=lame_exp             - specify a name of an executable file
+#
+#
+SHELL = @SHELL@
+@SET_MAKE@
+
+UNAME = $(shell uname)
+ARCH = $(shell uname -m)
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+BINDIR = @bindir@
+LIBDIR = $(prefix)/lib
+INCLUDEDIR = $(prefix)/include
+CC     = @CC@
+CFLAGS = @CFLAGS@
+LDFLAGS= @LDFLAGS@
+DEFS   = @CONFIG_DEFS@
+INCLUDES = @INCLUDES@
+INSTALL= @INSTALL@
+INSTALL_PROGRAM=@INSTALL_PROGRAM@
+INSTALL_DATA=@INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+
+SHARED_LIB = libmp3lame.so
+SHARED_LIB_MAJOR = $(SHARED_LIB).@LIB_MAJOR_VERSION@
+SHARED_LIB_MINOR = $(SHARED_LIB_MAJOR).@LIB_MINOR_VERSION@
+
+AR = @AR@
+RANLIB = @RANLIB@
+MAKEDEP = @MAKEDEP@
+RM_F = @RM_F@
+LN_S = @LN_S@
+
+lib_sources = \
+	bitstream.c \
+	encoder.c \
+	fft.c \
+        id3tag.c \
+        lame.c \
+        newmdct.c \
+	psymodel.c \
+	quantize.c \
+	quantize_pvt.c \
+	vbrquantize.c \
+	reservoir.c \
+	tables.c \
+	takehiro.c \
+	util.c \
+        VbrTag.c \
+	vorbis_interface.c \
+	mpglib_interface.c \
+        version.c
+
+lib_obj = $(lib_sources:.c=.o) 
+
+mpglib_sources = ../mpglib/common.c \
+        ../mpglib/dct64_i386.c \
+        ../mpglib/decode_i386.c \
+        ../mpglib/layer1.c \
+        ../mpglib/layer2.c \
+        ../mpglib/layer3.c \
+        ../mpglib/tabinit.c \
+        ../mpglib/interface.c 
+mpglib_obj = $(mpglib_sources:.c=.o) 
+
+all_sources = $(lib_sources) @LIB_SOURCES@
+
+lib_obj = $(all_sources:.c=.o)
+
+DEP = $(all_sources:.c=.d)
+
+
+
+
+NASM = nasm
+ASFLAGS=-f elf -i i386/
+%.o: %.nas
+	$(NASM) $(ASFLAGS) $< -o $@
+%.o: %.s
+	gcc -c $< -o $@
+
+## have NASM
+#CFLAGS += -DHAVE_NASM
+#lib_obj += i386/cpu_feat.o
+
+## use MMX extension. you need nasm and MMX supported CPU.
+#CFLAGS += -DMMX_choose_table
+#lib_obj += i386/choose_table.o
+
+%.o: %.c 
+	$(CC) $(INCLUDES) $(DEFS) $(CFLAGS) -c $< -o $@
+
+%.d: %.c
+  ifeq ($(NOUNIXCMD),YES)
+	$(CC) $(MAKEDEP) $(INCLUDES) $(DEFS) $(CFLAGS)  $< > $@
+  else
+	$(SHELL) -ec '$(CC) $(MAKEDEP) $(INCLUDES) $(DEFS) $(CFLAGS)  $< | sed '\''s;$*.o;& $@;g'\'' > $@'
+  endif
+
+all: @LIB_TARGETS@
+
+
+libmp3lame.a:  $(lib_obj) Makefile
+	$(AR) cr libmp3lame.a  $(lib_obj)
+	$(RANLIB) libmp3lame.a
+
+#shared library, probably GNU specific?
+libmp3lame.so:  $(lib_obj) Makefile
+	$(CC) -shared -Wl,-soname,$(SHARED_LIB_MAJOR) -o $(SHARED_LIB_MINOR) $(LDFLAGS) $(lib_obj)
+	@$(RM_F) $(SHARED_LIB_MAJOR)
+	$(LN_S) $(SHARED_LIB_MINOR) $(SHARED_LIB_MAJOR)
+	@$(RM_F) $(SHARED_LIB)
+	$(LN_S) $(SHARED_LIB_MAJOR) $(SHARED_LIB)
+
+install_header:
+	@mkdir -p $(INCLUDEDIR)
+	$(INSTALL_DATA) ../include/lame.h $(INCLUDEDIR)
+
+install_static_lib: libmp3lame.a install_header
+	@mkdir -p $(LIBDIR)
+	$(INSTALL_DATA) libmp3lame.a $(LIBDIR)
+
+install_shared_lib: libmp3lame.so install_header
+	@mkdir -p $(LIBDIR)
+	$(INSTALL_DATA) $(SHARED_LIB_MINOR) $(LIBDIR)
+	@$(RM_F) $(LIBDIR)/$(SHARED_LIB_MAJOR)
+	(cd $(LIBDIR) && $(LN_S) $(SHARED_LIB_MINOR) $(SHARED_LIB_MAJOR))
+	@$(RM_F) $(LIBDIR)/$(SHARED_LIB)
+	(cd $(LIBDIR) && $(LN_S) $(SHARED_LIB_MAJOR) $(SHARED_LIB))
+
+install: @LIB_INSTALL_TARGETS@
+
+uninstall:
+	$(RM_F) $(INCLUDEDIR)/lame.h
+	$(RM_F) $(LIBDIR)/libmp3lame.a
+	$(RM_F) $(LIBDIR)/$(SHARED_LIB)
+	$(RM_F) $(LIBDIR)/$(SHARED_LIB_MAJOR)
+	$(RM_F) $(LIBDIR)/$(SHARED_LIB_MINOR)
+
+
+clean:
+	-$(RM_F) $(lib_obj) $(DEP) \
+         libmp3lame.a $(SHARED_LIB) $(SHARED_LIB_MAJOR) $(SHARED_LIB_MINOR)
+
+tags: TAGS
+
+TAGS: $(all_sources) 
+	etags -T $(all_sources) 
+
+ifneq ($(MAKECMDGOALS),clean)
+  -include $(DEP)
+endif
+
+
