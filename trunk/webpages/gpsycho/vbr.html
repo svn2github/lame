@@ -108,7 +108,7 @@ VBR need to do any (expensive) quantization!</tt>
 a combination of global_gain, subblock_gain, preflag,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scalefac_scale,
 etc... so that:&nbsp; gain[sfb] &lt;= desired_gain[sfb]</tt>
-<br>&nbsp;<tt></tt>
+<br>&nbsp;
 <p><tt>step 4:&nbsp;&nbsp;&nbsp; VBR_quantize_granule()&nbsp; in vbrquantize.c</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Calculate
 the number of bits needed to encode the frame with</tt>
@@ -116,8 +116,8 @@ the number of bits needed to encode the frame with</tt>
 values computed in step 3.&nbsp; Unlike CBR, VBR (usually) only</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; has
 to do this expensive huffman bit counting stuff once!</tt>
-<br>&nbsp;<tt></tt>
-<p><tt>step 5:&nbsp;&nbsp;&nbsp; VBR_noise_shaping() in vbrquantize.c:</tt><tt></tt>
+<br>&nbsp;
+<p><tt>step 5:&nbsp;&nbsp;&nbsp; VBR_noise_shaping() in vbrquantize.c:</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
 bits &lt; minimum_bits:&nbsp; Repeat step 3, only with a larger value of</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; global_gain.&nbsp;
@@ -125,11 +125,11 @@ bits &lt; minimum_bits:&nbsp; Repeat step 3, only with a larger value of</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
 bits > maximum_bits:&nbsp; decrease global_gain, keeping all other</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scalefactors
-the same.</tt><tt></tt>
+the same.</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usually
 step 5 is not necessary.</tt>
-<br><tt></tt>&nbsp;
-<br>&nbsp;<tt></tt>
+<br>&nbsp;
+<br>&nbsp;
 <p><tt>step 6:&nbsp;&nbsp;&nbsp; VBR_quantize() in vbrquantize.c</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; After
 encoding both channels and granules, check to make sure</tt>
@@ -146,15 +146,13 @@ of bits.</tt>
 <p>
 <hr WIDTH="100%">
 <br><tt>The actual flow chart looks something like this:</tt>
-<br><tt></tt>&nbsp;<tt></tt>
+<br>&nbsp;
 <p><tt>VBR_quantize()</tt>
-<br><tt>&nbsp;</tt>
-<br><tt>&nbsp;&nbsp; determine minbits, maxbits for each granule</tt>
-<br><tt>&nbsp;&nbsp; determine max_frame_bits</tt><tt></tt>
+<p><tt>&nbsp;&nbsp; determine minbits, maxbits for each granule</tt>
+<br><tt>&nbsp;&nbsp; determine max_frame_bits</tt>
+<br><tt>&nbsp;&nbsp; adjust global quality setting based on VBR_q</tt>
 <p><tt>&nbsp;&nbsp; do</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frame_bits=0</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adjust global quality setting based
-on VBR_q</tt><tt></tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loop over each channel, granule:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute
 thm[sfb]</tt>
@@ -162,37 +160,36 @@ thm[sfb]</tt>
 Encodes each granule with minbits &lt;= bits &lt;=maxbits</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frame_bits
 += bits</tt>
-<br><tt>&nbsp;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; while (frame_bits > max_frame_bits)</tt>
-<br><tt></tt>&nbsp;
-<br><tt></tt>&nbsp;<tt></tt>
-<p><tt>VBR_noise_shaping():</tt><tt></tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lower the global quality setting</tt>
+<p><tt>&nbsp;&nbsp; while (frame_bits > max_frame_bits)</tt>
+<br>&nbsp;
+<br>&nbsp;
+<p><tt>VBR_noise_shaping():</tt>
 <p><tt>&nbsp;&nbsp;&nbsp; find_scalefac()&nbsp;&nbsp; (computes desired_gain)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; Estimate largest possible value of global_gain</tt><tt></tt>
+<br><tt>&nbsp;&nbsp;&nbsp; Estimate largest possible value of global_gain</tt>
 <p><tt>&nbsp;&nbsp;&nbsp; do</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute_scalefac_long/short()&nbsp;&nbsp;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute_scalefac_long/short()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scalefacts, etc. so
 that gain &lt;= desired_gain)</tt>
-<br><tt>&nbsp;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits = VBR_quantize_granule()</tt><tt></tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits = VBR_quantize_granule()</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (bits &lt; minbits
-&amp;&amp;&nbsp;analog silence) break;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (bits >= minbits)&nbsp;break;</tt>
-<br><tt>&nbsp;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; decrease global_gain
-(which increases number of bits used)</tt><tt></tt>
-<p><tt>&nbsp;&nbsp;&nbsp; while 1</tt><tt></tt>
-<p><tt>&nbsp;&nbsp;&nbsp; if bits >&nbsp;maxbits</tt>
+&amp;&amp; analog silence) break;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (bits >= minbits)
+break;</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; decrease global_gain
+(which increases number of bits used)</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; while 1</tt>
+<p><tt>&nbsp;&nbsp;&nbsp; if bits > maxbits</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increase
 global_gain</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits
 = VBR_quantize_granule()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (bits > maxbits)</tt>
-<br><tt></tt>&nbsp;
-<br><tt></tt>&nbsp;
-<br><tt></tt>&nbsp;<tt></tt>
-<p><tt>find_scalefac()</tt><tt></tt>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p><tt>find_scalefac()</tt>
 <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple divide and conquer iteration
 which repeatidly</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; calls calc_sfb_noise() with different
@@ -200,11 +197,11 @@ values of desired_gain</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; until it finds the largest desired_gain
 such that the</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quantization_noise &lt; allowed
-masking&nbsp;&nbsp;&nbsp;</tt>
-<br><tt>&nbsp;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requires 7 iterations.</tt>
-<br><tt></tt>&nbsp;<tt></tt>
-<p>&nbsp;
+masking</tt>
+<p><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requires 7 iterations.</tt>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
 <br>&nbsp;
 <br>&nbsp;
 <br>&nbsp;
