@@ -54,6 +54,10 @@ body {
   color: silver;
 }
 
+#footer img {
+   margin: 0px 10px;
+}
+
 ul.sitemap {
   padding: 0px;
 }
