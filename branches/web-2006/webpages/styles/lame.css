@@ -11,7 +11,7 @@ body {
   margin: 10px 5em 10px 10em;
   padding: 0;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:14px;
+  font-size: 14px;
 }
 
 #last {
@@ -48,11 +48,18 @@ body {
 }
 
 #footer {
-	position: absolute;
-	bottom: 20px;
-	padding: 4px;
-	font-family: verdana, arial, helvetica, sans-serif;
-	font-size:15px;
+  padding: 4px;
+  text-align: center;
+  font-size: x-small;
+  color: silver;
+}
+
+ul.sitemap {
+  padding: 0px;
+}
+
+ul.sitemap li {
+  list-style: none;
 }
 
 table {
@@ -72,5 +79,9 @@ span {
   position: relative;
   border-width: 0px;
   padding: 20px;
+}
+
+img {
+  border: 0px;
 }
 
