@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: index.php,v 1.1.2.3 2006-09-20 07:33:08 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: index.php,v 1.1.2.4 2006-09-20 07:38:22 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -29,28 +29,29 @@
 
 <h3 id="latest_release">Latest LAME release: v3.96.1 (July 2004)</h3>
 
-<p> LAME development started around mid-1998. Mike Cheng started it as a patch
+<p>LAME development started around mid-1998. Mike Cheng started it as a patch
 against the 8hz-MP3 encoder sources. After some quality concerns raised by
 others, he decided to start from scratch based on the dist10 sources. His goal
 was only to speed up the dist10 sources, and leave its quality untouched. That
 branch (a patch against the reference sources) became Lame 2.0, and only on Lame
-3.81 we replaced of all dist10 code, making LAME no more only a patch.</p>
+3.81 did we replaced of all dist10 code, making LAME no more only a patch.</p>
 
 <p>The project quickly became a team project. Mike Cheng eventually left
 leadership and started working on tooLame, an MP2 encoder. Mark Taylor became
-leader and started pursuing increased quality besides better speed. He can be
-considered the initiator of the LAME project in its current form. He released
-version 3.0 featuring gpsycho, a new psychoacoustic model developed by him.</p>
-
-<p>In early 2003 Mark left project leadership, and since than the project has
-been lead on by teamwork of the active developers (currently 4 individuals).</p>
-
-<p>Nowadays LAME is considered the best MP3 encoder at mid-high bitrates and at
-VBR, mostly thanks to the dedicated work of its developers and the open source
-licensing model, that allowed the project to tap into engineering resources from
-all around the world. And both quality and speed improvements are still
-happening, probably making LAME the only MP3 encoder still being actively
+leader and started pursuing increased quality in addition to better speed. He
+can be considered the initiator of the LAME project in its current form. He
+released version 3.0 featuring gpsycho, a new psychoacoustic model he
 developed.</p>
+
+<p>In early 2003 Mark left project leadership, and since then the project has
+been lead through the cooperation of the active developers (currently 4
+individuals).</p>
+
+<p>Today, LAME is considered the best MP3 encoder at mid-high bitrates and at
+VBR, mostly thanks to the dedicated work of its developers and the open source
+licensing model that allowed the project to tap into engineering resources from
+all around the world. Both quality and speed improvements are still happening,
+probably making LAME the only MP3 encoder still being actively developed.</p>
 
 </div>
 <?php include("footer.html") ?>
