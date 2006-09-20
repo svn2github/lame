@@ -6,9 +6,12 @@
   <title>LAME MP3 Encoder :: About</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: about.php,v 1.1.2.2 2006-09-19 05:42:08 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: about.php,v 1.1.2.3 2006-09-20 07:10:00 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
+  <!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="styles/ie.css" />
+  <![endif]-->
 </head>
 <body>
 
@@ -18,7 +21,7 @@
 <div id="content">
 
 <div align="center">
-  <img src="./images/logo.gif" width="358" height="231" alt="LAME Official logo" />
+  <img src="images/logo.gif" width="358" height="231" alt="LAME Official logo" />
   <h1>About LAME</h1>
 </div>
 
@@ -47,7 +50,7 @@ countries.</p>
 <ul>
 
   <li>Many improvements in quality in speed over ISO reference software. See <a
-  href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/lame/lame/doc/html/history.html?rev=HEAD">
+  href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
   history</a>.</li>
 
   <li>MPEG1,2 and 2.5 layer III encoding.</li>
@@ -79,19 +82,19 @@ countries.</p>
 
 <ul>
 
-  <li><a href="links.php">Software which uses LAME</a>.</li>
+  <li><a href="links.php#OpenSource">Software which uses LAME</a>.</li>
 
   <li><a href="links.php#Binaries">MP3 Related Links</a>.</li>
 
   <li><a href="developers.php">Who is The LAME Project</a></li>
 
   <li><a
-  href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/lame/lame/doc/html/history.html?rev=1.70">History
+  href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">History
   and ChangeLog</a></li>
 
   <li><a href="rationale.php">Rationale, by Mike Cheng, Sept. 1998</a></li>
 
-  <li><a href="http://toolame.sourceforge.net">TooLAME (layer II encoding)</a></li>
+  <li><a href="http://toolame.sourceforge.net/">TooLAME (layer II encoding)</a></li>
 
 </ul>
 
