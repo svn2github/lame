@@ -1,7 +1,7 @@
 body {
   background: #FFFFFF;
   color: #000000;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   text-align: justify;
@@ -14,17 +14,13 @@ body {
   font-size: 14px;
 }
 
-#last {
-  border: 0 !important;
-}
-
 #menu {
+  position: fixed;
+  top: 10px;
+  left: 10px;
   background: #17529D;
   border: 1px outset #808080;
-  left: 10px;
-  position: fixed;
   text-align: center;
-  top: 10px;
   width: 6em;
 }
 
