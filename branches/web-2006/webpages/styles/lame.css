@@ -70,6 +70,10 @@ table {
   font-size:12px;
 }
 
+table.devlist th {
+  font-size: 18px;
+}
+
 h3#latest_release {
   text-align: center;
   background: #CFF57C;
