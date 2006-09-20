@@ -6,9 +6,12 @@
   <title>LAME MP3 Encoder :: Site Map</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: sitemap.php,v 1.1.2.2 2006-09-19 07:39:08 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: sitemap.php,v 1.1.2.3 2006-09-20 06:30:45 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
+  <!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="styles/ie.css" />
+  <![endif]-->
 </head>
 <body>
 
@@ -21,6 +24,10 @@
   <img src="./images/logo.gif" width="358" height="231" alt="LAME Official logo" />
   <h1>About LAME</h1>
 </div>
+
+<div style="float: right;"><a href="http://www.jedit.org"><img
+src="images/jedit.png" height="40px" width="120px" border="0" alt="Made with
+jEdit" /></a></div>
 
 <ul class="sitemap">
 
@@ -112,8 +119,6 @@
     </ul>
   </li>
 </ul>
-
-
 
 </div>
 <?php include("footer.html") ?>
