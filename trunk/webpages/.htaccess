@@ -1,0 +1,16 @@
+# Map old URLs to new ones
+# $Id: .htaccess,v 1.2 2006-09-23 18:44:36 kylev Exp $
+RedirectPermanent /index.html http://lame.sourceforge.net/index.php
+RedirectPermanent /about.html http://lame.sourceforge.net/about.php
+RedirectPermanent /contact.html http://lame.sourceforge.net/contact.php
+RedirectPermanent /download.html http://lame.sourceforge.net/download.php
+
+RedirectPermanent /gpsycho/abr.html http://lame.sourceforge.net/abr.php
+RedirectPermanent /gpsycho/gpsycho.html http://lame.sourceforge.net/gpsycho.php
+RedirectPermanent /gpsycho/ms_stereo.html http://lame.sourceforge.net/ms_stereo.php
+RedirectPermanent /gpsycho/outer_loop.html http://lame.sourceforge.net/outer_loop.php
+RedirectPermanent /gpsycho/preecho.html http://lame.sourceforge.net/preecho.php
+RedirectPermanent /gpsycho/quality.html http://lame.sourceforge.net/quality.php
+RedirectPermanent /gpsycho/vbr.html http://lame.sourceforge.net/vbr.php
+
+RedirectPermanent /winamp/winamp.html http://lame.sourceforge.net/winamp.php
