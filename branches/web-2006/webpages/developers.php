@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Developers</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: developers.php,v 1.1.2.2 2006-09-20 07:03:28 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: developers.php,v 1.1.2.3 2006-09-23 07:19:17 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -37,7 +37,7 @@ official hierarchy or leadership.</p>
 order of family name) that contributed resources to LAME development. LAME owes
 its quality and speed to contributions from many other people, including the
 many people who post to the mp3encoder mailing list. See <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/lame/lame/doc/html/history.html?rev=HEAD">
+href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
 History</a> for more complete details.</p>
 
 <table class="devlist">

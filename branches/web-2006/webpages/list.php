@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: The LAME Mailing List</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: list.php,v 1.1.2.2 2006-09-23 06:28:45 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: list.php,v 1.1.2.3 2006-09-23 07:19:17 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
