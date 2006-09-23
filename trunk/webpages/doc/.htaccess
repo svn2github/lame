@@ -1,0 +1,2 @@
+# Docs now pulled straight from CVS
+RedirectMatch 301 ^/doc/html/(.+)$ http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/$1
