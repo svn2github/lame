@@ -1,186 +1,207 @@
-<!DOCTYPE html
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html>
 <head>
-	<title>LAME MP3 Encoder</title>
-	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-	<meta name="generator" content="jEdit 4.2" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="./styles/lame.css" />
-    <!--[if IE]>
-      <link rel="stylesheet" type="text/css" href="./styles/ie.css" />
-    <![endif]-->
+  <title>LAME MP3 Encoder :: GPSYCHO - Variable Bit Rate</title>
+  <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
+  <meta name="generator" content="jEdit 4.2" />
+  <meta name="cvs-version" content="$Id: vbr.php,v 1.1.2.2 2006-09-23 05:25:39 kylev Exp $" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="styles/lame.css" />
+  <!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="styles/ie.css" />
+  <![endif]-->
 </head>
 <body>
-	<?php include("gpsycho.html") ?>
-	<div id="container">
-		<div id="content">
-			<div align="center"><img src="./images/logo.gif" width="358" height="231" alt="LAME Official logo"></img>
-			<h1>GPSYCHO - Variable Bit Rate</h1></div>
-			<hr></hr>
-<pre>Suggested usage: 
 
-lame -v -V 2 -b 128  input.wav output.mp3 
-  
+<?php include("menu.html") ?>
 
-VBR mode automatically uses the highest quality option.  So both 
-"-v" and "-h" are not necessary when using -V. 
+<div id="container">
+<div id="content">
 
-Options: 
+<div align="center">
+  <img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
+  <h1>GPSYCHO - Variable Bit Rate</h1>
+</div>
 
--V n   where n=0..9.   0 = highest quality 
-                       9 = lowest quality 
+<p>Suggested usage:</p>
 
--b &lt;minimum allowed bitrate> 
--B &lt;maximum allowed bitrate> 
+<blockquote class="code">lame -v -V 2 -b 128  input.wav output.mp3</blockquote>
 
-Using -B with other than 320kbs is not recommended, since even a 
-128kbs CBR stream will sometimes use frames as large as 320kbs 
-via the bitreservoir.</pre>
-				<hr></hr>
-<pre>Variables used in VBR code description: 
-  
+<p>VBR mode automatically uses the highest quality option.  So both
+"-v" and "-h" are not necessary when using -V.  Options:</p>
 
-sfb:             scale factor band index. 
-thm[sfb]:    Allowed masking.  thm[sfb] = How much noise is allowed in the sfb'th band, 
-                   as computed by the GPSYCHO. 
+<dl>
 
-gain[sfb]:    MDCT coefficents are scaled by 2^(-.25*gain) before quantizing. 
-                   Smaller values of gain (more negative) mean that more bits are required 
-                   to encode the coefficients, but the quantization noise will be (usually) smaller. 
+  <dt>-V n (where n=0..9)</dt>
+  <dd>0 = highest quality<br />9 = lowest quality</dd>
 
-desired_gain[sfb]:       The amount of gain needed so that if gain[sfb] &lt;= desired_gain[sfb], 
-                                      the quantization noise will be &lt;= thm[sfb]. 
-  
+  <dt>-b &lt;minimum allowed bitrate&gt;</dt>
 
-An MP3 can use the following variables  to achieve a given gain[sfb]: 
+  <dt>-B &lt;maximum allowed bitrate&gt;</dt>
 
-For longblocks: 
+</dl>
 
-   gain[sfb][i] =   2^  [ -.25 * ( global_gain -210 - ifqstep*scalefac[gr][ch].l[sfb] -  ifqstep*pretab[sfb]) ] 
+<p>Using -B with other than 320kbs is not recommended, since even a
+128kbs CBR stream will sometimes use frames as large as 320kbs
+via the bitreservoir.</p>
 
-For shortblocks:  (i=0..2 for the three short blocks) 
+<p>Variables used in VBR code description:</p>
 
-    gain[sfb][i] =   2^  [ -.25*(  global_gain -210  -  8*subblock_gain[i]  - ifqstep*scalefac.s[sfb][i])   ] 
-  
+<dl>
 
-ifqstep =  scalefac_scale==0 ?  2 : 4;</pre>
-				<hr></hr>
-<pre>VBR Algorithm: 
-  
-  
-step 1:    psymodel.c: 
+  <dt><code>sfb</code></dt>
 
-           Computes the allowed maskings, thm[sfb] 
-           thm[sfb] may be reduced by a few db depending on the quality setting. 
-           The smaller thm[sfb], the more bits will be required to encode the 
-           frame. 
-  
+  <dd>Scale factor band index.</dd>
 
-step 2:    find_scalefac() in vbrquantize.c: 
+  <dt><code>thm[sfb]</code></dt>
 
-           Compute desired_gain[sfb]: 
+  <dd>Allowed masking. <code>thm[sfb]</code> = How much noise is allowed in the
+  sfb'th band, as computed by the GPSYCHO.</dd>
 
-           for (sfb=0, sfb &lt; SBMAX, ++sfb) 
-              compute desired_gain[sfb] using a divide and conquer iteration 
-              so that quantization_noise[sfb] &lt; thm[sfb] 
+  <dt><code>gain[sfb]</code></dt>
 
-              This requires 7 iterations of calc_sfb_noise() which computes 
-              quantization error for the specified gain.  This is the only time 
-              VBR need to do any (expensive) quantization! 
-  
+  <dd>MDCT coefficents are scaled by 2^(-.25*gain) before quantizing. Smaller
+  values of gain (more negative) mean that more bits are required to encode the
+  coefficients, but the quantization noise will be (usually) smaller.</dd>
 
-step 3:    VBR_noise_shaping() in vbrquantize.c: 
+  <dt><code>desired_gain[sfb]</code></dt>
 
-           Find a combination of global_gain, subblock_gain, preflag, 
-           scalefac_scale, etc... so that:  gain[sfb] &lt;= desired_gain[sfb] 
-  
+  <dd>The amount of gain needed so that if gain[sfb] &lt;= desired_gain[sfb],
+  the quantization noise will be &lt;= thm[sfb].</dd>
 
-step 4:    VBR_quantize_granule()  in vbrquantize.c 
+</dl>
 
-           Calculate the number of bits needed to encode the frame with 
-           the values computed in step 3.  Unlike CBR, VBR (usually) only 
-           has to do this expensive huffman bit counting stuff once! 
-  
+<p>An MP3 can use the following variables to achieve a given gain[sfb]. For
+longblocks:</p>
 
-step 5:    VBR_noise_shaping() in vbrquantize.c: 
+<blockquote class="code">gain[sfb][i] = 2^ [ -.25 * ( global_gain -210 - ifqstep*scalefac[gr][ch].l[sfb] - ifqstep*pretab[sfb]) ]</blockquote>
 
-           if bits &lt; minimum_bits:  Repeat step 3, only with a larger value of 
-           global_gain.  (but allow bits &lt; minimum_bits for analog silence) 
+<p>For shortblocks (i=0..2 for the three short blocks):</p>
 
-           if bits > maximum_bits:  decrease global_gain, keeping all other 
-           scalefactors the same. 
+<blockquote class="code">gain[sfb][i] =   2^  [ -.25*(  global_gain -210  -  8*subblock_gain[i]  - ifqstep*scalefac.s[sfb][i])   ]</blockquote>
 
-           Usually step 5 is not necessary. 
-  
-  
-step 6:    VBR_quantize() in vbrquantize.c 
+<p>In both of the above cases, calculate <code>ifqstep</code>:</p>
 
-           After encoding both channels and granules, check to make sure 
-           that the total number of bits for the whole frame does not 
-           exceed the maximum allowed. If it does, lower the quality 
-           and repeat steps 2,3 and 4 for the granules that were using 
-           lots of bits.</pre>
-				<hr></hr>
-<pre>The actual flow chart looks something like this: 
-  
+<blockquote class="code">ifqstep =  scalefac_scale==0 ?  2 : 4;</blockquote>
 
-VBR_quantize() 
+<h3>Algorithm</h3>
 
-   determine minbits, maxbits for each granule 
-   determine max_frame_bits 
-   adjust global quality setting based on VBR_q 
+<p>The VBR algorithm is as follows.</p>
 
-   do 
-      frame_bits=0 
+<dl>
 
-      loop over each channel, granule: 
-          compute thm[sfb] 
-          bits=VBR_noise_shaping():  Encodes each granule with minbits &lt;= bits &lt;= maxbits 
-          frame_bits += bits 
+  <dt>Step 1: <code>psymodel.c</code></dt>
 
-      lower the global quality setting 
+  <dd>Computes the allowed maskings, thm[sfb] thm[sfb] may be reduced by a few
+  db depending on the quality setting. The smaller thm[sfb], the more bits will
+  be required to encode the frame.</dd>
 
-   while (frame_bits > max_frame_bits) 
-    
+  <dt>Step 2: <code>find_scalefac()</code> in <code>vbrquantize.c</code></dt>
 
-VBR_noise_shaping(): 
+  <dd>Compute <code>desired_gain[sfb]</code> by iterating over the values of
+  <code>sfb</code> from 0 to <code>SBMAX</code>. At each value, compute
+  desired_gain[sfb] using a divide and conquer iteration so that
+  <code>quantization_noise[sfb] &lt; thm[sfb]</code> . This requires 7
+  iterations of <code>calc_sfb_noise()</code> which computes quantization error
+  for the specified gain. This is the only time VBR needs to do any (expensive)
+  quantization!</dd>
 
-    find_scalefac()   (computes desired_gain) 
-    Estimate largest possible value of global_gain 
+  <dt>Step 3: <code>VBR_noise_shaping()</code> in vbrquantize.c</dt>
 
-    do 
-        compute_scalefac_long/short() 
-        scalefacts, etc. so that gain &lt;= desired_gain) 
+  <dd>Find a combination of global_gain, subblock_gain, preflag, scalefac_scale,
+  etc... so that: <code>gain[sfb] &lt;= desired_gain[sfb]</code></dd>
 
-        bits = VBR_quantize_granule() 
 
-        if (bits &lt; minbits &amp;&amp; analog silence) break; 
-        if (bits >= minbits) break; 
+  <dt>Step 4: <code>VBR_quantize_granule()</code> in
+  <code>vbrquantize.c</code></dt>
 
-        decrease global_gain (which increases number of bits used) 
+  <dd>Calculate the number of bits needed to encode the frame with
+           the values computed in step 3.  Unlike CBR, VBR (usually) only
+           has to do this expensive huffman bit counting stuff once!</dd>
 
-    while 1 
 
-    if bits > maxbits 
-       do 
-           increase global_gain 
-           bits = VBR_quantize_granule() 
-       while (bits > maxbits) 
-  
- 
-find_scalefac() 
+  <dt>Step 5: <code>VBR_noise_shaping()</code> in <code>vbrquantize.c</code></dt>
 
-      Simple divide and conquer iteration which repeatidly 
-      calls calc_sfb_noise() with different values of desired_gain 
-      until it finds the largest desired_gain such that the 
-      quantization_noise &lt; allowed masking 
+  <dd>if bits &lt; minimum_bits: Repeat step 3, only with a larger value of
+  global_gain. (but allow bits &lt; minimum_bits for analog silence)<br />
 
-      Requires 7 iterations.</pre>
-		</div>
-	<?php include("footer.html") ?>
-	</div>
+  if bits > maximum_bits: decrease global_gain, keeping all other scalefactors
+  the same.<br />
+
+  Usually step 5 is not necessary.</dd>
+
+  <dt>step 6: VBR_quantize() in vbrquantize.c</dt>
+
+  <dd>After encoding both channels and granules, check to make sure that the
+  total number of bits for the whole frame does not exceed the maximum allowed.
+  If it does, lower the quality and repeat steps 2,3 and 4 for the granules that
+  were using lots of bits.</dd>
+
+</dl>
+
+<h3>Flow</h3>
+
+<p>The actual flow chart looks something like this:</p>
+
+<dl>
+
+  <dt>VBR_quantize()</dt>
+
+  <dd class="code">determine minbits, maxbits for each granule
+determine max_frame_bits
+adjust global quality setting based on VBR_q
+
+do
+   frame_bits=0
+
+   loop over each channel, granule:
+       compute thm[sfb]
+       bits = VBR_noise_shaping():  Encodes each granule with minbits &lt;= bits &lt;= maxbits
+       frame_bits += bits
+
+   lower the global quality setting
+
+while (frame_bits &gt; max_frame_bits)</dd>
+
+  <dt>VBR_noise_shaping()</dt>
+
+  <dd class="code">find_scalefac()   (computes desired_gain)
+Estimate largest possible value of global_gain
+
+do
+    compute_scalefac_long/short()
+    scalefacts, etc. so that gain &lt;= desired_gain)
+
+    bits = VBR_quantize_granule()
+
+    if (bits &lt; minbits &amp;&amp; analog silence) break;
+    if (bits &gt;= minbits) break;
+
+    decrease global_gain (which increases number of bits used)
+
+while 1
+
+if bits &gt; maxbits
+    do
+        increase global_gain
+        bits = VBR_quantize_granule()
+    while (bits &gt; maxbits)</dd>
+
+
+  <dt><code>find_scalefac()</code></dt>
+
+  <dd>Simple divide and conquer iteration which repeatidly calls
+  calc_sfb_noise() with different values of desired_gain until it finds the
+  largest desired_gain such that the quantization_noise &lt; allowed masking
+  Requires 7 iterations.</dd>
+
+</dl>
+
+</div>
+<?php include("footer.html") ?>
+</div>
+
 </body>
 </html>

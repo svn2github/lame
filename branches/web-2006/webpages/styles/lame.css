@@ -64,9 +64,9 @@ ul.sitemap li {
 }
 
 table {
-	background:white;
-	color:black;
-	font-family: verdana, arial, helvetica, sans-serif;
+  background:white;
+  color:black;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size:12px;
 }
 
@@ -74,16 +74,15 @@ table.devlist th {
   font-size: 18px;
 }
 
+.code {
+  font-family: Courier, fixed;
+  white-space: pre;
+}
+
 h3#latest_release {
   text-align: center;
   background: #CFF57C;
   border: 2px solid #ABD74C;
-}
-
-span {
-  position: relative;
-  border-width: 0px;
-  padding: 20px;
 }
 
 img {
