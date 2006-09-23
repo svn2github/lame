@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Related Links</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: links.php,v 1.2 2006-09-23 18:44:37 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: links.php,v 1.3 2006-09-23 20:57:38 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -404,40 +404,23 @@ support.
 <hr></hr>
 
 <h3><a name="Shame">HALL OF SHAME</a></h3>
-<h4>The following companies/products have bee known to infringe Lame copyright by not respecting
-the terms and conditions of our license.</h4>
+
+<h4>The following companies/products have bee known to infringe Lame copyright
+by not respecting the terms and conditions of our license.</h4>
 
 <ul>
 
-<li>
-<a href="http://www.vx30.com">Maui X-Stream VX30</a> This one is a (bad) joke. It not only
-uses LAME in violation to its license (I.E, no crediting) but it uses <a
-href="http://www.drunkenblog.com/drunkenblog-archives/000534.html#vx30evidence">lots of
-other Open Source code</a> as well - even GPLd code (like XviD), which demands the entire
-program	to be released as Open Source Software.
-</li>
+  <li><a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave Flash decompiler.</li>
 
-<li>
-<a href="http://www.vx30.com/pages.php?cid=MDEwMTgx">Maui X-Stream Zentu</a> Maui X-Stream
-launched yet another "product", which is pretty much a cut-and-paste of several
-open source projects.
-</li>
+  <li><a href="http://www.smart-soft.net/">Smart-Soft</a> - all of their producs
+  that encode to MP3 use LAME or GOGO without abiding to the license. That
+  includes <a href="http://www.smartcdripper.com/"> Smart CD Ripper</a>, <a
+  href="http://www.smartmp3converter.com/">Smart MP3 converter</a> and <a
+  href="http://www.smartwavconverter.com/">Smart WAV converter</a>.</li>
 
-<li>
-<a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave Flash decompiler.
-</li>
-
-<li>
-<a href="http://www.smart-soft.net/">Smart-Soft</a> - all of their producs that encode to MP3 use
-LAME or GOGO without abiding to the license. That includes <a href="http://www.smartcdripper.com/">
-Smart CD Ripper</a>, <a href="http://www.smartmp3converter.com/">Smart MP3 converter</a> and
-<a href="http://www.smartwavconverter.com/">Smart WAV converter</a>.
-</li>
-
-<li>
-<a href="http://www.papayatech.com/">Tunespark</a> This commercial software uses the LAME
-encoding engine in violation of our copyrights and without any acknowlegement.
-</li>
+  <li><a href="http://www.papayatech.com/">Tunespark</a> This commercial
+  software uses the LAME encoding engine in violation of our copyrights and
+  without any acknowlegement.</li>
 
 </ul>
 
