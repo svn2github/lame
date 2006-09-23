@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Using LAME</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: using.php,v 1.2 2006-09-23 18:44:37 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: using.php,v 1.3 2006-09-23 20:12:25 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -42,7 +42,7 @@
 
 </ul>
 
-<h3>Documentation:</h3>
+<h3>Documentation</h3>
 
 <ul>
 
@@ -50,7 +50,9 @@
 
   <li><a href="tech-FAQ.txt">Technical FAQ</a></li>
 
-  <li><a href="doc/html/index.html">Program documentation (LAME 3.96)</a></li>
+  <li><a
+  href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/index.html">Program
+  documentation (in CVS)</a></li>
 
 </ul>
 
