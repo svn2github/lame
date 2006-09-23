@@ -1,9 +1,20 @@
 # Map old URLs to new ones
-# $Id: .htaccess,v 1.2 2006-09-23 18:44:36 kylev Exp $
+# $Id: .htaccess,v 1.3 2006-09-23 19:53:42 kylev Exp $
 RedirectPermanent /index.html http://lame.sourceforge.net/index.php
 RedirectPermanent /about.html http://lame.sourceforge.net/about.php
 RedirectPermanent /contact.html http://lame.sourceforge.net/contact.php
+RedirectPermanent /developers.html http://lame.sourceforge.net/developers.php
 RedirectPermanent /download.html http://lame.sourceforge.net/download.php
+RedirectPermanent /free.html http://lame.sourceforge.net/free.php
+RedirectPermanent /inside.html http://lame.sourceforge.net/inside.php
+RedirectPermanent /lame-faq.en.html http://lame.sourceforge.net/lame-faq.en.php
+RedirectPermanent /lame_ui_example.html http://lame.sourceforge.net/lame_ui_example.php
+RedirectPermanent /links.html http://lame.sourceforge.net/links.php
+RedirectPermanent /list.html http://lame.sourceforge.net/list.php
+RedirectPermanent /rationale.html http://lame.sourceforge.net/rationale.php
+RedirectPermanent /refs.html http://lame.sourceforge.net/refs.php
+RedirectPermanent /speed.html http://lame.sourceforge.net/speed.php
+RedirectPermanent /using.html http://lame.sourceforge.net/using.php
 
 RedirectPermanent /gpsycho/abr.html http://lame.sourceforge.net/abr.php
 RedirectPermanent /gpsycho/gpsycho.html http://lame.sourceforge.net/gpsycho.php
@@ -14,3 +25,5 @@ RedirectPermanent /gpsycho/quality.html http://lame.sourceforge.net/quality.php
 RedirectPermanent /gpsycho/vbr.html http://lame.sourceforge.net/vbr.php
 
 RedirectPermanent /winamp/winamp.html http://lame.sourceforge.net/winamp.php
+
+RedirectPermanent /history.html http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html
