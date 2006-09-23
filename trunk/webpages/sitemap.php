@@ -4,9 +4,7 @@
 <html>
 <head>
   <title>LAME MP3 Encoder :: Site Map</title>
-  <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-  <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: sitemap.php,v 1.2 2006-09-23 18:44:37 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: sitemap.php,v 1.3 2006-09-23 21:32:10 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -21,7 +19,7 @@
 <div id="content">
 
 <div align="center">
-  <img src="./images/logo.gif" width="358" height="231" alt="LAME Official logo" />
+  <img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
   <h1>Site Map</h1>
 </div>
 
@@ -72,7 +70,9 @@ jEdit" /></a></div>
   
     <ul>
     
-      <li><a href="">Documentation</a> - LAME's official documentation.</li>
+      <li><a
+      href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/index.html">Documentation</a>
+      - LAME's official documentation.</li>
 
       <li><a href="download.php">Download</a> - Download LAME source code.</li>
 
@@ -85,7 +85,7 @@ jEdit" /></a></div>
       <li><a href="lame_ui_example.php">UI Example</a> - A recommended user
       interface for developers including LAME in their apps.</li>
 
-      <li><a href="">Usage</a> - Usage documentation.</li>
+      <li><a href="using.php">Usage</a> - Usage documentation.</li>
 
      <li><a href="tech-FAQ.txt">Tech FAQ</a> - MP3 technical FAQ.</li>
 
