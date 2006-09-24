@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Related Links</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: links.php,v 1.3 2006-09-23 20:57:38 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: links.php,v 1.4 2006-09-24 14:37:50 bouvigne Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -405,7 +405,7 @@ support.
 
 <h3><a name="Shame">HALL OF SHAME</a></h3>
 
-<h4>The following companies/products have bee known to infringe Lame copyright
+<h4>The following companies/products have been known to infringe Lame copyright
 by not respecting the terms and conditions of our license.</h4>
 
 <ul>
