@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Related Links</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: links.php,v 1.4 2006-09-24 14:37:50 bouvigne Exp $" />
+  <meta name="cvs-version" content="$Id: links.php,v 1.5 2006-10-02 07:29:09 kylev Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -401,7 +401,7 @@ support.
 
 </ul>
 
-<hr></hr>
+<hr />
 
 <h3><a name="Shame">HALL OF SHAME</a></h3>
 
@@ -424,124 +424,99 @@ by not respecting the terms and conditions of our license.</h4>
 
 </ul>
 
-<h5>If you want your company name to be removed from this list because you are now complying
-with our license, please contact us</h5>
+<p><strong>If you want your company name to be removed from this list because
+you are now complying with our license, please contact us.</strong></p>
 
-<hr></hr>
+<hr />
 
-
-<a name="binaries" id="binaries"></a>
 <h3><a name="Binaries">LAME Binaries:</a></h3>
 
-<p><b>Linux:</b></p>
+<h4>Linux:</h4>
 
 <ul>
 
-<li>
-<a href="http://www.rarewares.org/">RareWares</a> offers Debian binary packages of lame and
-several other audio codecs/tools. Precompiled LAME versions for other distros are also	available.
-</li>
+  <li><a href="http://www.rarewares.org/">RareWares</a> offers Debian binary
+  packages of lame and several other audio codecs/tools. Precompiled LAME
+  versions for other distros are also available.</li>
 
-<li>
-Linux &amp; Unix: binaries for stable releases of LAME are available from the
-<a href="http://users.rsise.anu.edu.au/~conrad/not_lame/">not_lame encoder site</a>.
-</li>
+  <li>Linux &amp; Unix binaries for stable releases of LAME are available from
+  the <a href="http://users.rsise.anu.edu.au/~conrad/not_lame/">not_lame encoder
+  site</a>.</li>
+  
+  <li><a href="http://freshrpms.net/">FreshRPMs</a> offers Linux RPM <a
+  href="http://bordeaux.freshrpms.net/rpm.html?id=1203">packages for several
+  popular RPM-based distributions</a>, including Fedora Core.</li>
 
 </ul>
 
-<p><b>Windows:</b></p>
+<h4>Windows:</h4>
 
 <ul>
 
-<li>
-<a href="http://www.rarewares.org/">RareWares</a> offers several compiled LAME versions,
-including modified versions featuring special functionality.
-</li>
+  <li><a href="http://www.rarewares.org/">RareWares</a> offers several compiled
+  LAME versions, including modified versions featuring special
+  functionality.</li>
 
-<li>
-A famous Russian site, and one of the most reliable for beta and bleeding edge (alpha)
-versions (updated almost daily): <a href="http://mitiok.maresweb.org/">Mitiok</a>.
-</li>
+  <li>A famous Russian site, and one of the most reliable for beta and bleeding
+  edge (alpha) versions (updated almost daily): <a
+  href="http://mitiok.maresweb.org/">Mitiok</a>.</li>
 
-<li>
-From the Encoder/Windows section of <a href="http://www.mp3-tech.org">www.mp3-tech.org</a>.
-</li>
+  <li>From the Encoder/Windows section of <a
+  href="http://www.mp3-tech.org">www.mp3-tech.org</a>.</li>
 
-<li>
-Beta versions from this <a href="http://www.hot.ee/smpman/mp3/">site in the in the .ee
-domain</a>.
-</li>
+  <li>Beta versions from this <a href="http://www.hot.ee/smpman/mp3/">site in
+  the in the .ee domain</a>.</li>
 
-<li>
-Beta versions and MSVC6 project files and source code available
-<a href="http://www.win32lame.com/">here</a>.
-</li>
+  <li>From the <a href="ftp://ftp.zlurp.com">ZLURP ftp site</a>.</li>
 
-<li>
-From the <a href="ftp://ftp.zlurp.com">ZLURP ftp site</a>.
-</li>
-
-<li>
-In the encoders section of <a href="http://www.maz-sound.com/">MAZ Sound</a>.
-</li>
+  <li>In the encoders section of <a href="http://www.maz-sound.com/">MAZ
+  Sound</a>.</li>
 
 </ul>
 
-<p><b>MacOS X:</b></p>
+<h4>MacOS X:</h4>
 
 <ul>
 
-<li>
-<a href="http://www.rarewares.org/">RareWares</a> offers precompiled binaries optimized
-for G4 (faster than FINK's) machines, besides the standard G3 binaries. Also, they tend
-to update their binaries faster than FINK.
-</li>
+  <li><a href="http://www.rarewares.org/">RareWares</a> offers precompiled
+  binaries optimized for G4 (faster than FINK's) machines, besides the standard
+  G3 binaries. Also, they tend to update their binaries faster than FINK.</li>
 
-<li>
-The <a href="http://fink.sourceforge.net/">FINK</a> project provides LAME binaries compiled
-for MacOS X.
-</li>
+  <li>The <a href="http://fink.sourceforge.net/">FINK</a> project provides LAME
+  binaries compiled for MacOS X.</li>
 
-<li>
-From <a href="http://www.culater.net/software.php">culater.net</a>.
-</li>
+  <li>From <a href="http://www.culater.net/software.php">culater.net</a>.</li>
 
 </ul>
 
-<p><b>Solaris:</b></p>
+<h4>Solaris:</h4>
 
 <ul>
 
-<li>
-<a href="http://www.rarewares.org/">RareWares</a> provides up-to-date binaries for Sun
-Solaris, both SPARC and x86 architectures.
-</li>
+  <li><a href="http://www.rarewares.org/">RareWares</a> provides up-to-date
+  binaries for Sun Solaris, both SPARC and x86 architectures.</li>
 
 </ul>
 
-<p><b>HP-UX, FreeBSD, OpenBSD, NetBSD, etc.:</b></p>
+<h4>HP-UX, FreeBSD, OpenBSD, NetBSD, etc.:</h4>
 
 <ul>
 
-<li>
-<a href="http://www.rarewares.org/">RareWares</a> again.
-</li>
+  <li><a href="http://www.rarewares.org/">RareWares</a> again.</li>
 
 </ul>
 
-<p><b>Amiga:</b></p>
+<h4>Amiga:</h4>
 
 <ul>
 
-<li>
-For those of you that just wont give up on your Amiga, check
-<a href="http://www.honeypot.net/audio/">The Amiga Alternative Audio Page</a> or
-<a href="http://amiga.sourceforge.net/">Amiga.SF</a>.
-</li>
+  <li>For those of you that just wont give up on your Amiga, check <a
+  href="http://www.honeypot.net/audio/">The Amiga Alternative Audio Page</a> or
+  <a href="http://amiga.sourceforge.net/">Amiga.SF</a>.</li>
 
 </ul>
 
-<hr></hr>
+<hr />
 
 <h3><a name="Alternatives">Other MP3 Encoders:</a></h3>
 
