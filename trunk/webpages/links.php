@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Related Links</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: links.php,v 1.5 2006-10-02 07:29:09 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: links.php,v 1.6 2006-10-18 20:57:57 bouvigne Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -398,6 +398,11 @@ the PC part of protected audio CDs. (&quot;Fast and Furious&quot;).
 <a href="http://www.iprogramdev.com/">Visual MP3</a> Windows jukebox software with Karaoke
 support.
 </li>
+  
+<li>
+  <a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave Flash decompiler.
+</li>
+
 
 </ul>
 
@@ -409,8 +414,6 @@ support.
 by not respecting the terms and conditions of our license.</h4>
 
 <ul>
-
-  <li><a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave Flash decompiler.</li>
 
   <li><a href="http://www.smart-soft.net/">Smart-Soft</a> - all of their producs
   that encode to MP3 use LAME or GOGO without abiding to the license. That
