@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Related Links</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: links.php,v 1.6 2006-10-18 20:57:57 bouvigne Exp $" />
+  <meta name="cvs-version" content="$Id: links.php,v 1.7 2007-01-11 21:17:50 rjamorim Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -169,9 +169,9 @@ href="mailto:rjamorim@users.sourceforge.net">Webmaster</a>.</i></p>
 
 <ul>
 
-<li>
-<a href="http://philippe.laval.free.fr">DropMP3</a> includes LAME binaries.
-</li>
+  <li>
+  <a href="http://philippe.laval.free.fr">DropMP3</a> includes LAME binaries.
+  </li>
 
 </ul>
 
@@ -179,49 +179,54 @@ href="mailto:rjamorim@users.sourceforge.net">Webmaster</a>.</i></p>
 
 <ul>
 
-<li>
-<a href="http://cdexos.sourceforge.net/">CDex</a> Ripper &amp; encoder, includes
-LAME binaries (the Blade compatible dll).
-</li>
+  <li>
+  <a href="http://cdexos.sourceforge.net/">CDex</a> Ripper &amp; encoder, includes
+  LAME binaries (the Blade compatible dll).
+  </li>
 
-<li>
-<a href="http://www.rarewares.org/mp3.html">LameDropXPd</a> OggDrop style drag'n'drop frontend.
-</li>
+  <li>
+  <a href="http://www.rarewares.org/mp3.html">LameDropXPd</a> OggDrop style drag'n'drop frontend.
+  </li>
 
-<li>
-<a href="http://dvdx.sourceforge.net">DVDx</a> DVD to VCD/SVCD/AVI(XviD...) one-step
-converter.
-</li>
+  <li>
+  <a href="http://dvdx.sourceforge.net">DVDx</a> DVD to VCD/SVCD/AVI(XviD...) one-step
+  converter.
+  </li>
+  
+  <li>
+  <a href="http://omniencoder.autobotcity.net/">OmniEncoder</a> a fully featured frontend
+  for LAME and several other encoders.
+  </li>
 
-<li>
-<a href="http://www.interruptx.com">LAMEX</a> An activex control for LAME, and a GUI.
-Source code only, includes LAME.
-</li>
+  <li>
+  <a href="http://www.interruptx.com">LAMEX</a> An activex control for LAME, and a GUI.
+  Source code only, includes LAME.
+  </li>
 
-<li>
-<a href="http://www.informatik.fh-muenchen.de/%7Eruckert/m3w/">m3w</a> A live mp3
-streamer for the WWW. Works with LAME, icecast, soundcard input.
-</li>
+  <li>
+  <a href="http://www.informatik.fh-muenchen.de/%7Eruckert/m3w/">m3w</a> A live mp3
+  streamer for the WWW. Works with LAME, icecast, soundcard input.
+  </li>
 
-<li>
-<a href="http://out-lame.sourceforge.net/">out_lame</a> Winamp output plug-in.
-Create MP3 files directly from Winamp!
-</li>
+  <li>
+  <a href="http://out-lame.sourceforge.net/">out_lame</a> Winamp output plug-in.
+  Create MP3 files directly from Winamp!
+  </li>
 
-<li>
-<a href="http://www.dors.de/razorlame/index.php">RazorLame</a> The RazorBlade
-front end now supports LAME.
-</li>
+  <li>
+  <a href="http://www.dors.de/razorlame/index.php">RazorLame</a> The RazorBlade
+  front end now supports LAME.
+  </li>
 
-<li>
-<a href="http://winlame.sourceforge.net">winLAME</a> The only *nice* windows
-UI for LAME, according to the author :-)
-</li>
+  <li>
+  <a href="http://winlame.sourceforge.net">winLAME</a> The only *nice* windows
+  UI for LAME, according to the author :-)
+  </li>
 
-<li>
-<a href="http://sourceforge.net/projects/bbc2mp3/">bbc2mp3</a> a tool for
-saving BBC "Listen Again" programmes as MP3 files.
-</li>
+  <li>
+  <a href="http://sourceforge.net/projects/bbc2mp3/">bbc2mp3</a> a tool for
+  saving BBC "Listen Again" programmes as MP3 files.
+  </li>
 
 </ul>
 
@@ -229,77 +234,77 @@ saving BBC "Listen Again" programmes as MP3 files.
 
 <ul>
 
-<li>
-<a href="http://www.audiograbber.com-us.net">Audiograbber</a> (Windows) CD ripper/encoder.
-</li>
-
-<li>
-<a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Windows) Rip and encode to/from mp3,
-wma, vorbis and other audio formats.
-</li>
-
-<li>
-<a href="http://www.skillreactor.org/tools/index.htm">EnLAMEr</a> (Windows) frontend for
-lame.exe
-</li>
-
-<li>
-<a href="http://www.exactaudiocopy.de">EAC</a> (Windows) Exact Audio Copy: High quality
-CD ripper.
-</li>
-
-<li>
-<a href="http://www.uic.nnov.ru/%7Eloea/">LameBatch</a> (Windows) frontend for lame.exe
-</li>
-
-<li>
-<a href="http://www.fridgesoft.de/harddiskogg.php">Hard Disk Ogg</a> a line-in recorder
-that can encode directly to MP3, among other formats.
-</li>
-
-<li>
-<a href="http://www.minekanaler.org">Asellus Nettradio</a> (Norwegian) an internet
-radio application that record internet radio streams to MP3.
-</li>
-
-<li>
-<a href="http://www.1oo-percent.de/lamer/">LAMEr</a> (Windows) Can also encode from line-in.
-</li>
-
-<li>
-<a href="http://www.riptrax.com/">RipTrax</a> (Windows) Advanced CD Ripper with
-support for LAME and Vorbis.
-</li>
-
-<li>
-<a href="http://snow.prohosting.com/emercer/">Music Conduit</a> (Windows) A working
-substitute for the Transfer to Device feature in Windows Media Player.
-</li>
-
-<li>
-<a href="http://freshmeat.net/projects/wlame/">WORM MP3 Encoder</a> (Windows) MP3 encoder
-based on LAME with reported improvements.
-</li>
-
-<li>
-<a href="http://www.zlurp.com">ZLURP</a> (Windows, Mac, Linux) Ripper and encoder. Includes
-LAME binaries.
-</li>
-
-<li>
-<a href="http://blacktree.com/apps/iTunes-LAME/">iTunes-LAME</a> (MacOS) Integrates LAME
-into Apple iTunes, as an alternative to the default (rather poor) encoder.
-</li>
-
-<li>
-<a href="http://www.funkatron.com/apps/lamebrain/">LameBrain</a> (MacOS) Lame frontend for
-MacOS X.
-</li>
-
-<li>
-<a href="http://www.helsinki.fi/~lakahone/amiga/secondspin/">SecondSpin</a> (Amiga)
-ripper &amp; encoder.
-</li>
+  <li>
+  <a href="http://www.audiograbber.com-us.net">Audiograbber</a> (Windows) CD ripper/encoder.
+  </li>
+  
+  <li>
+  <a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Windows) Rip and encode to/from mp3,
+  wma, vorbis and other audio formats.
+  </li>
+  
+  <li>
+  <a href="http://www.skillreactor.org/tools/index.htm">EnLAMEr</a> (Windows) frontend for
+  lame.exe
+  </li>
+  
+  <li>
+  <a href="http://www.exactaudiocopy.de">EAC</a> (Windows) Exact Audio Copy: High quality
+  CD ripper.
+  </li>
+  
+  <li>
+  <a href="http://www.uic.nnov.ru/%7Eloea/">LameBatch</a> (Windows) frontend for lame.exe
+  </li>
+  
+  <li>
+  <a href="http://www.fridgesoft.de/harddiskogg.php">Hard Disk Ogg</a> a line-in recorder
+  that can encode directly to MP3, among other formats.
+  </li>
+  
+  <li>
+  <a href="http://www.minekanaler.org">Asellus Nettradio</a> (Norwegian) an internet
+  radio application that record internet radio streams to MP3.
+  </li>
+  
+  <li>
+  <a href="http://www.1oo-percent.de/lamer/">LAMEr</a> (Windows) Can also encode from line-in.
+  </li>
+  
+  <li>
+  <a href="http://www.riptrax.com/">RipTrax</a> (Windows) Advanced CD Ripper with
+  support for LAME and Vorbis.
+  </li>
+  
+  <li>
+  <a href="http://snow.prohosting.com/emercer/">Music Conduit</a> (Windows) A working
+  substitute for the Transfer to Device feature in Windows Media Player.
+  </li>
+  
+  <li>
+  <a href="http://freshmeat.net/projects/wlame/">WORM MP3 Encoder</a> (Windows) MP3 encoder
+  based on LAME with reported improvements.
+  </li>
+  
+  <li>
+  <a href="http://www.zlurp.com">ZLURP</a> (Windows, Mac, Linux) Ripper and encoder. Includes
+  LAME binaries.
+  </li>
+  
+  <li>
+  <a href="http://blacktree.com/apps/iTunes-LAME/">iTunes-LAME</a> (MacOS) Integrates LAME
+  into Apple iTunes, as an alternative to the default (rather poor) encoder.
+  </li>
+  
+  <li>
+  <a href="http://www.funkatron.com/apps/lamebrain/">LameBrain</a> (MacOS) Lame frontend for
+  MacOS X.
+  </li>
+  
+  <li>
+  <a href="http://www.helsinki.fi/~lakahone/amiga/secondspin/">SecondSpin</a> (Amiga)
+  ripper &amp; encoder.
+  </li>
 
 </ul>
 
@@ -307,102 +312,101 @@ ripper &amp; encoder.
 
 <ul>
 
-<li>
-<a href="http://www.winamp.com">WinAmp</a> Can rip CDs using Lame, but only in the
-Pro (paid) version.
-</li>
-
-<li>
-<a href="http://www.steinberg.de/ProductPage_sb0f7f.html?Product_ID=2442&amp;Langue_ID=4">
-WaveLab</a> Digital Audio editing software.
-</li>
-
-<li>
-<a href="http://www.pinnaclesys.com/ProductPage_n.asp?Product_ID=1150&amp;Langue_ID=7">
-MyMP3</a> Windows jukebox software from Pinnacle.
-</li>
-
-<li>
-<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a> ISO CD image builder, editor
-and extractor.
-</li>
-
-<li>
-<a href="http://audioedit.mystikmedia.com">AudioEdit Deluxe</a> Windows sound editor.
-</li>
-
-<li>
-<a href="http://www.hairersoft.com/Amadeus.html">Amadeus II</a> (Mac) Manipulate, create
-and analyze sounds.
-</li>
-
-<li>
-<a href="http://www.bias-inc.com/">Peak 3</a> Macintosh audio editing/processing/mastering
-software.
-</li>
-
-<li>
-<a href="http://www.panic.com/audion/">Audion</a> Mac Jukebox software.
-</li>
-
-<li>
-<a href="http://www.nextuptech.com/">Text Aloud MP3</a> Converts text into speech.
-</li>
-
-<li>
-<a href="http://www.highcriteria.com/">TotalRecorder.</a> Universal sound recoder.
-</li>
-
-<li>
-<a href="http://www.cdcopy.sk/">CDcopy</a> Windows ripper/encoder.
-</li>
-
-<li>
-<a href="http://www.ejay.de/">eJay DJ Mix Station / MP3 Easy / MP3 Station / Music
-Cleaning Studio / MP3 Pro</a> Various Windows music tools, using Gogo.
-</li>
-
-<li>
-<a href="http://www.poikosoft.com">Easy CD-DA Extractor</a> Windows ripper/encoder,
-includes LAME binaries.
-</li>
-
-<li>
-<a href="http://www.mp3observer.com">MP3 Observer</a> MP3 file-manager, ID3 tag editor,
-playlist creator and CD-archiving tool.
-</li>
-
-<li>
-<a href="http://www.birdcagesoft.com/">MPAction MP3 Tools</a> Windows jukebox software.
-</li>
-
-<li>
-<a href="http://www.buttontool.com">1CoolButtonTool</a> Flash and Java button editor.
-</li>
-
-<li>
-<a href="http://proteron.com/n2mp3pro/">N2MP3 Pro</a> Macintosh jukebox software.
-</li>
-
-<li>
-<a href="http://www.ultratagger.com/">UltraTagger.</a> ID3 tag management, encoding and
-decoding.
-</li>
-
-<li>
-<a href="http://www.musichelponline.com/">UMG protected audio CDs</a> UMG is using Lame for
-the PC part of protected audio CDs. (&quot;Fast and Furious&quot;).
-</li>
-
-<li>
-<a href="http://www.iprogramdev.com/">Visual MP3</a> Windows jukebox software with Karaoke
-support.
-</li>
+  <li>
+  <a href="http://www.winamp.com">WinAmp</a> Can rip CDs using Lame, but only in the
+  Pro (paid) version.
+  </li>
   
-<li>
-  <a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave Flash decompiler.
-</li>
-
+  <li>
+  <a href="http://www.steinberg.de/ProductPage_sb0f7f.html?Product_ID=2442&amp;Langue_ID=4">
+  WaveLab</a> Digital Audio editing software.
+  </li>
+  
+  <li>
+  <a href="http://www.pinnaclesys.com/ProductPage_n.asp?Product_ID=1150&amp;Langue_ID=7">
+  MyMP3</a> Windows jukebox software from Pinnacle.
+  </li>
+  
+  <li>
+  <a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a> ISO CD image builder, editor
+  and extractor.
+  </li>
+  
+  <li>
+  <a href="http://audioedit.mystikmedia.com">AudioEdit Deluxe</a> Windows sound editor.
+  </li>
+  
+  <li>
+  <a href="http://www.hairersoft.com/Amadeus.html">Amadeus II</a> (Mac) Manipulate, create
+  and analyze sounds.
+  </li>
+  
+  <li>
+  <a href="http://www.bias-inc.com/">Peak 3</a> Macintosh audio editing/processing/mastering
+  software.
+  </li>
+  
+  <li>
+  <a href="http://www.panic.com/audion/">Audion</a> Mac Jukebox software.
+  </li>
+  
+  <li>
+  <a href="http://www.nextuptech.com/">Text Aloud MP3</a> Converts text into speech.
+  </li>
+  
+  <li>
+  <a href="http://www.highcriteria.com/">TotalRecorder.</a> Universal sound recoder.
+  </li>
+  
+  <li>
+  <a href="http://www.cdcopy.sk/">CDcopy</a> Windows ripper/encoder.
+  </li>
+  
+  <li>
+  <a href="http://www.ejay.de/">eJay DJ Mix Station / MP3 Easy / MP3 Station / Music
+  Cleaning Studio / MP3 Pro</a> Various Windows music tools, using Gogo.
+  </li>
+  
+  <li>
+  <a href="http://www.poikosoft.com">Easy CD-DA Extractor</a> Windows ripper/encoder,
+  includes LAME binaries.
+  </li>
+  
+  <li>
+  <a href="http://www.mp3observer.com">MP3 Observer</a> MP3 file-manager, ID3 tag editor,
+  playlist creator and CD-archiving tool.
+  </li>
+  
+  <li>
+  <a href="http://www.birdcagesoft.com/">MPAction MP3 Tools</a> Windows jukebox software.
+  </li>
+  
+  <li>
+  <a href="http://www.buttontool.com">1CoolButtonTool</a> Flash and Java button editor.
+  </li>
+  
+  <li>
+  <a href="http://proteron.com/n2mp3pro/">N2MP3 Pro</a> Macintosh jukebox software.
+  </li>
+  
+  <li>
+  <a href="http://www.ultratagger.com/">UltraTagger.</a> ID3 tag management, encoding and
+  decoding.
+  </li>
+  
+  <li>
+  <a href="http://www.musichelponline.com/">UMG protected audio CDs</a> UMG is using Lame for
+  the PC part of protected audio CDs. (&quot;Fast and Furious&quot;).
+  </li>
+  
+  <li>
+  <a href="http://www.iprogramdev.com/">Visual MP3</a> Windows jukebox software with Karaoke
+  support.
+  </li>
+    
+  <li>
+    <a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave Flash decompiler.
+  </li>
 
 </ul>
 
@@ -525,77 +529,56 @@ you are now complying with our license, please contact us.</strong></p>
 
 <ul>
 
-<li>
-<a href="http://www.initialt.org/">Takehiro Tominaga</a> has done some amazing work on LAME
-recently (see <a
-          href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/lame/lame/doc/html/history.html?rev=1.70">
-          history</a>). His versions are available <a href="http://www.initialt.org/lame-beta/">here
-(source code only)</a>. Fortunately for us, Takehiro takes the time to fold many of his
-improvements back into LAME.
-</li>
+  <li>
+  <a href="http://www.initialt.org/">Takehiro Tominaga</a> has done some amazing work on LAME
+  recently (see <a
+  href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/lame/lame/doc/html/history.html?rev=1.70">
+  history</a>). His versions are available <a href="http://www.initialt.org/lame-beta/">here
+  (source code only)</a>. Fortunately for us, Takehiro takes the time to fold many of his
+  improvements back into LAME.
+  </li>
 
-</ul>
-<ul>
+  <li>
+  <a href="http://www.marinecat.net/free/windows/mct_free.htm">GOGO-no-coda MP3 encoder</a>
+  (<a href="http://homepage2.nifty.com/kei-i/">Alternate link</a>) A forked version of LAME
+  with many key routines rewritten in assembly (I.E, it's much faster). Uses the <a
+  href="http://nasm.sourceforge.net/">NASM assembler.</a><br />
+  </li>
 
-<li>
-<a href="http://www.marinecat.net/free/windows/mct_free.htm">GOGO-no-coda MP3 encoder</a>
-(<a href="http://homepage2.nifty.com/kei-i/">Alternate link</a>) A forked version of LAME
-with many key routines rewritten in assembly (I.E, it's much faster). Uses the <a
-href="http://nasm.sourceforge.net/">NASM assembler.</a><br />
-</li>
+  <li>
+  <a href="http://www.rjamorim.com/rrw/mp3enc.html">FhG MP3enc</a> 3.1. The gold standard of
+  encoders. All other encoders strive to sound this good. Demo version only encodes up to 30
+  seconds.<br />
+  <i>Update: according to recent listening tests, Lame already surpassed FhG encoders in
+  quality at most bitrates. :-)</i>
+  </li>
 
-</ul>
-<ul>
-
-<li>
-<a href="http://www.rjamorim.com/rrw/mp3enc.html">FhG MP3enc</a> 3.1. The gold standard of
-encoders. All other encoders strive to sound this good. Demo version only encodes up to 30
-seconds.<br />
-<i>Update: according to recent listening tests, Lame already surpassed FhG encoders in
-quality at most bitrates. :-)</i>
-</li>
-
-</ul>
-<ul>
-
-<li>
-<a href="http://www.rjamorim.com/rrw/l3enc.html">FhG l3enc</a>. The older brother of MP3enc.
-Very slow, but with quite reasonable quality.
-</li>
-
-</ul>
-<ul>
-
-<li>
-<a href="http://www.rjamorim.com/rrw/fastencc.html">FhG Fastencc</a> this "free" encoder was
-created with libraries stolen from Fraunhofer. It's the faster brother of MP3enc, and also
-the only FhG encoder to offer VBR encoding. Quality is not on par with MP3enc or LAME.
-</li>
-
-</ul>
-<ul>
-
-<li>
-<a href="http://bladeenc.mp3.no">BladeEnc</a> One of the first free encoders for Linux.
-Development has stopped at version 0.94.1. Quality is not satisfactory.
-</li>
-
-</ul>
-<ul>
-
-<li>
-<a href="http://www.xingtech.com">Xing MP3 encoder</a> Reasonable quality and extremely
-fast encoder. Is now the MP3 encoder used in Real Jukebox and Real Player, and has been recently
-released under an Open Source license (it's still limited to Windows though)
-</li>
-
-</ul>
-<ul>
-
-<li>
-<a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrid quality. Only listed
-here for completeness purposes.
-</li>
+  <li>
+  <a href="http://www.rjamorim.com/rrw/l3enc.html">FhG l3enc</a>. The older brother of MP3enc.
+  Very slow, but with quite reasonable quality.
+  </li>
+  
+  <li>
+  <a href="http://www.rjamorim.com/rrw/fastencc.html">FhG Fastencc</a> this "free" encoder was
+  created with libraries stolen from Fraunhofer. It's the faster brother of MP3enc, and also
+  the only FhG encoder to offer VBR encoding. Quality is not on par with MP3enc or LAME.
+  </li>
+  
+  <li>
+  <a href="http://bladeenc.mp3.no">BladeEnc</a> One of the first free encoders for Linux.
+  Development has stopped at version 0.94.1. Quality is not satisfactory.
+  </li>
+  
+  <li>
+  <a href="http://www.xingtech.com">Xing MP3 encoder</a> Reasonable quality and extremely
+  fast encoder. Is now the MP3 encoder used in Real Jukebox and Real Player, and has been recently
+  released under an Open Source license (it's still limited to Windows though)
+  </li>
+  
+  <li>
+  <a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrid quality. Only listed
+  here for completeness purposes.
+  </li>
 
 </ul>
 
@@ -605,14 +588,14 @@ here for completeness purposes.
 
 <ul>
 
-<li>
-<a href="http://ff123.net/">Lots of different MP3 encoders, using blind ABX tests</a>
-</li>
-
-<li>
-<a href="http://www.rjamorim.com/test/">Roberto's</a> page of public blind listening
-tests comparing several formats and encoders.
-</li>
+  <li>
+  <a href="http://ff123.net/">Lots of different MP3 encoders, using blind ABX tests</a>
+  </li>
+  
+  <li>
+  <a href="http://www.rjamorim.com/test/">Roberto's</a> page of public blind listening
+  tests comparing several formats and encoders.
+  </li>
 
 </ul>
 
@@ -620,14 +603,14 @@ tests comparing several formats and encoders.
 
 <ul>
 
-<li>
-<a href="http://www.hydrogenaudio.org/forums/index.php">Hydrogenaudio</a> - Public discussion
-forum focused on psychoacoustic audio compression, featuring an MP3 section.
-</li>
-
-<li>
-<a href="http://www.maz-sound.com/">MAZ Sound</a> Encoders and other audio software.
-</li>
+  <li>
+  <a href="http://www.hydrogenaudio.org/forums/index.php">Hydrogenaudio</a> - Public discussion
+  forum focused on psychoacoustic audio compression, featuring an MP3 section.
+  </li>
+  
+  <li>
+  <a href="http://www.maz-sound.com/">MAZ Sound</a> Encoders and other audio software.
+  </li>
 
 </ul>
 
@@ -635,36 +618,36 @@ forum focused on psychoacoustic audio compression, featuring an MP3 section.
 
 <ul>
 
-<li>
-Great site for technical information: <a href="http://www.mp3-tech.org">www.mp3-tech.org</a>
-</li>
-
-<li>
-<a href="http://www.rarewares.org">RareWares</a> - audio coding-related download site
-featuring several audio formats besides MP3.
-</li>
-
-<li>
-<a href="http://wiki.hydrogenaudio.org">HydrogenAudio's Wiki</a> is a repository of
-knowledge on audio-related matters.
-</li>
-
-<li>
-<a href="http://wiki.hydrogenaudio.org/index.php?title=Recommended_LAME">HydrogenAudio's
-list of recommended lame settings</a> to produce best quality encodes at several bitrates.
-</li>
-
-<li>
-<a href="http://mitiok.maresweb.org/">Dmitry Kutsanov's site</a> is extremely useful!
-</li>
-
-<li>
-<a href="http://www.cd-rw.org/">CD-RW.ORG</a> - The CD-R and MP3 resource
-</li>
-
-<li>
-<a href="http://www.mpeg.org/MPEG/">MPEG.ORG</a> Many pointers and resources.
-</li>
+  <li>
+  Great site for technical information: <a href="http://www.mp3-tech.org">www.mp3-tech.org</a>
+  </li>
+  
+  <li>
+  <a href="http://www.rarewares.org">RareWares</a> - audio coding-related download site
+  featuring several audio formats besides MP3.
+  </li>
+  
+  <li>
+  <a href="http://wiki.hydrogenaudio.org">HydrogenAudio's Wiki</a> is a repository of
+  knowledge on audio-related matters.
+  </li>
+  
+  <li>
+  <a href="http://wiki.hydrogenaudio.org/index.php?title=Recommended_LAME">HydrogenAudio's
+  list of recommended lame settings</a> to produce best quality encodes at several bitrates.
+  </li>
+  
+  <li>
+  <a href="http://mitiok.maresweb.org/">Dmitry Kutsanov's site</a> is extremely useful!
+  </li>
+  
+  <li>
+  <a href="http://www.cd-rw.org/">CD-RW.ORG</a> - The CD-R and MP3 resource
+  </li>
+  
+  <li>
+  <a href="http://www.mpeg.org/MPEG/">MPEG.ORG</a> Many pointers and resources.
+  </li>
 
 </ul>
 
@@ -672,68 +655,68 @@ list of recommended lame settings</a> to produce best quality encodes at several
 
 <ul>
 
-<li>
-A favorite Linux ripper: <a href="http://www.xiph.org/paranoia/">cdparanoia</a> <i>(also,
-                                                                                    GNU's <a href="http://www.gnu.org/software/libcdio/">libcdio</a>, a multiplatform
-                                                                                    port of CDparanoia)</i>
-</li>
-
-<li>
-How to figure out which codec was used to make that mp3? Use <a
-href="http://www.guerillasoft.nstemp.com/EncSpot2/">EncSpot</a>
-</li>
-
-<li>
-Open source embedded mp3? <a href="http://www.janovetz.com/jake/cantante/index.html">
-Cantante</a>
-</li>
-
-<li>
-<a href="http://www.underbit.com/products/mad/">The MAD decoder</a> Bug free, 24bit and
-GPL!
-</li>
-
-<li>
-<a href="http://www.pcavtech.com/soundcards/compare/">PCAVtech sound card benchmarks</a>
-</li>
-
-<li>
-<a href="http://www.cmis.csiro.au/dmis/maaate/">Maate</a> looks like a very sophisticated
-MP3 analysis package. They also have a good description of MP3 frames.
-</li>
-
-<li>
-A nice .wav file viewer and editor: <a href="http://www.metadecks.org/software/sweep/index.html">
-sweep</a>
-</li>
-
-<li>
-<a href="http://www.mptrim.com/">mptrim</a>: Trim silence and adjust volume of mp3 files.
-</li>
-
-<li>
-<a href="http://programmierer.freepage.de/overmann/">mp3check</a>: A program to check integrity
-of mp3 files.
-</li>
-
-<li>
-<a href="http://minnie.tuhs.org/Programs/Mpcut/">Mpcut</a>: X11 mp3 frame editor.
-</li>
-
-<li>
-<a href="http://sourceforge.net/projects/mp3asm">mp3asm</a>: A program to cut and paste mp3
-frames.
-</li>
-
-<li>
-<a href="http://www.codevisions.de/mp3splitter/">MP3Splitter</a>: Win32 MP3 splitter and
-frame statistics.
-</li>
-
-<li>
-<a href="download/util/jchopwave.c">jchopwave</a>: Source code to a utility to split up .wav
-files.
-</li>
+  <li>
+  A favorite Linux ripper: <a href="http://www.xiph.org/paranoia/">cdparanoia</a> <i>(also,
+  GNU's <a href="http://www.gnu.org/software/libcdio/">libcdio</a>, a multiplatform
+  port of CDparanoia)</i>
+  </li>
+  
+  <li>
+  How to figure out which codec was used to make that mp3? Use <a
+  href="http://www.guerillasoft.nstemp.com/EncSpot2/">EncSpot</a>
+  </li>
+  
+  <li>
+  Open source embedded mp3? <a href="http://www.janovetz.com/jake/cantante/index.html">
+  Cantante</a>
+  </li>
+  
+  <li>
+  <a href="http://www.underbit.com/products/mad/">The MAD decoder</a> Bug free, 24bit and
+  GPL!
+  </li>
+  
+  <li>
+  <a href="http://www.pcavtech.com/soundcards/compare/">PCAVtech sound card benchmarks</a>
+  </li>
+  
+  <li>
+  <a href="http://www.cmis.csiro.au/dmis/maaate/">Maate</a> looks like a very sophisticated
+  MP3 analysis package. They also have a good description of MP3 frames.
+  </li>
+  
+  <li>
+  A nice .wav file viewer and editor: <a href="http://www.metadecks.org/software/sweep/index.html">
+  sweep</a>
+  </li>
+  
+  <li>
+  <a href="http://www.mptrim.com/">mptrim</a>: Trim silence and adjust volume of mp3 files.
+  </li>
+  
+  <li>
+  <a href="http://programmierer.freepage.de/overmann/">mp3check</a>: A program to check integrity
+  of mp3 files.
+  </li>
+  
+  <li>
+  <a href="http://minnie.tuhs.org/Programs/Mpcut/">Mpcut</a>: X11 mp3 frame editor.
+  </li>
+  
+  <li>
+  <a href="http://sourceforge.net/projects/mp3asm">mp3asm</a>: A program to cut and paste mp3
+  frames.
+  </li>
+  
+  <li>
+  <a href="http://www.codevisions.de/mp3splitter/">MP3Splitter</a>: Win32 MP3 splitter and
+  frame statistics.
+  </li>
+  
+  <li>
+  <a href="download/util/jchopwave.c">jchopwave</a>: Source code to a utility to split up .wav
+  files.
+  </li>
 
 </ul>
 
@@ -741,22 +724,22 @@ files.
 
 <ul>
 
-<li>
-<a href="http://www.netwaysglobal.com/mpegrec/">mpegrec</a>: Linux/Win32 line-in/mic MP3
-recorder (requires LAME).
-</li>
-
-<li>
-<a href="http://ldb.tpv.ru/">MixMP3</a> by Dmitry Lesnikov
-</li>
-
-<li>
-<a href="http://www.dago.pmp.com.pl/messer/">Messer</a> by Dariusz Sieradzki
-</li>
-
-<li>
-<a href="http://www.1oo-percent.de/lamer/">LAMEr</a>, also a nice Windows frontend
-</li>
+  <li>
+  <a href="http://www.netwaysglobal.com/mpegrec/">mpegrec</a>: Linux/Win32 line-in/mic MP3
+  recorder (requires LAME).
+  </li>
+  
+  <li>
+  <a href="http://ldb.tpv.ru/">MixMP3</a> by Dmitry Lesnikov
+  </li>
+  
+  <li>
+  <a href="http://www.dago.pmp.com.pl/messer/">Messer</a> by Dariusz Sieradzki
+  </li>
+  
+  <li>
+  <a href="http://www.1oo-percent.de/lamer/">LAMEr</a>, also a nice Windows frontend
+  </li>
 
 </ul>
 
@@ -764,24 +747,22 @@ recorder (requires LAME).
 
 <ul>
 
-<li>
-Some information from the source themselves: <a href="http://www.mp3licensing.com"> Thomson
-Multimedia</a>
-</li>
-
-<li>
-A more accurate portrayal of the situation can be found on <a href="http://www.mp3-tech.org">
-www.mp3-tech.org</a>
-</li>
-
-<li>
-Eric Scheirer's <a href="http://web.media.mit.edu/%7Eeds/mpeg-patents-faq"> FAQ: MPEG,
-Patents, and Audio Coding</a>
-</li>
+  <li>
+  Some information from the source themselves: <a href="http://www.mp3licensing.com"> Thomson
+  Multimedia</a>
+  </li>
+  
+  <li>
+  A more accurate portrayal of the situation can be found on <a href="http://www.mp3-tech.org">
+  www.mp3-tech.org</a>
+  </li>
+  
+  <li>
+  Eric Scheirer's <a href="http://web.media.mit.edu/%7Eeds/mpeg-patents-faq"> FAQ: MPEG,
+  Patents, and Audio Coding</a>
+  </li>
 
 </ul>
-
-
 
 </div>
 <?php include("footer.html") ?>
