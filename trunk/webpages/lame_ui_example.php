@@ -28,7 +28,7 @@
 			alt="The ideal LAME user interface"></img>
 			</p>
 			<p>
-				You should try to provide a user interface as simple as possible, avoiding 
+				You should try to provide an user interface as simple as possible, avoiding 
 				too many options.
 			</p>
 			<ul>
