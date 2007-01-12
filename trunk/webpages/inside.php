@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Inside</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: inside.php,v 1.2 2006-09-23 18:44:36 kylev Exp $" />
+  <meta name="cvs-version" content="$Id: inside.php,v 1.3 2007-01-12 18:49:21 rjamorim Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -49,11 +49,11 @@
   <li>MPEG1,2 and 2.5 layer III encoding.</li>
 
   <li>CBR (constant bitrate) and two types of variable bitrate, <a
-  href="gpsycho/gpsycho.php"> VBR and ABR</a>.</li>
+  href="gpsycho.php"> VBR and ABR</a>.</li>
 
   <li>Free format encoding and decoding.</li>
 
-  <li><a href="gpsycho/gpsycho.php">GPSYCHO:</a> a GPL'd psycho acoustic and
+  <li><a href="gpsycho.php">GPSYCHO:</a> a GPL'd psycho acoustic and
   noise shaping model.</li>
 
   <li><a href="screenshots.php">MP3x:</a> a GTK/X-Window MP3 frame analyzer for
