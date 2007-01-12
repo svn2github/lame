@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder :: Related Links</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: links.php,v 1.8 2007-01-12 13:46:08 rjamorim Exp $" />
+  <meta name="cvs-version" content="$Id: links.php,v 1.9 2007-01-12 13:49:12 rjamorim Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -341,7 +341,7 @@ href="mailto:rjamorim@users.sourceforge.net">Webmaster</a>.</i></p>
   </li>
   
   <li>
-  	<a href="http://www.audioease.com/">Audioease BarbaBatch</a> Batch audio file converter 
+  	<a href="http://www.audioease.com/">Audio Ease BarbaBatch</a> Batch audio file converter 
   	for Macintosh.
   </li>
   
