@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.11 2007-01-13 00:43:59 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.12 2007-01-13 12:52:41 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -28,7 +28,9 @@
 <p>
 	<i>If you know of some software supporting LAME that is not featured here, or
 	if you spot a broken link, please contact the <a
-	href="mailto:rjamorim@users.sourceforge.net">webmaster</a>.</i>
+	href="mailto:rjamorim@users.sourceforge.net">webmaster</a>.<br/>
+	If you are submitting your own software, please include a brief description of
+	it in the e-mail.</i>
 </p>
 
 <h3>Quick Links:</h3>
@@ -136,7 +138,7 @@
 	
 	<li>
 		<a href="http://home.netsurf.de/fr.schueler/Apps/index.html">Mp3Maker</a>
-		A WindowMaker enhanced front end to cdda2wav/cdparanoia and	lame/bladeenc.
+		A WindowMaker enhanced front end to cdda2wav/cdparanoia and	LAME/bladeenc.
 	</li>
 	
 	<li>
@@ -166,17 +168,17 @@
 	
 	<li>
 		<a href="http://www.agouros.de/dlame/">DLame</a> Perl script to distribute
-		the lame encoding task among several machines in a network.
+		the LAME encoding task among several machines in a network.
 	</li>
 	
 	<li>
 		<a href="http://scara.com/strec/">Strec</a> Stream recorder - A perl
-		wrapper for dsproxy, realplayer and lame.
+		wrapper for dsproxy, realplayer and LAME.
 	</li>
 	
 	<li>
 		<a href="http://tcdr.sourceforge.net/">TCDR</a> a menu-driven console
-		frontend for CD recording and ripping that uses Lame to rip CDs into MP3
+		frontend for CD recording and ripping that uses LAME to rip CDs into MP3
 		files.
 	</li>
 	
@@ -358,7 +360,7 @@
 	
 	<li>
 		<a href="http://www.funkatron.com/apps/lamebrain/">LameBrain</a> (MacOS) 
-		Lame frontend for MacOS X.
+		LAME frontend for MacOS X.
 	</li>
 	
 	<li>
@@ -382,6 +384,10 @@
 		editing software.
 	</li>
 	
+	<li>
+		<a href="http://www.goldwave.com/">Goldwave</a> Audio editor for Windows.
+	</li>
+	
 	<!--<li>
 		<a href="http://www.pinnaclesys.com/ProductPage_n.asp?Product_ID=1150&amp;Langue_ID=7">
 		MyMP3</a> Windows jukebox software from Pinnacle.
@@ -398,7 +404,17 @@
 	</li>
 	
 	<li>
-		<a href="http://www.ubercaster.com/">Übercaster</a> Podcast production 
+		<a href="http://www.blazemp.com/">Blaze Media Pro</a> audio jukebox, editor,
+		converter and more for Windows.
+	</li>
+	
+	<li>
+		<a href="http://www.swishzone.com/index.php">SWiSH Max</a> Adobe Flash 
+		authoring tool for Windows.
+	</li>
+	
+	<li>
+		<a href="http://www.ubercaster.com/">&uuml;bercaster</a> Podcast production 
 		suite for Macintosh.
 	</li>
 	
@@ -419,6 +435,11 @@
 	
 	<li>
 		<a href="http://www.panic.com/audion/">Audion</a> Mac Jukebox software.
+	</li>
+	
+	<li>
+		<a href="http://www.kapraet.com/">CD Stack</a> CD ripping software for
+		Mac.
 	</li>
 	
 	<li>
@@ -506,7 +527,7 @@ by not respecting the terms and conditions of our license.</h4>
 	</li>
 
 	<!--<li>  Disappeared
-		<a href="http://www.papayatech.com/">Tunespark</a> This commercial
+		<a href="http://www.papayatech.com/">TuneSpark</a> This commercial
 		software uses the LAME encoding engine in violation of our copyrights and
 		without any acknowlegement.
 	</li>-->
@@ -526,7 +547,7 @@ you are now complying with our license, please contact us.</strong></p>
 
 	<li>
 		<a href="http://www.rarewares.org/">RareWares</a> offers Debian binary
-		packages of lame and several other audio codecs/tools. Precompiled LAME
+		packages of LAME and several other audio codecs/tools. Precompiled LAME
 		versions for other distros are also available.
 	</li>
 	
@@ -589,6 +610,12 @@ you are now complying with our license, please contact us.</strong></p>
 	<li>
 		<a href="http://www.thalictrum.com/">Thalictrum</a> offers optimized binaries
 		for both Intel and PowerPC Macs.
+	</li>
+	
+	<li>
+		<a href="http://www.kjams.com/wiki/index.php/Lame">KJams</a> has a QuickTime
+		component, which allows you to export audio from QuickTime and related apps
+		to MP3 using LAME.
 	</li>
 	
 	<li>
@@ -767,7 +794,7 @@ you are now complying with our license, please contact us.</strong></p>
 	
 	<li>
 		<a href="http://wiki.hydrogenaudio.org/index.php?title=Recommended_LAME">
-		HydrogenAudio's list of recommended lame settings</a> to produce best 
+		HydrogenAudio's list of recommended LAME settings</a> to produce best 
 		quality encodes at several bitrates.
 	</li>
 	
