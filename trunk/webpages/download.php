@@ -3,15 +3,15 @@
 
 <html>
 <head>
-  <title>LAME MP3 Encoder :: Software Downloads</title>
-  <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-  <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: download.php,v 1.4 2006-09-24 14:42:48 bouvigne Exp $" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="styles/lame.css" />
-  <!--[if IE]>
-  <link rel="stylesheet" type="text/css" href="styles/ie.css" />
-  <![endif]-->
+	<title>LAME MP3 Encoder :: Software Downloads</title>
+	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
+	<meta name="generator" content="jEdit 4.2" />
+	<meta name="cvs-version" content="$Id: download.php,v 1.5 2007-01-13 00:17:44 rjamorim Exp $" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="styles/ie.css" />
+	<![endif]-->
 </head>
 <body>
 
@@ -21,43 +21,52 @@
 <div id="content">
 
 <div align="center">
-  <img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
-  <h1>Software Downloads</h1>
+	<img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
+	<h1>Software Downloads</h1>
 </div>
 
-<p>LAME is only distribued in source code form. For binaries and GUI based
-programs which can use LAME (or include fully licensed versions of LAME), check
-the <a href="links.php"> LAME related links</a>. All software from the LAME
-project can be found in the project's <a
-href="http://sourceforge.net/project/showfiles.php?group_id=290">file
-area</a>.</p>
+<p>
+	LAME is only distribued in source code form. For binaries and GUI based
+	programs which can use LAME (or include fully licensed versions of LAME), 
+	check the <a href="links.php"> LAME related links</a>. All software from the 
+	LAME project can be found in the project's <a
+	href="http://sourceforge.net/project/showfiles.php?group_id=290">file
+	area</a>.
+</p>
 
 <h3>Current Versions</h3>
 
 <ul>
 
-  <li>The current release version of LAME is 3.97</li>
-
-  <!-- Comment/hide this item if there is no current beta. 
-  <li>The most recent beta release of LAME is 3.97beta3.</li>-->
+	<li>The current release version of LAME is 3.97</li>
+	
+	<!-- Comment/hide this item if there is no current beta. 
+	<li>The most recent beta release of LAME is 3.97beta3.</li>-->
   
 </ul>
 
-<p>Source code tarballs of these versions <a
-href="http://sourceforge.net/project/showfiles.php?group_id=290&package_id=309">can
-be downloaded from SourceForge</a>.</p>
+<p>
+	Source code tarballs of these versions <a
+	href="http://sourceforge.net/project/showfiles.php?group_id=290&package_id=309">can
+	be downloaded from SourceForge</a>.
+</p>
 
-<p>LAME compiles on Windows, DOS, GNU/Linux, MacOS X, *BSD, Solaris, HP-UX,
-Tru64 Unix, AIX, Irix, SCO Unix, UnixWare, Ultrix, OpenVMS, MacOS Classic, BeOS,
-QNX, RiscOS, AmigaOS, OS/2, FreeMiNT(Atari) and probably a few more.</p>
+<p>
+	LAME compiles on Windows, DOS, GNU/Linux, MacOS X, *BSD, Solaris, HP-UX,
+	Tru64 Unix, AIX, Irix, NeXTstep, SCO Unix, UnixWare, Ultrix, Plan 9, OpenVMS, 
+	MacOS Classic, BeOS,	QNX, RiscOS, AmigaOS, OS/2, SkyOS, FreeMiNT(Atari) and 
+	probably a few more.
+</p>
 
 <h3>Development Versions</h3>
 
-<p>LAME source code is maintained with CVS, hosted on <a
-href="http://sourceforge.net/">SourceForge.net</a>. For instructions on
-downloading the current development sources, go to <a
-href="http://sourceforge.net/cvs/?group_id=290">the CVS information page of the
-LAME project on SourceForge.net</a>.</p>
+<p>
+	LAME source code is maintained with CVS, hosted on <a
+	href="http://sourceforge.net/">SourceForge.net</a>. For instructions on
+	downloading the current development sources, go to <a
+	href="http://sourceforge.net/cvs/?group_id=290">the CVS information page of 
+	the LAME project on SourceForge.net</a>.
+</p>
 
 </div>
 <?php include("footer.html") ?>

@@ -3,15 +3,15 @@
 
 <html>
 <head>
-  <title>LAME MP3 Encoder :: GPSYCHO - outer_loop() Algorithm</title>
-  <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-  <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: outer_loop.php,v 1.2 2006-09-23 18:44:37 kylev Exp $" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="styles/lame.css" />
-  <!--[if IE]>
-  <link rel="stylesheet" type="text/css" href="styles/ie.css" />
-  <![endif]-->
+	<title>LAME MP3 Encoder :: GPSYCHO - outer_loop() Algorithm</title>
+	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
+	<meta name="generator" content="jEdit 4.2" />
+	<meta name="cvs-version" content="$Id: outer_loop.php,v 1.3 2007-01-13 00:20:14 rjamorim Exp $" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="styles/ie.css" />
+	<![endif]-->
 </head>
 <body>
 
@@ -21,23 +21,31 @@
 <div id="content">
 
 <div align="center">
-  <img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
-  <h1>GPSYCHO - outer_loop() Algorithm</h1>
+	<img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
+	<h1>GPSYCHO - outer_loop() Algorithm</h1>
 </div>
 
-<p>Based on <cite>Bosi et al. "ISO/IEC MPEG-2 AAC", J. Audio Eng. Soc. 45 (1997) p
-789-814</cite>.</p>
+<p>
+	Based on <cite>Bosi et al. "ISO/IEC MPEG-2 AAC", J. Audio Eng. Soc. 45 (1997) 
+	p 789-814</cite>.
+</p>
 
-<p>Another good complement to the ISO documentation is <cite>Brandenburg &amp;
-Stoll, "ISO-MPEG-1 Audio: A Generic Standard for Coding of High-Quality Digital
-Audio", J. Audio Eng. Soc 42 (1994) p 780-792</cite>.</p>
+<p>
+	Another good complement to the ISO documentation is <cite>Brandenburg &amp;
+	Stoll, "ISO-MPEG-1 Audio: A Generic Standard for Coding of High-Quality 
+	Digital Audio", J. Audio Eng. Soc 42 (1994) p 780-792</cite>.
+</p>
 
-<p>The goal of the outer_loop routine in MP3 is to find the combination of
-scalefactors within each scalefactor band which produce the least amount of
-audible distortion. Audible distortion is distortion in a scalefactor band which
-exceeds the masking thresholds (computed by the psycho-acoustic model)</p>
+<p>
+	The goal of the outer_loop routine in MP3 is to find the combination of
+	scalefactors within each scalefactor band which produce the least amount of
+	audible distortion. Audible distortion is distortion in a scalefactor band 
+	which exceeds the masking thresholds (computed by the psycho-acoustic model)
+</p>
 
-<p>Pseudo-Code:</p>
+<p>
+	Pseudo-Code:
+</p>
 
 <blockquote class="code">initialize all scalefactors to 0.
 
@@ -68,38 +76,53 @@ do {
 
 Restore BEST quantization</blockquote>
 
+<p>
+	Whenever a scalefactor band is amplified, it will force the next quantization 
+	to use more bits for that band. This will result in more bits used to encode 
+	the MDCT coefficients in that band, and thus less quantization error. That is 
+	why bands with audible distortion are amplified. However, it will also result 
+	in less bits for the unamplified bands. But these bands had a quantization 
+	error less than the allowed masking, so hopefully they can tolerate a little 
+	more noise. The whole procedure is designed to allocate the bits to the
+	bands which need them the most.
+</p>
 
-<p>Whenever a scalefactor band is amplified, it will force the next
-quantization to use more bits for that band. This will result in more bits used
-to encode the MDCT coefficients in that band, and thus less quantization error.
-That is why bands with audible distortion are amplified. However, it will also
-result in less bits for the unamplified bands. But these bands had a
-quantization error less than the allowed masking, so hopefully they can tolerate
-a little more noise. The whole procedure is designed to allocate the bits to the
-bands which need them the most.</p>
+<p>
+	When the loop is done, if we found a quantization with count=0, everything is
+	great. Otherwise, we have to choose the best quantization that we found. The 
+	ISO model chooses the last quantization tried during outer_loop. This is 
+	strange because this is usually one of the worst. The MPEG2 paper makes the 
+	obvious point that after trying out all the different combinations, you 
+	should choose the BEST one, not the LAST one!
+</p>
 
-<p>When the loop is done, if we found a quantization with count=0, everything is
-great. Otherwise, we have to choose the best quantization that we found. The ISO
-model chooses the last quantization tried during outer_loop. This is strange
-because this is usually one of the worst. The MPEG2 paper makes the obvious
-point that after trying out all the different combinations, you should choose
-the BEST one, not the LAST one!</p>
+<p>
+	GPSYCHO defines the BEST quantization via the subroutine quant_compare(), and
+	this subroutine is in a constant state of flux!
+</p>
 
-<p>GPSYCHO defines the BEST quantization via the subroutine quant_compare(), and
-this subroutine is in a constant state of flux!</p>
+<p>
+	If you have ideas for a better way to define the BEST quantization, let me
+	know!
+</p>
 
-<p>If you have ideas for a better way to define the BEST quantization, let me
-know!</p>
-
-<p>Gabriel Bouvigne makes the following point: Which do you think is worse?</p>
+<p>
+	Gabriel Bouvigne makes the following point: Which do you think is worse?
+</p>
 
 <ul>
-  <li>Distortion only in band 9? (1.9-2.2kHz) (over = 1)</li>
-  <li>Distortion in band 0 (0-172Hz) and band 20 (13-16kHz) (over = 2)</li>
+	<li>
+		Distortion only in band 9? (1.9-2.2kHz) (over = 1)
+	</li>
+	<li>
+		Distortion in band 0 (0-172Hz) and band 20 (13-16kHz) (over = 2)
+	</li>
 </ul>
 
-<p>The outer_loop() described above will choose the over=1 as the best
-quantization.</p>
+<p>
+	The outer_loop() described above will choose the over=1 as the best
+	quantization.
+</p>
 
 </div>
 <?php include("footer.html") ?>

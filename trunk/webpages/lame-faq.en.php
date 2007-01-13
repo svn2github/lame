@@ -17,7 +17,8 @@
 	<?php include("menu.html") ?>
 	<div id="container">
 		<div id="content">
-			<div align="center"><img src="./images/logo.gif" width="358" height="231" alt="LAME Official logo"></img>
+			<div align="center">
+			<img src="./images/logo.gif" width="358" height="231" alt="LAME Official logo"></img>
 			<h1>LAME FAQ version 0.00002</h1></div>
 
 			<p>

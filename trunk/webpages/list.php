@@ -3,15 +3,15 @@
 
 <html>
 <head>
-  <title>LAME MP3 Encoder :: The LAME Mailing List</title>
-  <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-  <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: list.php,v 1.2 2006-09-23 18:44:37 kylev Exp $" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="styles/lame.css" />
-  <!--[if IE]>
-  <link rel="stylesheet" type="text/css" href="styles/ie.css" />
-  <![endif]-->
+	<title>LAME MP3 Encoder :: The LAME Mailing List</title>
+	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
+	<meta name="generator" content="jEdit 4.2" />
+	<meta name="cvs-version" content="$Id: list.php,v 1.3 2007-01-13 00:19:22 rjamorim Exp $" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="styles/ie.css" />
+	<![endif]-->
 </head>
 <body>
 
@@ -21,16 +21,25 @@
 <div id="content">
 
 <div align="center">
-  <img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
-  <h1>The LAME Mailing List</h1>
+	<img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
+	<h1>The LAME Mailing List</h1>
 </div>
 
-<p>Thanks to Jan Peman for running the mp3encoder mailing list for several
-years!</p>
+<p>
+	Thanks to Jan Peman for running the mp3encoder mailing list for several
+	years!
+</p>
 
-<p>In September of 2000, the list was moved and is now run by Warren Toomey. To
-join, visit <a href="http://minnie.tuhs.org/mailman/listinfo/mp3encoder">the
-mp3encoder mailing list webpage</a>.</p>
+<p>
+	In September of 2000, the list was moved and is now run by Warren Toomey. To
+	join, visit <a href="http://minnie.tuhs.org/mailman/listinfo/mp3encoder">the
+	mp3encoder mailing list webpage</a>.
+</p>
+
+<p>
+	The <a href="http://lists.sourceforge.net/lists/listinfo/lame-dev">development 
+	list</a> is run by SourceForge
+</p>
 
 </div>
 <?php include("footer.html") ?>
