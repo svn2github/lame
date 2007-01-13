@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.10 2007-01-12 15:28:03 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.11 2007-01-13 00:43:59 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -76,11 +76,6 @@
 		<a href="http://www.getid3.org">getID3()</a> (PHP) PHP4 script that
 		extracts useful information from MP3s &amp; other multimedia file formats.
 		Reads Lame tags.
-	</li>
-	
-	<li>
-		<a href="http://www.stud.uni-hannover.de/~paddy/mpeg.html">jLame</a>
-		(Java) Multiplatform frontend for LAME.
 	</li>
 	
 	<li>
@@ -186,7 +181,7 @@
 	</li>
 	
 	<li>
-		<a href="http://darkice.sourceforge.net">DarkIce</a> Live streamer for
+		<a href="http://darkice.tyrell.hu/">DarkIce</a> Live streamer for
 		IceCast.
 	</li>
 	
@@ -249,7 +244,7 @@
 	</li>
 	
 	<li>
-		<a href="http://dvdx.sourceforge.net">DVDx</a> DVD to VCD/SVCD/AVI(XviD...) 
+		<a href="http://www.labdv.com/dvdx/">DVDx</a> DVD to VCD/SVCD/AVI(XviD...) 
 		one-step	converter.
 	</li>
 	
@@ -510,11 +505,11 @@ by not respecting the terms and conditions of our license.</h4>
 		href="http://www.smartwavconverter.com/">Smart WAV converter</a>.
 	</li>
 
-	<li>
+	<!--<li>  Disappeared
 		<a href="http://www.papayatech.com/">Tunespark</a> This commercial
 		software uses the LAME encoding engine in violation of our copyrights and
 		without any acknowlegement.
-	</li>
+	</li>-->
 
 </ul>
 
@@ -568,11 +563,6 @@ you are now complying with our license, please contact us.</strong></p>
 	<li>
 		From the Encoder/Windows section of <a
 		href="http://www.mp3-tech.org">www.mp3-tech.org</a>.
-	</li>
-	
-	<li>
-		Beta versions from this <a href="http://www.hot.ee/smpman/mp3/">site in
-		the in the .ee domain</a>.
 	</li>
 	
 	<li>
@@ -771,8 +761,8 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://wiki.hydrogenaudio.org">HydrogenAudio's Wiki</a> is a 
-		repository of knowledge on audio-related matters.
+		<a href="http://wiki.hydrogenaudio.org/index.php?title=Main_Page">
+		HydrogenAudio's Wiki</a> is a repository of knowledge on audio-related matters.
 	</li>
 	
 	<li>
@@ -907,10 +897,10 @@ you are now complying with our license, please contact us.</strong></p>
 		href="http://www.mp3-tech.org">www.mp3-tech.org</a>
 	</li>
 	
-	<li>
+	<!--<li>  Disappeared
 		Eric Scheirer's <a href="http://web.media.mit.edu/%7Eeds/mpeg-patents-faq">
 		FAQ: MPEG, Patents, and Audio Coding</a>
-	</li>
+	</li>-->
 
 </ul>
 
