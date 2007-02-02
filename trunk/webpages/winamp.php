@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: The Winamp/100Hz Decoding Bug</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: winamp.php,v 1.3 2007-01-13 00:23:33 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: winamp.php,v 1.4 2007-02-02 00:44:48 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -100,11 +100,9 @@
 </p>
 
 <p>
-	Even more MP3 decoder bugs can be found at <a
-	href="http://players.shoutclub.net/wavcompare/">MP3 Player Quality Comparson
-	Site</a> and <a href="http://privatewww.essex.ac.uk/~djmrob/mp3decoders/">MP3
-	decoder tests</a>. Both sites document severe flaws in several popular
-	decoders.
+	Even more MP3 decoder bugs can be found at <a 
+	href="http://mp3decoders.mp3-tech.org/">MP3 decoder tests</a>. Both sites 
+	document severe flaws in several popular decoders.
 </p>
 
 <p>Test samples:</p>
