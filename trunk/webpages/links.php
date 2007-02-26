@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.13 2007-01-13 13:34:30 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.14 2007-02-26 16:22:09 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -124,11 +124,6 @@
 	<li>
 		<a href="http://www.nostatic.org/grip/">Grip</a> A gtk-based cd-player,
 		ripper and encoder. Supports cddb, cdparanoia and LAME.
-	</li>
-	
-	<li>
-		<a href="http://sourceforge.net/projects/jbm2/">jbm2</a> A KDE jukebox
-		style application for public places (bars, pubs, etc.)
 	</li>
 	
 	<li>
