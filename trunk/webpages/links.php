@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.14 2007-02-26 16:22:09 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.15 2007-02-26 16:47:58 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -443,7 +443,7 @@
 	</li>
 	
 	<li>
-		<a href="http://www.highcriteria.com/">TotalRecorder.</a> Universal sound 
+		<a href="http://www.highcriteria.com/">TotalRecorder</a> Universal sound 
 		recoder.
 	</li>
 	
@@ -521,12 +521,6 @@ by not respecting the terms and conditions of our license.</h4>
 		href="http://www.smartwavconverter.com/">Smart WAV converter</a>.
 	</li>
 
-	<!--<li>  Disappeared
-		<a href="http://www.papayatech.com/">TuneSpark</a> This commercial
-		software uses the LAME encoding engine in violation of our copyrights and
-		without any acknowlegement.
-	</li>-->
-
 </ul>
 
 <p><strong>If you want your company name to be removed from this list because
@@ -597,12 +591,6 @@ you are now complying with our license, please contact us.</strong></p>
 <ul>
 
 	<li>
-		<a href="http://www.rarewares.org/">RareWares</a> offers precompiled binaries 
-		optimized for G4 (faster than FINK's) machines, besides the standard G3 
-		binaries. Also, they tend to update their binaries faster than FINK.
-	</li>
-	
-	<li>
 		<a href="http://www.thalictrum.com/">Thalictrum</a> offers optimized binaries
 		for both Intel and PowerPC Macs.
 	</li>
@@ -624,7 +612,7 @@ you are now complying with our license, please contact us.</strong></p>
 
 </ul>
 
-<h4>Solaris:</h4>
+<!-- <h4>Solaris:</h4>
 
 <ul>
 
@@ -643,7 +631,7 @@ you are now complying with our license, please contact us.</strong></p>
 		<a href="http://www.rarewares.org/">RareWares</a> again.
 	</li>
 
-</ul>
+</ul> -->
 
 <h4>Amiga:</h4>
 
