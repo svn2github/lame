@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.15 2007-02-26 16:47:58 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.16 2007-05-20 19:01:52 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -292,11 +292,6 @@
 	</li>
 	
 	<li>
-		<a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Windows) Rip and encode 
-		to/from mp3, wma, vorbis and other audio formats.
-	</li>
-	
-	<li>
 		<a href="http://www.skillreactor.org/tools/index.htm">EnLAMEr</a> (Windows) 
 		frontend for lame.exe
 	</li>
@@ -387,6 +382,11 @@
 		<a href="http://www.pinnaclesys.com/ProductPage_n.asp?Product_ID=1150&amp;Langue_ID=7">
 		MyMP3</a> Windows jukebox software from Pinnacle.
 	</li>-->
+   
+   <li>
+		<a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Windows) Rip and encode 
+		to/from mp3, wma, vorbis and other audio formats.
+	</li>
 	
 	<li>
 		<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a> ISO CD image 
