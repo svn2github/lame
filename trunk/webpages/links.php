@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.16 2007-05-20 19:01:52 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.17 2007-08-10 01:30:17 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -47,7 +47,7 @@
 	
 	<li><a href="#ClosedSource">Free (closed source) software which supports or uses LAME</a></li>
 	<li><a href="#Commercial">Commercial software which supports or uses LAME</a></li>
-	<li><a href="#Shame">Hall of Shame</a></li>
+	<!--<li><a href="#Shame">Hall of Shame</a></li>-->
 	<li><a href="#Binaries">LAME Binaries (fow Windows, *nix, Amiga...)</a></li>
 	<li><a href="#Alternatives">Alternative MP3 encoders</a></li>
 	<li><a href="#Comparisons">Comparisons based on listening tests</a></li>
@@ -236,8 +236,8 @@
 	</li>
 	
 	<li>
-		<a href="http://www.rarewares.org/mp3.html">LameDropXPd</a> OggDrop style 
-		drag'n'drop frontend.
+		<a href="http://www.rarewares.org/mp3-lamedrop.php">LameDropXPd</a> OggDrop 
+      style drag'n'drop frontend.
 	</li>
 	
 	<li>
@@ -312,11 +312,6 @@
 	</li>
 	
 	<li>
-		<a href="http://www.minekanaler.org">Asellus Nettradio</a> (Norwegian) an 
-		internet radio application that record internet radio streams to MP3.
-	</li>
-	
-	<li>
 		<a href="http://www.1oo-percent.de/lamer/">LAMEr</a> (Windows) Can also 
 		encode from line-in.
 	</li>
@@ -349,7 +344,7 @@
 	</li>
 	
 	<li>
-		<a href="http://www.funkatron.com/apps/lamebrain/">LameBrain</a> (MacOS) 
+		<a href="http://funkatron.com/apps/lamebrain/">LameBrain</a> (MacOS) 
 		LAME frontend for MacOS X.
 	</li>
 	
@@ -506,7 +501,7 @@
 
 <hr />
 
-<h3><a name="Shame">HALL OF SHAME</a></h3>
+<!--<h3><a name="Shame">HALL OF SHAME</a></h3>
 
 <h4>The following companies/products have been known to infringe Lame copyright
 by not respecting the terms and conditions of our license.</h4>
@@ -528,7 +523,7 @@ you are now complying with our license, please contact us.</strong></p>
 
 <hr />
 
-<h3><a name="Binaries">LAME Binaries:</a></h3>
+<h3><a name="Binaries">LAME Binaries:</a></h3>-->
 
 <h4>Linux:</h4>
 
@@ -538,12 +533,6 @@ you are now complying with our license, please contact us.</strong></p>
 		<a href="http://www.rarewares.org/">RareWares</a> offers Debian binary
 		packages of LAME and several other audio codecs/tools. Precompiled LAME
 		versions for other distros are also available.
-	</li>
-	
-	<li>
-		Linux &amp; Unix binaries for stable releases of LAME are available from
-		the <a href="http://users.rsise.anu.edu.au/~conrad/not_lame/">not_lame 
-		encoder site</a>.
 	</li>
 	
 	<li>
@@ -602,13 +591,13 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		The <a href="http://fink.sourceforge.net/">FINK</a> project provides LAME
+		The <a href="http://www.finkproject.org/">FINK</a> project provides LAME
 		binaries compiled for MacOS X.
 	</li>
 	
-	<li>
+	<!--<li>
 		From <a href="http://www.culater.net/software.php">culater.net</a>.
-	</li>
+	</li>-->
 
 </ul>
 
@@ -621,17 +610,19 @@ you are now complying with our license, please contact us.</strong></p>
 		binaries for Sun Solaris, both SPARC and x86 architectures.
 	</li>
 
-</ul>
+</ul>-->
 
-<h4>HP-UX, FreeBSD, OpenBSD, NetBSD, etc.:</h4>
+<h4>Etc.:</h4>
 
 <ul>
 
 	<li>
-		<a href="http://www.rarewares.org/">RareWares</a> again.
+		<a href="http://www2.arnes.si/~mmilut/Lame.html">Lame Binary Distribution
+      Point</a> - somewhat outdated, but with compiles for several obscure systems
+      like HP-UX, Irix, VMS, Tru64, AIX, etc.
 	</li>
 
-</ul> -->
+</ul>
 
 <h4>Amiga:</h4>
 
@@ -696,14 +687,14 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.xingtech.com">Xing MP3 encoder</a> Reasonable quality 
-		and extremely fast encoder. Is now the MP3 encoder used in Real Jukebox 
-		and Real Player, and has been recently released under an Open Source 
-		license (it's still limited to Windows though)
+		<a href="http://www.rarewares.org/mp3-others.php#helix_enc">Xing MP3 encoder</a> 
+      Reasonable quality and extremely fast encoder. Is now the MP3 encoder used in 
+      Real Jukebox and Real Player, and has been recently released under an Open 
+      Source license (it's still limited to Windows though)
 	</li>
 	
 	<li>
-		<a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrid quality. 
+		<a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrible quality. 
 		Only listed here for completeness purposes.
 	</li>
 
@@ -787,7 +778,7 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.cd-rw.org/">CD-RW.ORG</a> - The CD-R and MP3 resource
+		<a href="http://www.bitburners.com">BitBurners</a> - The CD-R and MP3 resource
 	</li>
 	
 	<li>
