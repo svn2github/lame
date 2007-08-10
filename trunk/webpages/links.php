@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.17 2007-08-10 01:30:17 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.18 2007-08-10 01:49:09 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -70,7 +70,7 @@
 	</li>
 	
 	<li>
-		<a href="http://www.turnstyle.com/andromeda">andromeda</a> (PHP and ASP)
+		<a href="http://www.turnstyle.com/andromeda/">andromeda</a> (PHP and ASP)
 		Dynamically presents collections of mp3s as streaming web sites.
 	</li>
 	
@@ -521,9 +521,9 @@ by not respecting the terms and conditions of our license.</h4>
 <p><strong>If you want your company name to be removed from this list because
 you are now complying with our license, please contact us.</strong></p>
 
-<hr />
+<hr />-->
 
-<h3><a name="Binaries">LAME Binaries:</a></h3>-->
+<h3><a name="Binaries">LAME Binaries:</a></h3>
 
 <h4>Linux:</h4>
 
