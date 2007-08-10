@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Inside</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: inside.php,v 1.4 2007-01-13 00:18:42 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: inside.php,v 1.5 2007-08-10 02:04:22 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -37,7 +37,7 @@
 	
 	<li>
 		<a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">History/ChangeLog</a>
+		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">History/ChangeLog</a>
 	</li>
 	
 	<li>
@@ -50,7 +50,7 @@
 <ul>
 	<li>
 		Many improvements in quality in speed over ISO reference software. See <a
-		href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/lame/lame/doc/html/history.html?rev=HEAD">history</a>.
+		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">history</a>.
 	</li>
 	
 	<li>

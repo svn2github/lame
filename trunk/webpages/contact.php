@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Contact Information</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: contact.php,v 1.4 2007-01-13 00:17:12 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: contact.php,v 1.5 2007-08-10 02:04:22 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -37,9 +37,9 @@
 <p>
 	<a
 	href="http://www.mail-archive.com/mp3encoder%40minnie.tuhs.org/">Archives</a>
-	are also available (older archives:<a
+	are also available (older archives: <!--<a
 	href="http://www.mail-archive.com/mp3encoder%40minnie.cs.adfa.edu.au/"> October
-	2000 - Sept 2001</a> and <a
+	2000 - Sept 2001</a> and --><a
 	href="http://www.mail-archive.com/mp3encoder%40geek.rcc.se">before October
 	2000</a>)
 </p>
@@ -66,7 +66,7 @@
 <h3>IRC</h3>
 
 <p>
-	Some developers and other interested parties can periodically be found on the
+	Some developers and other interested parties can eventually be found on the
 	#mp3encoder channel on the <a href="http://freenode.net/">FreeNode
 	Network</a>.
 </p>
