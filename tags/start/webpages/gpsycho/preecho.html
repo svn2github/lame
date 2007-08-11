@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i686) [Netscape]">
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>
+GPSYCHO</H2></CENTER>
+
+<CENTER>
+<H2>
+A Good Example For Tuning Pre-Echo Detection Criterion</H2></CENTER>
+
+<CENTER>
+<H2>
+
+<HR WIDTH="100%"></H2></CENTER>
+Make sure you have lame3.04 or greater.&nbsp; there were some bugs in the
+syncing of mp3x (the frame analyzer.)
+<P>Find a sample with a noticeable artifact.&nbsp; testsignal2.wav is a
+good example (see&nbsp; <A HREF="tests.html">tests.html</A> )&nbsp; LAME&nbsp;
+will&nbsp; produce obvious and artificial "snare" like sounds that should
+not be there.&nbsp;&nbsp; FhG sounds pretty good.&nbsp; If the FhG encoder
+has the same problem, then good luck getting GPSYCHO to sound better than
+FhG!
+<P>Figure out what frame causes the problem.&nbsp; I use mpg123 for this.&nbsp;
+For example,&nbsp; to play just 25 frames:&nbsp;&nbsp; "mpg123 -n 25&nbsp;
+testsignal2.mp3".&nbsp; By trying different values for -n, you can usually
+get a pretty good&nbsp; estimate of which frames are bad.
+<P>For testsignal2.wav, the first problem is around frame 25.
+<P>Look at the frames with mp3x ('lame -g', the graphical frame analyzer).&nbsp;&nbsp;
+To get the frames from different encoders perfectly in sync with each other,
+you need to compensate for the various delays introduced by the encoder.
+<P>Encoders have different amounts of built in delay, meaning the mp3 file
+will add extra padding to the
+<BR>pcm data when it is decoded.&nbsp; All known decoders (including mpglib/mpg123
+used by mp3x) also introduce their own delay, usually an additional 528
+samples.&nbsp;&nbsp; So for the total amount of padding between the input
+file and a decoded output file, add 528 to the numbers below.
+<P>Encoder delays:
+<P><TT>ISO models &amp; MPECKER:&nbsp;&nbsp;&nbsp;&nbsp; 528 samples</TT>
+<BR><TT>LAME 3.11 and earlier:&nbsp;&nbsp;&nbsp; 528 samples</TT>
+<BR><TT>LAME 3.12-3.50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1160 samples</TT>
+<BR><TT>LAME 3.54 and newer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 48
+samples, adjustable - see ENCDELAY in encoder.h</TT>
+<BR><TT>FhG mp3enc31:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1160 samples</TT>
+<P>To use mp3x to do a direct frame by frame comparison between the various
+encoders, you need to add padding to the input file so that the encoded
+frames will be perfectly in sync.&nbsp; To add 632 bytes of padding to
+your input file,
+<BR>create a file "pad632.pcm" which just containes 4*632 bytes, all zero.&nbsp;
+Then:
+<UL>
+<LI>
+sox file.wav -t raw -x -w -s -c 2 -r 44100 temp.pcm</LI>
+
+<LI>
+cat pad632.pcm temp.pcm > temp2.pcm</LI>
+
+<LI>
+sox -t raw -x -w -s -c 2 -r 44100 temp2.pcm file632.wav</LI>
+
+<LI>
+l3enc -if file632.wav -of file632.mp3</LI>
+
+<LI>
+lame -g file632.mp3</LI>
+</UL>
+(note: the following frame numbers refered to LAME 3.11, and FhG applied
+to the .wav file with 520 bytes of padding)
+<P>For testsignal2.wav, you can see frame 25 (granule 1) and frame 26 (granule
+0), LAME does not use short blocks and FhG does.&nbsp; For these frames,
+the pe=1200.&nbsp; Forcing LAME to switch to short blocks for these (and
+other similar frames) by setting switch_pe=1000 will produce a mp3 file
+almost as good as the FhG.
+<P>So why not just change pe_switch to 1000?&nbsp; It might be a good idea,
+but then LAME will use about 2x as many short blocks as FhG.&nbsp; For
+example, in <A HREF="tests.html">else3.wav, </A>frame 29 (granule=1), the
+pe=1500, but FhG does not switch to short blocks.&nbsp; To compute the
+total number of short blocks in a MP3, run mp3x out to the last frame and
+then click on the "Stats" pull down menu.&nbsp; It will show a bunch of
+statistics from the MP3 file.
+<P>Note: the technique desribed above was used to tune some new window
+switching algorithms now in LAME 3.10.&nbsp; These new tunings solve all
+the problems mentioned above!
+<BR>&nbsp;
+</BODY>
+</HTML>

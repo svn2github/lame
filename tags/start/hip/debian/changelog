@@ -1,0 +1,10 @@
+libmp3hip (0.1-1) unstable; urgency=low
+
+  * Initial Release.
+  * Initial package, not placed in archive.
+
+ -- Myers Carpenter <myers_carpenter@users.sf.net>  Tue, 19 Feb 2002 14:37:11 -0500
+
+Local variables:
+mode: debian-changelog
+End:

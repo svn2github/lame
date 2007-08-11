@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i686) [Netscape]">
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>
+GPSYCHO</H2></CENTER>
+
+<CENTER>
+<H2>
+Quality and Listening Test Information</H2></CENTER>
+
+<CENTER>
+<HR WIDTH="100%"></CENTER>
+
+<H3>
+A rough estimate of where the GPSYCHO quality improvements come from:</H3>
+
+<UL>
+<LI>
+35%&nbsp; bug fixes in psycho acoustic model and pre-echo detection.</LI>
+
+<LI>
+35%&nbsp; bit allocation improvements</LI>
+
+<LI>
+20%&nbsp; bit reservoir control</LI>
+
+<LI>
+10 %&nbsp; joint stereo</LI>
+</UL>
+
+<H3>
+Tuning by listening tests:</H3>
+
+<UL>
+<LI>
+Most improvements in GPSYCHO require detailed listening tests.&nbsp; I
+think the best way to go about this is to find a sample where GPSYCHO does
+something bad.&nbsp; Then see if you can figure out which algorithm/tuning
+is at fault, and how it can be improved without breaking something else!</LI>
+
+<LI>
+The best way to perform a listening test is the "ABC hidden reference test".&nbsp;
+Signal A is always the original .wav file.&nbsp; B and C are the encoded
+and the original signal, in a random order.&nbsp; Listen to ABC three times,
+always in that order, and rate B and C on a scale from 1-5, 5 being for
+the signal you perceive as the original.</LI>
+</UL>
+
+<H3>
+<A HREF="preecho.html">Tuning by reverse engineering:</A></H3>
+Here is a detailed example on how the pre-echo algorithm in LAME 3.10 was
+tuned and dramatically improved by doing a frame by frame comparison with
+the FhG encoder.&nbsp;&nbsp; First a sample is found where LAME produces
+noticeably worse results than the state-of-the-art FhG encoder.&nbsp; Listening
+tests are used to determine which frames are causing most of the problems.&nbsp;
+MP3x ( the frame analyzer) is then used to compare the troublesome frames
+produced by LAME to those produced by the FhG encoder.&nbsp; In the case
+presented, the problem was because LAME was not switching to short blocks
+when it should have.
+<CENTER>
+<H2>
+
+<HR WIDTH="100%"></H2></CENTER>
+
+<CENTER>
+<H2>
+Some Test Samples</H2></CENTER>
+
+<HR WIDTH="100%">
+<P>Check out <A HREF="http://sound.media.mit.edu/mpeg4/audio/sqam">SQAM
+- Sound Quality Assessment Material.</A>&nbsp; I haven't had a chance to
+try these yet,
+<BR>but if you find samples where another encoder does noticeably better
+than LAME,&nbsp; I would be very interested.
+<P>
+<HR WIDTH="100%">
+<BR>I am not an audiophile, my ears are in their 30's, and I perform my
+tests with a motherboard sound card and $40 headphones.&nbsp; However,
+the quality of the ISO psy-model is so bad it is quite easy to detect the
+flaws.
+<P>Note that BladeEnc, 8hz-mp3,&nbsp; LAME 2.1 all produce identical results.
+<P>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<CENTER>
+<H1>
+Test cases which need work</H1></CENTER>
+
+<H3>
+<A HREF="../download/samples">ftb_test.wav</A>&nbsp; Obvious differences
+between FhG and LAME.&nbsp; (4.5M 26 seconds)</H3>
+This is a great test case found by&nbsp; &lt;jodaman@cegt201.bradley.edu>
+.&nbsp; It is a selection from Metallica's Fade To Black.&nbsp;&nbsp; At
+128kbs, the difference between LAME and FhG (mp3enc 3.1) is clearly noticable.&nbsp;
+There are problems with the vocal 's' sounds, and there is a slight tinny
+underwater sound.&nbsp;&nbsp; The old FhG encoder l3enc also has the same
+problems.
+<UL>
+<LI>
+<A HREF="http://cegt201.bradley.edu/~jodaman/dev/mp3">Joda's Space</A></LI>
+</UL>
+
+<H3>
+</H3>
+&nbsp;
+<H3>
+<A HREF="../download/samples">track7.wav</A>&nbsp;&nbsp; Jazz sample&nbsp;
+(800K,&nbsp; 4 seconds)</H3>
+Sent by Naoki SHIBATA,&nbsp; n-sibata@ics.es.osaka-u.ac.jp, see <A HREF="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</A>
+<BR>Naoki can hear noise in the left channel, but only when using a good
+pair of headphones.&nbsp; It goes away
+<BR>when joint stereo is not used.&nbsp; Comparing with FhG, it looks like
+LAME&nbsp;is toggling back and forth between
+<BR>MS and regular stereo when it should not be.&nbsp;&nbsp;
+<P>With this test case, I can also here some very faint 'trilling" underwater
+type sounds between the snares in the right channel (kind of like in testsignal4.wav
+below).&nbsp; I think it is a little worse&nbsp; when you quantize based
+on max noise in each critical band rather than average noise in each critical
+band.
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">testsignal2.wav</A>&nbsp;&nbsp;&nbsp; Subtle
+pre-echo test case.&nbsp; (700K, about 5 seconds)</H3>
+This is a very nice pre-echo test case from&nbsp; Jan Rafaj &lt;rafaj@cedric.vabo.cz>.&nbsp;&nbsp;&nbsp;&nbsp;
+It&nbsp; has some clear, isolated drums.&nbsp; If your MP3 encoder does
+not switch to short blocks at the precise moment, you will have very noticeable
+pre-echo.&nbsp; The pre-echo actually sounds like a snare,&nbsp; but this
+snare is completely artificial - there is no trace of it in the original
+.wav file!&nbsp;&nbsp; ISO based encoders do very poorly, mostly because
+the short block switching is completely broken in the psy model (even if
+it detects a pre-echo event, it will switch to short blocks 1 granule too
+late).&nbsp;&nbsp; LAME 3.03 does noticeably better, but it still uses
+the ISO pre-echo detection criterion, and misses many of the pre-echo events.&nbsp;
+If you go into l3psy.c and set switch_pe = 1000 (instead of 1800), LAME
+will do much better, maybe 90% as good as FhG.
+<P>FhG does great.&nbsp; They seem to have excellent pre-echo detection.&nbsp;
+I would love to know what their algorithm is based on.
+<P>Note&nbsp; 5/99: LAME 3.05 has a much improved pre-echo detection algorithm,
+and fixes some of the above problems!
+<BR>Note&nbsp; 7/99: LAME 3.16 has a better pre-echo detection, and allocates
+more bits from the reservoir.
+<UL>
+<LI>
+<A HREF="ftp://cedric.vabo.cz/pub/linux/testfiles/mp3encoders/">Jan Rafaj's
+mp3 testcases</A></LI>
+</UL>
+
+<H3>
+<A HREF="../download/samples">testsignal4.wav</A>&nbsp;&nbsp;&nbsp; Subtle
+distortion case.&nbsp; (800K, about 6 seconds)</H3>
+Another difficult and subtle case from Jan Rafaj &lt;rafaj@cedric.vabo.cz>.&nbsp;&nbsp;
+I believe this is by Enya.&nbsp; There is a slight trill as the volume
+increases.&nbsp; I can barely here it, but the FhG encoder manages to avoid
+it. Using mid/side masking thresholds seems to help a lot (-h in LAME 3.21
+and higher).
+<BR>&nbsp;
+<BR>&nbsp;
+<CENTER>
+<H1>
+Test cases previously used to improve LAME</H1></CENTER>
+
+<H3>
+<A HREF="../download/samples">castanets.wav</A>&nbsp;&nbsp; FhG pre-echo
+reference sample (1.2M, about 7 seconds)</H3>
+
+<P><BR>The castanets should sound like a sharp, crisp clack.&nbsp; In the
+ISO psy-model, they are smeared out into&nbsp; long, soft thwack like sounds.&nbsp;
+GPSYCHO makes a dramatic improvement in this, which is detectable on any
+sound system.&nbsp; This is due to correctly switching to short blocks
+and encoding them with extra bits from the reservoir.&nbsp; The attacks
+are very mono in nature, so jstereo also helps because it allows even more
+bits for encoding the mid channel.&nbsp; The sample is very close to mono,
+but if you really decimate the side it will results in noticeable artifacts.
+<P>The FhG encoder does an even better job on this sample, mostly because
+it detects some of the later castanets. They are muffled by other sounds
+and GPSYCHO fails to recognize them as needing short blocks.&nbsp; Latter
+on in the sample, the castanets come fast and furious, and even the FhG
+encoder can not maintain enough bits in the bit reservoir.&nbsp; VBR would
+be great in this situation. It is very easy to put into an encoder, but
+I don't have a player to debug it with.
+<P>Normally you have to perform listening tests to determine the quality
+of an mp3 encoding.&nbsp;&nbsp; You can not generally&nbsp; say anything
+about the quality by looking at the original and encoded pcm signal.&nbsp;
+Pre-echo problems like in castanets.wav are an exception to this.&nbsp;
+In a bad encoding, the sharp attack of the castanets will create noise
+that is heard<B> before </B>the actual castanets.&nbsp; This flaw is very
+visible in the encoded pcm signal,&nbsp; and is shown for several different
+encoders in&nbsp; <A HREF="../screenshots/screenshots.html">Screenshots.</A>
+<P>With the castents.wav file it's easy to try out new short block detection
+schemes.&nbsp; You dont have to rely on listening tests since the pre-echo
+is so easy to see in the output pcm data.&nbsp; Just modify the graphical
+interface display the new criterion and then go through castanets.wav frame
+by frame and see if it is triggered in the correct spots.&nbsp; For an
+interesting comparison, run lame with -g (the graphical frame analyzer)
+on MP3 files produced by other encoders to see how well they do.
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">Fools.wav</A>&nbsp;&nbsp; Good range of effects&nbsp;
+(5M, about 30 seconds)</H3>
+I got this off an MP3 encoder comparison web site that later vanished.&nbsp;
+I think it is a Lemon Heads song.
+<BR>It was heavily used to tune the LAME 3.12 <A HREF="ms_stereo.html">mid/side
+switch.</A>.&nbsp; I use a mono, downsampled version for the current MPEG2
+quality improvements.
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">main_theme.wav</A>&nbsp;&nbsp;&nbsp;&nbsp;
+Strange artifact, mid/side stereo test.&nbsp;&nbsp; (1.7M, about 11 seconds)</H3>
+This sample is from an old Pink Floyd song.&nbsp; It was found by Robert
+Hegemann &lt;Robert.Hegemann@gmx.de>
+<BR>In the beginning, while the foreground pans from right to left there
+is a slight twinkling sound.&nbsp; This goes away
+<BR>with -X, but the true cause and a better fix should be found.&nbsp;
+(NOTE: 11/99&nbsp; This problem is much improved around lame3.50)
+<P>It also contains a lot of distortion if mid/side stereo is used.&nbsp;
+The new (lame3.12) mid/side switching algorithm solves this problem and
+can detect that almost none of the frames should use mid/side stereo.&nbsp;
+The FhG also does not use mid/side encoding for this sample.
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">mstest.wav</A>&nbsp;&nbsp; Mide/Side stereo
+encoding test sample&nbsp; (700K, about 5 seconds)</H3>
+A good jstereo test case sent to me by Scott Miller &lt;scgmille@indiana.edu>.&nbsp;&nbsp;
+It contains some higher frequency modes which are isolated to the left
+channel.&nbsp; LAME sounds fine in Stereo mode (-m s), but using any type
+of mid/side stereo will spread these modes to the right channel.&nbsp;
+Switching between stereo and ms_stereo will result in the annoying effect
+of having them turn on and off in the right channel.&nbsp; The FhG encoder
+avoids this problem by using very few&nbsp; mid/side stereo frames.&nbsp;
+But the LAME mid/side stereo switching criterion can not detect that this
+sample should not be encode with mid/side stereo, and produces too many
+mid/side frames.&nbsp; Suggestions for a better switching criterion are
+welcome!&nbsp; I've tried a few things, but anything that works is usually
+too restrictive, i.e. it will turn off mid/side stereo for half the frames
+in castanets.wav, but this sample should have all frames mid/side stereo.
+<P>NOTE 6/99: This problem is fixed with new <A HREF="ms_stereo.html">mid/side
+switch</A> added to LAME 3.12!
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">t1.wav</A>&nbsp;&nbsp; Dire Straights sample&nbsp;
+(1.4M, about 9 seconds)</H3>
+This case has some subtle pre-echos that were missed by older versions
+of LAME, and it greatly confused the old LAME mid/side stereo switching
+criterion.&nbsp; It was found by Nils Faerber &lt;Nils.Faerber@unix-ag.org>.&nbsp;&nbsp;
+It was heavily used to tune the LAME 3.12 <A HREF="ms_stereo.html">mid/side
+switch,</A> and for more fine tuning of the pre-echo detection algorithm
+in LAME 3.15.&nbsp;&nbsp; Nils reports that with LAME 3.12, the quality
+is now very close to the FhG encoder.
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">else3.wav&nbsp;</A>&nbsp;&nbsp; Bit allocation
+tests.&nbsp; (1.0M, about 6 seconds)</H3>
+A sample from Sarah Mclaughlan's "Elsewhere".&nbsp; I first checked out
+an MP3 of this song from the Internet (a very high quality encoding).&nbsp;
+Later I bought the CD and encoded it my self with&nbsp; an ISO based encoder,
+and was surprised at the difference in quality.&nbsp; This is what motivated
+me to start looking at the encoder source.
+<P>This song contains a lot of very tonal piano music for which even the
+ISO encoder usually does ok.&nbsp; But in certain situations it produces
+very noticeable distortion in the piano notes.&nbsp; (Particularly in frames
+50-70).&nbsp; GPSYCHO fixes this mostly due to the improved outer_loop
+in the bit allocation subroutine.&nbsp; This sample also has some attacks
+(drums) that are greatly improved with GPSYCHO.&nbsp; I cannot detect a
+difference between GPSYCHO and FhG for this sample.
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<CENTER>
+<H1>
+Other test cases</H1></CENTER>
+
+<H3>
+<A HREF="../download/samples">60.wav</A>&nbsp;&nbsp; Simple two tone test
+case usefull for debugging.&nbsp;&nbsp; (900K,&nbsp; 5 seconds)</H3>
+Sent by Naoki SHIBATA,&nbsp; n-sibata@ics.es.osaka-u.ac.jp, see <A HREF="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</A>
+<H3>
+<A HREF="../download/samples">KMFDM-Dogma.wav</A>&nbsp;&nbsp; LAME actually
+sounds better than FhG!&nbsp; (1.1M, about 6 seconds.)</H3>
+Found by Kevin Burtch &lt;kburtch@bellsouth.net>.
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">iron.wav</A>&nbsp;&nbsp; A sample where LAME
+sounds better than FhG!&nbsp;&nbsp; (6.2M, 35 seconds)</H3>
+Found by Jee J C" &lt;jeejc@hotmail.com> .&nbsp; A short sample from the
+Cardigans.
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">fatboy.wav</A>&nbsp;&nbsp; All encoders have
+trouble with this one.&nbsp; (900K,&nbsp; about 5 seconds.)</H3>
+Found by Jake Hamby &lt;jehamby@anobject.com>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<H3>
+<A HREF="../download/samples">applaud.wav</A>&nbsp;&nbsp; 1.4M, about 9
+seconds.</H3>
+This is a very difficult test sample because of the lack on tonality and
+all the sharp attacks.&nbsp;&nbsp; All encoders produce results noticeably
+different than the original, but the FhG encoder still has the edge.&nbsp;
+The extra quality of the FhG encoder is not due to simple fixes like better
+use of short blocks and the bit reservoir.&nbsp;&nbsp; They do switch to
+ms_stereo, (and GPSYCHO does not), but forcing GPSYCHO into ms_stereo doesn't
+improve things.
+<P>Information on the applaud.wav test sample:
+<UL>
+<LI>
+<A HREF="http://geek.rcc.se/mp3encoder">Jan Peman's applaus test case and
+results from many other encoders</A></LI>
+</UL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i686) [Netscape]">
+</HEAD>
+<BODY>
+
+<CENTER>
+<H1>
+GPSYCHO Mid/Side Stereo</H1></CENTER>
+
+<CENTER>
+<P><BR>
+<HR WIDTH="100%"></CENTER>
+
+<P>There are two stereo modes, "stereo" and "jstereo".&nbsp; "stereo" is
+just the normal independent coding of left &amp; right channels.&nbsp;
+"jstereo" means the frames may use normal stereo, stereo, mid/side stereo
+or intensity stereo.&nbsp; FhG only seems to use intensity stereo at bitrates
+of 80kbs and lower.&nbsp; LAME does not have intensity stereo capability.&nbsp;
+In jstereo mode, the encoder has to decide for each frame if it should
+be encoded stereo or mid/side stereo.
+<P>mid/side stereo encodes the mid and side channels instead of left and
+right.&nbsp; It allocates more bits to the mid channel than the side channel.&nbsp;
+For signals without a lot of stereo seperation, there will be very little
+information in the side channel and this trick will improve bandwidth.&nbsp;
+If the left &amp; right channels differ by a lot, then the side channel
+will contain a lot of information.&nbsp; Errors encoding this information
+will show up as noise in *both* the left and right channels after decoding.
+<P>The LAME mid/side switching criterion, and mid/side masking thresholds
+are taken from:
+<P>Johnston and Ferreira, <I>Sum-Difference Stereo Transform Coding, </I>Proc.
+IEEE ICASSP (1992) p 569-571.
+<P>The MPEG AAC standard claims to use mid/side encoding based on this
+paper.
+<BR>&nbsp;
+<P>
+<HR WIDTH="100%">
+<H3>
+LAME Mid/Side switching criterion</H3>
+The new ms_stereo switch uses mid/side stereo only when the difference
+between L &amp; R masking thresholds (averaged over all scalefactors) is
+less then 5db.&nbsp;&nbsp; In several test samples it does an amazing job
+mimicking the FhG encoder (see below).
+<P>I believe the idea behind this is the following: If one channel has
+much less noise masking in a certain band, than masked noise in one channel
+that is spread to the other channel (by mid/side stereo) may no longer
+be masked.&nbsp; If both channels have the same masking, then the noise
+spread between both channels will be equally well masked.
+<BR>&nbsp;
+<P><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+regular stereo frames:</TT>
+<BR><TT>Fools.wav:&nbsp; (1180 frames)</TT>
+<BR><TT>FhG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+frames 793-804,902</TT>
+<BR><TT>new LAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+frames 793-803,869,902,966,1017</TT>
+<BR><TT>old LAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+over 500 frames used regular stereo</TT>
+<BR>&nbsp;
+<P><TT>IfYouCould.wav: (80 frames)</TT>
+<BR><TT>FhG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+43,51,60</TT>
+<BR><TT>new LAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+42,43,51,60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (like FhG, 1 extra)</TT>
+<BR><TT>old LAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+33,62,65,66&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (completely unlike FhG)</TT>
+<BR>&nbsp;
+<P><TT>mstest.wav: (156 frames)</TT>
+<BR><TT>FhG:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+138 frames use regular stereo</TT>
+<BR><TT>new LAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+137 frames use regular stereo</TT>
+<BR><TT>old LAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8 frames use regular stereo</TT>
+<BR>&nbsp;
+<P><TT>t1.wav: 160 frames</TT>
+<BR><TT>FhG:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+39-42, 80-83, 121-124, 144-150</TT>
+<BR><TT>new LAME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+38-41, 79-82, 120-124,</TT>
+<BR><TT>old LAME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+constant inappropriate toggling of ms_stereo</TT>
+<P><TT>track7.wav&nbsp;&nbsp; 146 frames</TT>
+<BR><TT>FhG:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0, 2-15, 21-66, 69-80, 83-146</TT>
+<BR><TT>new LAME:</TT>
+<BR>&nbsp;
+<P><TT>Castanets.wav:&nbsp; (253 frames)</TT>
+<BR><TT>All encoders use all ms_stereo for all frames</TT>
+<P><TT>else3.wav: 217 frames</TT>
+<BR><TT>All encoders use all ms_stereo for all frames</TT>
+<BR>&nbsp;
+<P>
+<HR WIDTH="100%">
+<H3>
+Mid/Side Stereo Masking Thresholds</H3>
+There is a problem for true jstereo, where you need to turn ms_stereo on
+and off on a frame by frame basis.&nbsp; Some frames will need masking
+thresholds from L/R channels, and some for Mid/Side channels.&nbsp; But
+since the masking thresholds depend on previous (and following) frames,
+you can only compute the masking for a given granule if you've computed
+it for the 2 previous granules. Thus to implement Mid/Side masking into
+the jstereo mode, we would need to compute, for all frames, L,R, Mid and
+Side masking thresholds in l3psycho_anal.&nbsp; This would not be as expensive
+as it sounds since the FFTs only need to be called on the L &amp; R channels.&nbsp;
+The energy and phase from Mid &amp; Side channels can be computed from
+the L &amp; R FFT output.&nbsp; But it would be a major code change.
+<BR>(Note: this is now done in LAME 3.21 with the -h option.&nbsp; It will
+eventually become the default).
+<P>What's done right now?&nbsp; Without the -h option, LAME jstereo only
+computes L &amp; R masking thresholds.&nbsp; If it is encoding a non ms_stereo
+frame, no problem.&nbsp; If it is encoding Mid &amp; Side channels, then
+we have to be a little careful.&nbsp; We are quantizing Mid/Side channels,
+but the masking (allowed distortion) is given on L &amp; R channels. Thus
+the computation of the audible distortion has to be done on the L &amp;
+R channels too.&nbsp; This just involves reforming the L/R MDCT coefficients
+and the de-quantized L/R coefficients, and is done in calc_noise2.
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>

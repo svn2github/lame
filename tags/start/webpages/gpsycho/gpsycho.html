@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (X11; I; Linux 2.0.36 i686) [Netscape]">
+</HEAD>
+<BODY>
+
+<CENTER>
+<H1>
+GPSYCHO</H1></CENTER>
+
+<CENTER>
+<H2>
+A GPL'd Psycho-Acoustic Model</H2></CENTER>
+
+<CENTER>
+<H2>
+c. 1999&nbsp; <A HREF="mailto:mt@sulaco.org">Mark Taylor</A></H2></CENTER>
+
+<CENTER>
+<HR WIDTH="100%"></CENTER>
+
+<P>GPSYCHO is an open source psycho-acoustic and noise shaping model for
+ISO based MP3 encoders.&nbsp; GPSYCHO fixes some substantial bugs in the
+ISO demonstration source psycho-acoustic model (ISO psy-model). In addition,&nbsp;
+GPSYCHO adds mid/side stereo, real bit reservoir control, much improved
+critical band bit allocation routines, variable bit rate (optional) and
+very good pre-echo control.&nbsp; At 128kbs, the quality is significantly
+better than that produced by the ISO psy-model (as found in almost all
+other free encoders).&nbsp; An example of these improvements is shown in
+<A HREF="../screenshots/screenshots.html">Screenshots</A>
+.&nbsp; GPSYCHO is close to the quality of the FhG encoder, but there is
+still room for improvement.&nbsp; Read on if you want to help!
+<P>As this code is released under the GPL, it can only be used in other
+GPL'd&nbsp; projects.&nbsp; I would also encourage others to help improve
+GPSYCHO.&nbsp; Some things that would help:
+<UL>
+<LI>
+Find (and send me) samples where your favorite encoder does a better job
+than GPSYCHO.</LI>
+
+<LI>
+Run your own listening tests and try tuning some of the algorithms below.&nbsp;
+Most have parameters that are set via trial and error.</LI>
+
+<LI>
+Try out new algorithms!</LI>
+</UL>
+
+<H3>
+
+<HR WIDTH="100%"><A HREF="quality.html">Quality Information and Listening
+Tests</A></H3>
+
+<UL>
+<LI>
+Click the above link for results and descriptions of the listening tests
+I use.</LI>
+</UL>
+
+<H3>
+
+<HR WIDTH="100%"></H3>
+
+<H3>
+<A HREF="vbr.html">Notes on GPSYCHO variable bit rate (VBR)</A></H3>
+
+<H3>
+<A HREF="ms_stereo.html">Notes on GPSYCHO Mid/Side Stereo</A></H3>
+
+<H3>
+<A HREF="outer_loop.html">Notes on GPSYCHO outer_loop quantization algorithm</A></H3>
+
+<H3>
+
+<HR WIDTH="100%">New Features (which may need some tuning):</H3>
+
+<UL>
+<LI>
+Bit allocation outer loop improved based on ideas in an MPEG2 J. Audio
+Eng. Soc. 1997 paper.&nbsp; The ISO demonstration source outer loop can
+produce some very poor quality frames in certain situations.</LI>
+
+<LI>
+VBR (variable bit rate) is now working!&nbsp;&nbsp; See the VBR link above
+for details.</LI>
+
+<LI>
+MS_STEREO switch.&nbsp; ISO formula is primitive.&nbsp; I use a switch
+described <A HREF="ms_stereo.html">here.</A></LI>
+
+<LI>
+MS_STEREO ISO sparsing&nbsp; formula does not work.&nbsp; It will remove
+95% of the side channel coefficients.&nbsp; I don't sparse the side channel
+at all, but allocate less bits for encoding.&nbsp;&nbsp; Martin Weghofer
+&lt;e9427483@student.tuwien.ac.at>&nbsp; has a coder which does effectively
+use side channel sparsing, but the algorithm does not work will with the
+LAME quantization procedure.&nbsp; This is an area that needs further work.</LI>
+
+<LI>
+MS_STEREO now uses ideas in a Johnson ICASSP 1992 paper to compute true
+Mid and Side thresholds which compensate for stereo de-masking.&nbsp;&nbsp;
+It is used in PAC and AAC.</LI>
+
+<LI>
+Bit reservoir use.&nbsp; Again the ISO formula performs poorly.&nbsp; At
+128kbs,&nbsp; it always thinks it needs to drain the reservoir, and thus
+the reservoir can never build up.&nbsp; It will also use up all the bits
+for the left channel before even looking at the right channel.&nbsp; I
+put in a kludged up formula that seems to work ok, but could use some tuning.</LI>
+
+<LI>
+Mid/Side bit allocation.&nbsp; I allocate bits based on the differences
+between left and right masking thresholds.&nbsp; Anyone have a better idea?</LI>
+
+<LI>
+Remove data in scalefactor band 21 when encoding at 128kbs or less.&nbsp;
+This was done because FhG also does it (you can see this by running the
+graphical frame analyzer).&nbsp; It amounts to a 16kHz low-pass filter
+and makes a few more bits available for more important information.&nbsp;
+If it offends you, you probably should not be encoding at 128kbs in the
+first place!&nbsp; Try 160kbs.&nbsp; At 128kbs, more often than not the
+psy-model will remove these frequencies even without this mod.</LI>
+
+<LI>
+Improved shortblock switching.&nbsp; It is now based on surges in PE or
+large fluctuations in energy within a single granule.&nbsp; These improvements
+trigger some critical window switching that LAME used to miss.</LI>
+</UL>
+
+<H3>
+Features to try out:</H3>
+
+<UL>
+<LI>
+Add a high-pass filter.&nbsp; 20Hz?</LI>
+
+<LI>
+Shorter FFT for the long block noise threshold calculation.&nbsp; A 768
+FFT centered over the 576 sample granule would be more accurate for the
+high frequency energies than the 1024 FFT.&nbsp;&nbsp; This should also
+improve the perceptual entropy (pe) calculation since there will be less
+interference from data outside the granule.&nbsp; Another advantage might
+be for the applaud.wav test - see the&nbsp; <A HREF="quality.html">Quality</A>
+section for details.&nbsp; It will of course make the low frequency energy
+estimates less accurate.</LI>
+
+<LI>
+subblock_gain.&nbsp; This seems to be important.&nbsp; FhG uses it for
+most short blocks.&nbsp; LAME and other dist10 based codes do not make
+any use of this.&nbsp; One subblock gain algorithm (LAME 3.21) is enabled
+with -Z.</LI>
+</UL>
+
+<H3>
+Things I've learned from analyzing FhG produced .mp3 frames (layer 3, 128kbs):</H3>
+
+<UL>
+<LI>
+I've never seen FhG use mixed_blocks</LI>
+
+<LI>
+I've never seen FhG use intensity stereo</LI>
+
+<LI>
+I've never seen FhG use scsfi&lt;>0</LI>
+
+<LI>
+Removes data in scalefactor band 21 at 128kbs.</LI>
+
+<LI>
+Almost always uses ms_stereo.&nbsp; Does not use ISO formula for ms_stereo
+switching.</LI>
+
+<LI>
+More sophisticated mid/side bit allocation.</LI>
+
+<LI>
+Excellent short block detection.&nbsp; How do they do this?&nbsp; They
+can't be using the ISO pe formula.</LI>
+
+<LI>
+Good bit reservoir use.&nbsp; Not totally based on pe, since they often
+allocate extra bits to long blocks.</LI>
+
+<LI>
+Does not produce variable bit rate frames.</LI>
+</UL>
+
+</BODY>
+</HTML>
