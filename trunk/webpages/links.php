@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.18 2007-08-10 01:49:09 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.19 2008-04-16 23:21:20 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -25,14 +25,6 @@
 	<h1>LAME and MP3-related Links</h1>
 </div>
 
-<p>
-	<i>If you know of some software supporting LAME that is not featured here, or
-	if you spot a broken link, please contact the <a
-	href="mailto:rjamorim@users.sourceforge.net">webmaster</a>.<br/>
-	If you are submitting your own software, please include a brief description of
-	it in the e-mail.</i>
-</p>
-
 <h3>Quick Links:</h3>
 
 <ul>
@@ -48,7 +40,7 @@
 	<li><a href="#ClosedSource">Free (closed source) software which supports or uses LAME</a></li>
 	<li><a href="#Commercial">Commercial software which supports or uses LAME</a></li>
 	<!--<li><a href="#Shame">Hall of Shame</a></li>-->
-	<li><a href="#Binaries">LAME Binaries (fow Windows, *nix, Amiga...)</a></li>
+	<li><a href="#Binaries">LAME Binaries (for Windows, *nix, Amiga...)</a></li>
 	<li><a href="#Alternatives">Alternative MP3 encoders</a></li>
 	<li><a href="#Comparisons">Comparisons based on listening tests</a></li>
 	<li><a href="#MP3_sites">MP3 encoding web sites</a></li>
@@ -300,6 +292,11 @@
 		<a href="http://www.exactaudiocopy.de">EAC</a> (Windows) Exact Audio Copy: 
 		High quality CD ripper.
 	</li>
+   
+   <li>
+      <a href="http://www.wavosaur.com/">Wavosaur</a> Free audio editor and batch 
+      processor.
+   </li>
 	
 	<li>
 		<a href="http://www.uic.nnov.ru/%7Eloea/">LameBatch</a> (Windows) frontend 
@@ -904,6 +901,16 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>-->
 
 </ul>
+
+<p>
+	<i>If you know of some software supporting LAME that is not featured here, or
+	if you spot a broken link, please contact the <a
+	href="mailto:rjamorim@users.sourceforge.net">webmaster</a>.<br/>
+	If you are submitting your own software, please include a brief description of
+	it in the e-mail.</i><br />
+   <b><i>DO NOT USE THAT E-MAIL FOR SUPPORT QUESTIONS! GO <a 
+   href="http://lame.sourceforge.net/contact.php">HERE</a> INSTEAD.</i></b>
+</p>
 
 </div>
 <?php include("footer.html") ?>
