@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.19 2008-04-16 23:21:20 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.20 2008-04-22 11:00:39 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -292,6 +292,11 @@
 		<a href="http://www.exactaudiocopy.de">EAC</a> (Windows) Exact Audio Copy: 
 		High quality CD ripper.
 	</li>
+   
+   <li>
+      <a href="http://slideplay.blogspot.com">jtvmaker</a> (Java) A web slideshow 
+      generating and photo sharing tool using LAME.
+   </li>
    
    <li>
       <a href="http://www.wavosaur.com/">Wavosaur</a> Free audio editor and batch 
