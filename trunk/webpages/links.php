@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.20 2008-04-22 11:00:39 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.21 2008-04-22 11:06:39 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -603,16 +603,16 @@ you are now complying with our license, please contact us.</strong></p>
 
 </ul>
 
-<!-- <h4>Solaris:</h4>
+<h4>Solaris:</h4>
 
 <ul>
 
 	<li>
-  		<a href="http://www.rarewares.org/">RareWares</a> provides up-to-date
-		binaries for Sun Solaris, both SPARC and x86 architectures.
+  		<a href="http://www.sunfreeware.com/">Sunfreeware</a> provides up-to-date
+		binaries for several versions of Sun Solaris, both SPARC and x86 architectures.
 	</li>
 
-</ul>-->
+</ul>
 
 <h4>Etc.:</h4>
 
