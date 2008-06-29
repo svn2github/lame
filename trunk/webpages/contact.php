@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Contact Information</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: contact.php,v 1.5 2007-08-10 02:04:22 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: contact.php,v 1.6 2008-06-29 15:25:28 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -44,7 +44,7 @@
 	2000</a>)
 </p>
 
-<h3>LAME developement mailing list</h3>
+<h3>LAME development mailing list</h3>
 
 <p>
 	<a href="http://lists.sourceforge.net/lists/listinfo/lame-dev">The lame-dev
