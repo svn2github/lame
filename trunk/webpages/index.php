@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: index.php,v 1.5 2007-01-13 00:18:29 rjamorim Exp $" />
+  <meta name="cvs-version" content="$Id: index.php,v 1.6 2008-07-04 14:30:13 rjamorim Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -29,7 +29,7 @@
 	LAME is an MPEG Audio Layer III (MP3) encoder licensed under the LGPL.
 </p>
 
-<h3 id="latest_release">Latest LAME release: <a href="download.php">v3.97</a>
+<h3 id="latest_release">Latest LAME release: <a href="download.php">v3.98</a>
 (September 2006)</h3>
 
 <p>
