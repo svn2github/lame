@@ -11,9 +11,6 @@
 # include <config.h>
 #endif
 
-#ifdef USE_LAYER_2
-
-
 #include "common.h"
 #include "layer2.h"
 #include "l2tables.h"
@@ -77,7 +74,7 @@ II_step_one(PMPSTR mp, unsigned int *bit_alloc,int *scale,struct frame *fr)
     int sblimit = fr->II_sblimit;
     int jsbound = fr->jsbound;
     int sblimit2 = fr->II_sblimit<<stereo;
-    struct al_table2 *alloc1 = fr->alloc;
+    struct al_table2 const *alloc1 = fr->alloc;
     int i;
     static unsigned int scfsi_buf[64];
     unsigned int *scfsi,*bita;
@@ -151,7 +148,7 @@ II_step_two(PMPSTR mp, unsigned int *bit_alloc,real fraction[2][4][SBLIMIT],int 
     int stereo = fr->stereo;
     int sblimit = fr->II_sblimit;
     int jsbound = fr->jsbound;
-    struct al_table2 *alloc2,*alloc1 = fr->alloc;
+    struct al_table2 const *alloc2, *alloc1 = fr->alloc;
     unsigned int *bita=bit_alloc;
     int d1,step;
 
@@ -160,7 +157,8 @@ II_step_two(PMPSTR mp, unsigned int *bit_alloc,real fraction[2][4][SBLIMIT],int 
       step = alloc1->bits;
       for (j=0;j<stereo;j++)
       {
-        if ( (ba=*bita++) ) 
+        ba = *bita++;
+        if ( ba ) 
         {
           k=(alloc2 = alloc1+ba)->bits;
           if( (d1=alloc2->d) < 0) 
@@ -191,7 +189,8 @@ II_step_two(PMPSTR mp, unsigned int *bit_alloc,real fraction[2][4][SBLIMIT],int 
     {
       step = alloc1->bits;
       bita++;	/* channel 1 and channel 2 bitalloc are the same */
-      if ( (ba=*bita++) )
+      ba = *bita++;
+      if ( ba )
       {
         k=(alloc2 = alloc1+ba)->bits;
         if( (d1=alloc2->d) < 0)
@@ -261,7 +260,7 @@ static void II_select_table(struct frame *fr)
     table = translate[fr->sampling_frequency][2-fr->stereo][fr->bitrate_index];
   sblim = sblims[table];
 
-  fr->alloc      = (struct al_table2*)tables[table];
+  fr->alloc      = (struct al_table2 const*)tables[table];
   fr->II_sblimit = sblim;
 }
 
@@ -308,5 +307,4 @@ int do_layer2( PMPSTR mp,unsigned char *pcm_sample,int *pcm_point)
 }
 
 
-#endif
 

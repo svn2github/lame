@@ -72,14 +72,14 @@ char *strchr (), *strrchr ();
 struct frame {
     int stereo;
     int jsbound;
-  int single;             /* single channel (monophonic) */
-  int lsf;                /* 0 = MPEG-1, 1 = MPEG-2/2.5 */
-  int mpeg25;             /* 1 = MPEG-2.5, 0 = MPEG-1/2 */
+    int single;             /* single channel (monophonic) */
+    int lsf;                /* 0 = MPEG-1, 1 = MPEG-2/2.5 */
+    int mpeg25;             /* 1 = MPEG-2.5, 0 = MPEG-1/2 */
     int header_change;
-  int lay;                /* Layer */
-  int error_protection;   /* 1 = CRC-16 code following header */
+    int lay;                /* Layer */
+    int error_protection;   /* 1 = CRC-16 code following header */
     int bitrate_index;
-  int sampling_frequency; /* sample rate of decompressed audio in Hz */
+    int sampling_frequency; /* sample rate of decompressed audio in Hz */
     int padding;
     int extension;
     int mode;
@@ -90,12 +90,11 @@ struct frame {
     int framesize; /* computed framesize */
 
 	/* AF: ADDED FOR LAYER1/LAYER2 */
-#if defined(USE_LAYER_2) || defined(USE_LAYER_1)
     int II_sblimit;
-    struct al_table2 *alloc;
+    struct al_table2 const *alloc;
 	int down_sample_sblimit;
 	int	down_sample;
-#endif
+
 
 };
 

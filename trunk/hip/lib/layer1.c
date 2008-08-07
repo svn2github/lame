@@ -14,8 +14,6 @@
 # include <config.h>
 #endif
 
-#ifdef USE_LAYER_1
-
 #include <assert.h>
 #include "common.h"
 #include "decode_i386.h"
@@ -23,6 +21,8 @@
 #ifdef WITH_DMALLOC
 #include <dmalloc.h>
 #endif
+
+#include "layer1.h"
 
 static void 
 I_step_one(PMPSTR mp, unsigned int balloc[], unsigned int scale_index[2][SBLIMIT],struct frame *fr)
@@ -83,28 +83,34 @@ I_step_two(PMPSTR mp, real fraction[2][SBLIMIT],unsigned int balloc[2*SBLIMIT],
     real *f1 = fraction[1];
     ba = balloc;
     for (sample=smpb,i=0;i<jsbound;i++)  {
-      if ((n = *ba++))
+      n = *ba++;
+      if (n)
         *sample++ = getbits(mp,n+1);
-      if ((n = *ba++))
+      n = *ba++;
+      if (n)
         *sample++ = getbits(mp,n+1);
     }
-    for (i=jsbound;i<SBLIMIT;i++) 
-      if ((n = *ba++))
+    for (i=jsbound;i<SBLIMIT;i++) {
+      n = *ba++;
+      if (n)
         *sample++ = getbits(mp,n+1);
-
+    }
     ba = balloc;
     for (sample=smpb,i=0;i<jsbound;i++) {
-      if((n=*ba++))
+      n = *ba++;
+      if(n)
         *f0++ = (real) ( ((-1)<<n) + (*sample++) + 1) * muls[n+1][*sca++];
       else
         *f0++ = 0.0;
-      if((n=*ba++))
+      n = *ba++;
+      if(n)
         *f1++ = (real) ( ((-1)<<n) + (*sample++) + 1) * muls[n+1][*sca++];
       else
         *f1++ = 0.0;
     }
     for (i=jsbound;i<SBLIMIT;i++) {
-      if ((n=*ba++)) {
+      n = *ba++;
+      if (n) {
         real samp = (real)( ((-1)<<n) + (*sample++) + 1);
         *f0++ = samp * muls[n+1][*sca++];
         *f1++ = samp * muls[n+1][*sca++];
@@ -118,12 +124,15 @@ I_step_two(PMPSTR mp, real fraction[2][SBLIMIT],unsigned int balloc[2*SBLIMIT],
   else {
     real *f0 = fraction[0];
     ba = balloc;
-    for (sample=smpb,i=0;i<SBLIMIT;i++)
-      if ((n = *ba++))
+    for (sample=smpb,i=0;i<SBLIMIT;i++) {
+      n = *ba++;
+      if (n)
         *sample++ = getbits(mp,n+1);
+    }
     ba = balloc;
     for (sample=smpb,i=0;i<SBLIMIT;i++) {
-      if((n=*ba++))
+      n = *ba++;
+      if(n)
         *f0++ = (real) ( ((-1)<<n) + (*sample++) + 1) * muls[n+1][*sca++];
       else
         *f0++ = 0.0;
@@ -169,5 +178,4 @@ int do_layer1(PMPSTR mp, unsigned char *pcm_sample,int *pcm_point)
   return clip;
 }
 
-#endif
 

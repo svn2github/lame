@@ -46,9 +46,7 @@ const long freqs[9] = { 44100, 48000, 32000,
 
 
 
-#if defined( USE_LAYER_1 ) || defined ( USE_LAYER_2 )
   real muls[27][64];
-#endif
 
 #if 0
 static void get_II_stuff(struct frame *fr)
@@ -97,14 +95,6 @@ int head_check(unsigned long head,int check_layer)
 	return FALSE;
   }
 
-#ifndef USE_LAYER_1
-  if (nLayer == 1)
-      return FALSE;
-#endif
-#ifndef USE_LAYER_2
-  if (nLayer == 2)
-      return FALSE;
-#endif
   if (nLayer == 4)
       return FALSE;
 
@@ -173,7 +163,6 @@ int decode_header(struct frame *fr,unsigned long newhead)
 
     switch(fr->lay)
     {
-#ifdef USE_LAYER_1
       case 1:
 		fr->framesize  = (long) tabsel_123[fr->lsf][0][fr->bitrate_index] * 12000;
 		fr->framesize /= freqs[fr->sampling_frequency];
@@ -181,8 +170,7 @@ int decode_header(struct frame *fr,unsigned long newhead)
 		fr->down_sample=0;
 		fr->down_sample_sblimit = SBLIMIT>>(fr->down_sample);
         break;
-#endif
-#ifdef USE_LAYER_2
+
       case 2:
 		fr->framesize = (long) tabsel_123[fr->lsf][1][fr->bitrate_index] * 144000;
 		fr->framesize /= freqs[fr->sampling_frequency];
@@ -190,7 +178,7 @@ int decode_header(struct frame *fr,unsigned long newhead)
 		fr->down_sample=0;
 		fr->down_sample_sblimit = SBLIMIT>>(fr->down_sample);
         break;
-#endif
+
       case 3:
 #if 0
         fr->do_layer = do_layer3;
@@ -313,9 +301,7 @@ int set_pointer( PMPSTR mp, long backstep)
   unsigned char *bsbufold;
 
   if(mp->fsizeold < 0 && backstep > 0) {
-#if 0
     fprintf(stderr,"hip: Can't step back %ld bytes!\n",backstep);
-#endif
     return MP3_ERR; 
   }
   bsbufold = mp->bsspace[1-mp->bsnum] + 512;
