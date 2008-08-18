@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.22 2008-06-29 15:49:19 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.23 2008-08-18 22:20:25 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -277,6 +277,11 @@
 <h3><a name="ClosedSource">Free (closed source) software which supports or uses LAME:</a></h3>
 
 <ul>
+	
+	<li>
+		<a href="http://www.foobar2000.org">Foobar2000</a> (Windows) an audio player with spartan
+		interface but lots of components and an almost fanatical focus on audio quality.
+	</li>
 
 	<li>
 		<a href="http://www.audiograbber.com-us.net">Audiograbber</a> (Windows) CD 
