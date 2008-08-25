@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.24 2008-08-25 02:04:31 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.25 2008-08-25 02:24:41 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -642,7 +642,7 @@ you are now complying with our license, please contact us.</strong></p>
 	<li>
 		<a href="http://www.initialt.org/">Takehiro Tominaga</a> has done some 
 		amazing work on LAME	recently (see <a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">
+		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
 		history</a>). His versions are available <a 
 		href="http://www.initialt.org/lame-beta/">here (source code only)</a>. 
 		Fortunately for us, Takehiro takes the time to fold many of his 
