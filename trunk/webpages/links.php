@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.23 2008-08-18 22:20:25 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.24 2008-08-25 02:04:31 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -28,7 +28,8 @@
 <h3>Quick Links:</h3>
 
 <ul>
-	<li><a href="#OpenSource">Free (open source) software which supports or uses LAME</a>
+	<li><a href="#OpenSource">Free (open source) software which supports or uses 
+	LAME</a>
 	<ul>
 		<li><a href="#Multiplatform">Multiplatform</a></li>
 		<li><a href="#Posix">Posix (UNIX-like)</a></li>
@@ -37,8 +38,10 @@
 	</ul>
 	</li>
 	
-	<li><a href="#ClosedSource">Free (closed source) software which supports or uses LAME</a></li>
-	<li><a href="#Commercial">Commercial software which supports or uses LAME</a></li>
+	<li><a href="#ClosedSource">Free (closed source) software which supports or 
+	uses LAME</a></li>
+	<li><a href="#Commercial">Commercial software which supports or uses 
+	LAME</a></li>
 	<!--<li><a href="#Shame">Hall of Shame</a></li>-->
 	<li><a href="#Binaries">LAME Binaries (for Windows, *nix, Amiga...)</a></li>
 	<li><a href="#Alternatives">Alternative MP3 encoders</a></li>
@@ -50,7 +53,8 @@
 	<li><a href="#Patents">Patent Information</a></li>
 </ul>
 
-<h3><a name="OpenSource">Free (open source) software which supports or uses LAME:</a></h3>
+<h3><a name="OpenSource">Free (open source) software which supports or uses 
+LAME:</a></h3>
 
 <p><b>&nbsp;&nbsp;<a name="Multiplatform">Multiplatform:</a></b></p>
 
@@ -100,7 +104,8 @@
 
 </ul>
 
-<p><b>&nbsp;&nbsp;<a name="Posix">Posix (Linux, MacOS X, BSD, Solaris, etc.):</a></b></p>
+<p><b>&nbsp;&nbsp;<a name="Posix">Posix (Linux, MacOS X, BSD, Solaris, etc.):
+</a></b></p>
 
 <ul>
 
@@ -129,11 +134,6 @@
 	</li>
 	
 	<li>
-		<a	href="http://userpage.fu-berlin.de/~mbayer/tools/dekagen.html">dekagenc</a>
-		Bourne shell script for ripping, encoding and CDDB naming.
-	</li>
-	
-	<li>
 		<a href="http://ripperx.sourceforge.net/">ripperX</a> GTK frontend for
 		rippers and several encoders featuring CDDB support.
 	</li>
@@ -154,8 +154,8 @@
 	</li>
 	
 	<li>
-		<a href="http://www.agouros.de/dlame/">DLame</a> Perl script to distribute
-		the LAME encoding task among several machines in a network.
+		<a href="http://www.agouros.de/dlame/">DLame</a> Perl script to 
+		distribute the LAME encoding task among several machines in a network.
 	</li>
 	
 	<li>
@@ -191,9 +191,8 @@
 	</li>
 	
 	<li>
-		<a href="http://www.hispalinux.es/~data/abcde.php">ABCDE</a> "A Better CD
-		Encoder" - Shell script to automatize ripping, encoding and tagging
-		process.
+		<a href="http://lly.org/~rcw/abcde/page/">ABCDE</a> "A Better CD	Encoder" 
+		- Shell script to automatize ripping, encoding and tagging process.
 	</li>
 	
 	<li>
@@ -213,7 +212,8 @@
 <ul>
 
 	<li>
-		<a href="http://philippe.laval.free.fr">DropMP3</a> includes LAME binaries.
+		<a href="http://philippe.laval.free.fr">DropMP3</a> includes LAME 
+		binaries.
 	</li>
 
 </ul>
@@ -228,23 +228,23 @@
 	</li>
 	
 	<li>
-		<a href="http://www.rarewares.org/mp3-lamedrop.php">LameDropXPd</a> OggDrop 
-      style drag'n'drop frontend.
+		<a href="http://www.rarewares.org/mp3-lamedrop.php">LameDropXPd</a> 
+		OggDrop style drag'n'drop frontend.
 	</li>
 	
 	<li>
-		<a href="http://www.labdv.com/dvdx/">DVDx</a> DVD to VCD/SVCD/AVI(XviD...) 
-		one-step	converter.
+		<a href="http://www.labdv.com/dvdx/">DVDx</a> DVD to 
+		VCD/SVCD/AVI(XviD...) one-step converter.
 	</li>
 	
 	<li>
-		<a href="http://omniencoder.autobotcity.net/">OmniEncoder</a> a fully 
+		<a href="http://www.omniencoder.com/">OmniEncoder</a> a fully 
 		featured frontend	for LAME and several other encoders.
 	</li>
 	
 	<li>
-		<a href="http://www.interruptx.com">LAMEX</a> An activex control for LAME, 
-		and a GUI. Source code only, includes LAME.
+		<a href="http://www.interruptx.com">LAMEX</a> An activex control for 
+		LAME, and a GUI. Source code only, includes LAME.
 	</li>
 	
 	<li>
@@ -258,13 +258,13 @@
 	</li>
 	
 	<li>
-		<a href="http://www.dors.de/razorlame/index.php">RazorLame</a> The RazorBlade
-		front end now supports LAME.
+		<a href="http://www.dors.de/razorlame/index.php">RazorLame</a> The 
+		RazorBlade front end now supports LAME.
 	</li>
 	
 	<li>
-		<a href="http://winlame.sourceforge.net">winLAME</a> The only *nice* windows
-		UI for LAME, according to the author :-)
+		<a href="http://winlame.sourceforge.net">winLAME</a> The only *nice* 
+		windows UI for LAME, according to the author :-)
 	</li>
 	
 	<li>
@@ -274,38 +274,40 @@
 
 </ul>
 
-<h3><a name="ClosedSource">Free (closed source) software which supports or uses LAME:</a></h3>
+<h3><a name="ClosedSource">Free (closed source) software which supports or uses 
+LAME:</a></h3>
 
 <ul>
 	
 	<li>
-		<a href="http://www.foobar2000.org">Foobar2000</a> (Windows) an audio player with spartan
-		interface but lots of components and an almost fanatical focus on audio quality.
+		<a href="http://www.foobar2000.org">Foobar2000</a> (Windows) an audio 
+		player with spartan interface but lots of components and an almost 
+		fanatical focus on audio quality.
 	</li>
 
 	<li>
-		<a href="http://www.audiograbber.com-us.net">Audiograbber</a> (Windows) CD 
-		ripper/encoder.
+		<a href="http://www.audiograbber.com-us.net">Audiograbber</a> (Windows) 
+		CD ripper/encoder.
 	</li>
 	
 	<li>
-		<a href="http://www.skillreactor.org/tools/index.htm">EnLAMEr</a> (Windows) 
-		frontend for lame.exe
+		<a href="http://www.skillreactor.org/tools/index.htm">EnLAMEr</a> 
+		(Windows) frontend for lame.exe
 	</li>
 	
 	<li>
-		<a href="http://www.exactaudiocopy.de">EAC</a> (Windows) Exact Audio Copy: 
-		High quality CD ripper.
+		<a href="http://www.exactaudiocopy.de">EAC</a> (Windows) Exact Audio 
+		Copy: High quality CD ripper.
 	</li>
    
    <li>
-      <a href="http://slideplay.blogspot.com">jtvmaker</a> (Java) A web slideshow 
-      generating and photo sharing tool using LAME.
+      <a href="http://slideplay.blogspot.com">jtvmaker</a> (Java) A web 
+      slideshow generating and photo sharing tool using LAME.
    </li>
    
    <li>
-      <a href="http://www.wavosaur.com/">Wavosaur</a> Free audio editor and batch 
-      processor.
+      <a href="http://www.wavosaur.com/">Wavosaur</a> Free audio editor and 
+      batch processor.
    </li>
 	
 	<li>
@@ -346,8 +348,8 @@
 	
 	<li>
 		<a href="http://blacktree.com/apps/iTunes-LAME/">iTunes-LAME</a> (MacOS) 
-		Integrates LAME into Apple iTunes, as an alternative to the default (rather 
-		poor) encoder.
+		Integrates LAME into Apple iTunes, as an alternative to the default 
+		(rather poor) encoder.
 	</li>
 	
 	<li>
@@ -362,13 +364,14 @@
 
 </ul>
 
-<h3><a name="Commercial">Commercial software which supports or uses LAME:</a></h3>
+<h3><a name="Commercial">Commercial software which supports or uses 
+LAME:</a></h3>
 
 <ul>
 
 	<li>
-		<a href="http://www.winamp.com">WinAmp</a> Can rip CDs using Lame, but only 
-		in the Pro (paid) version.
+		<a href="http://www.winamp.com">WinAmp</a> Can rip CDs using Lame, but 
+		only in the Pro (paid) version.
 	</li>
 	
 	<li>
@@ -380,14 +383,9 @@
 		<a href="http://www.goldwave.com/">Goldwave</a> Audio editor for Windows.
 	</li>
 	
-	<!--<li>
-		<a href="http://www.pinnaclesys.com/ProductPage_n.asp?Product_ID=1150&amp;Langue_ID=7">
-		MyMP3</a> Windows jukebox software from Pinnacle.
-	</li>-->
-   
    <li>
-		<a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Windows) Rip and encode 
-		to/from mp3, wma, vorbis and other audio formats.
+		<a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Windows) Rip and 
+		encode to/from mp3, wma, vorbis and other audio formats.
 	</li>
 	
 	<li>
@@ -401,8 +399,8 @@
 	</li>
 	
 	<li>
-		<a href="http://www.blazemp.com/">Blaze Media Pro</a> audio/video converter, 
-		editor, CD/DVD burner, and more for Windows.
+		<a href="http://www.blazemp.com/">Blaze Media Pro</a> audio/video 
+		converter, editor, CD/DVD burner, and more for Windows.
 	</li>
 	
 	<li>
@@ -411,8 +409,8 @@
 	</li>
 	
 	<li>
-		<a href="http://www.ubercaster.com/">&uuml;bercaster</a> Podcast production 
-		suite for Macintosh.
+		<a href="http://www.ubercaster.com/">&uuml;bercaster</a> Podcast 
+		production suite for Macintosh.
 	</li>
 	
 	<li>
@@ -440,8 +438,8 @@
 	</li>
 	
 	<li>
-		<a href="http://www.nextuptech.com/">Text Aloud MP3</a> Converts text into 
-		speech.
+		<a href="http://www.nextuptech.com/">Text Aloud MP3</a> Converts text 
+		into speech.
 	</li>
 	
 	<li>
@@ -454,7 +452,7 @@
 	</li>
 	
 	<li>
-		<a href="http://www.ejay.com/home/">eJay DJ Mix Station / Dance eJay</a> 
+		<a href="http://www.ejay.com/">eJay DJ Mix Station / Dance eJay</a> 
 		Various Windows DJ software, using Gogo.
 	</li>
 	
@@ -484,14 +482,14 @@
 	</li>
 	
 	<li>
-		<a href="http://www.ultratagger.com/">UltraTagger.</a> ID3 tag management, 
-		encoding and decoding.
+		<a href="http://www.ultratagger.com/">UltraTagger.</a> ID3 tag 
+		management, encoding and decoding.
 	</li>
 	
 	<li>
-		<a href="http://www.musichelponline.com/">UMG protected audio CDs</a> UMG 
-		is using Lame for	the PC part of protected audio CDs. (&quot;Fast and 
-		Furious&quot;).
+		<a href="http://www.musichelponline.com/">UMG protected audio CDs</a> 
+		UMG is using Lame for the PC part of protected audio CDs. (&quot;Fast 
+		and Furious&quot;).
 	</li>
 	
 	<li>
@@ -544,8 +542,8 @@ you are now complying with our license, please contact us.</strong></p>
 	
 	<li>
 		<a href="http://freshrpms.net/">FreshRPMs</a> offers Linux RPM <a
-		href="http://bordeaux.freshrpms.net/rpm.html?id=1473">packages for several
-		popular RPM-based distributions</a>, including Fedora Core.
+		href="http://bordeaux.freshrpms.net/rpm.html?id=1473">packages for 
+		several popular RPM-based distributions</a>, including Fedora Core.
 	</li>
 
 </ul>
@@ -555,24 +553,14 @@ you are now complying with our license, please contact us.</strong></p>
 <ul>
 
 	<li>
-		<a href="http://www.rarewares.org/">RareWares</a> offers several compiled
-		LAME versions, including modified versions featuring special
+		<a href="http://www.rarewares.org/">RareWares</a> offers several 
+		compiled	LAME versions, including modified versions featuring special
 		functionality.
-	</li>
-	
-	<li>
-		A famous Russian site, and one of the most reliable for beta and bleeding
-		edge (alpha) versions (updated almost daily): <a
-		href="http://mitiok.maresweb.org/">Mitiok</a>.
 	</li>
 	
 	<li>
 		From the Encoder/Windows section of <a
 		href="http://www.mp3-tech.org">www.mp3-tech.org</a>.
-	</li>
-	
-	<li>
-		From the <a href="ftp://ftp.zlurp.com">ZLURP ftp site</a>.
 	</li>
 	
 	<li>
@@ -587,14 +575,14 @@ you are now complying with our license, please contact us.</strong></p>
 <ul>
 
 	<li>
-		<a href="http://www.thalictrum.com/">Thalictrum</a> offers optimized binaries
-		for both Intel and PowerPC Macs.
+		<a href="http://www.thalictrum.com/">Thalictrum</a> offers optimized 
+		binaries for both Intel and PowerPC Macs.
 	</li>
 	
 	<li>
-		<a href="http://www.kjams.com/wiki/index.php/Lame">KJams</a> has a QuickTime
-		component, which allows you to export audio from QuickTime and related apps
-		to MP3 using LAME.
+		<a href="http://www.kjams.com/wiki/index.php/Lame">KJams</a> has a 
+		QuickTime component, which allows you to export audio from QuickTime 
+		and related apps to MP3 using LAME.
 	</li>
 	
 	<li>
@@ -613,8 +601,9 @@ you are now complying with our license, please contact us.</strong></p>
 <ul>
 
 	<li>
-  		<a href="http://www.sunfreeware.com/">Sunfreeware</a> provides up-to-date
-		binaries for several versions of Sun Solaris, both SPARC and x86 architectures.
+  		<a href="http://www.sunfreeware.com/">Sunfreeware</a> provides 
+  		up-to-date binaries for several versions of Sun Solaris, both SPARC and 
+  		x86 architectures.
 	</li>
 
 </ul>
@@ -625,8 +614,8 @@ you are now complying with our license, please contact us.</strong></p>
 
 	<li>
 		<a href="http://www2.arnes.si/~mmilut/Lame.html">Lame Binary Distribution
-      Point</a> - somewhat outdated, but with compiles for several obscure systems
-      like HP-UX, Irix, VMS, Tru64, AIX, etc.
+      Point</a> - somewhat outdated, but with compiles for several obscure 
+      systems like HP-UX, Irix, VMS, Tru64, AIX, etc.
 	</li>
 
 </ul>
@@ -637,8 +626,9 @@ you are now complying with our license, please contact us.</strong></p>
 
 	<li>
 		For those of you that just won't give up on your Amiga, check <a
-		href="http://honeypot.net/amiga-alternative-audio-page">The Amiga Alternative Audio Page</a> 
-		or <a href="http://amiga.sourceforge.net/">Amiga.SF</a>.
+		href="http://honeypot.net/amiga-alternative-audio-page">The Amiga 
+		Alternative Audio Page</a> or <a 
+		href="http://amiga.sourceforge.net/">Amiga.SF</a>.
 	</li>
 
 </ul>
@@ -655,8 +645,8 @@ you are now complying with our license, please contact us.</strong></p>
 		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">
 		history</a>). His versions are available <a 
 		href="http://www.initialt.org/lame-beta/">here (source code only)</a>. 
-		Fortunately for us, Takehiro takes the time to fold many of his improvements 
-		back into LAME.
+		Fortunately for us, Takehiro takes the time to fold many of his 
+		improvements back into LAME.
 	</li>
 	
 	<li>
@@ -671,8 +661,8 @@ you are now complying with our license, please contact us.</strong></p>
 		<a href="http://www.rjamorim.com/rrw/mp3enc.html">FhG MP3enc</a> 3.1. The 
 		gold standard of encoders. All other encoders strive to sound this good. 
 		Demo version only encodes up to 30 seconds.<br />
-		<i>Update: according to recent listening tests, Lame already surpassed FhG 
-		encoders in	quality at most bitrates. :-)</i>
+		<i>Update: according to recent listening tests, Lame already surpassed 
+		FhG encoders in quality at most bitrates. :-)</i>
 	</li>
 	
 	<li>
@@ -682,41 +672,43 @@ you are now complying with our license, please contact us.</strong></p>
 	
 	<li>
 		<a href="http://www.rjamorim.com/rrw/fastencc.html">FhG Fastencc</a> this 
-		"free" encoder was created with libraries stolen from Fraunhofer. It's the 
-		faster brother of MP3enc, and also the only FhG encoder to offer VBR 
+		"free" encoder was created with libraries stolen from Fraunhofer. It's 
+		the faster brother of MP3enc, and also the only FhG encoder to offer VBR 
 		encoding. Quality is not on par with MP3enc or LAME.
 	</li>
 	
 	<li>
-		<a href="http://www2.arnes.si/~mmilut/BladeEnc.html">BladeEnc</a> One of the first free 
-		encoders for Linux. Development has stopped at version 0.94.2. Quality is 
-		not satisfactory.
+		<a href="http://www2.arnes.si/~mmilut/BladeEnc.html">BladeEnc</a> One of 
+		the first free encoders for Linux. Development has stopped at version 
+		0.94.2. Quality is not satisfactory.
 	</li>
 	
 	<li>
-		<a href="http://www.rarewares.org/mp3-others.php#helix_enc">Xing MP3 encoder</a> 
-      Reasonable quality and extremely fast encoder. Is now the MP3 encoder used in 
-      Real Jukebox and Real Player, and has been recently released under an Open 
-      Source license (it's still limited to Windows though)
+		<a href="http://www.rarewares.org/mp3-others.php#helix_enc">Xing MP3 
+		encoder</a> Reasonable quality and extremely fast encoder. Is now the MP3 
+		encoder used in Real Jukebox and Real Player, and has been recently 
+		released under an Open Source license (it's still limited to Windows 
+		though)
 	</li>
 	
 	<li>
-		<a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrible quality. 
-		Only listed here for completeness purposes.
+		<a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrible 
+		quality. Only listed here for completeness purposes.
 	</li>
 
 	<li>
 		<a href="http://www.rjamorim.com/rrw/">ReallyRareWares</a> is an online
-		museum preserving obsolete and defunct encoders for several audio formats,
-		including old LAME versions and obscure MP3 encoders (most of these 
-		encoders are simply compiles of the MPEG reference sources - dist10 - 
-		though)
+		museum preserving obsolete and defunct encoders for several audio 
+		formats, including old LAME versions and obscure MP3 encoders (most of 
+		these encoders are simply compiles of the MPEG reference sources - 
+		dist10 - though)
 	</li>
 </ul>
 
 <hr></hr>
 
-<h3><a name="Comparisons">MP3 Encoder Comparisons based on <i>listening tests:</i></a></h3>
+<h3><a name="Comparisons">MP3 Encoder Comparisons based on <i>listening 
+tests:</i></a></h3>
 
 <ul>
 
@@ -726,8 +718,8 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
   
 	<li>
-		<a href="http://www.rjamorim.com/test/">Roberto's</a> page of public blind 
-		listening tests comparing several formats and encoders.
+		<a href="http://www.rjamorim.com/test/">Roberto's</a> page of public 
+		blind listening tests comparing several formats and encoders.
 	</li>
 	
 	<li>
@@ -748,8 +740,8 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.maz-sound.com/">MAZ Sound</a> Encoders and other audio 
-		software.
+		<a href="http://www.maz-sound.com/">MAZ Sound</a> Encoders and other 
+		audio software.
 	</li>
 
 </ul>
@@ -770,7 +762,8 @@ you are now complying with our license, please contact us.</strong></p>
 	
 	<li>
 		<a href="http://wiki.hydrogenaudio.org/index.php?title=Main_Page">
-		HydrogenAudio's Wiki</a> is a repository of knowledge on audio-related matters.
+		HydrogenAudio's Wiki</a> is a repository of knowledge on audio-related 
+		matters.
 	</li>
 	
 	<li>
@@ -785,11 +778,13 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.bitburners.com">BitBurners</a> - The CD-R and MP3 resource
+		<a href="http://www.bitburners.com">BitBurners</a> - The CD-R and MP3 
+		resource
 	</li>
 	
 	<li>
-		<a href="http://www.mpeg.org/MPEG/">MPEG.ORG</a> Many pointers and resources.
+		<a href="http://www.mpeg.org/MPEG/">MPEG.ORG</a> Many pointers and 
+		resources.
 	</li>
 
 </ul>
@@ -799,9 +794,10 @@ you are now complying with our license, please contact us.</strong></p>
 <ul>
 
 	<li>
-		A favorite Linux ripper: <a href="http://www.xiph.org/paranoia/">cdparanoia</a> 
-		<i>(also, GNU's <a href="http://www.gnu.org/software/libcdio/">libcdio</a>, 
-		a multiplatform port of CDparanoia)</i>
+		A favorite Linux ripper: <a 
+		href="http://www.xiph.org/paranoia/">cdparanoia</a> <i>(also, GNU's 
+		<a href="http://www.gnu.org/software/libcdio/">libcdio</a>, a 
+		multiplatform port of CDparanoia)</i>
 	</li>
 	
 	<li>
@@ -820,14 +816,14 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.pcavtech.com/soundcards/compare/">PCAVtech sound card 
-		benchmarks</a>
+		<a href="http://www.pcavtech.com/soundcards/compare/">PCAVtech sound 
+		card benchmarks</a>
 	</li>
 	
 	<li>
 		<a href="http://www.cmis.csiro.au/dmis/maaate/">Maate</a> looks like a 
-		very sophisticated MP3 analysis package. They also have a good description 
-		of MP3 frames.
+		very sophisticated MP3 analysis package. They also have a good 
+		description of MP3 frames.
 	</li>
 	
 	<li>
@@ -846,13 +842,13 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://minnie.tuhs.org/Programs/Mpcut/">Mpcut</a>: X11 mp3 frame 
-		editor.
+		<a href="http://minnie.tuhs.org/Programs/Mpcut/">Mpcut</a>: X11 mp3 
+		frame editor.
 	</li>
 	
 	<li>
-		<a href="http://sourceforge.net/projects/mp3asm">mp3asm</a>: A program to 
-		cut and paste mp3 frames.
+		<a href="http://sourceforge.net/projects/mp3asm">mp3asm</a>: A program 
+		to cut and paste mp3 frames.
 	</li>
 	
 	<li>
@@ -881,11 +877,13 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.dago.pmp.com.pl/messer/">Messer</a> by Dariusz Sieradzki
+		<a href="http://www.dago.pmp.com.pl/messer/">Messer</a> by Dariusz 
+		Sieradzki
 	</li>
 	
 	<li>
-		<a href="http://www.1oo-percent.de/lamer/">LAMEr</a>, also a nice Windows 
+		<a href="http://www.1oo-percent.de/lamer/">LAMEr</a>, also a nice 
+		Windows 
 		frontend
 	</li>
 
@@ -913,11 +911,11 @@ you are now complying with our license, please contact us.</strong></p>
 </ul>
 
 <p>
-	<i>If you know of some software supporting LAME that is not featured here, or
-	if you spot a broken link, please contact the <a
+	<i>If you know of some software supporting LAME that is not featured here, 
+	or if you spot a broken link, please contact the <a
 	href="mailto:rjamorim@users.sourceforge.net">webmaster</a>.<br/>
-	If you are submitting your own software, please include a brief description of
-	it in the e-mail.</i><br />
+	If you are submitting your own software, please include a brief description 
+	of it in the e-mail.</i><br />
    <b><i>DO NOT USE THAT E-MAIL FOR SUPPORT QUESTIONS! GO <a 
    href="http://lame.sourceforge.net/contact.php">HERE</a> INSTEAD.</i></b>
 </p>
