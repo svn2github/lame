@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Quality and Listening Test Information</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: quality.php,v 1.5 2008-08-25 02:24:41 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: quality.php,v 1.6 2008-08-25 02:48:31 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -476,8 +476,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
 </h4>
 
 <p>
-	Sent by Naoki SHIBATA, shibatch at geocities.co.jp, see <a
-	href="http://www.geocities.co.jp/Technopolis/9674/lametest/index.html">lametest</a>.
+	Sent by Naoki SHIBATA, shibatch at geocities.co.jp.
 </p>
 
 <h4>
