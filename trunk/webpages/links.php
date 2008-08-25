@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.25 2008-08-25 02:24:41 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.26 2008-08-25 02:32:16 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -770,11 +770,6 @@ tests:</i></a></h3>
 		<a href="http://wiki.hydrogenaudio.org/index.php?title=Recommended_LAME">
 		HydrogenAudio's list of recommended LAME settings</a> to produce best 
 		quality encodes at several bitrates.
-	</li>
-	
-	<li>
-		<a href="http://mitiok.maresweb.org/">Dmitry Kutsanov's site</a> is 
-		extremely useful!
 	</li>
 	
 	<li>
