@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Software Downloads</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: download.php,v 1.7 2008-08-25 02:24:41 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: download.php,v 1.8 2008-09-24 14:22:57 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -38,7 +38,7 @@
 
 <ul>
 
-	<li>The current release version of LAME is 3.98</li>
+	<li>The current release version of LAME is 3.98.1</li>
 	
 	<!-- Comment/hide this item if there is no current beta. 
 	<li>The most recent beta release of LAME is 3.97beta3.</li>-->
