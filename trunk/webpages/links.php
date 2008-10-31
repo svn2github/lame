@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.26 2008-08-25 02:32:16 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.27 2008-10-31 02:10:45 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -233,9 +233,14 @@ LAME:</a></h3>
 	</li>
 	
 	<li>
-		<a href="http://www.labdv.com/dvdx/">DVDx</a> DVD to 
-		VCD/SVCD/AVI(XviD...) one-step converter.
+		<a href="http://www.labdv.com/dvdx/">DVDx</a> DVD to VCD/SVCD/AVI(XviD...) 
+      one-step converter.
 	</li>
+   
+   <li>
+      <a href="http://www.bonkenc.org/">Bonk Encoder</a> Yet another CD
+      ripper, encoder &amp; converter that uses LAME for MP3 encoding.
+   </li>
 	
 	<li>
 		<a href="http://www.omniencoder.com/">OmniEncoder</a> a fully 
@@ -378,6 +383,11 @@ LAME:</a></h3>
 		<a href="http://www.steinberg.de/25_1.html">WaveLab</a> Digital Audio 
 		editing software.
 	</li>
+   
+   <li>
+      <a href="http://www.mackie.com/products/tracktion3/">Mackie Tracktion</a>
+      a sequencer that uses LAME to export to MP3.
+   </li>
 	
 	<li>
 		<a href="http://www.goldwave.com/">Goldwave</a> Audio editor for Windows.
