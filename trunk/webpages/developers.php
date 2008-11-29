@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Developers</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: developers.php,v 1.5 2008-08-25 02:24:41 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: developers.php,v 1.6 2008-11-29 15:28:42 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -33,7 +33,7 @@
 <p>
 	LAME was originally developed by Mike Cheng, from 1998 to 1999. After he
 	retired, the project started being maintained by Mark Taylor till early 2003.
-	After 2003, the project became managed by core developpers' teamwork, with no
+	After 2003, the project became managed by core developers' teamwork, with no
 	official hierarchy or leadership.
 </p>
 
