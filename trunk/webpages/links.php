@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.27 2008-10-31 02:10:45 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.28 2009-01-14 21:23:18 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -375,12 +375,12 @@ LAME:</a></h3>
 <ul>
 
 	<li>
-		<a href="http://www.winamp.com">WinAmp</a> Can rip CDs using Lame, but 
+		<a href="http://www.winamp.com">WinAmp</a> can rip CDs using Lame, but 
 		only in the Pro (paid) version.
 	</li>
 	
 	<li>
-		<a href="http://www.steinberg.de/25_1.html">WaveLab</a> Digital Audio 
+		<a href="http://www.steinberg.de/25_1.html">WaveLab</a> digital audio 
 		editing software.
 	</li>
    
@@ -390,7 +390,7 @@ LAME:</a></h3>
    </li>
 	
 	<li>
-		<a href="http://www.goldwave.com/">Goldwave</a> Audio editor for Windows.
+		<a href="http://www.goldwave.com/">Goldwave</a> audio editor for Windows.
 	</li>
 	
    <li>
@@ -402,6 +402,11 @@ LAME:</a></h3>
 		<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a> ISO CD image 
 		builder, editor and extractor.
 	</li>
+   
+   <li>
+      <a href="http://www.acondigital.com/us_Acoustica1.html">Acoustica</a>
+      digital audio editor
+   </li>
 	
 	<li>
 		<a href="http://audioedit.mystikmedia.com">AudioEdit Deluxe</a> Windows 
@@ -424,17 +429,17 @@ LAME:</a></h3>
 	</li>
 	
 	<li>
-		<a href="http://www.audioease.com/">Audio Ease BarbaBatch</a> Batch audio 
+		<a href="http://www.audioease.com/">Audio Ease BarbaBatch</a> batch audio 
 		file converter for Macintosh.
 	</li>
 	
 	<li>
 		<a href="http://www.hairersoft.com/Amadeus.html">Amadeus II</a> (Mac) 
-		Manipulate, create and analyze sounds.
+		manipulate, create and analyze sounds.
 	</li>
 	
 	<li>
-		<a href="http://www.bias-inc.com/">Peak 3</a> Macintosh audio 
+		<a href="http://www.bias-inc.com/">Peak 3</a> Mac audio 
 		editing/processing/mastering software.
 	</li>
 	
@@ -448,12 +453,12 @@ LAME:</a></h3>
 	</li>
 	
 	<li>
-		<a href="http://www.nextuptech.com/">Text Aloud MP3</a> Converts text 
+		<a href="http://www.nextuptech.com/">Text Aloud MP3</a> converts text 
 		into speech.
 	</li>
 	
 	<li>
-		<a href="http://www.highcriteria.com/">TotalRecorder</a> Universal sound 
+		<a href="http://www.highcriteria.com/">TotalRecorder</a> universal sound 
 		recoder.
 	</li>
 	
@@ -463,7 +468,7 @@ LAME:</a></h3>
 	
 	<li>
 		<a href="http://www.ejay.com/">eJay DJ Mix Station / Dance eJay</a> 
-		Various Windows DJ software, using Gogo.
+		various Windows DJ software, using Gogo.
 	</li>
 	
 	<li>
@@ -508,7 +513,7 @@ LAME:</a></h3>
 	</li>
 	
 	<li>
-		<a href="http://www.flashdig.com/">Flash Digger Plus</a> - a ShockWave 
+		<a href="http://www.flashdig.com/">Flash Digger Plus</a> - a Shockwave 
 		Flash decompiler.
 	</li>
 
@@ -572,6 +577,12 @@ you are now complying with our license, please contact us.</strong></p>
 		From the Encoder/Windows section of <a
 		href="http://www.mp3-tech.org">www.mp3-tech.org</a>.
 	</li>
+   
+   <li>
+      <a href="http://lame.buanzo.com.ar/">Arturo "Buanzo" Busleiman</a>
+      offers up-to-date Windows and Mac OS LAME compiles on his 
+      Argentina-hosted site.
+   </li>
 	
 	<li>
 		In the encoders section of <a href="http://www.maz-sound.com/">MAZ
@@ -590,19 +601,15 @@ you are now complying with our license, please contact us.</strong></p>
 	</li>
 	
 	<li>
-		<a href="http://www.kjams.com/wiki/index.php/Lame">KJams</a> has a 
-		QuickTime component, which allows you to export audio from QuickTime 
-		and related apps to MP3 using LAME.
+		<a href="http://karaoke.kjams.com/wiki/Lame">KJams</a> has a QuickTime 
+      component, which allows you to export audio from QuickTime and related 
+      apps to MP3 using LAME.
 	</li>
 	
 	<li>
 		The <a href="http://www.finkproject.org/">FINK</a> project provides LAME
 		binaries compiled for MacOS X.
 	</li>
-	
-	<!--<li>
-		From <a href="http://www.culater.net/software.php">culater.net</a>.
-	</li>-->
 
 </ul>
 
