@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.28 2009-01-14 21:23:18 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.29 2009-01-18 16:08:04 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -25,7 +25,7 @@
 	<h1>LAME and MP3-related Links</h1>
 </div>
 
-<h3>Quick Links:</h3>
+<h3><a name="Contents">Quick Links:</a></h3>
 
 <ul>
 	<li><a href="#OpenSource">Free (open source) software which supports or uses 
@@ -53,8 +53,8 @@
 	<li><a href="#Patents">Patent Information</a></li>
 </ul>
 
-<h3><a name="OpenSource">Free (open source) software which supports or uses 
-LAME:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="OpenSource">
+Free (open source) software which supports or uses LAME:</a></h3>
 
 <p><b>&nbsp;&nbsp;<a name="Multiplatform">Multiplatform:</a></b></p>
 
@@ -104,8 +104,8 @@ LAME:</a></h3>
 
 </ul>
 
-<p><b>&nbsp;&nbsp;<a name="Posix">Posix (Linux, MacOS X, BSD, Solaris, etc.):
-</a></b></p>
+<p><b>&nbsp;&nbsp;<a name="Posix">UNIX and UNIX-like (Linux, MacOS X, BSD, Solaris, 
+etc.): </a></b></p>
 
 <ul>
 
@@ -279,8 +279,8 @@ LAME:</a></h3>
 
 </ul>
 
-<h3><a name="ClosedSource">Free (closed source) software which supports or uses 
-LAME:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="ClosedSource">
+Free (closed source) software which supports or uses LAME:</a></h3>
 
 <ul>
 	
@@ -369,8 +369,8 @@ LAME:</a></h3>
 
 </ul>
 
-<h3><a name="Commercial">Commercial software which supports or uses 
-LAME:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Commercial">
+Commercial software which supports or uses LAME:</a></h3>
 
 <ul>
 
@@ -521,7 +521,8 @@ LAME:</a></h3>
 
 <hr />
 
-<!--<h3><a name="Shame">HALL OF SHAME</a></h3>
+<!--<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Shame">
+HALL OF SHAME</a></h3>
 
 <h4>The following companies/products have been known to infringe Lame copyright
 by not respecting the terms and conditions of our license.</h4>
@@ -543,7 +544,8 @@ you are now complying with our license, please contact us.</strong></p>
 
 <hr />-->
 
-<h3><a name="Binaries">LAME Binaries:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Binaries">
+LAME Binaries:</a></h3>
 
 <h4>Linux:</h4>
 
@@ -652,7 +654,8 @@ you are now complying with our license, please contact us.</strong></p>
 
 <hr />
 
-<h3><a name="Alternatives">Other MP3 Encoders:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Alternatives">
+Other MP3 Encoders:</a></h3>
 
 <ul>
 
@@ -724,8 +727,8 @@ you are now complying with our license, please contact us.</strong></p>
 
 <hr></hr>
 
-<h3><a name="Comparisons">MP3 Encoder Comparisons based on <i>listening 
-tests:</i></a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Comparisons">
+MP3 Encoder Comparisons based on <i>listening tests:</i></a></h3>
 
 <ul>
 
@@ -746,7 +749,8 @@ tests:</i></a></h3>
 
 </ul>
 
-<h3><a name="MP3_sites">MP3 Encoding Web Sites:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="MP3_sites">
+MP3 Encoding Web Sites:</a></h3>
 
 <ul>
 
@@ -763,7 +767,8 @@ tests:</i></a></h3>
 
 </ul>
 
-<h3><a name="MP3_general">General MP3 Web Sites:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="MP3_general">
+General MP3 Web Sites:</a></h3>
 
 <ul>
 
@@ -801,7 +806,8 @@ tests:</i></a></h3>
 
 </ul>
 
-<h3><a name="Soft_hard">MP3 Related Software and Hardware:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Soft_hard">
+MP3 Related Software and Hardware:</a></h3>
 
 <ul>
 
@@ -875,7 +881,8 @@ tests:</i></a></h3>
 
 </ul>
 
-<h3><a name="Line_in">MP3 Encoding direct from line-in:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Line_in">
+MP3 Encoding direct from line-in:</a></h3>
 
 <ul>
 
@@ -901,7 +908,8 @@ tests:</i></a></h3>
 
 </ul>
 
-<h3><a name="Patents">Patent Information:</a></h3>
+<h3><a href="#Contents"><sup><font size="-1">^</font></sup></a> <a name="Patents">
+Patent Information:</a></h3>
 
 <ul>
 
@@ -923,8 +931,8 @@ tests:</i></a></h3>
 </ul>
 
 <p>
-	<i>If you know of some software supporting LAME that is not featured here, 
-	or if you spot a broken link, please contact the <a
+	<i>If you know of some interesting software supporting LAME that is not 
+   featured here, or if you spot a broken link, please contact the <a
 	href="mailto:rjamorim@users.sourceforge.net">webmaster</a>.<br/>
 	If you are submitting your own software, please include a brief description 
 	of it in the e-mail.</i><br />
