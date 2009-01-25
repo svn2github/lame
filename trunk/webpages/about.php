@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: About</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: about.php,v 1.5 2008-08-25 02:24:41 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: about.php,v 1.6 2009-01-25 12:03:30 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -108,11 +108,11 @@
 <ul>
 
 	<li>
-		<a href="links.php#OpenSource">Software which uses LAME</a>.
+		<a href="links.php#Contents">Software which uses LAME</a>.
 	</li>
 	
 	<li>
-		<a href="links.php#Binaries">MP3 Related Links</a>.
+		<a href="links.php#MP3_general">MP3 Related Links</a>.
 	</li>
 	
 	<li>
