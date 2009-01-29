@@ -26,7 +26,7 @@
 #   SUCH DAMAGE.
 #
 
-# $Id: slame,v 1.11 2009-01-29 02:03:06 kylev Exp $
+# $Id: slame,v 1.12 2009-01-29 07:27:04 kylev Exp $
 
 # slame:
 # quick hack to test some aspects of pylame, a cleanup is needed
@@ -203,7 +203,7 @@ def main():
     mp3_file = file(mp3_name, "wb+")
 
     # Prep the encoder object
-    mp3 = lame.encoder()
+    mp3 = lame.Encoder()
     mp3.num_channels = nchannels
     mp3.set_in_samplerate(samplerate)
     mp3.set_num_samples(long(nframes))
