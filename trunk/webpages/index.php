@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: index.php,v 1.10 2009-01-25 12:03:30 rjamorim Exp $" />
+  <meta name="cvs-version" content="$Id: index.php,v 1.11 2009-03-12 00:39:26 rjamorim Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE]>
@@ -30,7 +30,7 @@
 	LGPL.
 </p>
 
-<h3 id="latest_release">Latest LAME release: <a href="download.php">v3.98.1</a>
+<h3 id="latest_release">Latest LAME release: <a href="download.php">v3.98.2</a>
 (September 2008)</h3>
 
 <p>
