@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.30 2009-03-12 00:39:26 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.31 2009-03-26 14:26:04 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -578,11 +578,6 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 		functionality.
 	</li>
 	
-	<li>
-		From the Encoder/Windows section of <a
-		href="http://www.mp3-tech.org">www.mp3-tech.org</a>.
-	</li>
-   
    <li>
       <a href="http://lame.buanzo.com.ar/">Arturo "Buanzo" Busleiman</a>
       offers up-to-date Windows and Mac OS LAME compiles on his 
