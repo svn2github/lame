@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.31 2009-03-26 14:26:04 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.32 2009-08-29 14:59:24 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -666,6 +666,13 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 		Fortunately for us, Takehiro takes the time to fold many of his 
 		improvements back into LAME.
 	</li>
+   
+   <li>
+      George Kotorlis created a multithreaded version of LAME called <a 
+      href="http://www.fiberpool.de/en/downloads.html">fpMP3Enc</a> based on 
+      his multicore framework <a href="http://www.fiberpool.de/en/index.html">
+      Fiber Pool</a>.
+   </li>
 	
 	<li>
 		<a href="http://www.marinecat.net/free/windows/mct_free.htm">GOGO-no-coda 
