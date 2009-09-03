@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.32 2009-08-29 14:59:24 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.33 2009-09-03 13:41:43 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE]>
@@ -404,6 +404,12 @@ supports or uses LAME:</a></h3>
 	<li>
 		<a href="http://www.ezbsystems.com/ultraiso/">UltraISO</a> ISO CD image 
 		builder, editor and extractor.
+	</li>
+	
+	<li>
+		<a href="http://www.jrmediacenter.com/">J. River Media Center</a> a media
+		center software that supports LAME for ripping, transcoding, and gapless 
+		playback.
 	</li>
    
    <li>
