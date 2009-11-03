@@ -6,10 +6,10 @@
 	<title>LAME MP3 Encoder :: About</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: about.php,v 1.6 2009-01-25 12:03:30 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: about.php,v 1.7 2009-11-03 16:11:00 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
-	<!--[if IE]>
+	<!--[if IE 6]>
 	<link rel="stylesheet" type="text/css" href="styles/ie.css" />
 	<![endif]-->
 </head>
