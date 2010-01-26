@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.34 2009-11-03 16:11:01 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.35 2010-01-26 09:54:37 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -64,6 +64,11 @@ which supports or uses LAME:</a></h3>
 	<li>
 		<a href="http://ffmpeg.mplayerhq.hu/">FFmpeg</a> An awesome collection of
 		codecs (libavcodec) for pretty much all popular audio and video formats.
+	</li>
+	
+	<li>
+		<a href="http://traverso-daw.org/">Traverso</a>, a cross-platform Digital
+		Audio Workstation (DAW).
 	</li>
 	
 	<li>
