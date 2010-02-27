@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Developers</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: developers.php,v 1.9 2010-02-27 15:56:43 robert Exp $" />
+	<meta name="cvs-version" content="$Id: developers.php,v 1.10 2010-02-27 16:37:22 robert Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -63,6 +63,11 @@
 		<td>Multiplatform configuration, libraries handling, release management...</td>
 	</tr>
 
+	<tr>
+		<td><a href="http://www.ime.usp.br/~rbrito/">Rog&eacute;rio Brito</a></td>
+		<td>Debian packaging, debugging.</td>
+	</tr>
+
 	<tr><th colspan="2">Primary developers - Retired:</th></tr>
 
     <tr>
@@ -103,11 +108,6 @@
 	<tr>
 		<td><a href="http://www.rjamorim.com">Roberto Amorim</a></td>
 		<td>Web pages and documentation.</td>
-	</tr>
-
-   <tr>
-		<td><a href="http://www.ime.usp.br/~rbrito/">Rog&eacute;rio Brito</a></td>
-		<td>Debian packaging, debugging.</td>
 	</tr>
 
 	<tr>

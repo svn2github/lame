@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Software Downloads</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: download.php,v 1.9 2009-11-03 16:11:01 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: download.php,v 1.10 2010-02-27 16:37:22 robert Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -27,8 +27,8 @@
 
 <p>
 	LAME is only distribued in source code form. For binaries and GUI based
-	programs which can use LAME (or include fully licensed versions of LAME), 
-	check the <a href="links.php"> LAME related links</a>. All software from the 
+	programs which can use LAME (or include fully licensed versions of LAME),
+	check the <a href="links.php"> LAME related links</a>. All software from the
 	LAME project can be found in the project's <a
 	href="http://sourceforge.net/project/showfiles.php?group_id=290">file
 	area</a>.
@@ -38,11 +38,11 @@
 
 <ul>
 
-	<li>The current release version of LAME is 3.98.1</li>
-	
-	<!-- Comment/hide this item if there is no current beta. 
+	<li>The current release version of LAME is 3.98.3</li>
+
+	<!-- Comment/hide this item if there is no current beta.
 	<li>The most recent beta release of LAME is 3.97beta3.</li>-->
-  
+
 </ul>
 
 <p>
@@ -53,8 +53,8 @@
 
 <p>
 	LAME compiles on Windows, DOS, GNU/Linux, MacOS X, *BSD, Solaris, HP-UX,
-	Tru64 Unix, AIX, Irix, NeXTstep, SCO Unix, UnixWare, Ultrix, Plan 9, OpenVMS, 
-	MacOS Classic, BeOS,	QNX, RiscOS, AmigaOS, OS/2, SkyOS, FreeMiNT(Atari) and 
+	Tru64 Unix, AIX, Irix, NeXTstep, SCO Unix, UnixWare, Ultrix, Plan 9, OpenVMS,
+	MacOS Classic, BeOS,	QNX, RiscOS, AmigaOS, OS/2, SkyOS, FreeMiNT(Atari) and
 	probably a few more.
 </p>
 
@@ -64,7 +64,7 @@
 	LAME source code is maintained with CVS, hosted on <a
 	href="http://sourceforge.net/">SourceForge.net</a>. For instructions on
 	downloading the current development sources, go to <a
-	href="http://sourceforge.net/cvs/?group_id=290">the CVS information page of 
+	href="http://sourceforge.net/cvs/?group_id=290">the CVS information page of
 	the LAME project on SourceForge.net</a>.
 </p>
 
