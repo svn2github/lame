@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: index.php,v 1.13 2010-02-27 15:56:43 robert Exp $" />
+  <meta name="cvs-version" content="$Id: index.php,v 1.14 2010-02-27 16:23:40 robert Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE 6]>
@@ -93,6 +93,7 @@
 
    <li>
       <a href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">History/ChangeLog</a>
+      - what has been happening lately.
    </li>
 
 </ul>
