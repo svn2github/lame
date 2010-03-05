@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Developers</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: developers.php,v 1.10 2010-02-27 16:37:22 robert Exp $" />
+	<meta name="cvs-version" content="$Id: developers.php,v 1.11 2010-03-05 00:28:30 robert Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -128,6 +128,11 @@
 	<tr>
 		<td><a href="http://sourceforge.net/users/afaber">Albert Faber</a></td>
 		<td>Author of CDex and lame_enc.dll.</td>
+	</tr>
+
+	<tr>
+		<td><a href="http://sourceforge.net/users/jwflynn1">Joseph Flynn</a></td>
+		<td>LAME DirectShow Filter.</td>
 	</tr>
 
 	<tr>
