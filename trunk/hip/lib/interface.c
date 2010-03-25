@@ -48,6 +48,10 @@
 int
 InitMP3(PMPSTR mp)
 {
+    hip_init_tables_layer1();
+    hip_init_tables_layer2();
+    hip_init_tables_layer3();
+
     memset(mp, 0, sizeof(MPSTR));
 
     mp->framesize = 0;
@@ -72,11 +76,9 @@ InitMP3(PMPSTR mp)
     mp->synth_bo = 1;
     mp->sync_bitstream = 1;
 
+
+
     make_decode_tables(32767);
-
-    init_layer3(SBLIMIT);
-
-    init_layer2();
 
     return 1;
 }
@@ -468,8 +470,9 @@ decodeMP3_clipchoice(PMPSTR mp, unsigned char *in, int isize, char *out, int *do
             fprintf(stderr, "hip: bitstream problem, resyncing skipping %d bytes...\n", bytes);
 #endif
             mp->old_free_format = 0;
-            // mp->sync_bitstream = 1;
-
+#if 0
+            mp->sync_bitstream = 1;
+#endif
             /* skip some bytes, buffer the rest */
             size = (int) (mp->wordpointer - (mp->bsspace[mp->bsnum] + 512));
 
@@ -495,7 +498,7 @@ decodeMP3_clipchoice(PMPSTR mp, unsigned char *in, int isize, char *out, int *do
         }
 
         read_head(mp);
-        decode_header(&mp->fr, mp->header);
+        decode_header(mp, &mp->fr, mp->header);
         mp->header_parsed = 1;
         mp->framesize = mp->fr.framesize;
         mp->free_format = (mp->framesize == 0);
@@ -532,7 +535,7 @@ decodeMP3_clipchoice(PMPSTR mp, unsigned char *in, int isize, char *out, int *do
 
             if (mp->fr.error_protection)
                 getbits(mp, 16);
-            bits = do_layer3_sideinfo(mp);
+            bits = decode_layer3_sideinfo(mp);
             /* bits = actual number of bits needed to parse this frame */
             /* can be negative, if all bits needed are in the reservoir */
             if (bits < 0)
@@ -583,18 +586,18 @@ decodeMP3_clipchoice(PMPSTR mp, unsigned char *in, int isize, char *out, int *do
             if (mp->fr.error_protection)
                 getbits(mp, 16);
 
-            do_layer1(mp, (unsigned char *) out, done);
+            decode_layer1_frame(mp, (unsigned char *) out, done);
             break;
 
         case 2:
             if (mp->fr.error_protection)
                 getbits(mp, 16);
 
-            do_layer2(mp, (unsigned char *) out, done);
+            decode_layer2_frame(mp, (unsigned char *) out, done);
             break;
 
         case 3:
-            do_layer3(mp, (unsigned char *) out, done, synth_1to1_mono_ptr, synth_1to1_ptr);
+            decode_layer3_frame(mp, (unsigned char *) out, done, synth_1to1_mono_ptr, synth_1to1_ptr);
             break;
         default:
             fprintf(stderr, "hip: invalid layer %d\n", mp->fr.lay);
@@ -679,7 +682,7 @@ int
 decodeMP3_unclipped(PMPSTR mp, unsigned char *in, int isize, char *out, int osize, int *done)
 {
     /* we forbid input with more than 1152 samples per channel for output in unclipped mode */
-    if (osize < 1152 * 2 * sizeof(real)) {
+    if (osize < (int) (1152 * 2 * sizeof(real))) {
         fprintf(stderr, "hip: out space too small for unclipped mode\n");
         return MP3_ERR;
     }

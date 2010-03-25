@@ -10,7 +10,7 @@
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the GNU
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Library General Public License for more details.
  *
  * You should have received a copy of the GNU Library General Public
@@ -22,6 +22,8 @@
 #ifndef LAYER1_H_INCLUDED
 #define LAYER1_H_INCLUDED
 
-int     do_layer1(PMPSTR mp, unsigned char *pcm_sample, int *pcm_point);
+void    hip_init_tables_layer1(void);
+int     decode_layer1_sideinfo(PMPSTR mp);
+int     decode_layer1_frame(PMPSTR mp, unsigned char *pcm_sample, int *pcm_point);
 
 #endif

@@ -28,9 +28,6 @@ typedef struct plotting_data plotting_data;
 #endif
 
 
-#ifndef NOANALYSIS
-extern plotting_data *mpg123_pinfo;
-#endif
 
 
 struct buf {
@@ -68,6 +65,7 @@ typedef struct mpstr_tag {
     int     fsizeold;        /* size of previous frame, -1 for first */
     int     fsizeold_nopadding;
     struct frame fr;         /* holds the parameters decoded from the header */
+    struct III_sideinfo sideinfo;
     unsigned char bsspace[2][MAXFRAMESIZE + 1024]; /* bit stream space used ???? *//* MAXFRAMESIZE */
     real    hybrid_block[2][2][SBLIMIT * SSLIMIT];
     int     hybrid_blc[2];
@@ -79,6 +77,7 @@ typedef struct mpstr_tag {
 
     int     bitindex;
     unsigned char *wordpointer;
+    plotting_data *pinfo;
 } MPSTR, *PMPSTR;
 
 

@@ -46,8 +46,7 @@ static const short tab1[] =
 
 static const short tab2[] =
 {
- -15, -11,  -9,  -5,  -3,  -1,  34,   2,  18,  -1,  33,  32,  17,  -1,   1,
-  16,   0
+ -15, -11,  -9,  -5,  -3,  -1,  34,   2,  18,  -1,  33,  32,  17,  -1,   1,  16,   0
 };
 
 static const short tab3[] =
