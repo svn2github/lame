@@ -1,10 +1,9 @@
 /* 
- * Mpeg Layer-3 audio decoder 
- * --------------------------
- * copyright (c) 1995,1996,1997 by Michael Hipp.
- * All rights reserved. See also 'README'
+ * layer3.c: Mpeg Layer-3 audio decoder 
  *
- * Copyright (C) 2000 Albert L. Faber
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -60,7 +59,9 @@ struct bandInfoStruct {
 static int longLimit[9][23];
 static int shortLimit[9][14];
 
-const struct bandInfoStruct bandInfo[9] = { 
+/* *INDENT-OFF* */
+
+static const struct bandInfoStruct bandInfo[9] = { 
 
 /* MPEG 1.0 */
  { {0,4,8,12,16,20,24,30,36,44,52,62,74, 90,110,134,162,196,238,288,342,418,576},
@@ -107,6 +108,7 @@ const struct bandInfoStruct bandInfo[9] = {
    {0, 24, 48, 72,108,156,216,288,372,480,486,492,498,576},
    {8,8,8,12,16,20,24,28,36,2,2,2,26} } ,
 };
+/* *INDENT-ON* */
 
 static int mapbuf0[9][152];
 static int mapbuf1[9][156];
@@ -120,7 +122,8 @@ static unsigned int i_slen2[256]; /* MPEG 2.0 slen for intensity stereo */
 static real tan1_1[16],tan2_1[16],tan1_2[16],tan2_2[16];
 static real pow1_1[2][16],pow2_1[2][16],pow1_2[2][16],pow2_2[2][16];
 
-static unsigned int get1bit(PMPSTR mp)
+static unsigned int
+get1bit(PMPSTR mp)
 {
   unsigned char rval;
   rval = *mp->wordpointer << mp->bitindex;
@@ -625,6 +628,7 @@ III_get_scale_factors_2(PMPSTR mp, int *scf,struct gr_info_s *gr_infos,int i_ste
   int n = 0;
   int numbits = 0;
 
+  /* *INDENT-OFF* */
   static const unsigned char stab[3][6][4] = {
    { { 6, 5, 5,5 } , { 6, 5, 7,3 } , { 11,10,0,0} ,
      { 7, 7, 7,0 } , { 6, 6, 6,3 } , {  8, 8,5,0} } ,
@@ -632,6 +636,7 @@ III_get_scale_factors_2(PMPSTR mp, int *scf,struct gr_info_s *gr_infos,int i_ste
      {12,12,12,0 } , {12, 9, 9,6 } , { 15,12,9,0} } ,
    { { 6, 9, 9,9 } , { 6, 9,12,6 } , { 15,18,0,0} ,
      { 6,15,12,0 } , { 6,12, 9,6 } , {  6,18,9,0} } }; 
+  /* *INDENT-ON* */
 
   if(i_stereo) /* i_stereo AND second channel -> do_layer3() checks this */
     slen = i_slen2[gr_infos->scalefac_compress>>1];
@@ -670,8 +675,10 @@ III_get_scale_factors_2(PMPSTR mp, int *scf,struct gr_info_s *gr_infos,int i_ste
   return numbits;
 }
 
+/* *INDENT-OFF* */
 static const int pretab1 [22] = {0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,2,2,3,3,3,2,0}; /* char enough ? */
 static const int pretab2 [22] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+/* *INDENT-ON* */
 
 static int III_dequantize_sample(PMPSTR mp, real xr[SBLIMIT][SSLIMIT],int *scf,
    struct gr_info_s *gr_infos,int sfreq,int part2bits)
@@ -1244,6 +1251,9 @@ static void III_antialias(real xr[SBLIMIT][SSLIMIT],struct gr_info_s *gr_infos)
   }
 }
 
+
+/* *INDENT-OFF* */
+
 /*
  DCT insipired by Jeff Tsay's DCT from the maplay package
  this is an optimized version with manual unroll.
@@ -1497,6 +1507,7 @@ static void dct12(real *in,real *rawout1,real *rawout2,real *wi,real *ts)
      out2[5-2] += in4 * wi[5-2];
   }
 }
+/* *INDENT-ON* */
 
 /*
  * III_hybrid
@@ -1572,7 +1583,8 @@ int layer3_audiodata_precedesframes(PMPSTR mp)
     return framesToBacktrack;
 }
 
-int do_layer3_sideinfo(PMPSTR mp)
+int
+decode_layer3_sideinfo(PMPSTR mp)
 {
   struct frame *fr = &mp->fr;
   int stereo = fr->stereo;

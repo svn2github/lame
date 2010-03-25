@@ -1,5 +1,9 @@
 /*
- * Copyright (C) 2000 Albert L. Faber
+ * tabinit.c
+ *
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -34,6 +38,7 @@ real decwin[512+32];
 static real cos64[16],cos32[8],cos16[4],cos8[2],cos4[1];
 real *pnts[] = { cos64,cos32,cos16,cos8,cos4 };
 
+/* *INDENT-OFF* */
 static const double dewin[512] = {
    0.000000000,-0.000015259,-0.000015259,-0.000015259,
   -0.000015259,-0.000015259,-0.000015259,-0.000030518,
@@ -101,6 +106,7 @@ static const double dewin[512] = {
    1.133926392, 1.138763428, 1.142211914, 1.144287109,
    1.144989014
 };
+/* *INDENT-ON* */
 
 void make_decode_tables(long scaleval)
 {

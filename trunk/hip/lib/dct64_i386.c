@@ -1,5 +1,9 @@
 /*
- * Copyright (C) 2000 Albert L. Faber
+ * dct64_i368.c
+ *
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -15,6 +19,7 @@
  * License along with this library; if not, write to the
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
+ *
  *
  * Discrete Cosine Tansform (DCT) for subband synthesis
  * optimized for machines with no auto-increment. 
@@ -36,7 +41,8 @@
 #include <dmalloc.h>
 #endif
 
-static void dct64_1(real *out0,real *out1,real *b1,real *b2,real *samples)
+static void
+dct64_1(real * out0, real * out1, real * b1, real * b2, real * samples)
 {
 
  {
@@ -334,7 +340,8 @@ static void dct64_1(real *out0,real *out1,real *b1,real *b2,real *samples)
  * the call via dct64 is a trick to force GCC to use
  * (new) registers for the b1,b2 pointer to the bufs[xx] field
  */
-void dct64( real *a,real *b,real *c)
+void
+dct64(real * a, real * b, real * c)
 {
   real bufs[0x40];
   dct64_1(a,b,bufs,bufs+0x20,c);

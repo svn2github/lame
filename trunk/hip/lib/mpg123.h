@@ -1,5 +1,7 @@
 /*
- * Copyright (C) 2000 Albert L. Faber
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -137,8 +139,7 @@ struct gr_info_s {
       real *pow2gain;
 };
 
-struct III_sideinfo
-{
+struct III_sideinfo {
   unsigned main_data_begin;
   unsigned private_bits;
   struct {

@@ -1,11 +1,9 @@
 /*
- * Mpeg Layer-1,2,3 audio decoder
- * ------------------------------
- * copyright (c) 1995,1996,1997 by Michael Hipp, All rights reserved.
- * modified by Aleksander Korzynski (Olcios) '2003
- * See also 'README'
+ * decode_i396.c: Mpeg Layer-1,2,3 audio decoder
  *
- * Copyright (C) 2000 Albert L. Faber
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,7 +20,8 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  *
- * slighlty optimized for machines without autoincrement/decrement.
+ *
+ * Slighlty optimized for machines without autoincrement/decrement.
  * The performance is highly compiler dependend. Maybe
  * the decode.c version for 'normal' processor may be faster
  * even for Intel processors.
@@ -73,6 +72,7 @@ char *strchr (), *strrchr ();
 #define WRITE_SAMPLE_UNCLIPPED(TYPE,samples,sum,clip) \
   *samples = (TYPE)sum;
 
+  /* *INDENT-OFF* */
 
  /* versions: clipped (when TYPE == short) and unclipped (when TYPE == real) of synth_1to1_mono* functions */
 #define SYNTH_1TO1_MONO_CLIPCHOICE(TYPE,SYNTH_1TO1)                    \
@@ -93,17 +93,20 @@ char *strchr (), *strrchr ();
                                                                        \
   return ret; 
 
+  /* *INDENT-ON* */
 
-int synth_1to1_mono(PMPSTR mp, real *bandPtr,unsigned char *out,int *pnt)
+
+int
+synth_1to1_mono(PMPSTR mp, real * bandPtr, unsigned char *out, int *pnt)
 {
   SYNTH_1TO1_MONO_CLIPCHOICE(short,synth_1to1)
-}
-
-int synth_1to1_mono_unclipped(PMPSTR mp, real *bandPtr, unsigned char *out,int *pnt)
+} int
+synth_1to1_mono_unclipped(PMPSTR mp, real * bandPtr, unsigned char *out, int *pnt)
 {
   SYNTH_1TO1_MONO_CLIPCHOICE(real,synth_1to1_unclipped)
 }
 
+    /* *INDENT-OFF* */
 /* versions: clipped (when TYPE == short) and unclipped (when TYPE == real) of synth_1to1* functions */
 #define SYNTH_1TO1_CLIPCHOICE(TYPE,WRITE_SAMPLE)         \
   static const int step = 2;                             \
@@ -207,14 +210,15 @@ int synth_1to1_mono_unclipped(PMPSTR mp, real *bandPtr, unsigned char *out,int *
   *pnt += 64*sizeof(TYPE);                               \
                                                          \
   return clip;                                           
+    /* *INDENT-ON* */
 
 
-int synth_1to1(PMPSTR mp, real *bandPtr,int channel,unsigned char *out, int *pnt)
+int
+synth_1to1(PMPSTR mp, real * bandPtr, int channel, unsigned char *out, int *pnt)
 {
   SYNTH_1TO1_CLIPCHOICE(short,WRITE_SAMPLE_CLIPPED)
-}
-
-int synth_1to1_unclipped(PMPSTR mp, real *bandPtr,int channel, unsigned char *out, int *pnt)
+} int
+synth_1to1_unclipped(PMPSTR mp, real * bandPtr, int channel, unsigned char *out, int *pnt)
 {
   SYNTH_1TO1_CLIPCHOICE(real,WRITE_SAMPLE_UNCLIPPED)
 }

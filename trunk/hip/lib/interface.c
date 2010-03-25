@@ -1,5 +1,9 @@
 /*
- * Copyright (C) 2000 Albert L. Faber
+ * interface.c
+ *
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -122,7 +126,8 @@ static struct buf *addbuf( PMPSTR mp, unsigned char *buf,int size)
 	return nbuf;
 }
 
-void remove_buf(PMPSTR mp)
+void
+remove_buf(PMPSTR mp)
 {
   struct buf *buf = mp->tail;
   
@@ -138,7 +143,8 @@ void remove_buf(PMPSTR mp)
 
 }
 
-static int read_buf_byte(PMPSTR mp)
+static int
+read_buf_byte(PMPSTR mp)
 {
 	unsigned int b;
 
@@ -165,7 +171,8 @@ static int read_buf_byte(PMPSTR mp)
 
 
 
-static void read_head(PMPSTR mp)
+static void
+read_head(PMPSTR mp)
 {
 	unsigned long head;
 
@@ -222,7 +229,8 @@ copy_mp(PMPSTR mp, int size, unsigned char *ptr)
  before starting to read
  return value: number of bytes in VBR header, including syncword
 */
-static int check_vbr_header(PMPSTR mp,int bytes)
+static int
+check_vbr_header(PMPSTR mp, int bytes)
 {
   int i,pos;
   struct buf *buf=mp->tail;
@@ -346,12 +354,13 @@ sync_buffer(PMPSTR mp,int free_match)
 }
 
 
-void decode_reset(PMPSTR mp)
+void
+decode_reset(PMPSTR mp)
 {
 #if 0
   remove_buf(mp);
   /* start looking for next frame */
-  // mp->fsizeold = mp->framesize;
+    /* mp->fsizeold = mp->framesize; */
     mp->fsizeold = -1;
   mp->old_free_format = mp->free_format;
   mp->framesize = 0;
@@ -364,7 +373,8 @@ void decode_reset(PMPSTR mp)
 #endif
 }
 
-int audiodata_precedesframes(PMPSTR mp)
+int
+audiodata_precedesframes(PMPSTR mp)
 {
     if(mp->fr.lay == 3)
 	return layer3_audiodata_precedesframes(mp);

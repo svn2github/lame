@@ -1,5 +1,9 @@
 /*
- * Copyright (C) 2000 Albert L. Faber
+ * common.c: some common bitstream operations
+ *
+ * Copyright (C) 1999-2010 The L.A.M.E. project
+ *
+ * Initially written by Michael Hipp, see also AUTHORS and README.
  *  
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -47,8 +51,8 @@
 
 /* In C++ the array first must be prototyped, why ? */
 
-extern const int tabsel_123 [2] [3] [16];
 
+    /* *INDENT-OFF* */
 const int tabsel_123 [2] [3] [16] = {
    { {0,32,64,96,128,160,192,224,256,288,320,352,384,416,448,},
      {0,32,48,56, 64, 80, 96,112,128,160,192,224,256,320,384,},
@@ -63,13 +67,16 @@ const long freqs[9] = { 44100, 48000, 32000,
                         22050, 24000, 16000,
                         11025, 12000,  8000 };
 
+    /* *INDENT-ON* */
 
 
   real muls[27][64];
 
 #if 0
-static void get_II_stuff(struct frame *fr)
+static void
+get_II_stuff(struct frame *fr)
 {
+    /* *INDENT-OFF* */
   static const int translate [3] [2] [16] =   /* char ? */
    { { { 0,2,2,2,2,2,2,0,0,0,1,1,1,1,1,0 } ,
        { 0,2,2,0,0,0,1,1,1,1,1,1,1,1,1,0 } } ,
@@ -77,10 +84,10 @@ static void get_II_stuff(struct frame *fr)
        { 0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0 } } ,
      { { 0,3,3,3,3,3,3,0,0,0,1,1,1,1,1,0 } ,
        { 0,3,3,0,0,0,1,1,1,1,1,1,1,1,1,0 } } };
+    /* *INDENT-ON* */
 
   int table,sblim;
-  static const struct al_table2 *tables[5] = 
-       { alloc_0, alloc_1, alloc_2, alloc_3 , alloc_4 };
+    static const struct al_table2 *tables[5] = { alloc_0, alloc_1, alloc_2, alloc_3, alloc_4 };
   static int sblims[5] = { 27 , 30 , 8, 12 , 30 };
 
   if(fr->lsf)
@@ -98,7 +105,8 @@ static void get_II_stuff(struct frame *fr)
 
 #define MAX_INPUT_FRAMESIZE 4096
 
-int head_check(unsigned long head,int check_layer)
+int
+head_check(unsigned long head, int check_layer)
 {
   /*
     look for a valid header.  
@@ -294,7 +302,8 @@ unsigned int getbits(PMPSTR mp, int number_of_bits)
   return rval;
 }
 
-unsigned int getbits_fast(PMPSTR mp, int number_of_bits)
+unsigned int
+getbits_fast(PMPSTR mp, int number_of_bits)
 {
   unsigned long rval;
 
