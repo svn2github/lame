@@ -25,16 +25,14 @@
 
 
 struct al_table2 {
-  short bits;
-  short d;
+    short   bits;
+    short   d;
 };
 
 
 
-void init_layer2(void);
-int  do_layer2( PMPSTR mp,unsigned char *pcm_sample,int *pcm_point);
+void    init_layer2(void);
+int     do_layer2(PMPSTR mp, unsigned char *pcm_sample, int *pcm_point);
 
 
 #endif
-
-

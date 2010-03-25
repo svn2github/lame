@@ -41,7 +41,7 @@
 #  define strchr index
 #  define strrchr rindex
 # endif
-char *strchr (), *strrchr ();
+char   *strchr(), *strrchr();
 # ifndef HAVE_MEMCPY
 #  define memcpy(d, s, n) bcopy ((s), (d), (n))
 #  define memmove(d, s, n) bcopy ((s), (d), (n))
@@ -99,11 +99,11 @@ char *strchr (), *strrchr ();
 int
 synth_1to1_mono(PMPSTR mp, real * bandPtr, unsigned char *out, int *pnt)
 {
-  SYNTH_1TO1_MONO_CLIPCHOICE(short,synth_1to1)
+    SYNTH_1TO1_MONO_CLIPCHOICE(short, synth_1to1)
 } int
 synth_1to1_mono_unclipped(PMPSTR mp, real * bandPtr, unsigned char *out, int *pnt)
 {
-  SYNTH_1TO1_MONO_CLIPCHOICE(real,synth_1to1_unclipped)
+    SYNTH_1TO1_MONO_CLIPCHOICE(real, synth_1to1_unclipped)
 }
 
     /* *INDENT-OFF* */
@@ -216,11 +216,9 @@ synth_1to1_mono_unclipped(PMPSTR mp, real * bandPtr, unsigned char *out, int *pn
 int
 synth_1to1(PMPSTR mp, real * bandPtr, int channel, unsigned char *out, int *pnt)
 {
-  SYNTH_1TO1_CLIPCHOICE(short,WRITE_SAMPLE_CLIPPED)
+    SYNTH_1TO1_CLIPCHOICE(short, WRITE_SAMPLE_CLIPPED)
 } int
 synth_1to1_unclipped(PMPSTR mp, real * bandPtr, int channel, unsigned char *out, int *pnt)
 {
-  SYNTH_1TO1_CLIPCHOICE(real,WRITE_SAMPLE_UNCLIPPED)
+    SYNTH_1TO1_CLIPCHOICE(real, WRITE_SAMPLE_UNCLIPPED)
 }
-
-

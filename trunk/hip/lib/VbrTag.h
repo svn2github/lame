@@ -48,25 +48,24 @@
 #define FRAMES_AND_BYTES (FRAMES_FLAG | BYTES_FLAG)
 
 
- 
+
 /*structure to receive extracted header */
 /* toc may be NULL*/
-typedef struct
-{
-  int		h_id;			/* from MPEG header, 0=MPEG2, 1=MPEG1 */
-  int		samprate;		/* determined from MPEG header */
-  int		flags;			/* from Vbr header data */
-  int		frames;			/* total bit stream frames from Vbr header data */
-  int		bytes;			/* total bit stream bytes from Vbr header data*/
-  int		vbr_scale;		/* encoded vbr scale from Vbr header data*/
-  unsigned char	toc[NUMTOCENTRIES];	/* may be NULL if toc not desired*/
-  int           headersize;             /* size of VBR header, in bytes */
-  int           enc_delay;              /* encoder delay */
-  int           enc_padding;            /* encoder paddign added at end of stream */
-}   VBRTAGDATA;
+typedef struct {
+    int     h_id;            /* from MPEG header, 0=MPEG2, 1=MPEG1 */
+    int     samprate;        /* determined from MPEG header */
+    int     flags;           /* from Vbr header data */
+    int     frames;          /* total bit stream frames from Vbr header data */
+    int     bytes;           /* total bit stream bytes from Vbr header data */
+    int     vbr_scale;       /* encoded vbr scale from Vbr header data */
+    unsigned char toc[NUMTOCENTRIES]; /* may be NULL if toc not desired */
+    int     headersize;      /* size of VBR header, in bytes */
+    int     enc_delay;       /* encoder delay */
+    int     enc_padding;     /* encoder paddign added at end of stream */
+} VBRTAGDATA;
 
-int CheckVbrTag(unsigned char *buf);
-int hip_GetVbrTag(VBRTAGDATA *pTagData,  unsigned char *buf);
+int     CheckVbrTag(unsigned char *buf);
+int     hip_GetVbrTag(VBRTAGDATA * pTagData, unsigned char *buf);
 
 /*
 int SeekPoint(unsigned char TOC[NUMTOCENTRIES], int file_bytes, float percent);
