@@ -292,13 +292,13 @@ hip_init_tables_layer3(void)
     for (j = 0; j < 9; j++) {
         for (i = 0; i < 23; i++) {
             longLimit[j][i] = (bandInfo[j].longIdx[i] - 1 + 8) / 18 + 1;
-            if (longLimit[j][i] > (down_sample_sblimit))
-                longLimit[j][i] = down_sample_sblimit;
+            if (longLimit[j][i] > SBLIMIT)
+                longLimit[j][i] = SBLIMIT;
         }
         for (i = 0; i < 14; i++) {
             shortLimit[j][i] = (bandInfo[j].shortIdx[i] - 1) / 18 + 1;
-            if (shortLimit[j][i] > (down_sample_sblimit))
-                shortLimit[j][i] = down_sample_sblimit;
+            if (shortLimit[j][i] > SBLIMIT)
+                shortLimit[j][i] = SBLIMIT;
         }
     }
 
