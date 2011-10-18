@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -6,7 +6,7 @@
   <title>LAME MP3 Encoder</title>
   <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
   <meta name="generator" content="jEdit 4.2" />
-  <meta name="cvs-version" content="$Id: index.php,v 1.15 2010-03-22 21:04:44 robert Exp $" />
+  <meta name="cvs-version" content="$Id: index.php,v 1.16 2011-10-18 21:19:50 robert Exp $" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="styles/lame.css" />
   <!--[if IE 6]>
@@ -30,8 +30,8 @@
 	LGPL.
 </p>
 
-<h3 id="latest_release">Latest LAME release: <a href="download.php">v3.98.4</a>
-(March 2010)</h3>
+<h3 id="latest_release">Latest LAME release: <a href="download.php">v3.99</a>
+(October 2011)</h3>
 
 <p>
 	LAME development started around mid-1998. Mike Cheng started it as a patch
