@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Related Links</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: links.php,v 1.36 2011-10-18 21:19:50 robert Exp $" />
+	<meta name="cvs-version" content="$Id: links.php,v 1.37 2014-10-01 19:21:01 robert Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -244,7 +244,7 @@ etc.): </a></b></p>
 	</li>
    
    <li>
-      <a href="http://www.bonkenc.org/">Bonk Encoder</a> Yet another CD
+      <a href="http://www.freac.org/">fre:ac - free audio converter (formerly known as Bonk Encoder)</a> Yet another CD
       ripper, encoder &amp; converter that uses LAME for MP3 encoding.
    </li>
 	
