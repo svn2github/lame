@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: MP3x Screenshots</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: screenshots.php,v 1.5 2009-11-03 16:11:01 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: screenshots.php,v 1.6 2017-08-02 16:03:40 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -104,7 +104,7 @@
 	
 	<li>
 		Most freely available encoders will produce identical results (LAME 2.1,
-			8hz-mp3, BlaceEnc, CDex with ISO .dll).
+		8hz-mp3, BladeEnc, CDex with ISO .dll).
 	</li>
 	
 	<li>
