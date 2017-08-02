@@ -93,7 +93,7 @@ which supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://audacity.sourceforge.net/">Audacity</a> Open source
+        <a href="http://www.audacityteam.org/">Audacity</a> Open source
         multiplatform audio editor.
     </li>
 
@@ -104,8 +104,8 @@ which supports or uses LAME:</a></h3>
 
     <li>
         <a
-        href="http://www.tradebit.com/layouts/featured-technology.php">Tradebit</a>
-        is    a file hosting service that offers server-side MP3 encoding with LAME.
+        href="https://www.tradebit.com/layouts/featured-technology.php">Tradebit</a>
+        is a file hosting service that offers server-side MP3 encoding with LAME.
     </li>
 
 </ul>
@@ -116,27 +116,13 @@ etc.): </a></b></p>
 <ul>
 
     <li>
-        <a href="http://www.k3b.org/">k3b</a> An exceptional CD burning and
-        ripping frontend for KDE.
+        <a href="https://userbase.kde.org/K3b">k3b</a> An exceptional CD burning
+        and ripping frontend for KDE.
     </li>
 
     <li>
-        <a href="http://divx.euro.ru">avifile</a> AVI/DIVX encoder and    decoder.
-    </li>
-
-    <li>
-        <a href="http://www.nostatic.org/grip/">Grip</a> A gtk-based cd-player,
-        ripper and encoder. Supports cddb, cdparanoia and LAME.
-    </li>
-
-    <li>
-        <a href="http://www.transcoding.org/">Transcode</a> Several command line
+        <a href="http://transcoding.org/">Transcode</a> Several command line
         utilities to transcode several audio and video formats.
-    </li>
-
-    <li>
-        <a href="http://home.netsurf.de/fr.schueler/Apps/index.html">Mp3Maker</a>
-        A WindowMaker enhanced front end to cdda2wav/cdparanoia and    LAME/bladeenc.
     </li>
 
     <li>
@@ -176,8 +162,7 @@ etc.): </a></b></p>
     </li>
 
     <li>
-        <a href="http://darkice.tyrell.hu/">DarkIce</a> Live streamer for
-        IceCast.
+        <a href="http://www.darkice.org/">DarkIce</a> Live streamer for IceCast.
     </li>
 
     <li>
@@ -206,11 +191,6 @@ etc.): </a></b></p>
         burning and ripping tools.
     </li>
 
-    <li>
-        <a href="http://www.vortex.prodigynet.co.uk/cripple/">Cripple</a> - A
-        command-line/batch CD ripper/encoder frontend.
-    </li>
-
 </ul>
 
 <p><b>&nbsp;&nbsp;<a name="MacOS">MacOS Classic:</a></b></p>
@@ -229,8 +209,8 @@ etc.): </a></b></p>
 <ul>
 
     <li>
-        <a href="http://cdexos.sourceforge.net/">CDex</a> Ripper &amp; encoder,
-        includes    LAME binaries (the Blade compatible dll).
+        <a href="http://cdex.mu/">CDex</a> Ripper &amp; encoder, includes LAME 
+        binaries (the Blade compatible dll).
     </li>
 
     <li>
@@ -250,13 +230,8 @@ etc.): </a></b></p>
    </li>
 
     <li>
-        <a href="http://www.omniencoder.com/">OmniEncoder</a> a fully
-        featured frontend    for LAME and several other encoders.
-    </li>
-
-    <li>
-        <a href="http://www.interruptx.com">LAMEX</a> An activex control for
-        LAME, and a GUI. Source code only, includes LAME.
+        <a href="https://github.com/dswigger/lamex">LAMEX</a> An activex control
+        for LAME, and a GUI. Source code only, includes LAME.
     </li>
 
     <li>
@@ -275,18 +250,18 @@ etc.): </a></b></p>
     </li>
 
     <li>
-        <a href="http://winlame.sourceforge.net">winLAME</a> The only *nice*
+        <a href="https://winlame.sourceforge.io/">winLAME</a> The only *nice*
         windows UI for LAME, according to the author :-)
     </li>
 
     <li>
-        <a href="http://sourceforge.net/projects/bbc2mp3/">bbc2mp3</a> a tool for
+        <a href="https://sourceforge.net/projects/bbc2mp3/">bbc2mp3</a> a tool for
         saving BBC "Listen Again" programmes as MP3 files.
     </li>
 
     <li>
-        <a href="http://www.autohotkey.net/~aaronbewza/Aaron's%20Sonar%20Mp3%20Patch/index.html">Aaron's Sonar Mp3 Patch</a>
-        a Cakewalk Sonar plugin written in AutoHotkey.
+        <a href="https://autohotkey.com/board/topic/66927-aarons-sonar-mp3-patch-v564/">Aaron's 
+        Sonar Mp3 Patch</a> a Cakewalk Sonar plugin written in AutoHotkey.
     </li>
 
 </ul>
@@ -304,13 +279,8 @@ which supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.audiograbber.com-us.net">Audiograbber</a> (Windows)
-        CD ripper/encoder.
-    </li>
-
-    <li>
-        <a href="http://www.skillreactor.org/tools/index.htm">EnLAMEr</a>
-        (Windows) frontend for lame.exe
+        <a href="http://www.audiograbber.org/">Audiograbber</a> (Windows) CD 
+        ripper/encoder.
     </li>
 
     <li>
@@ -341,12 +311,6 @@ which supports or uses LAME:</a></h3>
     <li>
         <a href="http://www.riptrax.com/">RipTrax</a> (Windows) Advanced CD Ripper
         with support for LAME and Vorbis.
-    </li>
-
-    <li>
-        <a href="http://snow.prohosting.com/emercer/">Music Conduit</a> (Windows)
-        A working substitute for the Transfer to Device feature in Windows Media
-        Player.
     </li>
 
     <li>
@@ -413,13 +377,13 @@ supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.jrmediacenter.com/">J. River Media Center</a> a media
-        center software that supports LAME for ripping, transcoding, and gapless
+        <a href="https://jriver.com/">J. River Media Center</a>, a media center 
+        software that supports LAME for ripping, transcoding, and gapless
         playback.
     </li>
 
    <li>
-      <a href="http://www.acondigital.com/us_Acoustica1.html">Acoustica</a>
+      <a href="https://acondigital.com/products/acoustica-audio-editor/">Acoustica</a>
       digital audio editor
    </li>
 
@@ -434,18 +398,8 @@ supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.swishzone.com/index.php">SWiSH Max</a> Adobe Flash
-        authoring tool for Windows.
-    </li>
-
-    <li>
-        <a href="http://www.ubercaster.com/">&uuml;bercaster</a> Podcast
-        production suite for Macintosh.
-    </li>
-
-    <li>
-        <a href="http://www.audioease.com/">Audio Ease BarbaBatch</a> batch audio
-        file converter for Macintosh.
+        <a href="http://www.audioease.com/index.php">Audio Ease BarbaBatch</a> 
+        batch audio file converter for Macintosh.
     </li>
 
     <li>
@@ -483,7 +437,7 @@ supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.poikosoft.com">Easy CD-DA Extractor</a> Windows
+        <a href="https://www.poikosoft.com">Easy CD-DA Extractor</a> Windows
         ripper/encoder, includes LAME binaries.
     </li>
 
@@ -495,11 +449,6 @@ supports or uses LAME:</a></h3>
     <li>
         <a href="http://www.birdcagesoft.com/">MPAction MP3 Tools</a> Windows
         jukebox software.
-    </li>
-
-    <li>
-        <a href="http://www.buttontool.com">1CoolButtonTool</a> Flash and Java
-        button editor.
     </li>
 
     <li>
@@ -552,14 +501,13 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 <ul>
 
     <li>
-        <a href="http://www.rarewares.org/">RareWares</a> Precompiled LAME
-        versions for several distros.
+        <a href="http://www.rarewares.org/index.php">RareWares</a> Precompiled 
+        LAME versions for several distros.
     </li>
 
     <li>
-        <a href="http://freshrpms.net/">FreshRPMs</a> offers Linux RPM <a
-        href="http://bordeaux.freshrpms.net/rpm.html?id=1473">packages for
-        several popular RPM-based distributions</a>, including Fedora Core.
+        <a href="https://freshrpms.net/">FreshRPMs</a> offers Linux RPM packages 
+        for several popular RPM-based distributions, including Fedora Core.
     </li>
 
 </ul>
@@ -673,8 +621,8 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     <li>
         <a href="http://www.marinecat.net/free/windows/mct_free.htm">GOGO-no-coda
         MP3 encoder</a> A forked version of LAME with many key routines rewritten
-        in assembly (I.E, it's much faster). Uses the <a
-        href="http://nasm.sourceforge.net/">NASM assembler.</a>
+        in assembly (I.E, it's much faster). Uses the <a 
+        href="http://www.nasm.us/">NASM assembler.</a>
     </li>
 
     <!--<li>
@@ -756,9 +704,9 @@ size="-1">^</font></sup></a> <a name="MP3_sites">MP3 Encoding Web Sites:</a></h3
 <ul>
 
     <li>
-        <a href="http://www.hydrogenaudio.org/forums/index.php">Hydrogenaudio</a>
-        - Public discussion forum focused on psychoacoustic audio compression,
-        featuring an MP3 section.
+        <a href="https://hydrogenaud.io/">Hydrogenaudio</a> - Public discussion 
+        forum focused on psychoacoustic audio compression, featuring an MP3 
+        section.
     </li>
 
     <li>
@@ -784,19 +732,19 @@ size="-1">^</font></sup></a> <a name="MP3_general">General MP3 Web Sites:</a></h
     </li>
 
     <li>
-        <a href="http://wiki.hydrogenaudio.org/index.php?title=Main_Page">
+        <a href="http://wiki.hydrogenaud.io/index.php?title=Main_Page">
         HydrogenAudio's Wiki</a> is a repository of knowledge on audio-related
         matters.
     </li>
 
     <li>
-        <a href="http://wiki.hydrogenaudio.org/index.php?title=Recommended_LAME">
+        <a href="http://wiki.hydrogenaud.io/index.php?title=Recommended_LAME">
         HydrogenAudio's list of recommended LAME settings</a> to produce best
         quality encodes at several bitrates.
     </li>
 
     <li>
-        <a href="http://www.bitburners.com">BitBurners</a> - The CD-R and MP3
+        <a href="https://cd-rw.org/">cd-rw.org</a> - The CD-R and MP3
         resource
     </li>
 
@@ -820,7 +768,7 @@ Hardware:</a></h3>
 
     <li>
         A favorite Linux ripper: <a
-        href="http://www.xiph.org/paranoia/">cdparanoia</a> <i>(also, GNU's
+        href="https://www.xiph.org/paranoia/">cdparanoia</a> <i>(also, GNU's
         <a href="http://www.gnu.org/software/libcdio/">libcdio</a>, a
         multiplatform port of CDparanoia)</i>
     </li>
@@ -831,22 +779,12 @@ Hardware:</a></h3>
     </li>
 
     <li>
-        Open source embedded mp3? <a
-        href="http://www.janovetz.com/jake/cantante/index.html">Cantante</a>
-    </li>
-
-    <li>
         <a href="http://www.underbit.com/products/mad/">The MAD decoder</a> Bug
         free, 24bit and GPL!
     </li>
 
     <li>
-        <a href="http://www.pcavtech.com/soundcards/compare/">PCAVtech sound
-        card benchmarks</a>
-    </li>
-
-    <li>
-        <a href="http://www.cmis.csiro.au/dmis/maaate/">Maate</a> looks like a
+        <a href="http://maaate.sourceforge.net/">Maate</a> looks like a
         very sophisticated MP3 analysis package. They also have a good
         description of MP3 frames.
     </li>
@@ -872,7 +810,7 @@ Hardware:</a></h3>
     </li>
 
     <li>
-        <a href="http://sourceforge.net/projects/mp3asm">mp3asm</a>: A program
+        <a href="https://sourceforge.net/projects/mp3asm">mp3asm</a>: A program
         to cut and paste mp3 frames.
     </li>
 
@@ -904,8 +842,7 @@ line-in:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.dago.pmp.com.pl/messer/">Messer</a> by Dariusz
-        Sieradzki
+        <a href="http://messer.aerolit.pl/">Messer</a> by Dariusz Sieradzki
     </li>
 
 </ul>
