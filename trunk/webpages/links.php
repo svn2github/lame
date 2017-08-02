@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>LAME MP3 Encoder :: Related Links</title>
-    <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-    <meta name="generator" content="jEdit 4.2" />
+    <meta name="author" content="Roberto Amorim - rjamorim@yahoo.com" />
+    <meta name="generator" content="jEdit 5.4" />
     <meta name="cvs-version" content="$Id: links.php,v 1.37 2014/10/01 19:21:01 robert Exp" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/lame.css" />
@@ -45,7 +45,7 @@
     <!--<li><a href="#Shame">Hall of Shame</a></li>-->
     <li><a href="#Binaries">LAME Binaries (for Windows, *nix, Amiga...)</a></li>
     <li><a href="#Alternatives">Alternative MP3 encoders</a></li>
-    <li><a href="#Comparisons">Comparisons based on listening tests</a></li>
+    <!--<li><a href="#Comparisons">Comparisons based on listening tests</a></li>-->
     <li><a href="#MP3_sites">MP3 encoding web sites</a></li>
     <li><a href="#MP3_general">General MP3 Web Sites</a></li>
     <li><a href="#Soft_hard">MP3 Related Software and Hardware</a></li>
@@ -339,11 +339,6 @@ which supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.1oo-percent.de/lamer/">LAMEr</a> (Windows) Can also
-        encode from line-in.
-    </li>
-
-    <li>
         <a href="http://www.riptrax.com/">RipTrax</a> (Windows) Advanced CD Ripper
         with support for LAME and Vorbis.
     </li>
@@ -508,11 +503,6 @@ supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://proteron.com/n2mp3pro/">N2MP3 Pro</a> Macintosh jukebox
-        software.
-    </li>
-
-    <li>
         <a href="http://www.ultratagger.com/">UltraTagger.</a> ID3 tag
         management, encoding and decoding.
     </li>
@@ -663,7 +653,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 
 <ul>
 
-    <li>
+    <!--<li>
         <a href="http://www.initialt.org/">Takehiro Tominaga</a> has done some
         amazing work on LAME    recently (see <a
         href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
@@ -671,7 +661,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         href="http://www.initialt.org/lame-beta/">here (source code only)</a>.
         Fortunately for us, Takehiro takes the time to fold many of his
         improvements back into LAME.
-    </li>
+    </li>-->
 
     <li>
         George Kotorlis created a multithreaded version of LAME called <a
@@ -737,7 +727,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 
 <hr></hr>
 
-<h3><a href="#Contents" style="text-decoration: none"><sup><font
+<!--<h3><a href="#Contents" style="text-decoration: none"><sup><font
 size="-1">^</font></sup></a> <a name="Comparisons">MP3 Encoder Comparisons
 based on <i>listening tests:</i></a></h3>
 
@@ -758,7 +748,7 @@ based on <i>listening tests:</i></a></h3>
         tests
     </li>
 
-</ul>
+</ul>-->
 
 <h3><a href="#Contents" style="text-decoration: none"><sup><font
 size="-1">^</font></sup></a> <a name="MP3_sites">MP3 Encoding Web Sites:</a></h3>
@@ -824,6 +814,11 @@ Hardware:</a></h3>
 <ul>
 
     <li>
+        <a href="http://mpg123.de/">mpg123</a> is a fast, featureful and precise 
+        MP1/2/3 decoder that is actively developed and licensed under the LGPL.
+    </li>
+
+    <li>
         A favorite Linux ripper: <a
         href="http://www.xiph.org/paranoia/">cdparanoia</a> <i>(also, GNU's
         <a href="http://www.gnu.org/software/libcdio/">libcdio</a>, a
@@ -832,12 +827,12 @@ Hardware:</a></h3>
 
     <li>
         How to figure out which codec was used to make that mp3? Use <a
-        href="http://www.guerillasoft.nstemp.com/EncSpot2/">EncSpot</a>
+        href="http://download.cnet.com/EncSpot/3000-2169_4-10062007.html">EncSpot</a>
     </li>
 
     <li>
         Open source embedded mp3? <a
-        href="http://www.janovetz.com/jake/cantante/index.html"> Cantante</a>
+        href="http://www.janovetz.com/jake/cantante/index.html">Cantante</a>
     </li>
 
     <li>
@@ -858,7 +853,7 @@ Hardware:</a></h3>
 
     <li>
         A nice .wav file viewer and editor: <a
-        href="http://www.metadecks.org/software/sweep/index.html"> sweep</a>
+        href="http://www.metadecks.org/software/sweep/index.html">sweep</a>
     </li>
 
     <li>
@@ -868,7 +863,7 @@ Hardware:</a></h3>
 
     <li>
         <a href="http://programmierer.freepage.de/overmann/">mp3check</a>: A
-        program to check integrity    of mp3 files.
+        program to check integrity of mp3 files.
     </li>
 
     <li>
