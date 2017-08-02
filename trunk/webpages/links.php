@@ -342,8 +342,8 @@ which supports or uses LAME:</a></h3>
 </ul>
 
 <h3><a href="#Contents" style="text-decoration: none"><sup><font size="-1">^</font>
-</sup></a> <a name="Commercial">Commercial software which
-supports or uses LAME:</a></h3>
+</sup></a> <a name="Commercial">Commercial software which supports or uses 
+LAME:</a></h3>
 
 <ul>
 
@@ -353,8 +353,8 @@ supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.steinberg.de/25_1.html">WaveLab</a> digital audio
-        editing software.
+        <a href="https://www.steinberg.net/en/shop/buy_product/product/wavelab-pro-9.html">WaveLab</a> 
+        digital audio editing software.
     </li>
 
    <li>
@@ -517,7 +517,7 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 <ul>
 
     <li>
-        <a href="http://www.rarewares.org/">RareWares</a> offers several
+        <a href="http://www.rarewares.org/index.php">RareWares</a> offers several
         compiled LAME versions, including modified versions featuring special
         functionality.
     </li>
@@ -727,8 +727,8 @@ size="-1">^</font></sup></a> <a name="MP3_general">General MP3 Web Sites:</a></h
     </li>
 
     <li>
-        <a href="http://www.rarewares.org">RareWares</a> - audio coding-related
-        download site featuring several audio formats besides MP3.
+        <a href="http://www.rarewares.org/index.php">RareWares</a> - audio 
+        coding-related download site featuring several audio formats besides MP3.
     </li>
 
     <li>
@@ -810,7 +810,7 @@ Hardware:</a></h3>
     </li>
 
     <li>
-        <a href="https://sourceforge.net/projects/mp3asm">mp3asm</a>: A program
+        <a href="https://sourceforge.net/projects/mp3asm/">mp3asm</a>: A program
         to cut and paste mp3 frames.
     </li>
 
