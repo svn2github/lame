@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Quality and Listening Test Information</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: quality.php,v 1.7 2009-11-03 16:11:01 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: quality.php,v 1.8 2017-08-02 21:00:11 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -69,10 +69,10 @@
 </p>
 
 <p>
-	Check out <a href="http://sound.media.mit.edu/mpeg4/audio/sqam">SQAM - Sound
-	Quality Assessment Material.</a> I haven't had a chance to try these yet, but 
-	if you find samples where another encoder does noticeably better than LAME, I 
-	would be very interested.
+	Check out <a href="http://sound.media.mit.edu/resources/mpeg4/audio/sqam/">SQAM 
+	- Sound	Quality Assessment Material.</a> I haven't had a chance to try these 
+	yet, but if you find samples where another encoder does noticeably better 
+	than LAME, I would be very interested.
 </p>
 
 <h2>Test cases which need work</h2>
@@ -175,9 +175,9 @@
 	
 	<li>
 		4th place: LAME 3.70 (-h) - More high frequency metallic vibrations.
-		Sounds like low cost trumpets are used. (resonance between the metal parts of
-		the trumpets) These vibrations even occur, if the trumpets are not
-		playing.
+		Sounds like low cost trumpets are used. (resonance between the metal 
+		parts of the trumpets) These vibrations even occur, if the trumpets 
+		are not	playing.
 	</li>
 	
 	<li>

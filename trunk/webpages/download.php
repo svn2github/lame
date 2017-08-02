@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Software Downloads</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: download.php,v 1.12 2017-08-02 16:00:28 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: download.php,v 1.13 2017-08-02 21:00:11 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -64,7 +64,7 @@
 	LAME source code is maintained with CVS, hosted on <a
 	href="http://sourceforge.net/">SourceForge.net</a>. For instructions on
 	downloading the current development sources, go to <a
-	href="http://sourceforge.net/cvs/?group_id=290">the CVS information page of
+	href="https://sourceforge.net/p/lame/code/">the CVS information page of
 	the LAME project on SourceForge.net</a>.
 </p>
 

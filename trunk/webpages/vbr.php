@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: GPSYCHO - Variable Bit Rate</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: vbr.php,v 1.5 2009-11-03 16:11:01 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: vbr.php,v 1.6 2017-08-02 21:00:11 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -114,11 +114,10 @@
 	<dd>Find a combination of global_gain, subblock_gain, preflag, scalefac_scale,
 	etc... so that: <code>gain[sfb] &lt;= desired_gain[sfb]</code></dd>
 		
-	<dt>Step 4: <code>VBR_quantize_granule()</code> in
-	<code>vbrquantize.c</code></dt>
-	<dd>Calculate the number of bits needed to encode the frame with
-		the values computed in step 3.  Unlike CBR, VBR (usually) only
-		has to do this expensive huffman bit counting stuff once!</dd>
+	<dt>Step 4: <code>VBR_quantize_granule()</code> in <code>vbrquantize.c</code></dt>
+	<dd>Calculate the number of bits needed to encode the frame with the values 
+	computed in step 3. Unlike CBR, VBR (usually) only has to do this expensive 
+	huffman bit counting stuff once!</dd>
 	
 	
 	<dt>Step 5: <code>VBR_noise_shaping()</code> in <code>vbrquantize.c</code></dt>
@@ -130,7 +129,7 @@
 	<br />
 	Usually step 5 is not necessary.</dd>
 	
-	<dt>step 6: VBR_quantize() in vbrquantize.c</dt>
+	<dt>step 6: <code>VBR_quantize()</code> in <code>vbrquantize.c</code></dt>
 	<dd>After encoding both channels and granules, check to make sure that the
 	total number of bits for the whole frame does not exceed the maximum allowed.
 	If it does, lower the quality and repeat steps 2,3 and 4 for the granules that
@@ -160,6 +159,8 @@ do
 
 while (frame_bits &gt; max_frame_bits)</dd>
 
+<br />
+    
   <dt>VBR_noise_shaping()</dt>
 
   <dd class="code">find_scalefac()   (computes desired_gain)
@@ -184,6 +185,7 @@ if bits &gt; maxbits
         bits = VBR_quantize_granule()
     while (bits &gt; maxbits)</dd>
 
+<br />
 
   <dt><code>find_scalefac()</code></dt>
 
