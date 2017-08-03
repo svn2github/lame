@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: The LAME Mailing List</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: list.php,v 1.5 2009-11-03 16:11:01 rjamorim Exp $" />
+	<meta name="cvs-version" content="$Id: list.php,v 1.6 2017-08-03 12:33:12 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -31,13 +31,14 @@
 </p>
 
 <p>
-	In September of 2000, the list was moved and is now run by Warren Toomey. To
-	join, visit <a href="http://minnie.tuhs.org/mailman/listinfo/mp3encoder">the
-	mp3encoder mailing list webpage</a>.
+	In September of 2000, the list was moved and was then run by Warren Toomey. 
+	But sometime in 2011 it got deleted from the list server, so it seems to be
+	gone for good now. You can still peruse the archives though (check the
+	<a href="contact.php">contact</a> page for details).
 </p>
 
 <p>
-	The <a href="http://lists.sourceforge.net/lists/listinfo/lame-dev">development 
+	The <a href="https://sourceforge.net/projects/lame/lists/lame-dev">development 
 	list</a> is run by SourceForge
 </p>
 

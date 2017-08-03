@@ -37,17 +37,17 @@
 			
 			<ul>
 				<li>
-					&quot;target&quot; bitrate/quality allows choice betwen VBR or CBR/ABR. 
+					&quot;Target&quot; bitrate/quality allows choice betwen VBR or CBR/ABR. 
 					According to selection, CBR/ABR or VBR options should be grayed out.
 				</li>
 				
 				<li>
-					&quot;encoding engine quality&quot; allows 3 choices: fast, standard or 
+					&quot;Encoding engine quality&quot; allows 3 choices: fast, standard or 
 					high. This option is not mandatory.
 				</li>
 				
 				<li>
-					a checkbox allows to encode in mono (LAME will downsample). There is no 
+					A checkbox allows to encode in mono (LAME will downsample). There is no 
 					choice between different stereo modes, as the default mode should be optimal. 
 					Other modes are likely to decrease quality.
 				</li>
