@@ -435,7 +435,7 @@ by not respecting the terms and conditions of our license.</h4>
 </ul>
 
 <p><strong>If you want your company name to be removed from this list because
-you are now complying with our license, please contact us.</strong></p>
+you are now complying with the LAME license, please contact us.</strong></p>
 
 <hr />-->
 
@@ -590,10 +590,10 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         though)
     </li>
 
-    <!--<li>
-        <a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrible
-        quality. Only listed here for completeness purposes.
-    </li>-->
+    <li>
+        <a href="http://www.rarewares.org/rrw/qdmc.html">QDesign MP3 encoder</a> 
+        Horrible quality. Only listed here for completeness purposes.
+    </li>
 
     <li>
         <a href="http://www.rarewares.org/rrw/">ReallyRareWares</a> is an online
