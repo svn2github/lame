@@ -6,7 +6,7 @@
 	<title>LAME MP3 Encoder :: Developers</title>
 	<meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
 	<meta name="generator" content="jEdit 4.2" />
-	<meta name="cvs-version" content="$Id: developers.php,v 1.12 2010-07-18 21:33:46 robert Exp $" />
+	<meta name="cvs-version" content="$Id: developers.php,v 1.13 2017-08-24 16:54:29 rjamorim Exp $" />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="styles/lame.css" />
 	<!--[if IE 6]>
@@ -106,7 +106,7 @@
 	<tr><th colspan="2">Additional developers:</th></tr>
 
 	<tr>
-		<td><a href="http://www.rjamorim.com">Roberto Amorim</a></td>
+		<td><a href="http://sourceforge.net/users/rjamorim">Roberto Amorim</a></td>
 		<td>Web pages and documentation.</td>
 	</tr>
 

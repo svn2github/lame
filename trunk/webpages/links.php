@@ -542,16 +542,6 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 
 <ul>
 
-    <!--<li>
-        <a href="http://www.initialt.org/">Takehiro Tominaga</a> has done some
-        amazing work on LAME    recently (see <a
-        href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
-        history</a>). His versions are available <a
-        href="http://www.initialt.org/lame-beta/">here (source code only)</a>.
-        Fortunately for us, Takehiro takes the time to fold many of his
-        improvements back into LAME.
-    </li>-->
-
     <li>
         George Kotorlis created a multithreaded version of LAME called <a
         href="http://www.fiberpool.de/en/fiberpool_case_studies_fpmp3enc_overview.html">fpMP3Enc</a>
@@ -566,8 +556,8 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         href="http://www.nasm.us/">NASM assembler.</a>
     </li>
 
-    <!--<li>
-        <a href="http://www.rjamorim.com/rrw/mp3enc.html">FhG MP3enc</a> 3.1. The
+    <li>
+        <a href="http://www.rarewares.org/rrw/mp3enc.html">FhG MP3enc</a> 3.1. The
         gold standard of encoders. All other encoders strive to sound this good.
         Demo version only encodes up to 30 seconds.<br />
         <i>Update: according to recent listening tests, Lame already surpassed
@@ -575,16 +565,16 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.rjamorim.com/rrw/l3enc.html">FhG l3enc</a>. The older
-        brother of MP3enc. Very slow, but with quite reasonable quality.
+        <a href="http://www.rarewares.org/rrw/l3enc.html">FhG l3enc</a>. The older
+        brother of MP3enc. Very slow, but with quite decent quality.
     </li>
 
     <li>
-        <a href="http://www.rjamorim.com/rrw/fastencc.html">FhG Fastencc</a> this
+        <a href="http://www.rarewares.org/rrw/fastencc.html">FhG Fastencc</a> this
         "free" encoder was created with libraries stolen from Fraunhofer. It's
         the faster brother of MP3enc, and also the only FhG encoder to offer VBR
         encoding. Quality is not on par with MP3enc or LAME.
-    </li>-->
+    </li>
 
     <li>
         <a href="http://www2.arnes.si/~mmilut/BladeEnc.html">BladeEnc</a> One of
@@ -603,15 +593,15 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     <!--<li>
         <a href="http://www.qdesign.com">QDesign MP3 encoder</a> Horrible
         quality. Only listed here for completeness purposes.
-    </li>
+    </li>-->
 
     <li>
-        <a href="http://www.rjamorim.com/rrw/">ReallyRareWares</a> is an online
+        <a href="http://www.rarewares.org/rrw/">ReallyRareWares</a> is an online
         museum preserving obsolete and defunct encoders for several audio
         formats, including old LAME versions and obscure MP3 encoders (most of
         these encoders are simple compiles of the MPEG reference sources -
         dist10 - though)
-    </li>-->
+    </li>
 </ul>
 
 <hr></hr>
