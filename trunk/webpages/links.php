@@ -573,7 +573,8 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         <a href="http://www.rarewares.org/rrw/fastencc.html">FhG Fastencc</a> this
         "free" encoder was created with libraries stolen from Fraunhofer. It's
         the faster brother of MP3enc, and also the only FhG encoder to offer VBR
-        encoding. Quality is not on par with MP3enc or LAME.
+        encoding. The stereo encoding is buggy and quality is not on par with 
+        MP3enc or LAME.
     </li>
 
     <li>
@@ -584,23 +585,36 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 
     <li>
         <a href="http://www.rarewares.org/mp3-others.php#helix_enc">Xing MP3
-        encoder</a> Reasonable quality and extremely fast encoder. Is now the MP3
+        encoder</a> Good quality and very fast encoder. It is now the MP3
         encoder used in Real Jukebox and Real Player, and has been recently
-        released under an Open Source license (it's still limited to Windows
-        though)
+        released under an Open Source license (the speed tweaks are still 
+        limited to Windows though, because they use MASM)
     </li>
 
     <li>
         <a href="http://www.rarewares.org/rrw/qdmc.html">QDesign MP3 encoder</a> 
         Horrible quality. Only listed here for completeness purposes.
     </li>
+    
+    <li>
+        <a href="https://www.mp3-tech.org/programmer/encoding.html">Shine</a> is
+        a featureless, but clean and readable MP3 encoder by Gabriel Bouvigne of
+        LAME fame. Great as a starting point or learning tool. Also probably the
+        only open source, fixed point math MP3 encoder.
+    </li>
+    
+    <li>
+        <a href="download/dist10.tar.gz">dist10</a> - the MPEG (ISO) reference 
+        MP1/2/3 encoders. Low quality, very slow and buggy. Good as a starting 
+        point, maybe?
+    </li>
 
     <li>
         <a href="http://www.rarewares.org/rrw/">ReallyRareWares</a> is an online
         museum preserving obsolete and defunct encoders for several audio
         formats, including old LAME versions and obscure MP3 encoders (most of
-        these encoders are simple compiles of the MPEG reference sources -
-        dist10 - though)
+        these encoders are simple compiles of the dist10 MPEG reference sources
+        though)
     </li>
 </ul>
 
