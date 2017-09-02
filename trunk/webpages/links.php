@@ -557,7 +557,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.rarewares.org/rrw/mp3enc.html">FhG MP3enc</a> 3.1. The
+        <a href="http://www.rarewares.org/rrw/mp3enc.php">FhG MP3enc</a> 3.1. The
         gold standard of encoders. All other encoders strive to sound this good.
         Demo version only encodes up to 30 seconds.<br />
         <i>Update: according to recent listening tests, Lame already surpassed
@@ -565,12 +565,12 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.rarewares.org/rrw/l3enc.html">FhG l3enc</a>. The older
+        <a href="http://www.rarewares.org/rrw/l3enc.php">FhG l3enc</a>. The older
         brother of MP3enc. Very slow, but with quite decent quality.
     </li>
 
     <li>
-        <a href="http://www.rarewares.org/rrw/fastencc.html">FhG Fastencc</a> this
+        <a href="http://www.rarewares.org/rrw/fastencc.php">FhG Fastencc</a> this
         "free" encoder was created with libraries stolen from Fraunhofer. It's
         the faster brother of MP3enc, and also the only FhG encoder to offer VBR
         encoding. The stereo encoding is buggy and quality is not on par with 
@@ -592,7 +592,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.rarewares.org/rrw/qdmc.html">QDesign MP3 encoder</a> 
+        <a href="http://www.rarewares.org/rrw/qdmc.php">QDesign MP3 encoder</a> 
         Horrible quality. Only listed here for completeness purposes.
     </li>
     
