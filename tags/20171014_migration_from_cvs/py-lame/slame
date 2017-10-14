@@ -1,0 +1,255 @@
+#!/usr/bin/env python
+
+#
+#   Copyright (c) 2001-2002 Alexander Leidinger. All rights reserved.
+#
+#   Redistribution and use in source and binary forms, with or without
+#   modification, are permitted provided that the following conditions
+#   are met:
+#
+#   1. Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#   2. Redistributions in binary form must reproduce the above copyright
+#      notice, this list of conditions and the following disclaimer in the
+#      documentation and/or other materials provided with the distribution.
+#
+#   THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+#   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+#   FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+#   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+#   OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+#   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+#   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+#   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#   SUCH DAMAGE.
+#
+
+# $Id: slame,v 1.14 2009-01-29 21:51:13 kylev Exp $
+
+# slame:
+# quick hack to test some aspects of pylame, a cleanup is needed
+
+# TODO:
+#  * split into multiple files
+#  * cleanup
+
+import optparse
+import os
+import sys
+
+import wave
+import aifc
+import sunau
+
+import lame
+
+
+def parse_args():
+    parser = optparse.OptionParser(usage='%prog [options] INFILE [OUTFILE]')
+    parser.add_option('-b', '--bitrate', dest='bitrate', type='int',
+                      default=lame.PRESET_STANDARD,
+                      help='Use a bitrate of <bitrate> kbps')
+    parser.add_option('-a', '--abr', dest='abr', action='store_true',
+                      help='Produce an ABR MP3')
+    parser.add_option('-c', '--cbr', dest='cbr', action='store_true',
+                      help='Produce a constant bitrate MP3')
+    parser.add_option('-q', '--quiet', dest='quiet', action='store_true',
+                      help='Be quiet (no output except on errors)')
+    parser.add_option('-v', '--verbose', dest='verbose', action='count',
+                      default=0,
+                      help='Produce a more verbose output')
+
+    opt, args = parser.parse_args()
+
+    # Process options
+    if opt.abr and opt.cbr:
+        parser.error('You can only specify one of ABR or CBR.')
+
+    vbr = lame.VBR_MODE_DEFAULT
+    if opt.abr:
+        vbr = lame.VBR_MODE_ABR
+    if opt.cbr:
+        vbr = lame.VBR_MODE_OFF
+
+    arg_count = len(args)
+    if (1 > len(args)) or (2 < len(args)):
+        parser.error('You must specify at least an input file.')
+
+    in_file = args[0]
+    if 2 == len(args):
+        mp3_name = args[1]
+    else:
+        root, extension = os.path.splitext(in_file)
+        mp3_name = root + '.mp3'
+
+    return opt.bitrate, opt.verbose, opt.quiet, vbr, in_file, mp3_name
+
+
+def open_soundfile_or_exit(file):
+    try:
+        sound = wave.open(file, 'rb')
+    except wave.Error, wave_errval:
+        try:
+            sound = aifc.open(file, 'rb')
+        except aifc.Error, aifc_errval:
+            try:
+                sound = sunau.open(file, 'rb')
+            except sunau.Error, sunau_errval:
+                print 'Unknown file format:' + os.linesep + \
+                      ' AIFC  :', aifc_errval,  os.linesep, \
+                      ' SUN AU:', sunau_errval, os.linesep, \
+                      ' WAVE  :', wave_errval,  os.linesep
+                sys.exit(1)
+
+    return sound
+
+
+def is_readable_or_exit(file):
+    if not os.access(file, os.R_OK):
+        print 'Input file "%s" not readable.' % (file,)
+        sys.exit(1)
+
+
+def get_average(bitrate_hist, frames_processed):
+    average = 0.0
+    for item in bitrate_hist:
+        if 0 != item['value']:
+            average += item['bitrate'] * item['value'] \
+                / float(frames_processed)
+
+    return average
+
+
+def print_stats(mp3, processed_bytes, raw_size, verbose, vbr, bitrate):
+    """Print out statistics of the encoding process."""
+    bitrate_hist = mp3.get_bitrate_histogram()
+    stmode_hist = mp3.get_bitrate_stereo_mode_histogram()
+    stmode_total = mp3.get_stereo_mode_histogram()
+    frames_processed = mp3.frame_num
+    frames_total = mp3.total_frames
+
+    if lame.VBR_MODE_DEFAULT == vbr:
+        average_rate = get_average(bitrate_hist, frames_processed)
+    else:
+        average_rate = bitrate
+
+    progress = frames_processed / float(frames_total)
+
+    if 1 <= verbose:
+        print ''
+
+    if lame.VBR_MODE_DEFAULT == vbr:
+        print '\r%9d of %9d bytes (%04.1f%%, %.1f kbps)' % \
+              (processed_bytes, raw_size,
+               float(processed_bytes)/raw_size*100,
+               average_rate ),
+    else:
+        # ABR & CBR
+        print '\r%9d of %9d bytes' % (processed_bytes, raw_size),
+
+    sys.stdout.flush()
+
+    if 1 <= verbose:
+        print ''
+        for i in range(0, 14):
+            print '%3d: %4d (%5.1f%%)  LR: %4d LR-I: %4d MS: %4d MS-I: %4d' % \
+                  (bitrate_hist[i]["bitrate"], bitrate_hist[i]["value"],
+                   100*bitrate_hist[i]["value"]/float(frames_total),
+                   stmode_hist[i]["LR"], stmode_hist[i]["LR-I"],
+                   stmode_hist[i]["MS"], stmode_hist[i]["MS-I"])
+
+        print 'Total: %4d of %4d frames (%5.1f%%)  LR: %4d LR-I: %4d MS: %4d MS-I: %4d' % (
+            frames_processed, frames_total, progress*100,
+            stmode_total["LR"], stmode_total["LR-I"],
+            stmode_total["MS"], stmode_total["MS-I"]  )
+
+
+def main():
+    # argument parsing
+    bitrate, verbose, quiet, vbr, in_file, mp3_name = parse_args()
+
+    is_readable_or_exit(in_file)
+
+    sound = open_soundfile_or_exit(in_file)
+
+    # get some info about the infile
+    nchannels, sampwidth, samplerate, nframes, comptype, compname = \
+        sound.getparams()
+
+    raw_size = nchannels * sampwidth * nframes
+
+    if 1 <= verbose:
+        print "File      :", in_file
+        print "nchannels :", nchannels
+        print "sampwidth :", sampwidth
+        print "samplerate:", samplerate
+        print "nframes   :", nframes
+        print "comptype  :", comptype
+        print "compname  :", compname
+        print "raw size  :", raw_size
+
+        print os.linesep + "Lame:"
+        print "URL      :", lame.LAME_URL
+        print "Version  :", lame.LAME_VERSION
+
+    if 2 != sampwidth:
+        print 'Sorry, no support for != 16bit samples.'
+        sys.exit(1)
+
+    # mp3file
+    mp3_file = open(mp3_name, 'wb+')
+
+    # Prep the encoder object
+    mp3 = lame.Encoder()
+    mp3.num_channels = nchannels
+    mp3.in_samplerate = samplerate
+    mp3.set_num_samples(nframes)
+
+    mp3.set_vbr(vbr)
+    if 8 <= bitrate <= 320:
+        mp3.set_bitrate(bitrate)
+    mp3.set_preset(bitrate)
+
+    mp3.init()
+
+    abort = 0
+
+    num_samples_per_enc_run = samplerate
+
+    # 1 sample = 2 bytes
+    num_bytes_per_enc_run = nchannels * num_samples_per_enc_run * sampwidth
+
+    processed_bytes = 0
+    while 0 == abort:
+        frames = sound.readframes(num_samples_per_enc_run)
+        condition = num_bytes_per_enc_run != len(frames)
+        if 1 == condition:
+            abort = condition
+        if 2 == nchannels:
+            data = mp3.encode_interleaved(frames)
+            mp3_file.write(data)
+        else:
+            print 'only 2 channels at the moment!'
+            sys.exit(1)
+
+        processed_bytes += len(frames)
+
+        if not quiet:
+            print_stats(mp3, processed_bytes, raw_size, verbose, vbr, bitrate)
+
+    data = mp3.flush_buffers()
+    mp3_file.write(data)
+
+    mp3.write_tags(mp3_file)
+
+    if not quiet:
+        print_stats(mp3, processed_bytes, raw_size, verbose, vbr, bitrate)
+
+    mp3_file.close()
+    sound.close()
+
+
+if __name__ == '__main__':
+    main()

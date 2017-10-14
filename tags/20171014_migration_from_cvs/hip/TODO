@@ -1,0 +1,12 @@
+Intergrate this back into LAME
+
+Apply 'VBR' bug 
+
+Unit test ... maybe get the ISO examples and run them thru
+
+Documentation
+
+Seeking
+
+python module should use ctypes
+

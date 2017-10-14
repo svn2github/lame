@@ -1,0 +1,28 @@
+- Michael Hipp <mh@mpg123.de> 
+  Orignal mpglib.  Without whom HIP wouldn't exist. (Note that HIP is
+  also supposed be a pun on Michael's last name)
+
+- Mark Taylor <markt@users.sf.net>
+- Albert L Faber <afaber@users.sf.net>
+- Alexander Leidinger <aleidinger@users.sf.net>
+- Frank Klemm <pfk@users.sf.net>
+- Takehiro TOMINAGA <takehiro@users.sf.net>
+- Robert Hegemann <robert@users.sf.net>
+- Sigbjorn Skjaeret <cisc@users.sf.net>
+  All members of the lame dev team.  Made the code in to a library and many,
+  many other improvements.
+
+- Myers Carpenter <myers@users.sf.net>
+  Added vorbisfile like interface.  Repackaged as seprate from lame. Python
+  module.
+
+- Leigh Smith <leighsmith@users.sourceforge.net>
+  Added a patch:
+
+Introduces two functions hip_decode_reset() and
+hip_audiodata_precedesframes() to aid arbitrary seeking within
+MP3 data. Standardised error messages to have a "hip:" prefix
+(aiding error reporting by users of applications linking to hip) and
+controlled the display of them using a #define HIP_DEBUG. Added
+a couple of debugging fprintfs (controlled by HIP_DEBUG). Added
+documentation of fields of struct frame and MPSTR.

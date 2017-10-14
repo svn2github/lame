@@ -1,0 +1,26 @@
+libmp3hip (0.2) unstable; urgency=low
+
+  * Fixed problem in python wrapper with fd's not getting fclose()d on
+    deletion of python objects (closes #154885).
+  * Renamed python-hip to python2.1-hip and created python2.2-hip and
+    python2.3-hip (closes #161579).
+
+ -- Myers W. Carpenter <myers@fil.org>  Fri, 27 Sep 2002 02:06:09 -0400
+
+libmp3hip (0.1.1) unstable; urgency=low
+
+  * Non-Maintainer Upload
+  * Switched to python2.2 (Closes: #161579) 
+
+ -- Michael Banck <mbanck@debian.org>  Sat, 12 Oct 2002 20:59:57 +0200
+
+libmp3hip (0.1) unstable; urgency=low
+
+  * Initial Release.
+  * Uploaded by sponsor.
+
+ -- JP Sugarbroad <taral@taral.net>  Tue, 23 Apr 2002 16:46:53 -0500
+
+Local variables:
+mode: debian-changelog
+End:
