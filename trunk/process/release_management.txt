@@ -1,0 +1,23 @@
+- SF-net - project - files - create folder (version = name of folder), enable "staged"
+- make sure libmp3lame/version.h mentions the right version and release instead of alpha/beta (commit if not)
+- test build
+- make test
+- copy testcase.new.mp3 to tescase.mp3 and commit
+- update doc/html/history.html (release date, important changes) and commit
+- create ChangeLog (run make_changelog.sh) and commit
+- tag the release, e.g. for lame-3.100:
+    svn copy --username=$USERNAME svn+ssh://$USERNAME@svn.code.sf.net/p/lame/svn/trunk/lame svn+ssh://$USERNAME@svn.code.sf.net/p/lame/svn/tags/lame3_100
+    svn copy --username=$USERNAME svn+ssh://$USERNAME@svn.code.sf.net/p/lame/svn/trunk/lame svn+ssh://$USERNAME@svn.code.
+sf.net/p/lame/svn/tags/RELEASE__3_100
+- TBD: delete all files if in separate build directory and re-build (to get new ChangeLog)?
+- make dist
+- upload lame-<version>.tar.gz to the version directory create above
+- click on the (i) button of the uploaded file, change "Default Download For" (select all, deselct Android)
+- fill "Download Button:" with "<version> source ode"
+- save
+- click on the (i) button of the version directory
+- remove the hook from the "Stage this folder for 3 days"
+- save
+- send mail to lame-dev@list.sf.net
+- update website (index.php and download.php) to point to the latest LAME release (see website_update.txt)
+

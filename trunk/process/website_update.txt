@@ -1,0 +1,5 @@
+- update the website in SVN
+- login to a SF shell (ssh -t $USERNAME@shell.sf.net create)
+- cd /home/project-web/lame/htdocs
+- run "./siteupdate.sh"
+
