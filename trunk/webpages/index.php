@@ -92,7 +92,7 @@
    </li>
 
    <li>
-      <a href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">History/ChangeLog</a>
+      <a href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">History/ChangeLog</a>
       - what has been happening lately.
    </li>
 

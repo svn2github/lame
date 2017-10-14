@@ -61,10 +61,10 @@
 <h3>Development Versions</h3>
 
 <p>
-	LAME source code is maintained with CVS, hosted on <a
+	LAME source code is maintained with SVN, hosted on <a
 	href="http://sourceforge.net/">SourceForge.net</a>. For instructions on
 	downloading the current development sources, go to <a
-	href="https://sourceforge.net/p/lame/code/">the CVS information page of
+	href="https://sourceforge.net/p/lame/svn/">the SVN information page of
 	the LAME project on SourceForge.net</a>.
 </p>
 

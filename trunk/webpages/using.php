@@ -27,7 +27,7 @@
 
 <ul>
 	<li>
-		<a href="download.php">Download the source code (CVS, .tar and source
+		<a href="download.php">Download the source code (SVN, .tar and source
 			RPMS available).</a>
 	</li>
 	
@@ -53,8 +53,8 @@
 
 <ul>
 	<li>
-		<a href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/USAGE">Guide 
-		to command line options (in CVS)</a>
+		<a href="https://svn.code.sf.net/p/lame/svn/trunk/lame/USAGE">Guide 
+		to command line options (in SVN)</a>
 	</li>
 	
 	<li>
@@ -63,8 +63,8 @@
 	
 	<li>
 		<a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/index.html">Program
-		documentation (in CVS)</a>
+		href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/index.html">Program
+		documentation (in SVN)</a>
 	</li>
 </ul>
 

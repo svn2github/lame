@@ -57,7 +57,7 @@
 
 	<li>
 		Many improvements in quality in speed over ISO reference software. See <a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
+		href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">
 		history</a>.
 	</li>
 
@@ -122,7 +122,7 @@
 	
 	<li>
 		<a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html">
+		href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">
 		History and ChangeLog</a>
 	</li>
 	

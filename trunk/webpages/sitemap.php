@@ -49,7 +49,7 @@ src="images/jedit.png" height="40px" width="120px" border="0" alt="Made with jEd
 			</li>
 	
 			<li>
-				<a href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">History</a> 
+				<a href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">History</a> 
 				- LAME development history/changelog.
 			</li>
 	
@@ -108,7 +108,7 @@ src="images/jedit.png" height="40px" width="120px" border="0" alt="Made with jEd
 		<ul>
 			<li>
 				<a
-				href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/index.html">Documentation</a>
+				href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/index.html">Documentation</a>
 				- LAME's official documentation.
 			</li>
 		
@@ -166,7 +166,7 @@ src="images/jedit.png" height="40px" width="120px" border="0" alt="Made with jEd
 			</li>
 			
 			<li>
-				<a href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">History</a> 
+				<a href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">History</a> 
 				- LAME development history and changelog.
 			</li>
 			

@@ -27,7 +27,7 @@
 
 <ul>
 	<li>
-		<a href="download.php">Download the source code (CVS, .tar and source RPMS
+		<a href="download.php">Download the source code (SVN, .tar and source RPMS
 		available).</a>
 	</li>
 	
@@ -37,7 +37,7 @@
 	
 	<li>
 		<a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">History/ChangeLog</a>
+		href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">History/ChangeLog</a>
 	</li>
 	
 	<li>
@@ -50,7 +50,7 @@
 <ul>
 	<li>
 		Many improvements in quality in speed over ISO reference software. See <a
-		href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html?revision=HEAD">history</a>.
+		href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">history</a>.
 	</li>
 	
 	<li>

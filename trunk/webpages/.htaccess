@@ -28,4 +28,4 @@ RedirectPermanent /gpsycho/vbr.html http://lame.sourceforge.net/vbr.php
 
 RedirectPermanent /winamp/winamp.html http://lame.sourceforge.net/winamp.php
 
-RedirectPermanent /history.html http://lame.cvs.sourceforge.net/*checkout*/lame/lame/doc/html/history.html
+RedirectPermanent /history.html https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html

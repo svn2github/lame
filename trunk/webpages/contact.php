@@ -55,12 +55,13 @@
     Archives</a> are provided by SourceForge.
 </p>
 
-<h3>CVS mailing list</h3>
+<h3>SVN mailing list</h3>
 
 <p>
-    If you want to be automatically notified of commits to CVS, you can subscribe
+    If you want to be automatically notified of commits to SVN, you can subscribe
     to <a href="https://sourceforge.net/projects/lame/lists/lame-cvs">the lame-cvs
-    list</a>.
+    list</a>. The name of this list has historic reasons, we have not renamed it
+    after switching from CVS to SVN.
 </p>
 
 <h3>IRC</h3>
