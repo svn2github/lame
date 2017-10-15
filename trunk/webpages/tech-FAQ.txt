@@ -144,9 +144,6 @@ albatross works, but I think it has an effective window length of
 samples up to 96+512.  
 
 
-
-
-
 ==========================================================================
 3.  Why does LAME add silence to the end of each song?
 
@@ -259,6 +256,7 @@ unless the padding bit is set in which case round up.  (padding makes
 the frame one byte larger) The encoder is supposed to use padding in
 selected frames to keep the average bitrate as close as possible to
 the specified bitrate.
+
 
 ==========================================================================
 6. Does LAME use any MP3 patented technology?
