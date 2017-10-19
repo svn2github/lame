@@ -27,8 +27,7 @@
 
 <ul>
 	<li>
-		<a href="download.php">Download the source code (SVN, .tar and source RPMS
-		available).</a>
+		<a href="download.php">Download the source code (SVN and .tar packages available).</a>
 	</li>
 	
 	<li>
@@ -67,7 +66,7 @@
 	</li>
 	
 	<li>
-		<a href="gpsycho.php">GPSYCHO:</a> a GPL'd psycho acoustic and	noise 
+		<a href="gpsycho.php">GPSYCHO</a>: an LGPL'd psycho acoustic and noise 
 		shaping model.
 	</li>
 	
