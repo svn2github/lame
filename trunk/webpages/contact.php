@@ -76,7 +76,7 @@
 
 <p>
     To submit bug reports, you can use the <a
-    href="https://sourceforge.net/p/lame/bugs/">bug    tracker</a> besides the <a
+    href="https://sourceforge.net/p/lame/bugs/">bug tracker</a> besides the <a
     href="https://sourceforge.net/projects/lame/lists/lame-dev">lame-dev mailing
     list</a>. Please be descriptive in your bug report. You should clearly 
     mention your problem, LAME version used and how to reproduce the bug.

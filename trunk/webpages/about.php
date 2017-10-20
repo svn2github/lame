@@ -56,6 +56,14 @@
 <ul>
 
 	<li>
+		Quality better than all other encoders at most bitrates.
+	</li>
+
+	<li>
+		Fast! Encodes faster than real time on a PII 266 at highest quality mode.
+	</li>
+
+	<li>
 		Many improvements in quality in speed over ISO reference software. See <a
 		href="https://svn.code.sf.net/p/lame/svn/trunk/lame/doc/html/history.html">
 		history</a>.
@@ -86,14 +94,6 @@
 	
 	<li>
 		Powerful and easy to use presets.
-	</li>
-	
-	<li>
-		Quality better than all other encoders at most bitrates.
-	</li>
-	
-	<li>
-		Fast! Encodes faster than real time on a PII 266 at highest quality mode.
 	</li>
 	
 	<li>

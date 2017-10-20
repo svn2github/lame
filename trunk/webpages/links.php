@@ -79,7 +79,7 @@ which supports or uses LAME:</a></h3>
     <li>
         <a href="http://www.getid3.org">getID3()</a> (PHP) PHP4 script that
         extracts useful information from MP3s &amp; other multimedia file formats.
-        Reads Lame tags.
+        Reads LAME tags.
     </li>
 
     <li>
@@ -339,7 +339,7 @@ LAME:</a></h3>
 
    <li>
         <a href="http://www.dbpoweramp.com">dBpowerAMP</a> (Win) Rip and encode 
-        to/from mp3, wma, vorbis and other audio formats.
+        to/from MP3, WMA, Vorbis and other audio formats.
     </li>
 
     <li>
@@ -352,10 +352,10 @@ LAME:</a></h3>
         software that supports LAME for ripping, transcoding, and gapless playback.
     </li>
 
-   <li>
-      <a href="https://acondigital.com/products/acoustica-audio-editor/">Acoustica</a>
-      digital audio editor
-   </li>
+    <li>
+        <a href="https://acondigital.com/products/acoustica-audio-editor/">Acoustica</a>
+        digital audio editor
+    </li>
 
     <li>
         <a href="http://audioedit.mystikmedia.com">AudioEdit Deluxe</a> (Win)
@@ -398,7 +398,7 @@ LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.mp3observer.com">MP3 Observer</a> MP3 file-manager,
+        <a href="http://www.mp3observer.com">MP3 Observer</a> (Win) MP3 file-manager,
         ID3 tag editor, playlist creator and CD-archiving tool.
     </li>
 
@@ -408,7 +408,7 @@ LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.flashdig.com/">Flash Digger Plus</a> - a Shockwave
+        <a href="http://www.flashdig.com/">Flash Digger Plus</a> (Win) a Shockwave
         Flash decompiler.
     </li>
 
@@ -593,7 +593,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 
     <li>
         <a href="http://www.rarewares.org/rrw/qdmc.php">QDesign MP3 encoder</a> 
-        Horrible quality. Only listed here for completeness purposes.
+        Horrible quality. Only listed here for completeness.
     </li>
     
     <li>
@@ -614,7 +614,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         museum preserving obsolete and defunct encoders for several audio
         formats, including old LAME versions and obscure MP3 encoders (most of
         these encoders are simple compiles of the dist10 MPEG reference sources
-        though)
+        though).
     </li>
 </ul>
 

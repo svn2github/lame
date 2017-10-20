@@ -28,9 +28,9 @@
 <p>
 	LAME is only distribued in source code form. For binaries and GUI based
 	programs which can use LAME (or include fully licensed versions of LAME),
-	check the <a href="links.php"> LAME related links</a>. All software from the
+	check the <a href="links.php">LAME related links</a>. All software from the
 	LAME project can be found in the project's <a
-	href="http://sourceforge.net/project/showfiles.php?group_id=290">file
+	href="https://sourceforge.net/projects/lame/files/">file
 	area</a>.
 </p>
 
@@ -46,15 +46,15 @@
 </ul>
 
 <p>
-	Source code tarballs of these versions <a
-	href="http://sourceforge.net/projects/lame/files/lame/">can
-	be downloaded from SourceForge</a>.
+	Source code tarballs of the versions can be <a
+	href="http://sourceforge.net/projects/lame/files/lame/">downloaded from 
+	SourceForge</a>.
 </p>
 
 <p>
 	LAME compiles on Windows, DOS, GNU/Linux, MacOS X, *BSD, Solaris, HP-UX,
 	Tru64 Unix, AIX, Irix, NeXTstep, SCO Unix, UnixWare, Ultrix, Plan 9, OpenVMS,
-	MacOS Classic, BeOS,	QNX, RiscOS, AmigaOS, OS/2, SkyOS, FreeMiNT(Atari) and
+	MacOS Classic, BeOS, QNX, RiscOS, AmigaOS, OS/2, SkyOS, FreeMiNT(Atari) and
 	probably a few more.
 </p>
 
@@ -64,8 +64,8 @@
 	LAME source code is maintained with SVN, hosted on <a
 	href="http://sourceforge.net/">SourceForge.net</a>. For instructions on
 	downloading the current development sources, go to <a
-	href="https://sourceforge.net/p/lame/svn/">the SVN information page of
-	the LAME project on SourceForge.net</a>.
+	href="https://sourceforge.net/p/lame/svn/">the SVN information page</a> of
+	the LAME project on SourceForge.net.
 </p>
 
 </div>
