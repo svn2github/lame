@@ -38,8 +38,8 @@
 	against the 8hz-MP3 encoder sources. After some quality concerns raised by
 	others, he decided to start from scratch based on the dist10 sources. His
 	goal was only to speed up the dist10 sources, and leave its quality untouched.
-	That branch (a patch against the reference sources) became Lame 2.0, and only
-	on Lame 3.81 did we replaced of all dist10 code, making LAME no more only a
+	That branch (a patch against the reference sources) became Lame 2.0, and with
+	Lame 3.81 all of dist10 code was replaced, making LAME no more only a
 	patch.
 </p>
 
