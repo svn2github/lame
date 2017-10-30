@@ -515,9 +515,14 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 <ul>
 
     <li>
+        <a href="http://www.perzl.org/aix/index.php?n=Main.Lame">Michael Perlz</a>
+        provides RPM packages with AIX binaries for several versions of LAME.
+    </li>
+
+    <li>
         <a href="http://www2.arnes.si/~mmilut/Lame.html">Lame Binary Distribution
         Point</a> - somewhat outdated, but with compiles for several obscure
-        systems like HP-UX, Irix, VMS, Tru64, AIX, etc.
+        systems like HP-UX, Irix, VMS, Tru64, etc.
     </li>
 
 </ul>
