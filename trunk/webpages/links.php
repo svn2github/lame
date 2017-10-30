@@ -591,9 +591,9 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     <li>
         <a href="http://www.rarewares.org/mp3-others.php#helix_enc">Xing MP3
         encoder</a> Good quality and very fast encoder. It is now the MP3
-        encoder used in Real Jukebox and Real Player, and has been recently
-        released under an Open Source license (the speed tweaks are still 
-        limited to Windows though, because they use MASM)
+        encoder used in Real Player, and has been recently released under an 
+        Open Source license (the speed tweaks are still limited to Windows 
+        though, because they use MASM)
     </li>
 
     <li>
