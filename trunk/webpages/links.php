@@ -65,6 +65,11 @@ which supports or uses LAME:</a></h3>
         <a href="https://ffmpeg.org/">FFmpeg</a> An awesome collection of codecs 
         (libavcodec) for pretty much all popular audio and video formats.
     </li>
+    
+    <li>
+        <a href="http://www.freac.org/">fre:ac - free audio converter</a> Yet 
+        another CD ripper, encoder &amp; converter that uses LAME for MP3 encoding.
+   </li>
 
     <li>
         <a href="http://traverso-daw.org/">Traverso</a>, a cross-platform Digital
@@ -206,12 +211,6 @@ etc.): </a></b></p>
         <a href="http://www.labdv.com/dvdx/">DVDx</a> DVD to VCD/SVCD/AVI(XviD...)
         one-step converter.
     </li>
-
-   <li>
-        <a href="http://www.freac.org/">fre:ac - free audio converter (formerly
-        known as Bonk Encoder)</a> Yet another CD ripper, encoder &amp; converter
-        that uses LAME for MP3 encoding.
-   </li>
 
     <li>
         <a href="https://github.com/dswigger/lamex">LAMEX</a> An activex control
