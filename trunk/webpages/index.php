@@ -46,7 +46,7 @@
 <p>
 	The project quickly became a team project. Mike Cheng eventually left
 	leadership and started working on tooLame, an MP2 encoder. Mark Taylor became
-	leader and started pursuing increased quality in addition to better speed. He
+	leader and started pursuing better quality in addition to increased speed. He
 	can be considered the initiator of the LAME project in its current form. He
 	released version 3.0 featuring gpsycho, a new psychoacoustic model he
 	developed.
@@ -54,7 +54,7 @@
 
 <p>
 	In early 2003 Mark left project leadership, and since then the project has
-	been lead through the cooperation of the active developers (currently 4
+	been lead through the cooperation of the active developers (currently three
 	individuals).
 </p>
 
