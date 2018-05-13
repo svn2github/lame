@@ -28,20 +28,27 @@
 <h3>MP3 encoder mailing list</h3>
 
 <p>
-    For general discussions and comments about LAME and MP3 encoding, there used
-    to be the <a href="list.php">MP3 encoder mailing list</a>. But unfortunately 
-    it is now gone, although you can still access the list archives in the links
-    below.
+    For general discussions and comments about LAME and MP3 encoding there used
+    to be the <a href="list.php">MP3 encoder mailing list</a>. Unfortunately it 
+    is now gone, although you can still access the list archives in the links
+    below:
 </p>
 
 <p>
-    <a
-    href="http://www.mail-archive.com/mp3encoder%40minnie.tuhs.org/">Archives</a>
-    are also available (older archives: <!--<a
-    href="http://www.mail-archive.com/mp3encoder%40minnie.cs.adfa.edu.au/"> October
-    2000 - Sept 2001</a> and --><a
-    href="http://www.mail-archive.com/mp3encoder%40geek.rcc.se">before October
-    2000</a>)
+    <ul>
+       <li>Archives for <a
+           href="http://www.mail-archive.com/mp3encoder%40minnie.tuhs.org/">Sept 
+           2001 - Sept 2011</a>
+       </li>
+       <li>Archives for <s><a
+           href="http://www.mail-archive.com/mp3encoder%40minnie.cs.adfa.edu.au/">Oct
+           2000 - Sept 2001</a></s>
+       </li>
+       <li>Archives for <a
+           href="http://www.mail-archive.com/mp3encoder%40geek.rcc.se">before 
+           Oct 2000</a>
+       </li>
+    </ul>
 </p>
 
 <h3>LAME development mailing list</h3>
@@ -50,7 +57,7 @@
     <a href="https://sourceforge.net/projects/lame/lists/lame-dev">The lame-dev
     list</a> is the right place for everything related to LAME development: bug 
     reports, questions and suggestions concerning the encoder, the documentation 
-    and the web pages. It's also the best way to get in touch with the active 
+    and the web pages. It is also the best way to get in touch with the active 
     developers. <a href="https://sourceforge.net/p/lame/mailman/lame-dev/">
     Archives</a> are provided by SourceForge.
 </p>

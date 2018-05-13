@@ -31,7 +31,7 @@
 </p>
 
 <p>
-	In September of 2000, the list was moved and was then run by Warren Toomey. 
+	In September 2000 the list was moved and started being run by Warren Toomey. 
 	But sometime in 2011 it got deleted from the list server, so it seems to be
 	gone for good now. You can still peruse the archives though (check the
 	<a href="contact.php">contact</a> page for details).
