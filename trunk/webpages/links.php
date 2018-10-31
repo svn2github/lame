@@ -82,7 +82,7 @@ which supports or uses LAME:</a></h3>
     </li>
 
     <li>
-        <a href="http://www.getid3.org">getID3()</a> (PHP) PHP4 script that
+        <a href="http://www.getid3.org">getID3()</a> (PHP) PHP5 script that
         extracts useful information from MP3s &amp; other multimedia file formats.
         Reads LAME tags.
     </li>
@@ -441,31 +441,15 @@ you are now complying with the LAME license, please contact us.</strong></p>
 <h3><a href="#Contents" style="text-decoration: none"><sup><font
 size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 
-<h4>Linux:</h4>
-
-<ul>
-
-    <li>
-        <a href="http://www.rarewares.org/index.php">RareWares</a> Precompiled 
-        LAME versions for several distros.
-    </li>
-
-    <li>
-        <a href="https://freshrpms.net/">FreshRPMs</a> offers Linux RPM packages 
-        for several popular RPM-based distributions, including Fedora Core.
-    </li>
-
-</ul>
-
 <h4>Windows:</h4>
 
 <ul>
 
-    <li>
+   <li>
         <a href="http://www.rarewares.org/index.php">RareWares</a> offers several
         compiled LAME versions, including modified versions featuring special
         functionality.
-    </li>
+   </li>
 
    <li>
         <a href="http://lame.buanzo.com.ar/">Arturo "Buanzo" Busleiman</a>
@@ -475,14 +459,25 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 
 </ul>
 
-<h4>MacOS X:</h4>
+<h4>Linux:</h4>
 
 <ul>
 
     <li>
-        <a href="http://www.thalictrum.com/">Thalictrum</a> offers optimized
-        binaries for both Intel and PowerPC Macs.
+        <a href="https://freshrpms.net/">FreshRPMs</a> offers Linux RPM packages 
+        for several popular RPM-based distributions, including Fedora Core.
     </li>
+
+    <li>
+        <a href="http://www.rarewares.org/index.php">RareWares</a> Precompiled 
+        LAME versions for several distros.
+    </li>
+
+</ul>
+
+<h4>MacOS X:</h4>
+
+<ul>
 
     <li>
         <a href="http://karaoke.kjams.com/wiki/Lame">KJams</a> has a QuickTime
@@ -502,9 +497,9 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 <ul>
 
     <li>
-          <a href="https://www.opencsw.org">OpenCSW</a> provides up-to-date
-          binaries for several versions of Sun Solaris, both SPARC and x86
-          architectures.
+        <a href="https://www.opencsw.org/packages/CSWlame/">OpenCSW</a> 
+        provides up-to-date binaries for several versions of Sun Solaris, both
+        SPARC and x86 architectures.
     </li>
 
 </ul>
@@ -520,8 +515,8 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 
     <li>
         <a href="http://www2.arnes.si/~mmilut/Lame.html">Lame Binary Distribution
-        Point</a> - somewhat outdated, but with compiles for several obscure
-        systems like HP-UX, Irix, VMS, Tru64, etc.
+        Point</a> - outdated, but with compiles for several obscure systems like 
+        HP-UX, Irix, VMS, Tru64, etc.
     </li>
 
 </ul>
@@ -582,17 +577,18 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     </li>
 
     <li>
-        <a href="http://www2.arnes.si/~mmilut/BladeEnc.html">BladeEnc</a> One of
-        the first free encoders for Linux. Development has stopped at version
-        0.94.2. Quality is not satisfactory.
+        <a href="http://www.rarewares.org/rrw/blade.php">BladeEnc</a> One of the 
+        first free encoders for Linux. Development has stopped at version 0.94.2. 
+        Quality is not satisfactory. Compiles for a myriad of platforms are 
+        available <a href="http://www2.arnes.si/~mmilut/BladeEnc.html">here</a>.
     </li>
 
     <li>
-        <a href="http://www.rarewares.org/mp3-others.php#helix_enc">Xing MP3
-        encoder</a> Good quality and very fast encoder. It is now the MP3
-        encoder used in Real Player, and has been recently released under an 
-        Open Source license (the speed tweaks are still limited to Windows 
-        though, because they use MASM)
+        <a href="http://www.rarewares.org/rrw/xing.php">Xing MP3 encoder</a> 
+        Good quality and very fast encoder. It is now the MP3 encoder used in 
+        Real Player, and has been recently released under an Open Source license
+        (the speed tweaks are still limited to Windows though, because they are
+        written in MASM)
     </li>
 
     <li>
@@ -609,7 +605,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
     
     <li>
         <a href="download/dist10.tar.gz">dist10</a> - the MPEG (ISO) reference 
-        MP1/2/3 encoders. Low quality, very slow and buggy. Good as a starting 
+        MP1/2/3 encoders. Bad quality, very slow and buggy. Good as a starting 
         point, maybe?
     </li>
 
@@ -724,7 +720,7 @@ Hardware:</a></h3>
 
     <li>
         How to figure out which codec was used to make that mp3? Use <a
-        href="http://download.cnet.com/EncSpot/3000-2169_4-10062007.html">EncSpot</a>
+        href="http://www.rarewares.org/rrw/encspot.php">EncSpot</a>
     </li>
 
     <li>
@@ -787,11 +783,12 @@ line-in:</a></h3>
     </li>
 
     <li>
-        <a href="http://ldb.tpv.ru/">MixMP3</a> by Dmitry Lesnikov
+        <a href="http://ldb.tpv.ru/">MixMP3</a> for Windows - by Dmitry Lesnikov
     </li>
 
     <li>
-        <a href="http://messer.aerolit.pl/">Messer</a> by Dariusz Sieradzki
+        <a href="http://messer.aerolit.pl/">Messer</a> for Windows - by Dariusz 
+        Sieradzki
     </li>
 
 </ul>
