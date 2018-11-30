@@ -271,36 +271,49 @@ which supports or uses LAME:</a></h3>
         <a href="http://www.exactaudiocopy.de">EAC</a> (Win) Exact Audio
         Copy: High quality CD ripper.
     </li>
-
+    
     <li>
-       <a href="http://www.wavosaur.com/">Wavosaur</a> Free audio editor and
-       batch processor.
+        <a href="http://www.zlurp.com">ZLURP</a> (Win, Mac) Ripper and
+        encoder. Includes LAME binaries.
     </li>
 
     <li>
-        <a href="http://www.fridgesoft.de/harddiskogg.php">Hard Disk Ogg</a> a
-        line-in recorder that can encode directly to MP3, among other formats.
+       <a href="http://www.wavosaur.com/">Wavosaur</a> (Win) Free audio editor 
+       and batch processor.
+    </li>
+    
+    <li>
+       <a href="https://en.stateful-audio-converter.frdafonseca.com/index.html">
+       Stateful Audio Converter</a> (Win) is a LAME encoding and decoding 
+       frontend with a wizard interface that does batch processing.
+    </li>
+
+    <li>
+        <a href="http://www.fridgesoft.de/harddiskogg.php">Hard Disk Ogg</a> 
+        (Win) a line-in recorder that can encode directly to MP3, among other 
+        formats.
     </li>
 
     <li>
         <a href="http://freshmeat.net/projects/wlame/">WORM MP3 Encoder</a>
         (Win) MP3 encoder based on LAME with reported improvements.
     </li>
-
+  
     <li>
-        <a href="http://www.zlurp.com">ZLURP</a> (Windows, Mac, Linux) Ripper and
-        encoder. Includes LAME binaries.
+        <a href="https://en.slideshow-creator.frdafonseca.com/index.html">
+        Slideshow Creator</a> (Win) a program that creates slide show videos 
+        from sequences of images. Can use LAME to add a soundtrack.
     </li>
 
     <li>
-        <a href="https://www.macupdate.com/app/mac/8837/itunes-lame-encoder">iTunes-LAME</a>
-        (MacOS X) Integrates LAME into Apple iTunes, as an alternative to the
-        default (rather poor) encoder.
+        <a href="https://www.macupdate.com/app/mac/8837/itunes-lame-encoder">
+        iTunes-LAME</a> (Mac) Integrates LAME into Apple iTunes, as an 
+        alternative to the default (rather poor) encoder.
     </li>
 
     <li>
         <a href="https://funkatron.com/posts/lamebrain_a_lame_based_mp3_encoder_and_cd_ripper.html">LameBrain</a>
-        (MacOS) LAME frontend for MacOS X.
+        (Mac) LAME frontend for MacOS X.
     </li>
 
     <li>
@@ -328,8 +341,8 @@ LAME:</a></h3>
     </li>
 
    <li>
-        <a href="https://www.tracktion.com/">Mackie Tracktion</a> a sequencer that
-        uses LAME to export to MP3.
+        <a href="https://www.tracktion.com/">Tracktion WaveForm</a> (Win/Mac/Linux) 
+        a sequencer that uses LAME to export to MP3.
    </li>
 
     <li>
@@ -353,7 +366,7 @@ LAME:</a></h3>
 
     <li>
         <a href="https://acondigital.com/products/acoustica-audio-editor/">Acoustica</a>
-        digital audio editor
+        (Win/Mac) digital audio editor
     </li>
 
     <li>
@@ -468,11 +481,6 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
         for several popular RPM-based distributions, including Fedora Core.
     </li>
 
-    <li>
-        <a href="http://www.rarewares.org/index.php">RareWares</a> Precompiled 
-        LAME versions for several distros.
-    </li>
-
 </ul>
 
 <h4>MacOS X:</h4>
@@ -559,7 +567,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         <a href="http://www.rarewares.org/rrw/mp3enc.php">FhG MP3enc</a> 3.1. The
         gold standard of encoders. All other encoders strive to sound this good.
         Demo version only encodes up to 30 seconds.<br />
-        <i>Update: according to recent listening tests, Lame already surpassed
+        <i>Update: according to several listening tests, Lame already surpassed
         FhG encoders in quality at most bitrates. :-)</i>
     </li>
 
@@ -578,7 +586,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
 
     <li>
         <a href="http://www.rarewares.org/rrw/blade.php">BladeEnc</a> One of the 
-        first free encoders for Linux. Development has stopped at version 0.94.2. 
+        first free encoders for Linux. Development stopped at version 0.94.2. 
         Quality is not satisfactory. Compiles for a myriad of platforms are 
         available <a href="http://www2.arnes.si/~mmilut/BladeEnc.html">here</a>.
     </li>
@@ -614,7 +622,7 @@ size="-1">^</font></sup></a> <a name="Alternatives">Other MP3 Encoders:</a></h3>
         museum preserving obsolete and defunct encoders for several audio
         formats, including old LAME versions and obscure MP3 encoders (most of
         these encoders are simple compiles of the dist10 MPEG reference sources
-        though).
+        with minimal tweaks, though).
     </li>
 </ul>
 
