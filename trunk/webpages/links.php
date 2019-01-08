@@ -477,8 +477,11 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 <ul>
 
     <li>
-        <a href="https://freshrpms.net/">FreshRPMs</a> offers Linux RPM packages 
-        for several popular RPM-based distributions, including Fedora Core.
+        Ever since the MP3 patents <a href="#Patents">expired</a>, most Linux 
+        distros provide LAME from their online repositories or installation media. 
+        Otherwise, you can still locate installation packages at package search 
+        engines such as <a href="https://pkgs.org/download/lame">pkgs.org</a>
+        or <a href="https://rpm.pbone.net/">RPM search</a>.
     </li>
 
 </ul>
