@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>LAME MP3 Encoder :: Quality and Listening Test Information</title>
-    <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-    <meta name="generator" content="jEdit 4.2" />
+    <meta name="author" content="Roberto Amorim - rjamorim@yahoo.com" />
+    <meta name="generator" content="jEdit 5.4" />
     <meta name="cvs-version" content="$Id: quality.php,v 1.8 2017-08-02 21:00:11 rjamorim Exp $" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/lame.css" />
@@ -28,7 +29,6 @@
 <h3>Tuning by Listening Tests</h3>
 
 <ul>
-
     <li>
         Most improvements in GPSYCHO require detailed listening tests. The best
         way to go about this is to find a sample where GPSYCHO does something bad.
@@ -43,7 +43,6 @@
         and C on a scale from 1-5, 5 being for the signal you perceive as the
         original.
     </li>
-
 </ul>
 
 <hr />
@@ -156,7 +155,6 @@
 </p>
 
 <ul>
-
     <li>
         1st place: The original sample.
     </li>
@@ -175,17 +173,15 @@
 
     <li>
         4th place: LAME 3.70 (-h) - More high frequency metallic vibrations.
-        Sounds like low cost trumpets are used. (resonance between the metal
-        parts of the trumpets) These vibrations even occur, if the trumpets
-        are not    playing.
+        Sounds like budget trumpets are used (resonance between the metal
+        parts of the trumpets). These vibrations even occur if the trumpets
+        are not playing.
     </li>
 
     <li>
         5th place: SCMPX 1.51 - This one even makes additional noise.
     </li>
-
 </ul>
-
 
 <h4>
     <a href="http://lame.sourceforge.net/download/samples">ftb_samp.wv</a>
@@ -195,9 +191,9 @@
 <p>
     This is a great test case found by jodaman at cegt201.bradley.edu. It is a
     selection from Metallica's Fade To Black. At 128kbs, the difference between
-    LAME and FhG (mp3enc 3.1) is clearly noticable. There are problems with the
+    LAME and FhG (mp3enc 3.1) is clearly noticeable. There are problems with the
     vocal 's' sounds, and there is a slight tinny underwater sound. The old FhG
-    encoder l3enc also has the same problems.
+    encoder l3enc has the same problems.
 </p>
 
 <h4>
@@ -258,8 +254,8 @@
 <h2>Test cases previously used to improve LAME</h2>
 
 <h4>
-<a href="http://lame.sourceforge.net/download/samples">castanets.wv</a> FhG
-pre-echo reference sample (0.5M - about 7 seconds)
+    <a href="http://lame.sourceforge.net/download/samples">castanets.wv</a> FhG
+    pre-echo reference sample (0.5M - about 7 seconds)
 </h4>
 
 <p>
@@ -309,7 +305,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
 </h4>
 
 <p>
-    Sent by Naoki SHIBATA - shibatch at geocities.co.jp.
+    Sent by Naoki Shibata - shibatch at geocities.co.jp.
     Naoki can hear noise in the left channel, but only when using a good pair of
     headphones. It goes away when joint stereo is not used. Comparing with FhG,
     it looks like LAME is toggling back and forth between MS and regular stereo
@@ -334,7 +330,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
 </h4>
 
 <p>
-    This sample is from an old Pink Floyd song. It was found by Robert Hegemann -
+    This sample is from a Pink Floyd song. It was found by Robert Hegemann -
     Robert.Hegemann at gmx.de. In the beginning, while the foreground pans from
     right to left there is a slight twinkling sound. This goes away with -X, but
     the true cause and a better fix should be found.
@@ -365,7 +361,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
     them turn on and off in the right channel. The FhG encoder avoids this
     problem by using very few mid/side stereo frames. But the LAME mid/side
     stereo switching criterion can not detect that this sample should not be
-    encode with mid/side stereo, and produces too many mid/side frames.
+    encoded with mid/side stereo, and produces too many mid/side frames.
     Suggestions for a better switching criterion are welcome! I've tried a few
     things, but anything that works is usually too restrictive, i.e. it will
     turn off mid/side stereo for half the frames in castanets.wv, but this
@@ -457,7 +453,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
 </h4>
 
 <p>
-    From davel at caffeine.co.uk: The opening bars from the Beautiful South track
+    From davel at caffeine.co.uk: The opening bars from the Beautiful south track
     'Blackbird on the Wire' - you will notice it has some very sudden synthesized
     drums in it. I encoded this track using both Lame and FhG, and found that FhG
     just couldn't handle the first drum hit (it even had trouble with subsequent
@@ -476,7 +472,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
 </h4>
 
 <p>
-    Sent by Naoki SHIBATA, shibatch at geocities.co.jp.
+    Sent by Naoki Shibata, shibatch at geocities.co.jp.
 </p>
 
 <h4>
@@ -490,7 +486,7 @@ pre-echo reference sample (0.5M - about 7 seconds)
 
 <h4>
     <a href="http://lame.sourceforge.net/download/samples">applaud.wv</a> (1.0M,
-        about 9 seconds)
+    about 9 seconds)
 </h4>
 
 <p>

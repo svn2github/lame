@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>LAME MP3 Encoder :: Contact Information</title>
-    <meta name="author" content="Roberto Amorim - roberto@rjamorim.com" />
-    <meta name="generator" content="jEdit 4.2" />
+    <meta name="author" content="Roberto Amorim - rjamorim@yahoo.com" />
+    <meta name="generator" content="jEdit 5.4" />
     <meta name="cvs-version" content="$Id: contact.php,v 1.9 2017-08-03 12:33:12 rjamorim Exp $" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/lame.css" />
@@ -29,7 +30,7 @@
 
 <p>
     For general discussions and comments about LAME and MP3 encoding there used
-    to be the <a href="list.php">MP3 encoder mailing list</a>. Unfortunately it 
+    to be the <a href="list.php">MP3 encoder mailing list</a>. Unfortunately it
     is now gone, although you can still access the list archives in the links
     below:
 </p>
@@ -37,7 +38,7 @@
 <p>
     <ul>
        <li>Archives for <a
-           href="http://www.mail-archive.com/mp3encoder%40minnie.tuhs.org/">Sept 
+           href="http://www.mail-archive.com/mp3encoder%40minnie.tuhs.org/">Sept
            2001 - Sept 2011</a>
        </li>
        <li>Archives for <s><a
@@ -45,7 +46,7 @@
            2000 - Sept 2001</a></s>
        </li>
        <li>Archives for <a
-           href="http://www.mail-archive.com/mp3encoder%40geek.rcc.se">before 
+           href="http://www.mail-archive.com/mp3encoder%40geek.rcc.se">before
            Oct 2000</a>
        </li>
     </ul>
@@ -55,9 +56,9 @@
 
 <p>
     <a href="https://sourceforge.net/projects/lame/lists/lame-dev">The lame-dev
-    list</a> is the right place for everything related to LAME development: bug 
-    reports, questions and suggestions concerning the encoder, the documentation 
-    and the web pages. It is also the best way to get in touch with the active 
+    list</a> is the right place for everything related to LAME development: bug
+    reports, questions and suggestions concerning the encoder, the documentation
+    and the web pages. It is also the best way to get in touch with the active
     developers. <a href="https://sourceforge.net/p/lame/mailman/lame-dev/">
     Archives</a> are provided by SourceForge.
 </p>
@@ -85,7 +86,7 @@
     To submit bug reports, you can use the <a
     href="https://sourceforge.net/p/lame/bugs/">bug tracker</a> besides the <a
     href="https://sourceforge.net/projects/lame/lists/lame-dev">lame-dev mailing
-    list</a>. Please be descriptive in your bug report. You should clearly 
+    list</a>. Please be descriptive in your bug report. You should clearly
     mention your problem, LAME version used and how to reproduce the bug.
 </p>
 
@@ -97,10 +98,10 @@
     contacting a developer.
 </p>
 
-<h3>Contact the Webmaster</h3>
+<h3>Contact the webmaster</h3>
 
 <p>
-    The current Webmaster for the LAME project is Roberto Amorim. You can 
+    The current webmaster for the LAME project is Roberto Amorim. You can
     contact him through <a href="mailto:rjamorim@users.sourceforge.net">e-mail</a>.
 </p>
 

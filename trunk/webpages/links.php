@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>LAME MP3 Encoder :: Related Links</title>
@@ -478,8 +479,8 @@ size="-1">^</font></sup></a> <a name="Binaries">LAME Binaries:</a></h3>
 
     <li>
         Ever since the MP3 patents <a href="#Patents">expired</a>, most Linux 
-        distros provide LAME from their online repositories or installation media. 
-        Otherwise, you can still locate installation packages at package search 
+        distros provide LAME from their online repositories or installation 
+        media. Otherwise, you can still locate installation packages at search 
         engines such as <a href="https://pkgs.org/download/lame">pkgs.org</a>
         or <a href="https://rpm.pbone.net/">RPM search</a>.
     </li>
